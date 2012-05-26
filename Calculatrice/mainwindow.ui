@@ -551,7 +551,7 @@
      <x>0</x>
      <y>0</y>
      <width>582</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -574,8 +574,15 @@
      <addaction name="actionReel"/>
      <addaction name="actionRationnel"/>
     </widget>
+    <widget class="QMenu" name="menuAngle">
+     <property name="title">
+      <string>Mesure d'angle</string>
+     </property>
+     <addaction name="actionDegres"/>
+     <addaction name="actionRadians"/>
+    </widget>
     <addaction name="menuType_de_Constante"/>
-    <addaction name="actionDegre_Radian"/>
+    <addaction name="menuAngle"/>
     <addaction name="actionMode_Complexe"/>
     <addaction name="actionClavier"/>
    </widget>
@@ -611,11 +618,6 @@
     <string>Annuler</string>
    </property>
   </action>
-  <action name="actionDegre_Radian">
-   <property name="text">
-    <string>Degre/Radian</string>
-   </property>
-  </action>
   <action name="actionMode_Complexe">
    <property name="text">
     <string>Mode Complexe</string>
@@ -639,6 +641,16 @@
   <action name="actionRationnel">
    <property name="text">
     <string>Rationnel</string>
+   </property>
+  </action>
+  <action name="actionDegres">
+   <property name="text">
+    <string>Degres</string>
+   </property>
+  </action>
+  <action name="actionRadians">
+   <property name="text">
+    <string>Radians</string>
    </property>
   </action>
  </widget>

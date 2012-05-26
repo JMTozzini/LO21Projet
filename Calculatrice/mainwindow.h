@@ -3,8 +3,13 @@
 
 #include <QMainWindow>
 #include <iostream>
+#include <cstdio>
+#include <fstream>
+#include <string>
+
 #include "pile.h"
 #include "constante.h"
+
 
 namespace Ui {class MainWindow;}
 
@@ -16,14 +21,22 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void AffichageEcran();
+    static void InitParam();
+    static void MAJParam();
+
+
     
 private:
     Ui::MainWindow *ui;
     PileStockage* ps;
     PileAffichage* pa;
-    static bool complexe;
+    static std::string complexe;
     static std::string typeDeCste;
+    static std::string clavier;
     static std::string operateur;
+    static std::string angle;
+
+
 
 public slots:
     void Num1Press();
@@ -45,6 +58,12 @@ public slots:
     void MenuEntier();
     void MenuReel();
     void MenuRationnel();
+    void MenuClavier();
+    void MenuDegres();
+    void MenuRadians();
 };
+
+
+
 
 #endif // MAINWINDOW_H

@@ -3,7 +3,11 @@
 
 void MainWindow::MenuComplexe()
 {
-    complexe=ui->actionMode_Complexe->isChecked();
+    bool tmp=ui->actionMode_Complexe->isChecked();
+    if(tmp)
+        complexe="1";
+    else
+        complexe="0";
 }
 
 
@@ -29,4 +33,27 @@ void MainWindow::MenuRationnel()
     ui->actionEntier->setChecked(0);
     ui->actionRationnel->setChecked(1);
     typeDeCste="rationnel";
+}
+
+void MainWindow::MenuClavier()
+{
+    bool tmp=ui->actionClavier->isChecked();
+    if(tmp)
+        clavier="1";
+    else
+        clavier="0";    // A voir comment on change l'interface en fonction du boolean clavier...
+}
+
+void MainWindow::MenuDegres()
+{
+    ui->actionRadians->setChecked(0);
+    ui->actionDegres->setChecked(1);
+    angle="degres";
+}
+
+void MainWindow::MenuRadians()
+{
+    ui->actionDegres->setChecked(0);
+    ui->actionRadians->setChecked(1);
+    angle="radians";
 }
