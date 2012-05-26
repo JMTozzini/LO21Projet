@@ -48,6 +48,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Opérations
     QObject::connect(ui->plus,SIGNAL(clicked()),this,SLOT(PlusPress()));
+    QObject::connect(ui->moins,SIGNAL(clicked()),this,SLOT(MoinsPress()));
+
 
     // Entrer
     QObject::connect(ui->entrer,SIGNAL(clicked()),this,SLOT(EntrerPress()));
@@ -85,6 +87,8 @@ std::string MainWindow::angle;
 std::string MainWindow::operateur="rien";
 
 
+
+// Fonctions statiques pour l'initialisation et la mise à jour des paramètres
 
 void MainWindow::InitParam(){
 

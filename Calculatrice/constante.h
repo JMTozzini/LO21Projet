@@ -18,20 +18,6 @@ public:
 
 class Base : public Constante{};
 
-class Entier : public Base
-{
-    int valeur;
-
-public:
-    Entier(int n):valeur(n){}
-    Entier(QString s):valeur(s.toInt()){}
-    const Constante& Sinus() const {return *this;}
-    void Afficher(std::ostream& os=std::cout) {os<<GetVal()<<std::endl;}
-    double GetVal() const {return valeur;}
-    const std::string GetType() const {return "je suis un entier";}
-    Entier& operator+(const Constante& e) {return *(new Entier(valeur + e.GetVal()));}
-};
-
 class Reel : public Base
 {
     double valeur;
@@ -45,5 +31,21 @@ public:
     const std::string GetType() const {return "je suis un réel";}
     Reel& operator+(const Constante& e) {return *(new Reel(valeur + e.GetVal()));}
 };
+
+class Entier : public Base
+{
+    int valeur;
+
+public:
+    Entier(int n):valeur(n){}
+    Entier(QString s):valeur(s.toInt()){}
+    const Constante& Sinus() const {return *this;}
+    void Afficher(std::ostream& os=std::cout) {os<<GetVal()<<std::endl;}
+    double GetVal() const {return valeur;}
+    const std::string GetType() const {return "je suis un entier";}
+    Entier& operator+(const Constante& e) {return *(new Entier(valeur + e.GetVal()));}
+    Entier& operator-(const Constante& e) {return *(new Entier(valeur - e.GetVal()));}
+};
+
 
 #endif // CONSTANTE_H

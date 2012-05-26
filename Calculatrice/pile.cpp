@@ -28,6 +28,7 @@ Constante& PileStockage::Depiler()
 void PileAffichage::Empiler(QString c)
 {
     ptr.push_back(c);
+
 }
 
 QString& PileAffichage::Depiler()

@@ -18,10 +18,20 @@ void MainWindow::EntrerPress()
         ps->AffichagePile();
     }
 
+    else if(s=="+"){
+        pa->Depiler();
+        PlusPress();
+    }
+    else if(s=="-"){
+        pa->Depiler();
+        MoinsPress();
+    }
+
     else
     {
         Entier* e=new Entier(s);
         ps->Empiler(*e);
+
     }
     ui->champEcr->clear();
 }

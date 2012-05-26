@@ -53,6 +53,7 @@ public slots:
     void CmplxPress();
     void ExprPress();
     void PlusPress();
+    void MoinsPress();
     void EntrerPress();
     void MenuComplexe();
     void MenuEntier();

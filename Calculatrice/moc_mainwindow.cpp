@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Sat May 26 17:39:52 2012
+** Created: Sat May 26 23:43:30 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      22,   14, // methods
+      23,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -46,13 +46,14 @@ static const uint qt_meta_data_MainWindow[] = {
      157,   11,   11,   11, 0x0a,
      169,   11,   11,   11, 0x0a,
      181,   11,   11,   11, 0x0a,
-     195,   11,   11,   11, 0x0a,
-     210,   11,   11,   11, 0x0a,
+     194,   11,   11,   11, 0x0a,
+     208,   11,   11,   11, 0x0a,
      223,   11,   11,   11, 0x0a,
-     234,   11,   11,   11, 0x0a,
-     250,   11,   11,   11, 0x0a,
-     264,   11,   11,   11, 0x0a,
+     236,   11,   11,   11, 0x0a,
+     247,   11,   11,   11, 0x0a,
+     263,   11,   11,   11, 0x0a,
      277,   11,   11,   11, 0x0a,
+     290,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -63,9 +64,9 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "Num6Press()\0Num7Press()\0Num8Press()\0"
     "Num9Press()\0Num0Press()\0ComaPress()\0"
     "CmplxPress()\0ExprPress()\0PlusPress()\0"
-    "EntrerPress()\0MenuComplexe()\0MenuEntier()\0"
-    "MenuReel()\0MenuRationnel()\0MenuClavier()\0"
-    "MenuDegres()\0MenuRadians()\0"
+    "MoinsPress()\0EntrerPress()\0MenuComplexe()\0"
+    "MenuEntier()\0MenuReel()\0MenuRationnel()\0"
+    "MenuClavier()\0MenuDegres()\0MenuRadians()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -88,14 +89,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 11: _t->CmplxPress(); break;
         case 12: _t->ExprPress(); break;
         case 13: _t->PlusPress(); break;
-        case 14: _t->EntrerPress(); break;
-        case 15: _t->MenuComplexe(); break;
-        case 16: _t->MenuEntier(); break;
-        case 17: _t->MenuReel(); break;
-        case 18: _t->MenuRationnel(); break;
-        case 19: _t->MenuClavier(); break;
-        case 20: _t->MenuDegres(); break;
-        case 21: _t->MenuRadians(); break;
+        case 14: _t->MoinsPress(); break;
+        case 15: _t->EntrerPress(); break;
+        case 16: _t->MenuComplexe(); break;
+        case 17: _t->MenuEntier(); break;
+        case 18: _t->MenuReel(); break;
+        case 19: _t->MenuRationnel(); break;
+        case 20: _t->MenuClavier(); break;
+        case 21: _t->MenuDegres(); break;
+        case 22: _t->MenuRadians(); break;
         default: ;
         }
     }
@@ -134,9 +136,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 22)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 23;
     }
     return _id;
 }
