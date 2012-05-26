@@ -551,7 +551,7 @@
      <x>0</x>
      <y>0</y>
      <width>582</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -566,7 +566,15 @@
     <property name="title">
      <string>Parametres</string>
     </property>
-    <addaction name="actionType_de_Constante"/>
+    <widget class="QMenu" name="menuType_de_Constante">
+     <property name="title">
+      <string>Type de Constante</string>
+     </property>
+     <addaction name="actionEntier"/>
+     <addaction name="actionReel"/>
+     <addaction name="actionRationnel"/>
+    </widget>
+    <addaction name="menuType_de_Constante"/>
     <addaction name="actionDegre_Radian"/>
     <addaction name="actionMode_Complexe"/>
     <addaction name="actionClavier"/>
@@ -603,11 +611,6 @@
     <string>Annuler</string>
    </property>
   </action>
-  <action name="actionType_de_Constante">
-   <property name="text">
-    <string>Type de Constante</string>
-   </property>
-  </action>
   <action name="actionDegre_Radian">
    <property name="text">
     <string>Degre/Radian</string>
@@ -621,6 +624,21 @@
   <action name="actionClavier">
    <property name="text">
     <string>Clavier</string>
+   </property>
+  </action>
+  <action name="actionEntier">
+   <property name="text">
+    <string>Entier</string>
+   </property>
+  </action>
+  <action name="actionReel">
+   <property name="text">
+    <string>Réel</string>
+   </property>
+  </action>
+  <action name="actionRationnel">
+   <property name="text">
+    <string>Rationnel</string>
    </property>
   </action>
  </widget>

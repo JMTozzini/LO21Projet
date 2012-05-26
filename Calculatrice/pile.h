@@ -10,7 +10,7 @@ class PileStockage
 public :
     PileStockage(){}
     void Empiler(Constante& c);
-    Constante* Depiler();
+    Constante& Depiler();
     void AffichagePile();
 };
 

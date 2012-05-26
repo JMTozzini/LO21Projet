@@ -8,6 +8,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->champAff->setFontPointSize(30);
     ui->champAff->setAlignment(Qt::AlignCenter);
 
+    // Configuration Menu
+    ui->actionMode_Complexe->setCheckable(true); // par défaut false
+    ui->actionReel->setCheckable(true);
+    ui->actionEntier->setCheckable(true);
+    ui->actionEntier->setChecked(true);
+    ui->actionRationnel->setCheckable(true);
+
     // Numéro
     QObject::connect(ui->un,SIGNAL(clicked()),this,SLOT(Num1Press()));
     QObject::connect(ui->deux,SIGNAL(clicked()),this,SLOT(Num2Press()));
@@ -30,6 +37,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Entrer
     QObject::connect(ui->entrer,SIGNAL(clicked()),this,SLOT(EntrerPress()));
+
+    // Menu
+    QObject::connect(ui->actionMode_Complexe,SIGNAL(triggered()),this,SLOT(MenuComplexe()));
+    QObject::connect(ui->actionEntier,SIGNAL(triggered()),this,SLOT(MenuEntier()));
+    QObject::connect(ui->actionReel,SIGNAL(triggered()),this,SLOT(MenuReel()));
+    QObject::connect(ui->actionRationnel,SIGNAL(triggered()),this,SLOT(MenuRationnel()));
 }
 
 MainWindow::~MainWindow()
@@ -46,3 +59,7 @@ void MainWindow::AffichageEcran()
     for(unsigned int i=0;i<ptr.size();i++)
         ui->champAff->append(pa->GetVal(i));
 }
+
+bool MainWindow::complexe=false;
+std::string MainWindow::typeDeCste="entier";
+std::string MainWindow::operateur="rien";

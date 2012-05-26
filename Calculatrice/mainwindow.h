@@ -21,6 +21,9 @@ private:
     Ui::MainWindow *ui;
     PileStockage* ps;
     PileAffichage* pa;
+    static bool complexe;
+    static std::string typeDeCste;
+    static std::string operateur;
 
 public slots:
     void Num1Press();
@@ -38,6 +41,10 @@ public slots:
     void ExprPress();
     void PlusPress();
     void EntrerPress();
+    void MenuComplexe();
+    void MenuEntier();
+    void MenuReel();
+    void MenuRationnel();
 };
 
 #endif // MAINWINDOW_H

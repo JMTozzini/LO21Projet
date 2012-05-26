@@ -5,16 +5,24 @@ void MainWindow::EntrerPress()
 {
     QString s=ui->champEcr->text();
 
-    pa->Empiler(s);
-    pa->AffichagePile();
 
+    pa->Empiler(s);
     AffichageEcran();
 
-    Entier* e=new Entier(s);
+    if(s.contains(","))
+    {
+        s.remove(" ");
+        s.replace(s.indexOf(","),1,".");
+        Reel* r=new Reel(s);
+        ps->Empiler(*r);
+        ps->AffichagePile();
+    }
 
-    ps->Empiler(*e);
-    ps->AffichagePile();
-
+    else
+    {
+        Entier* e=new Entier(s);
+        ps->Empiler(*e);
+    }
     ui->champEcr->clear();
 }
 

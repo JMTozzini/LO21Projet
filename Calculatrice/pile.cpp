@@ -17,11 +17,11 @@ void PileStockage::Empiler(Constante& c)
     ptr.push_back(&c);
 }
 
-Constante* PileStockage::Depiler()
+Constante& PileStockage::Depiler()
 {
     Entier* tmp=dynamic_cast<Entier*>(ptr.back());
     ptr.pop_back();
-    return tmp;
+    return *tmp;
 }
 
 
