@@ -30,9 +30,9 @@ private:
     Ui::MainWindow *ui;
     PileStockage* ps;
     PileAffichage* pa;
-    static std::string complexe;
+    static bool complexe;
     static std::string typeDeCste;
-    static std::string clavier;
+    static bool clavier;
     static std::string operateur;
     static std::string angle;
 

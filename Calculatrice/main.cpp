@@ -7,7 +7,6 @@ int main(int argc, char *argv[])
     MainWindow::InitParam();
     MainWindow w;
     w.show();
-    MainWindow::MAJParam();
 
     return a.exec();
 }

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <map>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -15,20 +15,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->actionMode_Complexe->setCheckable(true); // par défaut false
     ui->actionReel->setCheckable(true);
     ui->actionEntier->setCheckable(true);
-    ui->actionEntier->setChecked(true);
     ui->actionRationnel->setCheckable(true);
     ui->actionClavier->setCheckable(true);
-    ui->actionClavier->setChecked(true);
     ui->actionDegres->setCheckable(true);
     ui->actionRadians->setCheckable(true);
-    ui->actionClavier->setChecked(true);
-    ui->actionDegres->setChecked(true);
 
-    // Utilisation d'un fichier pour sauver les paramètres
-
-
-
-
+    if(complexe) ui->actionMode_Complexe->setChecked(true);
+    if(clavier) ui->actionClavier->setChecked(true);
+    if(typeDeCste=="entier") ui->actionEntier->setChecked(true);
+    else if(typeDeCste=="reel") ui->actionReel->setChecked(true);
+    else ui->actionRationnel->setChecked(true);
+    if (angle=="degres") ui->actionDegres->setChecked(true);
+    else ui->actionRadians->setChecked(true);
 
 
     // Numéro
@@ -80,11 +78,11 @@ void MainWindow::AffichageEcran()
         ui->champAff->append(pa->GetVal(i));
 }
 
-std::string MainWindow::complexe;
+bool MainWindow::complexe;
 std::string MainWindow::typeDeCste;
-std::string MainWindow::operateur="rien";
-std::string MainWindow::clavier;
+bool MainWindow::clavier;
 std::string MainWindow::angle;
+std::string MainWindow::operateur="rien";
 
 
 
@@ -94,12 +92,13 @@ void MainWindow::InitParam(){
     std::ifstream fichier("param.txt", ios::in);  // Ouverture en lecture du fichier de paramètres
     if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des paramètres
     {
-        getline(fichier, complexe);
+        string tmp;
+        getline(fichier, tmp);
+        complexe=atoi(tmp.c_str());
         getline(fichier, typeDeCste);
-        getline(fichier, clavier);
+        getline(fichier, tmp);
+        clavier=atoi(tmp.c_str());
         getline(fichier, angle);
-
-        std::cout<<"if complexe="<<complexe<<std::endl; // test
 
     }
     else{ // Sinon le fichier n'existait pas, on ouvre en écriture et on l'initialise avec les valeurs pas défaut
@@ -107,15 +106,14 @@ void MainWindow::InitParam(){
 
         if(fichier)
         {
-            fichier<<"0"<<std::endl;
-            complexe="0";
+            fichier<<0<<std::endl;
+            complexe=0;
             fichier<<"entier"<<std::endl;
             typeDeCste="entier";
-            fichier<<"1"<<std::endl;
-            clavier="1";
-            fichier<<"degre"<<std::endl;
-            angle="degre";
-            std::cout<<"else complexe="<<complexe<<std::endl; // test
+            fichier<<1<<std::endl;
+            clavier=1;
+            fichier<<"degres"<<std::endl;
+            angle="degres";
 
         }
         else
@@ -126,16 +124,15 @@ void MainWindow::InitParam(){
 }
 
 void MainWindow::MAJParam(){
-    std::ofstream fichier("param1.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
+    std::ofstream fichier("param.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
 
     if(fichier)  // si l'ouverture a réussi
     {
         fichier<<complexe<<std::endl;
-
         fichier<<typeDeCste<<std::endl;
         fichier<<clavier<<std::endl;
         fichier<<angle<<std::endl;
-        std::cout<<"Ok MAJ"<<complexe<<std::endl;
+        fichier.close();
 
     }
     else  // sinon
