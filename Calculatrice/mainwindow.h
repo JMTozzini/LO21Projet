@@ -9,6 +9,8 @@
 
 #include "pile.h"
 #include "constante.h"
+#include "fonctionsAnnexe.h"
+#include "exceptionCalculatrice.h"
 
 
 namespace Ui {class MainWindow;}
@@ -16,16 +18,7 @@ namespace Ui {class MainWindow;}
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-    void AffichageEcran();
-    static void InitParam();
-    static void MAJParam();
 
-
-    
 private:
     Ui::MainWindow *ui;
     PileStockage* ps;
@@ -35,8 +28,15 @@ private:
     static bool clavier;
     static std::string operateur;
     static std::string angle;
+    friend class ExceptionCalculatrice;
 
 
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+    void AffichageEcran();
+    static void InitParam();
+    static void MAJParam();
 
 public slots:
     void Num1Press();

@@ -16,7 +16,6 @@ void MainWindow::EntrerPress()
         s.push_back('0'); s.push_front('0'); // on entre 2,_ ou _,2 et ça fonctionne
         Reel* r=new Reel(s);
         ps->Empiler(*r);
-        ps->AffichagePile();
     }
 
     /*

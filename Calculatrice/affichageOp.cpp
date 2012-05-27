@@ -3,21 +3,18 @@
 
 void MainWindow::PlusPress()
 {
+    try
+    {
     pa->Depiler(); pa->Depiler();
-
     Constante& c = ((ps->Depiler()) + &(ps->Depiler()));
-
     ps->Empiler(c);
+    pa->Empiler(ToQString(c));
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
 
-    //ReelToQString(c);
-
-    pa->Empiler();
-
-    pa->AffichagePile();// ps->AffichagePile();
-
+    //pa->AffichagePile(); ps->AffichagePile();
     ui->champAff->clear();
     ui->champEcr->clear();
-
     AffichageEcran();
 }
 

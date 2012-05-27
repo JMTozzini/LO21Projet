@@ -17,11 +17,15 @@ SOURCES += main.cpp\
     pile.cpp \
     affichageOp.cpp \
     menu.cpp \
-    constante.cpp
+    constante.cpp \
+    fonctionsAnnexe.cpp \
+    exceptionCalculatrice.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \
-    constante.h
+    constante.h \
+    fonctionsAnnexe.h \
+    exceptionCalculatrice.h
 
 FORMS    += \
     mainwindow.ui
