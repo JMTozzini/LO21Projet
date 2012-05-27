@@ -2,6 +2,16 @@
 #include "mainwindow.h"
 #include <iostream>
 
+// ----- Pile Stockage -----
+
+void PileStockage::Empiler(Constante& c){ptr.push_back(&c);}
+
+Constante& PileStockage::Depiler()
+{
+    Constante* tmp=ptr.back();
+    ptr.pop_back();
+    return *tmp;
+}
 
 void PileStockage::AffichagePile()
 {
@@ -12,24 +22,10 @@ void PileStockage::AffichagePile()
     std::cout<<"----"<<std::endl;
 }
 
-void PileStockage::Empiler(Constante& c)
-{
-    ptr.push_back(&c);
-}
 
-Constante& PileStockage::Depiler()
-{
-    Entier* tmp=dynamic_cast<Entier*>(ptr.back());
-    ptr.pop_back();
-    return *tmp;
-}
+// ----- Pile Affichage -----
 
-
-void PileAffichage::Empiler(QString c)
-{
-    ptr.push_back(c);
-
-}
+void PileAffichage::Empiler(QString c){ptr.push_back(c);}
 
 QString& PileAffichage::Depiler()
 {

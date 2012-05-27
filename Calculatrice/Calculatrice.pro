@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     affichageAutre.cpp \
     pile.cpp \
     affichageOp.cpp \
-    menu.cpp
+    menu.cpp \
+    constante.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \
