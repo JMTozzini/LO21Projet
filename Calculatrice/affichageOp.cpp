@@ -12,6 +12,8 @@ void MainWindow::PlusPress()
     //ReelToQString(c);
 
     pa->Empiler();
+    /* Je sais pas ce que tu as changé et pourquoi, mais en tous cas ne marche plus chez moi !*/
+
 
     pa->AffichagePile();// ps->AffichagePile();
 
