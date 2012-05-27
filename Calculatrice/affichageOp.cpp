@@ -12,7 +12,18 @@ void MainWindow::PlusPress()
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
+<<<<<<< HEAD
     //pa->AffichagePile(); ps->AffichagePile();
+=======
+    //ReelToQString(c);
+
+    pa->Empiler();
+    /* Je sais pas ce que tu as changé et pourquoi, mais en tous cas ne marche plus chez moi !*/
+
+
+    pa->AffichagePile();// ps->AffichagePile();
+
+>>>>>>> f724fd849ec9b0ccfd67dca2e0a75701eda43bde
     ui->champAff->clear();
     ui->champEcr->clear();
     AffichageEcran();
