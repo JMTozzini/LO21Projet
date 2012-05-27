@@ -5,15 +5,15 @@ void MainWindow::PlusPress()
 {
     pa->Depiler(); pa->Depiler();
 
-    Entier& tmp1 = dynamic_cast<Entier&>(ps->Depiler());
-    Entier& tmp2 = dynamic_cast<Entier&>(ps->Depiler());
-    Entier& res = tmp2+tmp1;
+    Constante& c = ((ps->Depiler()) + &(ps->Depiler()));
 
-    ps->Empiler(res);
-    pa->Empiler(QString::number(res.GetVal()));
+    ps->Empiler(c);
 
-    pa->AffichagePile();
-    ps->AffichagePile();
+    //ReelToQString(c);
+
+    pa->Empiler();
+
+    pa->AffichagePile();// ps->AffichagePile();
 
     ui->champAff->clear();
     ui->champEcr->clear();
@@ -24,6 +24,7 @@ void MainWindow::PlusPress()
 
 void MainWindow::MoinsPress()
 {
+    /*
     pa->Depiler(); pa->Depiler();
     Entier& tmp1 = dynamic_cast<Entier&>(ps->Depiler());
     Entier& tmp2 = dynamic_cast<Entier&>(ps->Depiler());
@@ -35,4 +36,5 @@ void MainWindow::MoinsPress()
     ui->champAff->clear();
     ui->champEcr->clear();
     AffichageEcran();
+    */
 }
