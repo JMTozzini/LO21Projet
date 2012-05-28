@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sat May 26 22:20:19 2012
+** Created: Mon May 28 14:58:59 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -439,6 +439,7 @@ public:
         ecrans->setObjectName(QString::fromUtf8("ecrans"));
         champEcr = new QLineEdit(horizontalLayoutWidget);
         champEcr->setObjectName(QString::fromUtf8("champEcr"));
+        champEcr->setReadOnly(true);
 
         ecrans->addWidget(champEcr);
 
@@ -448,6 +449,7 @@ public:
 
         champAff = new QTextEdit(horizontalLayoutWidget);
         champAff->setObjectName(QString::fromUtf8("champAff"));
+        champAff->setReadOnly(true);
 
         ecrans->addWidget(champAff);
 
@@ -457,7 +459,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 582, 22));
+        menuBar->setGeometry(QRect(0, 0, 582, 25));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuParam = new QMenu(menuBar);
@@ -541,9 +543,13 @@ public:
         entrer->setShortcut(QApplication::translate("MainWindow", "Return", 0, QApplication::UnicodeUTF8));
         opBinaires->setText(QApplication::translate("MainWindow", "Operateurs Binaires", 0, QApplication::UnicodeUTF8));
         div->setText(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));
+        div->setShortcut(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));
         plus->setText(QApplication::translate("MainWindow", "+", 0, QApplication::UnicodeUTF8));
+        plus->setShortcut(QApplication::translate("MainWindow", "+", 0, QApplication::UnicodeUTF8));
         moins->setText(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
+        moins->setShortcut(QApplication::translate("MainWindow", "-", 0, QApplication::UnicodeUTF8));
         multi->setText(QApplication::translate("MainWindow", "*", 0, QApplication::UnicodeUTF8));
+        multi->setShortcut(QApplication::translate("MainWindow", "*", 0, QApplication::UnicodeUTF8));
         pow->setText(QApplication::translate("MainWindow", "Pow", 0, QApplication::UnicodeUTF8));
         mod->setText(QApplication::translate("MainWindow", "Mod", 0, QApplication::UnicodeUTF8));
         opUnaires->setText(QApplication::translate("MainWindow", "Op\303\251rateurs Unaires", 0, QApplication::UnicodeUTF8));

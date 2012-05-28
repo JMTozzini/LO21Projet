@@ -79,6 +79,10 @@ class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
 {
     Entier numerateur;
     Entier denominateur;
+// Pourquoi ici tu n'utilises pas directement des int ? Dans l'UML on avait dit qu'un rationnel était composé de deux entiers ?
+// Je trouve que ça complique un peu la classe et que ça n'apporte rien parce qu'on peut empiler un rationnel car il hérite de Base
+// donc de constante. Après comme tu veux!
+
 
 public:
     // Constructeurs

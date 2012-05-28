@@ -40,6 +40,10 @@ void MainWindow::EntrerPress()
     est différent ?
     Je comprend ce que tu veux dire, pour moi on ne peut pas ecrire dans les champ directement, on a des raccourci qui activent le clavier mais
     on peut pas ecrire dans les champ sinon on peut empiler nimporte quoi genre "bonjour" etc... à discuter
+
+    -> Mais ici je ne te parle pas de n'importe quoi mais des opérateurs !! Si on désactive le clavier de la calculatrice, il va bien faloir entrer
+    les opérateurs d'une façon ou d'une autre !
+
     */
 
     else
