@@ -5,25 +5,25 @@ void MainWindow::PlusPress()
 {
     try
     {
-    pa->Depiler(); pa->Depiler();
-    Constante& c = ((ps->Depiler()) + &(ps->Depiler()));
-    ps->Empiler(c);
-    pa->Empiler(ToQString(c));
+        pa->Depiler(); pa->Depiler();
+        Constante& c = ((ps->Depiler()) + &(ps->Depiler()));
+        ps->Empiler(c);
+        pa->Empiler(ToQString(c));
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     //pa->AffichagePile(); ps->AffichagePile();
-=======
+//=======
     //ReelToQString(c);
 
-    pa->Empiler();
+    //pa->Empiler();
     /* Je sais pas ce que tu as changé et pourquoi, mais en tous cas ne marche plus chez moi !*/
 
 
-    pa->AffichagePile();// ps->AffichagePile();
+    //pa->AffichagePile(); ps->AffichagePile();
 
->>>>>>> f724fd849ec9b0ccfd67dca2e0a75701eda43bde
+//>>>>>>> f724fd849ec9b0ccfd67dca2e0a75701eda43bde
     ui->champAff->clear();
     ui->champEcr->clear();
     AffichageEcran();

@@ -5,8 +5,9 @@ void MainWindow::EntrerPress()
 {
     QString s=ui->champEcr->text();
 
+    try {pa->Empiler(s);}
+    catch(ExceptionCalculatrice e){e.GetInfos();}
 
-    pa->Empiler(s);
     AffichageEcran();
 
     if(s.contains(","))
@@ -37,6 +38,8 @@ void MainWindow::EntrerPress()
     stockage.
     Le problème là c'est surtout : est-ce que le comportement attendu quand on appuie sur le bouton plus ou qu'on rentre + au clavier puis entrer
     est différent ?
+    Je comprend ce que tu veux dire, pour moi on ne peut pas ecrire dans les champ directement, on a des raccourci qui activent le clavier mais
+    on peut pas ecrire dans les champ sinon on peut empiler nimporte quoi genre "bonjour" etc...
     */
 
     else

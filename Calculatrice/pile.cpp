@@ -10,7 +10,7 @@ void PileStockage::Empiler(Constante& c){ptr.push_back(&c);}
 Constante& PileStockage::Depiler()
 {
     if(ptr.size()==0)
-        throw ExceptionCalculatrice("Impossible de dépiler !");
+        throw ExceptionCalculatrice("Impossible de dépiler car la pile est vide...");
 
     Constante* tmp=ptr.back();
     ptr.pop_back();
@@ -29,12 +29,18 @@ void PileStockage::AffichagePile()
 
 // ----- Pile Affichage -----
 
-void PileAffichage::Empiler(QString c){ptr.push_back(c);}
+void PileAffichage::Empiler(QString c)
+{
+    if(c!="")
+        ptr.push_back(c);
+    else
+        throw ExceptionCalculatrice("Impossible d'empiler une valeur NULL");
+}
 
 QString& PileAffichage::Depiler()
 {
     if(ptr.size()==0)
-        throw ExceptionCalculatrice("Impossible de dépiler !");
+        throw ExceptionCalculatrice("Impossible de dépiler car la pile est vide...");
 
     QString* tmp=&(ptr.back());
     ptr.pop_back();
