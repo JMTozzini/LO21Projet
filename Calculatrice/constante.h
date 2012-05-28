@@ -72,7 +72,7 @@ public:
     // Operateur +
     Entier& operator+(const Entier&);
     Reel& operator+(const Reel&);
-    Rationnel& operator+(const Rationnel&);
+    //Rationnel& operator+(const Rationnel&);
 };
 
 class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
@@ -83,6 +83,8 @@ class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
 // Je trouve que ça complique un peu la classe et que ça n'apporte rien parce qu'on peut empiler un rationnel car il hérite de Base
 // donc de constante. Après comme tu veux!
 
+// Est-ce que ça compile chez toi ? Moi il me dit qu'Entier est une classe abstraite et du coup il peut pas déclarer numerateur et
+// denominateur comme entiers. Après peut-être que c'es parce qu'on compose des classes filles entre-elle, ça fait un peu consanguins quoi..
 
 public:
     // Constructeurs
