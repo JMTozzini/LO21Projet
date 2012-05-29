@@ -11,8 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Configuration Ecrans
     ui->champAff->setFontPointSize(30);
     ui->champAff->setAlignment(Qt::AlignCenter);
-    ui->champAff->setReadOnly(true); // à discuter
-    ui->champEcr->setReadOnly(true); // à discuter
+    ui->champAff->setReadOnly(true);
 
     // Configuration Menu
     ui->actionMode_Complexe->setCheckable(true); // par défaut false

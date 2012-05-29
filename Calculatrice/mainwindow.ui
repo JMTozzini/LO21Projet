@@ -533,7 +533,7 @@
        <item>
         <widget class="QLineEdit" name="champEcr">
          <property name="readOnly">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -571,7 +571,7 @@
      <x>0</x>
      <y>0</y>
      <width>582</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">

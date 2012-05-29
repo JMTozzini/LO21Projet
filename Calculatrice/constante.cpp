@@ -12,7 +12,7 @@ Constante& Constante::operator+(Constante* c)
 
     if(e) return (*this + *e);
     else if(r) return (*this + *r);
-    else if(ra) return (*this + *ra);
+    //else if(ra) return (*this + *ra);
     else throw ExceptionCalculatrice("Erreur d'operation +");
 
     return *c;
