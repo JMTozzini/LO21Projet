@@ -2,3 +2,6 @@ Rationnels : tu as raison ça complique un peu de mettre des entiers dans les ra
 - d'une part je trouve ça plus propre (c'est pas vraiment un argument lol)
 - je pense que ça complique pas beaucoup plus que ça (la surcharge du + est déja faite pour les entiers)
 - enfin (et surtout), on suit notre UML qui disait qu'un rationnel est composé de deux entiers et non de deux int...
+
+Je pense que ça compile plus parce que j'ai créer deux getters virtuels purs (getval & getvalbis) que j'ai pas eu
+le tps de surcharger partout...
