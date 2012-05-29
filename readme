@@ -1,0 +1,4 @@
+Rationnels : tu as raison ça complique un peut de mettre des entiers dans le rationnel.
+- d'un part je trouve ça plus propre (c'est pas vraiment un argument lol)
+- je pense que ça complique pas beaucoup plus que ça (la surcharge du + est déja faite pour les entiers)
+- enfin, on suit notre UML qui disait qu'un rationnel est composé de deux entiers et non de deux int...
