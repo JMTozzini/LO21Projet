@@ -27,7 +27,7 @@ public:
     virtual Constante& operator+(Constante*); // Design Pattern Template Method
     virtual Constante& operator+(const Reel&)=0;
     virtual Constante& operator+(const Entier&)=0;
-    virtual Constante& operator+(const Rationnel&)=0;
+    //virtual Constante& operator+(const Rationnel&)=0;
 
 };
 
@@ -39,7 +39,7 @@ class Reel : public Base
 
 public:
     // Constructeurs
-    Reel(double r):valeur(r){}
+    Reel(double r=0):valeur(r){}
     Reel(QString s):valeur(s.toDouble()){}
 
     // Fonctions annexes virtuelles
@@ -60,7 +60,7 @@ class Entier : public Base
 
 public:
     // Constructeurs
-    Entier(int n):valeur(n){}
+    Entier(int n=0):valeur(n){}
     Entier(QString s):valeur(s.toInt()){}
 
     // Fonctions annexes virtuelles
@@ -72,7 +72,7 @@ public:
     // Operateur +
     Entier& operator+(const Entier&);
     Reel& operator+(const Reel&);
-    //Rationnel& operator+(const Rationnel&);
+    Rationnel& operator+(const Rationnel&);
 };
 
 class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
@@ -88,17 +88,17 @@ class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
 
 public:
     // Constructeurs
-    Rationnel(Entier num, Entier den):numerateur(num)
+    Rationnel(Entier num, Entier den):numerateur(*(new Entier(num)))
     {
         if(den.GetVal()==0)
             throw ExceptionCalculatrice("Divison par 0 !");
         else
-            denominateur=den;
+            denominateur=Entier(den);
     }
     //Rationnel(QString s):valeur(s.toInt()){}
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout) {os << numerateur.Afficher() << " / " << denominateur.Afficher() << std::endl;}
+    void Afficher(std::ostream& os=std::cout) {numerateur.Afficher(); os<<" / "; (denominateur.Afficher()); os<< std::endl;}
     double GetVal() const {return numerateur.GetVal();}
     double GetValBis() const {return denominateur.GetVal();}
     const std::string GetType() const {return "rationnel";}

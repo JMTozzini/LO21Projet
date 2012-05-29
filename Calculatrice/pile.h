@@ -27,5 +27,4 @@ public:
     const QString& GetVal(int i) const {return ptr[i];}
 };
 
-
 #endif // PILE_H

@@ -28,7 +28,7 @@ private:
     static bool clavier;
     static std::string operateur;
     static std::string angle;
-    friend class ExceptionCalculatrice;
+    //friend class ExceptionCalculatrice;
 
 
 public:

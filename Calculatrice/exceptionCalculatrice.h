@@ -1,8 +1,7 @@
 #ifndef EXCEPTIONCALCULATRICE_H
 #define EXCEPTIONCALCULATRICE_H
 
-#include "mainwindow.h"
-
+#include <QString>
 
 class ExceptionCalculatrice
 {

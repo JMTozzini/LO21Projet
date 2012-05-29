@@ -3,6 +3,6 @@
 
 #include "mainwindow.h"
 
-QString& ToQString(Constante&);
+QString& ToQString(Constante& c);
 
 #endif // FONCTIONANNEXE_H
