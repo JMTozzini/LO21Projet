@@ -20,14 +20,15 @@ public:
     // Fonctions annexes virtuelles
     virtual void Afficher(std::ostream& os=std::cout) = 0;
     virtual double GetVal() const = 0;  // Temporaire
+    virtual double GetValBis() const = 0; // Temporaire
     virtual const std::string GetType()const=0;
-    virtual double GetValBis() const = 0;
+
 
     // Opérateur +
     virtual Constante& operator+(Constante*); // Design Pattern Template Method
     virtual Constante& operator+(const Reel&)=0;
     virtual Constante& operator+(const Entier&)=0;
-    //virtual Constante& operator+(const Rationnel&)=0;
+    virtual Constante& operator+(const Rationnel&)=0;
 
 };
 
@@ -88,12 +89,19 @@ class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
 
 public:
     // Constructeurs
-    Rationnel(Entier num, Entier den):numerateur(*(new Entier(num)))
+    Rationnel(Entier num, Entier den):numerateur(num)
     {
         if(den.GetVal()==0)
             throw ExceptionCalculatrice("Divison par 0 !");
         else
-            denominateur=Entier(den);
+            denominateur=den;
+    }
+    Rationnel(int num, int den):numerateur(*(new Entier(num)))
+    {
+        if(den==0)
+            throw ExceptionCalculatrice("Divison par 0 !");
+        else
+            denominateur=*(new Entier (den));
     }
     //Rationnel(QString s):valeur(s.toInt()){}
 
@@ -103,8 +111,8 @@ public:
     double GetValBis() const {return denominateur.GetVal();}
     const std::string GetType() const {return "rationnel";}
 
-    double GetNum() const {GetVal();} // Pour des raisons de commodité
-    double GetDen() const {GetValBis();} // Pour des raisons de commodité
+    double GetNum() const {return GetVal();} // Pour des raisons de commodité
+    double GetDen() const {return GetValBis();} // Pour des raisons de commodité
 
 
     // Operateur +

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue May 29 07:11:03 2012
+** Created: Wed May 30 08:43:21 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -439,7 +439,7 @@ public:
         ecrans->setObjectName(QString::fromUtf8("ecrans"));
         champEcr = new QLineEdit(horizontalLayoutWidget);
         champEcr->setObjectName(QString::fromUtf8("champEcr"));
-        champEcr->setReadOnly(true);
+        champEcr->setReadOnly(false);
 
         ecrans->addWidget(champEcr);
 
@@ -459,7 +459,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 582, 25));
+        menuBar->setGeometry(QRect(0, 0, 582, 23));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuParam = new QMenu(menuBar);
