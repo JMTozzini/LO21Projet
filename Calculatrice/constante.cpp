@@ -21,7 +21,7 @@ Constante& Constante::operator+(Constante* c)
 // Reel
 Reel& Reel::operator+(const Reel& r) {return *(new Reel(valeur + r.GetVal()));}
 Reel& Reel::operator+(const Entier& e) {return *(new Reel(valeur + e.GetVal()));}
-Reel& Reel::operator+(const Rationnel& ra){return *(new Reel( (ra.GetNum() / ra.GetDen()) + valeur));}
+Rationnel& Reel::operator+(const Rationnel& ra){return *(new Rationnel((int)valeur,(int)valeur));} // à finir
 
 // Entier
 Entier& Entier::operator+(const Entier& e) {return *(new Entier(valeur + (int)e.GetVal()));}

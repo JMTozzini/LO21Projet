@@ -28,7 +28,7 @@ public:
     virtual Constante& operator+(Constante*); // Design Pattern Template Method
     virtual Constante& operator+(const Reel&)=0;
     virtual Constante& operator+(const Entier&)=0;
-    virtual Constante& operator+(const Rationnel&)=0;
+    virtual Rationnel& operator+(const Rationnel&)=0;
 
 };
 
@@ -52,7 +52,7 @@ public:
     // Operateur +
     Reel& operator+(const Reel&);
     Reel& operator+(const Entier&);
-    Reel& operator+(const Rationnel&);
+    Rationnel& operator+(const Rationnel&);
 };
 
 class Entier : public Base
@@ -80,12 +80,6 @@ class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
 {
     Entier numerateur;
     Entier denominateur;
-// Pourquoi ici tu n'utilises pas directement des int ? Dans l'UML on avait dit qu'un rationnel était composé de deux entiers ?
-// Je trouve que ça complique un peu la classe et que ça n'apporte rien parce qu'on peut empiler un rationnel car il hérite de Base
-// donc de constante. Après comme tu veux!
-
-// Est-ce que ça compile chez toi ? Moi il me dit qu'Entier est une classe abstraite et du coup il peut pas déclarer numerateur et
-// denominateur comme entiers. Après peut-être que c'es parce qu'on compose des classes filles entre-elle, ça fait un peu consanguins quoi..
 
 public:
     // Constructeurs
