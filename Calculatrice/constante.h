@@ -29,10 +29,23 @@ public:
     virtual Constante& operator+(const Reel&)=0;
     virtual Constante& operator+(const Entier&)=0;
     virtual Rationnel& operator+(const Rationnel&)=0;
-
 };
 
-class Base : public Constante{};
+class Base : public Constante{
+public:
+    virtual void Afficher(std::ostream& os=std::cout){}
+    virtual double GetVal() const{}  // Temporaire
+    virtual double GetValBis() const{} // Temporaire
+    virtual const std::string GetType()const{}
+
+
+    // Opérateur +
+    Base& operator+(Base* c);
+    virtual Constante& operator+(const Reel&){}
+    virtual Constante& operator+(const Entier&){}
+    virtual Rationnel& operator+(const Rationnel&){}
+
+};
 
 class Reel : public Base
 {
@@ -100,7 +113,7 @@ public:
     //Rationnel(QString s):valeur(s.toInt()){}
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout) {numerateur.Afficher(); os<<" / "; (denominateur.Afficher()); os<< std::endl;}
+    void Afficher(std::ostream& os=std::cout) {numerateur.Afficher(); os<<"/"; (denominateur.Afficher()); os<< std::endl;}
     double GetVal() const {return numerateur.GetVal();}
     double GetValBis() const {return denominateur.GetVal();}
     const std::string GetType() const {return "rationnel";}
@@ -112,8 +125,37 @@ public:
     // Operateur +
     Rationnel& operator+(const Rationnel&);
     Rationnel& operator+(const Entier&);
-    Reel& operator+(const Reel&);
+    Rationnel& operator+(const Reel&);
 };
+
+
+class Complexe : public Constante // a$b (correspondant à a+ib), a : reel, b : imaginaire
+{
+    Base reel;
+    Base imaginaire;
+
+public:
+    // Constructeurs
+    Complexe(Base r, Base i):reel(r), imaginaire(i){}
+
+    // Fonctions annexes virtuelles
+    void Afficher(std::ostream& os=std::cout) {reel.Afficher(); os<<"$"; (imaginaire.Afficher()); os<< std::endl;}
+    double GetVal() const {return reel.GetVal();}
+    double GetValBis() const {return imaginaire.GetVal();}
+    const std::string GetType() const {return "complexe";}
+
+    double GetReel() const {return GetVal();} // Pour des raisons de commodité
+    double GetIm() const {return GetValBis();} // Pour des raisons de commodité
+
+
+    // Operateur +
+    Rationnel& operator+(const Rationnel&);
+    Complexe& operator+(const Entier&);
+    Complexe& operator+(const Reel&);
+};
+
+
+
 
 
 #endif // CONSTANTE_H

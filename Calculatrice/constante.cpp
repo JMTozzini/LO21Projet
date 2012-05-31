@@ -18,6 +18,21 @@ Constante& Constante::operator+(Constante* c)
     return *c;
 }
 
+
+// Base => pour les complexes
+Base& Base::operator+(Base* c){
+    Entier* e=dynamic_cast<Entier*>(c);
+    Reel* r=dynamic_cast<Reel*>(c);
+    Rationnel* ra=dynamic_cast<Rationnel*>(c);
+
+    if(e) return (*this + *e);
+    else if(r) return (*this + *r);
+    else if(ra) return (*this + *ra);
+    else throw ExceptionCalculatrice("Erreur d'operation +");
+
+    return *c;
+}
+
 // Reel
 Reel& Reel::operator+(const Reel& r) {return *(new Reel(valeur + r.GetVal()));}
 Reel& Reel::operator+(const Entier& e) {return *(new Reel(valeur + e.GetVal()));}
@@ -40,4 +55,18 @@ Rationnel& Rationnel::operator+(const Entier& e)
 {
     return *(new Rationnel(numerateur.GetVal() + e.GetVal()*denominateur.GetVal(),denominateur.GetVal()));
 }
-Reel& Rationnel::operator+(const Reel& r){return *(new Reel( (GetNum()/GetDen()) + r.GetVal()));}
+Rationnel& Rationnel::operator+(const Reel& r){return *(new Rationnel(1,1));} // à finir
+
+
+// Complexe
+Complexe& Complexe::operator+(const Entier& e)
+{
+    return *(new Complexe(reel.Base::operator+(e), imaginaire));
+}
+
+Complexe& Complexe::operator+(const Rationnel& ra)
+{
+    Constante::operator+(e);
+}
+
+Complexe& Complexe::operator+(const Reel& r){return *(new Rationnel(1,1));} // à finir
