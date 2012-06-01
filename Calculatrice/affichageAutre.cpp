@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QRegExp>
 
 void MainWindow::EntrerPress()
 {
@@ -10,7 +11,21 @@ void MainWindow::EntrerPress()
 
     AffichageEcran();
 
-    if(s.contains(","))
+    QRegExp r("*,*"),plus("*+*"),moins("*-*"), exp("'*'"),ra("*/*"),cmplx("*$*");
+    r.setPatternSyntax(QRegExp::Wildcard);
+    plus.setPatternSyntax(QRegExp::Wildcard);
+    moins.setPatternSyntax(QRegExp::Wildcard);
+    exp.setPatternSyntax(QRegExp::Wildcard);
+    ra.setPatternSyntax(QRegExp::Wildcard);
+    cmplx.setPatternSyntax(QRegExp::Wildcard);
+
+    if(exp.exactMatch(s)){}
+    else if(cmplx.exactMatch(s)){
+        s.remove(" ");
+        Complexe* c=ToComplexe(s);
+        ps->Empiler(*c);
+    }
+    else if(r.exactMatch(s))
     {
         s.remove(" ");
         s.replace(s.indexOf(","),1,".");
@@ -18,18 +33,23 @@ void MainWindow::EntrerPress()
         Reel* r=new Reel(s);
         ps->Empiler(*r);
     }
-
-    else if(s=="+")
+    else if(ra.exactMatch(s))
+    {
+        s.remove(" ");
+        QStringList list1 = s.split("/");
+        Rationnel* ra=new Rationnel(list1.value(1).toInt(),list1.value(2).toInt());
+        ps->Empiler(*ra);
+    }
+    else if(plus.exactMatch(s))
     {
         pa->Depiler();
         PlusPress();
     }
-    else if(s=="-")
+    /*else if(moins.exactMatch(s))
     {
         pa->Depiler();
         MoinsPress();
-    }
-
+    }*/
     else
     {
         Entier* e=new Entier(s);
