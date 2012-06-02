@@ -37,14 +37,14 @@ void MainWindow::EntrerPress()
     {
         s.remove(" ");
         QStringList list1 = s.split("/");
-        Rationnel* ra=new Rationnel(list1.value(1).toInt(),list1.value(2).toInt());
+        Rationnel* ra=ToRationnel(s);
         ps->Empiler(*ra);
     }
-    else if(plus.exactMatch(s))
-    {
-        pa->Depiler();
-        PlusPress();
-    }
+//    else if(plus.exactMatch(s))
+//    {
+//        pa->Depiler();
+//        PlusPress();
+//    }
     /*else if(moins.exactMatch(s))
     {
         pa->Depiler();
