@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     menu.cpp \
     constante.cpp \
     fonctionsAnnexe.cpp \
-    exceptionCalculatrice.cpp
+    exceptionCalculatrice.cpp \
+    pile.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \
@@ -29,3 +30,4 @@ HEADERS  += mainwindow.h \
 
 FORMS    += \
     mainwindow.ui
+

@@ -29,7 +29,8 @@ Rationnel* ToRationnel(QString& s){
     return new Rationnel(list1.value(1).toInt(),list1.value(2).toInt());
 }
 
-Complexe* ToComplexe(QString& s){
+Complexe* ToComplexe(QString& s)
+{
     s.remove(" ");
     QStringList list1 = s.split("/");
     QString reel=list1.value(1), im=list1.value(2);
