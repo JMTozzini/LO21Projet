@@ -19,13 +19,15 @@ SOURCES += main.cpp\
     constante.cpp \
     fonctionsAnnexe.cpp \
     exceptionCalculatrice.cpp \
-    pile.cpp
+    pile.cpp \
+    memento.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \
     constante.h \
     fonctionsAnnexe.h \
-    exceptionCalculatrice.h
+    exceptionCalculatrice.h \
+    memento.h
 
 FORMS    += \
     mainwindow.ui
