@@ -56,3 +56,4 @@ void PileAffichage::AffichagePile()
         std::cout<< (*deb).toStdString() << ' ' <<std::endl;
     std::cout<<"----"<<std::endl;
 }
+

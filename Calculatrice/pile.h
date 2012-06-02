@@ -9,7 +9,7 @@ class PileStockage
 
 public :
     PileStockage(){}
-    void Empiler(Constante& c);
+    void Empiler(Constante&);
     Constante& Depiler();
     void AffichagePile();
 };
@@ -20,7 +20,7 @@ class PileAffichage
 
 public:
     PileAffichage(){}
-    void Empiler(QString c);
+    void Empiler(QString);
     QString& Depiler();
     std::deque<QString> GetPtr() const {return ptr;}
     void AffichagePile();

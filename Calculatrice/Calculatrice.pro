@@ -14,7 +14,6 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     affichageNum.cpp \
     affichageAutre.cpp \
-    pile.cpp \
     affichageOp.cpp \
     menu.cpp \
     constante.cpp \

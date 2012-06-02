@@ -11,40 +11,19 @@ void MainWindow::EntrerPress()
 
     AffichageEcran();
 
-    QRegExp r("*,*"),plus("*+*"),moins("*-*"), exp("'*'"),ra("*/*"),cmplx("*$*");
-    r.setPatternSyntax(QRegExp::Wildcard);
-    plus.setPatternSyntax(QRegExp::Wildcard);
-    moins.setPatternSyntax(QRegExp::Wildcard);
+    QRegExp exp("'*'");
     exp.setPatternSyntax(QRegExp::Wildcard);
-    ra.setPatternSyntax(QRegExp::Wildcard);
-    cmplx.setPatternSyntax(QRegExp::Wildcard);
 
     if(exp.exactMatch(s)){}
-    else if(cmplx.exactMatch(s)){
-        s.remove(" ");
-        Complexe* c=ToComplexe(s);
-        ps->Empiler(*c);
-    }
-    else if(r.exactMatch(s))
+    else if(s.contains("$")){ps->Empiler(*(ToComplexe(s)));}
+    else if(s.contains(",")){ps->Empiler(*(ToReel(s)));}
+    else if(s.contains("/")){ps->Empiler(*(ToRationnel(s)));}
+    else if(!(s.contains("$") || s.contains(",") || s.contains("/"))){ps->Empiler(*(new Entier(s)));}
+    else if(s=="+")
     {
-        s.remove(" ");
-        s.replace(s.indexOf(","),1,".");
-        s.push_back('0'); s.push_front('0'); // on entre 2,_ ou _,2 et ça fonctionne
-        Reel* r=new Reel(s);
-        ps->Empiler(*r);
+        pa->Depiler();
+        PlusPress();
     }
-    else if(ra.exactMatch(s))
-    {
-        s.remove(" ");
-        QStringList list1 = s.split("/");
-        Rationnel* ra=ToRationnel(s);
-        ps->Empiler(*ra);
-    }
-//    else if(plus.exactMatch(s))
-//    {
-//        pa->Depiler();
-//        PlusPress();
-//    }
     /*else if(moins.exactMatch(s))
     {
         pa->Depiler();
@@ -52,9 +31,8 @@ void MainWindow::EntrerPress()
     }*/
     else
     {
-        Entier* e=new Entier(s);
-        ps->Empiler(*e);
-
+        pa->Depiler();
+        throw ExceptionCalculatrice("Mauvaise saisie");
     }
 
     ui->champEcr->clear();
