@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     fonctionsAnnexe.cpp \
     exceptionCalculatrice.cpp \
     pile.cpp \
-    memento.cpp
+    memento.cpp \
+    pileOp.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \

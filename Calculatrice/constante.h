@@ -18,6 +18,7 @@ class Constante
 public:
     // Constructeur
     Constante(){}
+    ~Constante(){delete this;}
 
     // Fonctions annexes virtuelles
     virtual void Afficher(std::ostream& os=std::cout) = 0;

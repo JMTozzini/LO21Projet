@@ -5,22 +5,35 @@
 #include <iostream>
 #include "constante.h"
 
-class Memento
+class MementoStock
 {
     std::deque<Constante*> etat;
 
 public:
-    Memento(std::deque<Constante*> state){etat=state; std::cout<<"Memento crée"<<std::endl;}
+    MementoStock(std::deque<Constante*> state){etat=state;}
     std::deque<Constante*> GetEtatSauve() const {return etat;}
+};
+
+class MementoAff
+{
+    std::deque<QString> etat;
+
+public:
+    MementoAff(std::deque<QString> state){etat=state;}
+    std::deque<QString> GetEtatSauve() const {return etat;}
 };
 
 class Gardien
 {
-   std::deque<Memento*> listeEtatsSauve;
+   std::deque<MementoStock*> listeEtatsSauveStock;
+   std::deque<MementoAff*> listeEtatsSauveAff;
+
 
 public:
-   void AjouterMemento(Memento* m) {listeEtatsSauve.push_back(m); std::cout<<"Memento ajouté"<<std::endl;}
-   Memento* Annuler() {listeEtatsSauve.pop_back(); return (listeEtatsSauve.back());}
+   void AjouterMemento(MementoStock* m) {listeEtatsSauveStock.push_back(m);}
+   void AjouterMemento(MementoAff* m) {listeEtatsSauveAff.push_back(m);}
+   MementoAff* AnnulerAff();
+   MementoStock* AnnulerStock();
 };
 
 #endif // MEMENTO_H

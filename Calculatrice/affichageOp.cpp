@@ -6,13 +6,16 @@ void MainWindow::PlusPress()
     try
     {
         pa->Depiler(); pa->Depiler();
-        Constante& c = ((ps->Depiler()) + &(ps->Depiler()));
+        Constante* tmp1=&(ps->Depiler());
+        Constante* tmp2=&(ps->Depiler());
+        Constante& c = *tmp2 + tmp1;
         ps->Empiler(c);
         pa->Empiler(ToQString(c));
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
     g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
 
     ui->champAff->clear();
     ui->champEcr->clear();

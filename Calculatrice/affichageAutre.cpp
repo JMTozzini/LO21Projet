@@ -29,6 +29,7 @@ void MainWindow::EntrerPress()
         pa->Depiler();
         MoinsPress();
     }*/
+    else if(s==""){DupPress();}
     else
     {
         pa->Depiler();
@@ -41,7 +42,17 @@ void MainWindow::EntrerPress()
 void MainWindow::AnnulerPress()
 {
     std::cout<<"annuler"<<std::endl;
-    ps->AffichagePile();
-    ps->ChargerMemento(g->Annuler());
-    ps->AffichagePile();
+    ps->AffichagePile(); pa->AffichagePile();
+    try
+    {
+        MementoStock *m1= g->AnnulerStock();
+        MementoAff *m2=g->AnnulerAff();
+        ps->ChargerMemento(m1); pa->ChargerMemento(m2);
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
+
+    ps->AffichagePile(); pa->AffichagePile();
+
+
+    AffichageEcran();
 }
