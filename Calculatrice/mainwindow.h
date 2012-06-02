@@ -11,6 +11,7 @@
 #include "constante.h"
 #include "fonctionsAnnexe.h"
 #include "exceptionCalculatrice.h"
+#include "memento.h"
 
 
 namespace Ui {class MainWindow;}
@@ -23,6 +24,7 @@ private:
     Ui::MainWindow *ui;
     PileStockage* ps;
     PileAffichage* pa;
+    Gardien* g;
     static bool complexe;
     static std::string typeDeCste;
     static bool clavier;
@@ -62,6 +64,7 @@ public slots:
     void MenuClavier();
     void MenuDegres();
     void MenuRadians();
+    void AnnulerPress();
 };
 
 

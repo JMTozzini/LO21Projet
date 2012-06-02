@@ -571,7 +571,7 @@
      <x>0</x>
      <y>0</y>
      <width>582</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -636,6 +636,9 @@
   <action name="actionAnnuler">
    <property name="text">
     <string>Annuler</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
    </property>
   </action>
   <action name="actionMode_Complexe">

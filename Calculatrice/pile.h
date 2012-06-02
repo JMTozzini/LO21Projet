@@ -2,6 +2,7 @@
 #define PILE_H
 
 #include "constante.h"
+#include "memento.h"
 
 class PileStockage
 {
@@ -9,9 +10,12 @@ class PileStockage
 
 public :
     PileStockage(){}
+
     void Empiler(Constante&);
     Constante& Depiler();
     void AffichagePile();
+    Memento* CreerMemento(){return new Memento(ptr);}
+    void ChargerMemento(Memento *mem){ptr = mem->GetEtatSauve();}
 };
 
 class PileAffichage

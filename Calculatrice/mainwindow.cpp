@@ -65,6 +65,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->actionDegres,SIGNAL(triggered()),this,SLOT(MenuDegres()));
     QObject::connect(ui->actionRadians,SIGNAL(triggered()),this,SLOT(MenuRadians()));
 
+    // Annuler & Rétablir
+    QObject::connect(ui->actionAnnuler, SIGNAL(triggered()),this,SLOT(AnnulerPress()));
+
 }
 
 MainWindow::~MainWindow()

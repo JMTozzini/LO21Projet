@@ -38,3 +38,10 @@ void MainWindow::EntrerPress()
     ui->champEcr->clear();
 }
 
+void MainWindow::AnnulerPress()
+{
+    std::cout<<"annuler"<<std::endl;
+    ps->AffichagePile();
+    ps->ChargerMemento(g->Annuler());
+    ps->AffichagePile();
+}

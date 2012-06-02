@@ -12,13 +12,7 @@ void MainWindow::PlusPress()
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
-    pa->AffichagePile(); ps->AffichagePile();
-    //ReelToQString(c);
-
-    //pa->Empiler();
-
-
-    //pa->AffichagePile(); ps->AffichagePile();
+    g->AjouterMemento(ps->CreerMemento());
 
     ui->champAff->clear();
     ui->champEcr->clear();
