@@ -27,6 +27,9 @@ void PileStockage::AffichagePile()
 }
 
 
+
+
+
 // ----- Pile Affichage -----
 
 void PileAffichage::Empiler(QString c)
@@ -57,3 +60,12 @@ void PileAffichage::AffichagePile()
     std::cout<<"----"<<std::endl;
 }
 
+
+void PileAffichage::Save(std::ostream& os)
+{
+    std::deque<QString>::const_iterator deb(ptr.begin()), fin(ptr.end());
+    for(;deb!=fin;++deb){
+        os<< (*deb).toStdString() <<std::endl;
+    }
+
+}

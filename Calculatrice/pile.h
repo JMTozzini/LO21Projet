@@ -27,6 +27,8 @@ public :
     Constante* Dup();
     void Drop();
     Constante* Sum(int);
+
+
 };
 
 class PileAffichage
@@ -52,6 +54,9 @@ public:
     void Clear(){ptr.clear();}
     QString Dup();
     void Drop();
+
+    // Sauvegarde dans un fichier
+    void Save(std::ostream& os);
 };
 
 #endif // PILE_H

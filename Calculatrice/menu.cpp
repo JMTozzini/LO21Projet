@@ -14,7 +14,7 @@ void MainWindow::MenuEntier()
     ui->actionRationnel->setChecked(0);
     ui->actionEntier->setChecked(1);
     typeDeCste="entier";
-    MainWindow::MAJParam();
+    MAJParam();
 
 }
 
@@ -24,7 +24,7 @@ void MainWindow::MenuReel()
     ui->actionRationnel->setChecked(0);
     ui->actionReel->setChecked(1);
     typeDeCste="reel";
-    MainWindow::MAJParam();
+    MAJParam();
 
 }
 
@@ -34,14 +34,14 @@ void MainWindow::MenuRationnel()
     ui->actionEntier->setChecked(0);
     ui->actionRationnel->setChecked(1);
     typeDeCste="rationnel";
-    MainWindow::MAJParam();
+    MAJParam();
 
 }
 
 void MainWindow::MenuClavier()
 {
     clavier=ui->actionClavier->isChecked();
-    MainWindow::MAJParam();
+    MAJParam();
 
     // A voir comment on change l'interface en fonction du boolean clavier...
 }
@@ -51,7 +51,7 @@ void MainWindow::MenuDegres()
     ui->actionRadians->setChecked(0);
     ui->actionDegres->setChecked(1);
     angle="degres";
-    MainWindow::MAJParam();
+    MAJParam();
 
 }
 
@@ -60,6 +60,6 @@ void MainWindow::MenuRadians()
     ui->actionDegres->setChecked(0);
     ui->actionRadians->setChecked(1);
     angle="radians";
-    MainWindow::MAJParam();
+    MAJParam();
 
 }

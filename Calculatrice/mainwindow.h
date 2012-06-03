@@ -25,11 +25,11 @@ private:
     PileStockage* ps;
     PileAffichage* pa;
     Gardien* g;
-    static bool complexe;
-    static std::string typeDeCste;
-    static bool clavier;
-    static std::string operateur;
-    static std::string angle;
+    bool complexe;
+    std::string typeDeCste;
+    bool clavier;
+    std::string operateur;
+    std::string angle;
     //friend class ExceptionCalculatrice;
 
 
@@ -37,8 +37,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void AffichageEcran();
-    static void InitParam();
-    static void MAJParam();
+    void InitParam();
+    void MAJParam();
 
 public slots:
     void Num1Press();

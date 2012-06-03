@@ -34,6 +34,8 @@ void MainWindow::PlusPress()
 
     ui->champAff->clear();
     ui->champEcr->clear();
+    MAJParam();
+
     AffichageEcran();
 }
 
@@ -52,5 +54,7 @@ void MainWindow::MoinsPress()
     ui->champAff->clear();
     ui->champEcr->clear();
     AffichageEcran();
+    MAJParam();
+
     */
 }

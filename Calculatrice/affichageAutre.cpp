@@ -33,6 +33,8 @@ void MainWindow::EntrerPress()
 
     ui->champEcr->clear();
     AffichageEcran();
+    MAJParam();
+
 }
 
 void MainWindow::AnnulerPress()
@@ -46,4 +48,6 @@ void MainWindow::AnnulerPress()
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
     AffichageEcran();
+//    MAJParam();
+
 }

@@ -92,11 +92,11 @@ void MainWindow::AffichageEcran()
         ui->champAff->append(pa->GetVal(i));
 }
 
-bool MainWindow::complexe;
-std::string MainWindow::typeDeCste;
-bool MainWindow::clavier;
-std::string MainWindow::angle;
-std::string MainWindow::operateur="rien";
+//bool MainWindow::complexe;
+//std::string MainWindow::typeDeCste;
+//bool MainWindow::clavier;
+//std::string MainWindow::angle;
+//std::string MainWindow::operateur="rien";
 
 
 
@@ -108,14 +108,32 @@ void MainWindow::InitParam(){
     std::ifstream fichier("param.txt", ios::in);  // Ouverture en lecture du fichier de paramètres
     if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des paramètres
     {
-        string tmp;
+        string tmp, tmp_pile;
         getline(fichier, tmp);
         complexe=atoi(tmp.c_str());
         getline(fichier, typeDeCste);
         getline(fichier, tmp);
         clavier=atoi(tmp.c_str());
         getline(fichier, angle);
+        getline(fichier, tmp_pile); // lit "pile" ou "pile vide"
+        if(tmp_pile!="pile vide"){
+            while(getline(fichier, tmp_pile)){
+                QString* tmp2= new QString(tmp_pile.c_str());
 
+                QRegExp exp("'*'");
+                exp.setPatternSyntax(QRegExp::Wildcard);
+                if(exp.exactMatch(tmp_pile.c_str())){Expression* c=new Expression(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
+                else if(tmp_pile.find('$')){Complexe* c=ToComplexe(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
+                else if(tmp_pile.find(',')){Reel* c=ToReel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
+                else if(tmp_pile.find('/')){Rationnel* c=ToRationnel(*tmp2); ps->Empiler(ToRationnel(*tmp2)); pa->Empiler(*tmp2);}
+                else {Entier* c=new Entier(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
+
+
+            }
+
+            AffichageEcran();
+
+        }
     }
     else{ // Sinon le fichier n'existait pas, on ouvre en écriture et on l'initialise avec les valeurs pas défaut
         std::ofstream fichier("param.txt", ios::out);
@@ -130,7 +148,7 @@ void MainWindow::InitParam(){
             clavier=1;
             fichier<<"degres"<<std::endl;
             angle="degres";
-
+            fichier<<"pile vide"<<std::endl;
         }
         else
             cerr << "Erreur à l'ouverture !" << endl;
@@ -148,8 +166,9 @@ void MainWindow::MAJParam(){
         fichier<<typeDeCste<<std::endl;
         fichier<<clavier<<std::endl;
         fichier<<angle<<std::endl;
+        fichier<<"pile"<<std::endl;
+        pa->Save(fichier);
         fichier.close();
-
     }
     else  // sinon
         cerr << "Erreur à l'ouverture !" << endl;

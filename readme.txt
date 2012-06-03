@@ -19,3 +19,10 @@ J'ai pas regardé le code de ton Memento, et il faut buguer les opérateurs donc
 
 Si tu veux je me charge du -, / et * ajourd'hui !
 
+
+
+
+Yop.
+Après deux heures de lutte j'ai fini la sauvegarde de la pile !!
+Bon, dans la pile de stockage il dit que c'est tous des complexes, mais bon ça se voit pas dans l'affichage, 
+et comme j'en ai marre, tant pis

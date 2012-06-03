@@ -4,8 +4,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow::InitParam();
+//    MainWindow::InitParam();
     MainWindow w;
+    w.InitParam();
     w.show();
 
     return a.exec();
