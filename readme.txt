@@ -7,3 +7,4 @@ ouai j'ai pris un ancien... j'avais le même probleme mais maintenant je pense qu
 
 L'historique fonctionne mais je n'arrive pas à le sécuriser avec try et catch...
 
+L'operateur + fonctionne pour les expressions, par contre il y a des probleme dans les additions avec des complexes

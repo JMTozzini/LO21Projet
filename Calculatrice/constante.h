@@ -46,11 +46,13 @@ class Expression : public Constante
 
 public:
     Expression(QString s):exp(s){}
+
     void Afficher(std::ostream& os=std::cout) {os<<exp.toStdString()<< std::endl;}
     double GetVal() const {throw ExceptionCalculatrice("Fonction non définie\n");}
     double GetValBis() const {throw ExceptionCalculatrice("Fonction non définie\n");}
     const std::string GetType() const {return "expression";}
     QString GetQString() const {return exp;}
+    void SetExp(QString s){exp=s;}
 
     // Operateur +
     Expression& operator+(const Entier&);

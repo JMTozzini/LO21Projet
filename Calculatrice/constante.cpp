@@ -80,7 +80,13 @@ Complexe& Complexe::operator +(const Complexe& c){
     return *(new Complexe(tmp1, tmp2));
 }
 
-Expression& Complexe::operator+(Expression& ex){return (ex+(*this));}
+Expression& Complexe::operator+(Expression& ex)
+{
+    QString tmp1=this->GetQString(), tmp2=ex.GetQString();
+    tmp1.remove("'"); tmp2.remove("'");
+    ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "+" + "'");
+    return ex;
+}
 
 
 // Rationnel
@@ -99,18 +105,30 @@ Complexe& Rationnel::operator+(const Complexe& e){
     Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
     return *(new Complexe(tmp, e.GetIm()));
 }
-Expression& Rationnel::operator+(Expression& ex){return (ex+(*this));}
+Expression& Rationnel::operator+(Expression& ex)
+{
+    QString tmp1=this->GetQString(), tmp2=ex.GetQString();
+    tmp1.remove("'"); tmp2.remove("'");
+    ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "+" + "'");
+    return ex;
+}
 
 
 // Reel
 Reel& Reel::operator+(const Reel& r) {return *(new Reel(valeur + r.GetVal()));}
 Reel& Reel::operator+(const Entier& e) {return *(new Reel(valeur + e.GetVal()));}
-Reel& Reel::operator+(const Rationnel& ra){return *(new Reel(valeur + ra.GetNum()/ra.GetDen()));} // à finir
+Reel& Reel::operator+(const Rationnel& ra){return *(new Reel(valeur + ra.GetNum() / ra.GetDen()));}
 Complexe& Reel::operator+(const Complexe& e){
     Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
     return *(new Complexe(tmp, e.GetIm()));
 }
-Expression& Reel::operator+(Expression& ex){return (ex+(*this));}
+Expression& Reel::operator+(Expression& ex)
+{
+    QString tmp1=this->GetQString(), tmp2=ex.GetQString();
+    tmp1.remove("'"); tmp2.remove("'");
+    ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "+" + "'");
+    return ex;
+}
 
 
 // Entier
@@ -124,7 +142,13 @@ Complexe& Entier::operator+(const Complexe& e){
     Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
     return *(new Complexe(tmp, e.GetIm()));
 }
-Expression& Entier::operator+(Expression& ex){return (ex+(*this));}
+Expression& Entier::operator+(Expression& ex)
+{
+    QString tmp1=this->GetQString(), tmp2=ex.GetQString();
+    tmp1.remove("'"); tmp2.remove("'");
+    ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "+" + "'");
+    return ex;
+}
 
 
 

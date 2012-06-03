@@ -24,7 +24,9 @@ void MainWindow::PlusPress()
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
     }
+    pa->AffichagePile();
     ps->AffichagePile();
+
     ui->champAff->clear();
     ui->champEcr->clear();
     AffichageEcran();
