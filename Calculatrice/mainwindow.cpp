@@ -73,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->clear, SIGNAL(clicked()), this, SLOT(ClearPress()));
     QObject::connect(ui->dup, SIGNAL(clicked()), this, SLOT(DupPress()));
     QObject::connect(ui->drop, SIGNAL(clicked()), this, SLOT(DropPress()));
+    QObject::connect(ui->sum,SIGNAL(clicked()), this, SLOT(SumPress()));
 }
 
 MainWindow::~MainWindow()

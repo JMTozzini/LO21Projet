@@ -47,6 +47,13 @@ void PileStockage::Drop()
     ptr.pop_front();
 }
 
+Constante* PileStockage::Sum(int x)
+{
+    Constante* res=ptr[x-1];
+    std::cout<<res->GetVal()<<std::endl;
+    for(int i=0;i<x-1;i++){res = &(*res + ptr[i]);}
+    return res;
+}
 
 
 // Slots
@@ -95,3 +102,17 @@ void MainWindow::DropPress()
     catch(ExceptionCalculatrice e){e.GetInfos();}
     AffichageEcran();
 }
+
+void MainWindow::SumPress()
+{
+    pa->Depiler();
+    Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
+    Constante* tmp2=ps->Sum(tmp1->GetVal());
+    ps->Empiler(*tmp2);
+    AffichageEcran();
+}
+
+/*
+– MEAN : moyenne des x premiers éléments de la pile (où x est l’argument) (entier, ra-
+tionnel, réel, complexe) : à faire lorsque operator * surchargé
+*/

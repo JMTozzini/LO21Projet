@@ -69,6 +69,7 @@ public slots:
     void ClearPress();
     void DupPress();
     void DropPress();
+    void SumPress();
 };
 
 

@@ -22,10 +22,11 @@ public :
     void ChargerMemento(MementoStock *mem){ptr = mem->GetEtatSauve();}
 
     // Méthodes d'opérations
-    void Swap(int x, int y);
+    void Swap(int, int);
     void Clear(){ptr.clear();}
     Constante* Dup();
     void Drop();
+    Constante* Sum(int);
 };
 
 class PileAffichage
@@ -47,7 +48,7 @@ public:
     void ChargerMemento(MementoAff *mem){ptr = mem->GetEtatSauve();}
 
     // Méthodes d'opérations
-    void Swap(int x, int y);
+    void Swap(int, int);
     void Clear(){ptr.clear();}
     QString Dup();
     void Drop();
