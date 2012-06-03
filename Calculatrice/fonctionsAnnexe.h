@@ -7,4 +7,7 @@ Reel* ToReel(QString& s);
 Rationnel* ToRationnel(QString& s);
 Complexe* ToComplexe(QString& s);
 
+QString eval(QString& s);
+
+
 #endif // FONCTIONANNEXE_H

@@ -48,10 +48,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->expr,SIGNAL(clicked()),this,SLOT(ExprPress()));
     QObject::connect(ui->cmplx,SIGNAL(clicked()),this,SLOT(CmplxPress()));
 
-    // Opérations
+    // Opérateurs binaire
     QObject::connect(ui->plus,SIGNAL(clicked()),this,SLOT(PlusPress()));
     QObject::connect(ui->moins,SIGNAL(clicked()),this,SLOT(MoinsPress()));
 
+    // Opérateurs unaires
+    QObject::connect(ui->eval,SIGNAL(clicked()),this,SLOT(EvalPress()));
 
     // Entrer
     QObject::connect(ui->entrer,SIGNAL(clicked()),this,SLOT(EntrerPress()));
@@ -92,15 +94,10 @@ void MainWindow::AffichageEcran()
         ui->champAff->append(pa->GetVal(i));
 }
 
-//bool MainWindow::complexe;
-//std::string MainWindow::typeDeCste;
-//bool MainWindow::clavier;
-//std::string MainWindow::angle;
-//std::string MainWindow::operateur="rien";
 
 
 
-// Fonctions statiques pour l'initialisation et la mise à jour des paramètres
+// Fonctions pour l'initialisation et la mise à jour des paramètres
 
 void MainWindow::InitParam(){
 
@@ -125,7 +122,7 @@ void MainWindow::InitParam(){
                 if(exp.exactMatch(tmp_pile.c_str())){Expression* c=new Expression(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
                 else if(tmp_pile.find('$')){Complexe* c=ToComplexe(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
                 else if(tmp_pile.find(',')){Reel* c=ToReel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
-                else if(tmp_pile.find('/')){Rationnel* c=ToRationnel(*tmp2); ps->Empiler(ToRationnel(*tmp2)); pa->Empiler(*tmp2);}
+                else if(tmp_pile.find('/')){Rationnel* c=ToRationnel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
                 else {Entier* c=new Entier(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
 
 

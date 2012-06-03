@@ -5,23 +5,28 @@
 void MainWindow::EntrerPress()
 {
     QString s=ui->champEcr->text();
+    bool arret=0;
 
-    try {pa->Empiler(s);}
-    catch(ExceptionCalculatrice e){e.GetInfos();}
 
     QRegExp exp("'*'");
     exp.setPatternSyntax(QRegExp::Wildcard);
 
     if(exp.exactMatch(s)){ps->Empiler(new Expression(s));}
-    else if(s.contains("$")){Complexe* c=ToComplexe(s); ps->Empiler(c);}
+    else if(s.contains("$")){
+        if(!complexe){
+            arret=1;
+            std::cout<<"Le mode complexe n'est pas activé"<<std::endl;
+        }
+        else{
+            Complexe* c=ToComplexe(s);
+            ps->Empiler(c);
+        }
+    }
     else if(s.contains(",")){ps->Empiler(ToReel(s));}
     else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
     else if(s=="+"){pa->Depiler(); PlusPress();}
-    /*else if(moins.exactMatch(s))
-    {
-        pa->Depiler();
-        MoinsPress();
-    }*/
+    else if(s=="-"){pa->Depiler(); MoinsPress();}
+
     //else if(s==""){DupPress();}
     else {ps->Empiler(new Entier(s));}
     /*else
@@ -30,6 +35,10 @@ void MainWindow::EntrerPress()
         ExceptionCalculatrice e("Mauvaise saisie");
         e.GetInfos();
     }*/
+    if(!arret){
+        try {pa->Empiler(s);}
+        catch(ExceptionCalculatrice e){e.GetInfos();}
+    }
 
     ui->champEcr->clear();
     AffichageEcran();

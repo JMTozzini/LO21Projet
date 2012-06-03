@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     exceptionCalculatrice.cpp \
     pile.cpp \
     memento.cpp \
-    pileOp.cpp
+    pileOp.cpp \
+    operateursUnaires.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \

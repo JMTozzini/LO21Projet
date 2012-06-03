@@ -71,6 +71,7 @@ public slots:
     void DropPress();
     void SumPress();
     void MeanPress();
+    void EvalPress();
 };
 
 
