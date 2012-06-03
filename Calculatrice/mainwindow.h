@@ -70,6 +70,7 @@ public slots:
     void DupPress();
     void DropPress();
     void SumPress();
+    void MeanPress();
 };
 
 

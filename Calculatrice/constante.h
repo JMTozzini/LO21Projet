@@ -11,6 +11,7 @@ class Complexe;
 class Reel;
 class Rationnel;
 class Entier;
+class Expression;
 
 
 class Constante
@@ -25,6 +26,7 @@ public:
     virtual double GetVal() const = 0;      // Temporaire
     virtual double GetValBis() const = 0;   // Temporaire
     virtual const std::string GetType()const=0;
+    virtual QString GetQString()const=0;
 
 
     // Opérateur +
@@ -32,11 +34,34 @@ public:
     virtual Constante& operator+(const Reel&)=0;
     virtual Constante& operator+(const Entier&)=0;
     virtual Constante& operator+(const Rationnel&)=0;
-    virtual Constante& operator +(const Complexe&)=0;
+    virtual Constante& operator+(const Complexe&)=0;
+    virtual Constante& operator+(Expression&)=0;
+
 };
 
-class Base : public Constante{};
 
+class Expression : public Constante
+{
+    QString exp;
+
+public:
+    Expression(QString s):exp(s){}
+    void Afficher(std::ostream& os=std::cout) {os<<exp.toStdString()<< std::endl;}
+    double GetVal() const {throw ExceptionCalculatrice("Fonction non définie\n");}
+    double GetValBis() const {throw ExceptionCalculatrice("Fonction non définie\n");}
+    const std::string GetType() const {return "expression";}
+    QString GetQString() const {return exp;}
+
+    // Operateur +
+    Expression& operator+(const Entier&);
+    Expression& operator+(const Reel&);
+    Expression& operator+(const Rationnel&);
+    Expression& operator+(const Complexe&);
+    Expression& operator+(Expression&);
+};
+
+
+class Base : public Constante{};
 
 class Complexe : public Constante // a$b (correspondant à a+ib), a : reel, b : imaginaire
 {
@@ -52,6 +77,7 @@ public:
     double GetVal() const {return reel->GetVal();}
     double GetValBis() const {return imaginaire->GetVal();}
     const std::string GetType() const {return "complexe";}
+    QString GetQString() const {return (reel->GetQString()+"$"+imaginaire->GetQString());}
 
     Base* GetReel() const {return reel;}   // Pour des raisons de commodité
     Base* GetIm() const {return imaginaire;}  // Pour des raisons de commodité
@@ -62,6 +88,7 @@ public:
     Complexe& operator+(const Reel&);
     Complexe& operator+(const Rationnel&);
     Complexe& operator+(const Complexe&);
+    Expression& operator+(Expression&);
 };
 
 
@@ -80,12 +107,14 @@ public:
     double GetVal() const {return valeur;}
     double GetValBis() const {throw ExceptionCalculatrice("Un réel n'a pas de dénominateur");}
     const std::string GetType() const {return "reel";}
+    QString GetQString() const {QString s(QString::number(valeur)); s.replace(s.indexOf("."),1," , "); return s;}
 
     // Operateur +
     Reel& operator+(const Reel&);
     Reel& operator+(const Entier&);
     Reel& operator+(const Rationnel&);
     Complexe& operator+(const Complexe&);
+    Expression& operator+(Expression&);
 };
 
 
@@ -109,6 +138,7 @@ public:
     double GetVal() const {return numerateur;}
     double GetValBis() const {return denominateur;}
     const std::string GetType() const {return "rationnel";}
+    QString GetQString() const {return (QString::number(numerateur)+"/"+QString::number(denominateur));}
 
     double GetNum() const {return GetVal();}    // Pour des raisons de commodité
     double GetDen() const {return GetValBis();} // Pour des raisons de commodité
@@ -119,6 +149,7 @@ public:
     Rationnel& operator+(const Entier&);
     Reel& operator+(const Reel&);
     Complexe& operator+(const Complexe&);
+    Expression& operator+(Expression&);
 };
 
 
@@ -136,30 +167,15 @@ public:
     double GetVal() const {return valeur;}
     double GetValBis() const {return 1;}
     const std::string GetType() const {return "entier";}
+    QString GetQString() const {return (QString::number(valeur));}
 
     // Operateur +
     Entier& operator+(const Entier&);
     Reel& operator+(const Reel&);
     Rationnel& operator+(const Rationnel&);
     Complexe& operator +(const Complexe&);
+    Expression& operator+(Expression&);
 };
-
-
-class Expression : public Constante
-{
-    QString exp;
-
-public:
-    Expression(QString s):exp(s){}
-    void Afficher(std::ostream& os=std::cout) {os<<exp.toStdString()<< std::endl;}
-    double GetVal() const {throw ExceptionCalculatrice("Fonction non définie\n");}
-    double GetValBis() const {throw ExceptionCalculatrice("Fonction non définie\n");}
-    const std::string GetType() const {return "expression";}
-    QString GetExp() const {return exp;}
-
-};
-
-
 
 #endif // CONSTANTE_H
 

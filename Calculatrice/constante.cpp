@@ -9,54 +9,49 @@ Constante& Constante::operator+(Constante* c)
     Entier* e=dynamic_cast<Entier*>(c);
     Reel* r=dynamic_cast<Reel*>(c);
     Rationnel* ra=dynamic_cast<Rationnel*>(c);
+    Expression* exp=dynamic_cast<Expression*>(c);
 
     if(e) return (*this + *e);
     else if(r) return (*this + *r);
     else if(ra) return (*this + *ra);
+    else if(exp) return (*this + * exp);
     else throw ExceptionCalculatrice("Erreur d'operation +");
 
     return *c;
 }
 
-
-// Reel
-Reel& Reel::operator+(const Reel& r) {return *(new Reel(valeur + r.GetVal()));}
-Reel& Reel::operator+(const Entier& e) {return *(new Reel(valeur + e.GetVal()));}
-Reel& Reel::operator+(const Rationnel& ra){return *(new Reel(valeur + ra.GetNum()/ra.GetDen()));} // à finir
-Complexe& Reel::operator+(const Complexe& e){
-    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
-    return *(new Complexe(tmp, e.GetIm()));
-}
-
-
-// Entier
-Entier& Entier::operator+(const Entier& e) {return *(new Entier(valeur + (int)e.GetVal()));}
-Reel& Entier::operator+(const Reel& r){return *(new Reel((double)valeur + r.GetVal()));}
-Rationnel& Entier::operator+(const Rationnel& ra)
+// Expression
+Expression& Expression::operator+(const Entier& e)
 {
-    return *(new Rationnel(ra.GetNum() + valeur*ra.GetDen(), ra.GetDen()));
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " " + e.GetQString() + " " + "+" + "'";
+    return *this;
 }
-Complexe& Entier::operator+(const Complexe& e){
-    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
-    return *(new Complexe(tmp, e.GetIm()));
-}
-
-
-// Rationnel
-Rationnel& Rationnel::operator+(const Rationnel& ra)
+Expression& Expression::operator+(const Reel& r)
 {
-    return *(new Rationnel(numerateur*ra.GetDen()+ra.GetNum()*denominateur,ra.GetDen()*denominateur));
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " " + r.GetQString() + " " + "+" + "'";
+    return *this;
 }
-Rationnel& Rationnel::operator+(const Entier& e)
+Expression& Expression::operator+(const Rationnel& ra)
 {
-    return *(new Rationnel(numerateur + e.GetVal()*denominateur,denominateur));
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " " + ra.GetQString() + " " + "+" + "'";
+    return *this;
 }
-Reel& Rationnel::operator+(const Reel& r){
-    return *(new Reel(r.GetVal()+((double)numerateur/(double)denominateur)));
+Expression& Expression::operator+(const Complexe& c)
+{
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " " + c.GetQString() + " " + "+" + "'";
+    return *this;
 }
-Complexe& Rationnel::operator+(const Complexe& e){
-    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
-    return *(new Complexe(tmp, e.GetIm()));
+Expression& Expression::operator+(Expression& ex)
+{
+    this->exp.remove("'");
+    QString tmp=ex.GetQString();
+    tmp.remove("'");
+    this->exp="'" + this->exp + " " + tmp + " " + "+" + "'";
+    return *this;
 }
 
 
@@ -83,4 +78,53 @@ Complexe& Complexe::operator +(const Complexe& c){
     Base* tmp2=dynamic_cast<Base*>(&(*imaginaire+c.GetIm()));
 
     return *(new Complexe(tmp1, tmp2));
-};
+}
+
+Expression& Complexe::operator+(Expression& ex){return (ex+(*this));}
+
+
+// Rationnel
+Rationnel& Rationnel::operator+(const Rationnel& ra)
+{
+    return *(new Rationnel(numerateur*ra.GetDen()+ra.GetNum()*denominateur,ra.GetDen()*denominateur));
+}
+Rationnel& Rationnel::operator+(const Entier& e)
+{
+    return *(new Rationnel(numerateur + e.GetVal()*denominateur,denominateur));
+}
+Reel& Rationnel::operator+(const Reel& r){
+    return *(new Reel(r.GetVal()+((double)numerateur/(double)denominateur)));
+}
+Complexe& Rationnel::operator+(const Complexe& e){
+    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
+    return *(new Complexe(tmp, e.GetIm()));
+}
+Expression& Rationnel::operator+(Expression& ex){return (ex+(*this));}
+
+
+// Reel
+Reel& Reel::operator+(const Reel& r) {return *(new Reel(valeur + r.GetVal()));}
+Reel& Reel::operator+(const Entier& e) {return *(new Reel(valeur + e.GetVal()));}
+Reel& Reel::operator+(const Rationnel& ra){return *(new Reel(valeur + ra.GetNum()/ra.GetDen()));} // à finir
+Complexe& Reel::operator+(const Complexe& e){
+    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
+    return *(new Complexe(tmp, e.GetIm()));
+}
+Expression& Reel::operator+(Expression& ex){return (ex+(*this));}
+
+
+// Entier
+Entier& Entier::operator+(const Entier& e) {return *(new Entier(valeur + (int)e.GetVal()));}
+Reel& Entier::operator+(const Reel& r){return *(new Reel((double)valeur + r.GetVal()));}
+Rationnel& Entier::operator+(const Rationnel& ra)
+{
+    return *(new Rationnel(ra.GetNum() + valeur*ra.GetDen(), ra.GetDen()));
+}
+Complexe& Entier::operator+(const Complexe& e){
+    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) + *(this)));
+    return *(new Complexe(tmp, e.GetIm()));
+}
+Expression& Entier::operator+(Expression& ex){return (ex+(*this));}
+
+
+

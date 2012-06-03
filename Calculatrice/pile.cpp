@@ -22,7 +22,7 @@ void PileStockage::AffichagePile()
     std::deque<Constante*>::const_iterator deb(ptr.begin()), fin(ptr.end());
     std::cout<<"----"<<std::endl;
     for(;deb!=fin;++deb)
-        std::cout<< (*deb)->GetVal() << ' ' <<std::endl;
+        std::cout<< (*deb)->GetType() << ' ' <<std::endl;
     std::cout<<"----"<<std::endl;
 }
 

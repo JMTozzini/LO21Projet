@@ -3,20 +3,28 @@
 
 void MainWindow::PlusPress()
 {
-    try
+    if(pa->GetPtr().size()<2)
     {
-        pa->Depiler(); pa->Depiler();
-        Constante* tmp1=&(ps->Depiler());
-        Constante* tmp2=&(ps->Depiler());
-        Constante& c = *tmp2 + tmp1;
-        ps->Empiler(c);
-        pa->Empiler(ToQString(c));
+        ExceptionCalculatrice e("Pas assez operande");
+        e.GetInfos();
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    else
+    {
+        try
+        {
+            pa->Depiler(); pa->Depiler();
+            Constante* tmp1=&(ps->Depiler());
+            Constante* tmp2=&(ps->Depiler());
+            Constante& c = *tmp2 + tmp1;
+            ps->Empiler(c);
+            pa->Empiler(c.GetQString());
+        }
+        catch(ExceptionCalculatrice e){e.GetInfos();}
 
-    g->AjouterMemento(ps->CreerMemento());
-    g->AjouterMemento(pa->CreerMemento());
-
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
+    }
+    ps->AffichagePile();
     ui->champAff->clear();
     ui->champEcr->clear();
     AffichageEcran();
