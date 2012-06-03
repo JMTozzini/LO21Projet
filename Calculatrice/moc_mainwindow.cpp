@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Sat Jun 2 16:14:12 2012
+** Created: Sun Jun 3 13:39:58 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      30,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,6 +54,13 @@ static const uint qt_meta_data_MainWindow[] = {
      263,   11,   11,   11, 0x0a,
      277,   11,   11,   11, 0x0a,
      290,   11,   11,   11, 0x0a,
+     304,   11,   11,   11, 0x0a,
+     319,   11,   11,   11, 0x0a,
+     331,   11,   11,   11, 0x0a,
+     344,   11,   11,   11, 0x0a,
+     355,   11,   11,   11, 0x0a,
+     367,   11,   11,   11, 0x0a,
+     378,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -67,6 +74,9 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "MoinsPress()\0EntrerPress()\0MenuComplexe()\0"
     "MenuEntier()\0MenuReel()\0MenuRationnel()\0"
     "MenuClavier()\0MenuDegres()\0MenuRadians()\0"
+    "AnnulerPress()\0SwapPress()\0ClearPress()\0"
+    "DupPress()\0DropPress()\0SumPress()\0"
+    "MeanPress()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -98,6 +108,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 20: _t->MenuClavier(); break;
         case 21: _t->MenuDegres(); break;
         case 22: _t->MenuRadians(); break;
+        case 23: _t->AnnulerPress(); break;
+        case 24: _t->SwapPress(); break;
+        case 25: _t->ClearPress(); break;
+        case 26: _t->DupPress(); break;
+        case 27: _t->DropPress(); break;
+        case 28: _t->SumPress(); break;
+        case 29: _t->MeanPress(); break;
         default: ;
         }
     }
@@ -136,9 +153,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 30)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 30;
     }
     return _id;
 }

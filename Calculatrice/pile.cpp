@@ -5,7 +5,7 @@
 
 // ----- Pile Stockage -----
 
-void PileStockage::Empiler(Constante& c){ptr.push_back(&c);}
+void PileStockage::Empiler(Constante* c){ptr.push_back(c);}
 
 Constante& PileStockage::Depiler()
 {

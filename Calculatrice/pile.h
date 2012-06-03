@@ -12,7 +12,7 @@ public :
     PileStockage(){}
 
     // Méthodes de base
-    void Empiler(Constante&);
+    void Empiler(Constante*);
     Constante& Depiler();
     std::deque<Constante*> GetPtr() const {return ptr;}
     void AffichagePile();

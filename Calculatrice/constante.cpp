@@ -10,11 +10,13 @@ Constante& Constante::operator+(Constante* c)
     Reel* r=dynamic_cast<Reel*>(c);
     Rationnel* ra=dynamic_cast<Rationnel*>(c);
     Expression* exp=dynamic_cast<Expression*>(c);
+    Complexe* cmplx=dynamic_cast<Complexe*>(c);
 
     if(e) return (*this + *e);
     else if(r) return (*this + *r);
     else if(ra) return (*this + *ra);
     else if(exp) return (*this + * exp);
+    else if(cmplx) return(*this + *cmplx);
     else throw ExceptionCalculatrice("Erreur d'operation +");
 
     return *c;
@@ -57,7 +59,6 @@ Expression& Expression::operator+(Expression& ex)
 
 // Complexe
 Complexe& Complexe::operator+(const Entier& e){
-
     Base* res=dynamic_cast<Base*>(&(*reel+e));
     return *(new Complexe(res, imaginaire));
 }

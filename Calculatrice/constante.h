@@ -22,7 +22,7 @@ public:
     ~Constante(){delete this;}
 
     // Fonctions annexes virtuelles
-    virtual void Afficher(std::ostream& os=std::cout) = 0;
+    virtual void Afficher(std::ostream& os=std::cout)const = 0;
     virtual double GetVal() const = 0;      // Temporaire
     virtual double GetValBis() const = 0;   // Temporaire
     virtual const std::string GetType()const=0;
@@ -47,7 +47,7 @@ class Expression : public Constante
 public:
     Expression(QString s):exp(s){}
 
-    void Afficher(std::ostream& os=std::cout) {os<<exp.toStdString()<< std::endl;}
+    void Afficher(std::ostream& os=std::cout)const {os<<exp.toStdString()<< std::endl;}
     double GetVal() const {throw ExceptionCalculatrice("Fonction non définie\n");}
     double GetValBis() const {throw ExceptionCalculatrice("Fonction non définie\n");}
     const std::string GetType() const {return "expression";}
@@ -63,7 +63,11 @@ public:
 };
 
 
-class Base : public Constante{};
+class Base : public Constante{
+public :
+    virtual void Afficher(std::ostream& os=std::cout)const = 0;
+
+};
 
 class Complexe : public Constante // a$b (correspondant à a+ib), a : reel, b : imaginaire
 {
@@ -75,7 +79,7 @@ public:
     Complexe(Base* r, Base* i):reel(r), imaginaire(i){}
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout) {reel->Afficher(); os<<"$"; (imaginaire->Afficher()); os<< std::endl;}
+    void Afficher(std::ostream& os=std::cout)const {reel->Afficher(os); os<<"$"; imaginaire->Afficher(os); os<< std::endl;}
     double GetVal() const {return reel->GetVal();}
     double GetValBis() const {return imaginaire->GetVal();}
     const std::string GetType() const {return "complexe";}
@@ -105,11 +109,11 @@ public:
     Reel(QString s):valeur(s.toDouble()){}
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout) {os<<valeur<<std::endl;}
+    void Afficher(std::ostream& os=std::cout)const {os<<valeur<<std::endl;}
     double GetVal() const {return valeur;}
     double GetValBis() const {throw ExceptionCalculatrice("Un réel n'a pas de dénominateur");}
     const std::string GetType() const {return "reel";}
-    QString GetQString() const {QString s(QString::number(valeur)); s.replace(s.indexOf("."),1," , "); return s;}
+    QString GetQString() const {QString s(QString::number(valeur)); s.replace(s.indexOf("."),1,","); return s;}
 
     // Operateur +
     Reel& operator+(const Reel&);
@@ -136,7 +140,7 @@ public:
     }
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout) { os<<numerateur << "/" << denominateur << std::endl;}
+    void Afficher(std::ostream& os=std::cout)const { os<<numerateur << "/" << denominateur << std::endl;}
     double GetVal() const {return numerateur;}
     double GetValBis() const {return denominateur;}
     const std::string GetType() const {return "rationnel";}
@@ -165,7 +169,7 @@ public:
     Entier(QString s):valeur(s.toInt()){}
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout) {os<<GetVal()<<std::endl;}
+    void Afficher(std::ostream& os=std::cout)const {os<<GetVal()<<std::endl;}
     double GetVal() const {return valeur;}
     double GetValBis() const {return 1;}
     const std::string GetType() const {return "entier";}

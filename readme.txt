@@ -1,12 +1,21 @@
-Je compile plus, il me dit que j'ai deux pile.o. Tu as pris quel fichier pile.cpp quand je l'ai oubli� ce matin ?
-Et tu as boss� dessus finalement ou pas ?
 
-Je t'ai vu a festupic, c'est mal, tu devrais coder !! (toi m�me !! lol)
 
-ouai j'ai pris un ancien... j'avais le m�me probleme mais maintenant je pense que c'est bon.
 
-L'historique fonctionne mais je n'arrive pas � le s�curiser avec try et catch...
 
-L'operateur + fonctionne pour les expressions, par contre il y a des probleme dans les additions avec des complexes
+
 
 Je te propose qu'on fasse les autres opérations dans un autre .cpp dédié sinon ça va être le souk
+-> ok
+
+Le + remarche pour les Entiers, Rationnels, Reels et Complexe. (Complexe ça marchait pas parce qu'on avait
+pas fini de gérer les expressions avec des $ en TP..)
+Par contre j'ai changé Empile de la pile de stockage. Comme on empile des Constante*, je trouvais ça mieux
+de mettre un Constante* en argument de Empiler(). Ca change pas grand chose mais il faut que tu le saches 
+pour le reste. 
+D'ailleurs on aurait pu renvoyer des pointeurs pour les opérateurs, ça aurait été plus logique, mais bon...
+
+J'ai mis Afficher en const.
+J'ai pas regardé le code de ton Memento, et il faut buguer les opérateurs donc je l'ai commenté dans le +.
+
+Si tu veux je me charge du -, / et * ajourd'hui !
+

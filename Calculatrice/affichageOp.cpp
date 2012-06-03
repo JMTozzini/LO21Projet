@@ -5,7 +5,7 @@ void MainWindow::PlusPress()
 {
     if(pa->GetPtr().size()<2)
     {
-        ExceptionCalculatrice e("Pas assez operande");
+        ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
         e.GetInfos();
     }
     else
@@ -13,16 +13,21 @@ void MainWindow::PlusPress()
         try
         {
             pa->Depiler(); pa->Depiler();
+
             Constante* tmp1=&(ps->Depiler());
             Constante* tmp2=&(ps->Depiler());
-            Constante& c = *tmp2 + tmp1;
+            Constante* c;
+            c = &(tmp2->operator +(tmp1));
+
+
+
             ps->Empiler(c);
-            pa->Empiler(c.GetQString());
+            pa->Empiler(c->GetQString());
         }
         catch(ExceptionCalculatrice e){e.GetInfos();}
 
-        g->AjouterMemento(ps->CreerMemento());
-        g->AjouterMemento(pa->CreerMemento());
+//        g->AjouterMemento(ps->CreerMemento());
+//        g->AjouterMemento(pa->CreerMemento());
     }
     pa->AffichagePile();
     ps->AffichagePile();

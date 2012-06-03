@@ -15,7 +15,7 @@ Rationnel* ToRationnel(QString& s){
 Complexe* ToComplexe(QString& s)
 {
     s.remove(" ");
-    QStringList list1 = s.split("/");
+    QStringList list1 = s.split("$");
     QString reel=list1.value(0), im=list1.value(1);
     Base *b1,*b2;
 

@@ -86,7 +86,7 @@ void MainWindow::DupPress()
 {
     try
     {
-        ps->Empiler(*(ps->Dup()));
+        ps->Empiler(ps->Dup());
         pa->Empiler(pa->Dup());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
@@ -111,7 +111,7 @@ void MainWindow::SumPress()
         pa->Depiler();
         Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
         Constante* tmp2=ps->Sum(tmp1->GetVal());
-        ps->Empiler(*tmp2);
+        ps->Empiler(tmp2);
         pa->Empiler(tmp2->GetQString());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}

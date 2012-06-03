@@ -12,10 +12,10 @@ void MainWindow::EntrerPress()
     QRegExp exp("'*'");
     exp.setPatternSyntax(QRegExp::Wildcard);
 
-    if(exp.exactMatch(s)){ps->Empiler(*(new Expression(s)));}
-    else if(s.contains("$")){ps->Empiler(*(ToComplexe(s)));}
-    else if(s.contains(",")){ps->Empiler(*(ToReel(s)));}
-    else if(s.contains("/")){ps->Empiler(*(ToRationnel(s)));}
+    if(exp.exactMatch(s)){ps->Empiler(new Expression(s));}
+    else if(s.contains("$")){Complexe* c=ToComplexe(s); ps->Empiler(c);}
+    else if(s.contains(",")){ps->Empiler(ToReel(s));}
+    else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
     else if(s=="+"){pa->Depiler(); PlusPress();}
     /*else if(moins.exactMatch(s))
     {
@@ -23,7 +23,7 @@ void MainWindow::EntrerPress()
         MoinsPress();
     }*/
     //else if(s==""){DupPress();}
-    else {ps->Empiler(*(new Entier(s)));}
+    else {ps->Empiler(new Entier(s));}
     /*else
     {
         pa->Depiler();
