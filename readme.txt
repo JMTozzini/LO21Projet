@@ -1,10 +1,12 @@
-Je compile plus, il me dit que j'ai deux pile.o. Tu as pris quel fichier pile.cpp quand je l'ai oublié ce matin ?
-Et tu as bossé dessus finalement ou pas ?
+Je compile plus, il me dit que j'ai deux pile.o. Tu as pris quel fichier pile.cpp quand je l'ai oubliï¿½ ce matin ?
+Et tu as bossï¿½ dessus finalement ou pas ?
 
-Je t'ai vu a festupic, c'est mal, tu devrais coder !! (toi même !! lol)
+Je t'ai vu a festupic, c'est mal, tu devrais coder !! (toi mï¿½me !! lol)
 
-ouai j'ai pris un ancien... j'avais le même probleme mais maintenant je pense que c'est bon.
+ouai j'ai pris un ancien... j'avais le mï¿½me probleme mais maintenant je pense que c'est bon.
 
-L'historique fonctionne mais je n'arrive pas à le sécuriser avec try et catch...
+L'historique fonctionne mais je n'arrive pas ï¿½ le sï¿½curiser avec try et catch...
 
 L'operateur + fonctionne pour les expressions, par contre il y a des probleme dans les additions avec des complexes
+
+Je te propose qu'on fasse les autres opÃ©rations dans un autre .cpp dÃ©diÃ© sinon Ã§a va Ãªtre le souk
