@@ -27,8 +27,7 @@ void MainWindow::PlusPress()
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
     }
-    //pa->AffichagePile();
-    //ps->AffichagePile();
+    //pa->AffichagePile(); ps->AffichagePile();
 
     ui->champEcr->clear();
     MAJParam();
@@ -63,8 +62,7 @@ void MainWindow::MoinsPress()
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
     }
-    //pa->AffichagePile();
-    //ps->AffichagePile();
+    //pa->AffichagePile(); ps->AffichagePile();
 
     ui->champEcr->clear();
     MAJParam();
@@ -98,8 +96,7 @@ void MainWindow::MultPress()
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
     }
-    pa->AffichagePile();
-    ps->AffichagePile();
+    //pa->AffichagePile(); ps->AffichagePile();
 
     ui->champEcr->clear();
     MAJParam();

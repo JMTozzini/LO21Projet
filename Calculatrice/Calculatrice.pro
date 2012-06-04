@@ -23,6 +23,7 @@ SOURCES += main.cpp\
     operateursUnaires.cpp \
     constanteOpPlus.cpp \
     constanteOpMoins.cpp \
+    constanteOpDiv.cpp \
     constanteOpMult.cpp
 
 HEADERS  += mainwindow.h \

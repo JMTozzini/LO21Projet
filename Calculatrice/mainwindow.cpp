@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     // Configuration Ecrans
-    ui->champAff->setFontPointSize(30);
+    ui->champAff->setFontPointSize(25);
     ui->champAff->setAlignment(Qt::AlignCenter);
     ui->champAff->setReadOnly(true);
 

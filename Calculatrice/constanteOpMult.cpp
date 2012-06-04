@@ -74,16 +74,8 @@ Complexe& Complexe::operator*(const Reel& r){
     return *(new Complexe(res, imaginaire));
 }
 
-Complexe& Complexe::operator*(const Complexe& c){ //je comprend pas pourquoi base + base fonction dans + et - et pas dans *...
-
-    /*Constante* test1=dynamic_cast<Constante*>(&(*reel + c.GetReel()));
-    Constante* test2=dynamic_cast<Constante*>(&(*imaginaire + c.GetIm()));
-    Base* tmp1=dynamic_cast<Base*>(&( test1->operator -(test2) ));*/
+Complexe& Complexe::operator*(const Complexe& c){
     Base* tmp1=dynamic_cast<Base*>(&( (*reel + c.GetReel()) + (&(*imaginaire + c.GetIm())) ));
-
-    /*test1=dynamic_cast<Constante*>(&(*imaginaire + c.GetReel()));
-    test2=dynamic_cast<Constante*>(&(*reel + c.GetIm()));
-    Base* tmp2=dynamic_cast<Base*>(&( test1->operator +(test2) ));*/
     Base* tmp2=dynamic_cast<Base*>(&( (*imaginaire + c.GetReel()) + (&(*reel + c.GetIm())) ));
 
     return *(new Complexe(tmp1, tmp2));
@@ -110,9 +102,9 @@ Rationnel& Rationnel::operator*(const Entier& e)
 Reel& Rationnel::operator*(const Reel& r){
     return *(new Reel(r.GetVal() * ((double)numerateur / (double)denominateur)));
 }
-Complexe& Rationnel::operator*(const Complexe& e){
-    Base* tmp=dynamic_cast<Base*>(&(*(e.GetReel()) * *(this)));
-    return *(new Complexe(tmp, e.GetIm()));
+Complexe& Rationnel::operator*(const Complexe& c){
+    Base* tmp=dynamic_cast<Base*>(&(*(c.GetReel()) * *(this)));
+    return *(new Complexe(tmp, c.GetIm()));
 }
 Expression& Rationnel::operator*(Expression& ex)
 {
@@ -158,6 +150,3 @@ Expression& Entier::operator*(Expression& ex)
     ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "*" + "'");
     return ex;
 }
-
-
-
