@@ -1,7 +1,6 @@
 
 
 
-
 Je te propose qu'on fasse les autres opérations dans un autre .cpp dédié sinon ça va être le souk
 -> ok
 
@@ -23,3 +22,5 @@ Yop.
 Après deux heures de lutte j'ai fini la sauvegarde de la pile !!
 Bon, dans la pile de stockage il dit que c'est tous des complexes, mais bon ça se voit pas dans l'affichage, 
 et comme j'en ai marre, tant pis
+-> C'est pas primordial mais le faite qu'il renvoie des complexe fait que lorque l'on fait des opération sur les valeurs
+sauvegardées on a un resultat complexe
