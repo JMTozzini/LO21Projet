@@ -1,6 +1,5 @@
 
 
-
 Je te propose qu'on fasse les autres opérations dans un autre .cpp dédié sinon ça va être le souk
 -> ok
 
@@ -14,7 +13,7 @@ D'ailleurs on aurait pu renvoyer des pointeurs pour les opérateurs, ça aurait 
 
 J'ai mis Afficher en const.
 J'ai pas regardé le code de ton Memento, et il faut buguer les opérateurs donc je l'ai commenté dans le +.
-->Je vais essayer de le faire marcher, si j'y arrive pas il n'y aura qu'un seul annuler...
+-> C'est bon l'historique fonctionne, j'avais oublié d'initialiser le gardien dans mainwindow...
 
 Si tu veux je me charge du -, / et * ajourd'hui !
 
