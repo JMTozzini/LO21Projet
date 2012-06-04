@@ -3,7 +3,6 @@
 
 
 
-
 Je te propose qu'on fasse les autres opérations dans un autre .cpp dédié sinon ça va être le souk
 -> ok
 
@@ -13,6 +12,7 @@ Par contre j'ai changé Empile de la pile de stockage. Comme on empile des Const
 de mettre un Constante* en argument de Empiler(). Ca change pas grand chose mais il faut que tu le saches 
 pour le reste. 
 D'ailleurs on aurait pu renvoyer des pointeurs pour les opérateurs, ça aurait été plus logique, mais bon...
+-> Non car si on veut chainer les operation (a+b+c) il faut renvoyer des réfenrences
 
 J'ai mis Afficher en const.
 J'ai pas regardé le code de ton Memento, et il faut buguer les opérateurs donc je l'ai commenté dans le +.
