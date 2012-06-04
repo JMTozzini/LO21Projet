@@ -19,20 +19,17 @@ void MainWindow::PlusPress()
             Constante* c;
             c = &(tmp2->operator +(tmp1));
 
-
-
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
         catch(ExceptionCalculatrice e){e.GetInfos();}
 
-//        g->AjouterMemento(ps->CreerMemento());
-//        g->AjouterMemento(pa->CreerMemento());
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
     }
-    pa->AffichagePile();
-    ps->AffichagePile();
+    //pa->AffichagePile();
+    //ps->AffichagePile();
 
-    ui->champAff->clear();
     ui->champEcr->clear();
     MAJParam();
 
@@ -58,20 +55,17 @@ void MainWindow::MoinsPress()
             Constante* c;
             c = &(tmp2->operator -(tmp1));
 
-
-
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
         catch(ExceptionCalculatrice e){e.GetInfos();}
 
-//        g->AjouterMemento(ps->CreerMemento());
-//        g->AjouterMemento(pa->CreerMemento());
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
     }
-    pa->AffichagePile();
-    ps->AffichagePile();
+    //pa->AffichagePile();
+    //ps->AffichagePile();
 
-    ui->champAff->clear();
     ui->champEcr->clear();
     MAJParam();
 

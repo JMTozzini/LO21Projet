@@ -4,7 +4,8 @@
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), ps(new PileStockage()), pa(new PileAffichage())
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow),
+    ps(new PileStockage()), pa(new PileAffichage()),g(new Gardien())
 {
     ui->setupUi(this);
 

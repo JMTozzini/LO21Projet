@@ -16,13 +16,14 @@ SOURCES += main.cpp\
     affichageAutre.cpp \
     affichageOp.cpp \
     menu.cpp \
-    constante.cpp \
     fonctionsAnnexe.cpp \
     exceptionCalculatrice.cpp \
     pile.cpp \
     memento.cpp \
     pileOp.cpp \
-    operateursUnaires.cpp
+    operateursUnaires.cpp \
+    constanteOpPlus.cpp \
+    constanteOpMoins.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \

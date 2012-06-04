@@ -7,7 +7,6 @@ void MainWindow::EntrerPress()
     QString s=ui->champEcr->text();
     bool arret=0;
 
-
     QRegExp exp("'*'");
     exp.setPatternSyntax(QRegExp::Wildcard);
 
@@ -24,8 +23,8 @@ void MainWindow::EntrerPress()
     }
     else if(s.contains(",")){ps->Empiler(ToReel(s));}
     else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
-    else if(s=="+"){pa->Depiler(); PlusPress();}
-    else if(s=="-"){pa->Depiler(); MoinsPress();}
+    else if(s=="+"){arret=1; PlusPress();} // Sinon il empile le signe et c'est moche lol
+    else if(s=="-"){arret=1; MoinsPress();}
 
     //else if(s==""){DupPress();}
     else {ps->Empiler(new Entier(s));}
