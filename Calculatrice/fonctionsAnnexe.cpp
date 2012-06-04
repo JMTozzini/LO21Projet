@@ -30,7 +30,7 @@ Complexe* ToComplexe(QString& s)
     return (new Complexe(b1, b2));
 }
 
-
+/*
 QString eval(QString& s){
     QString tmp;
     for(int i=0; s.count(); i++)
@@ -38,4 +38,4 @@ QString eval(QString& s){
 
 
     return s;
-}
+}*/

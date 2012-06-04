@@ -5,7 +5,7 @@
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow),
-    ps(new PileStockage()), pa(new PileAffichage()),g(new Gardien())
+    ps(new PileStockage()), pa(new PileAffichage()), g(new Gardien())
 {
     ui->setupUi(this);
 
@@ -171,4 +171,3 @@ void MainWindow::MAJParam(){
     else  // sinon
         cerr << "Erreur à l'ouverture !" << endl;
 }
-

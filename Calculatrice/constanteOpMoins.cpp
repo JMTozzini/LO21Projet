@@ -19,7 +19,7 @@ Constante& Constante::operator-(Constante* c)
     else if(ra) return (*this - *ra);
     else if(exp) return (*this - * exp);
     else if(cmplx) return(*this - *cmplx);
-    else throw ExceptionCalculatrice("Erreur d'operation +");
+    else throw ExceptionCalculatrice("Erreur d'operation -");
 
     return *c;
 }

@@ -23,3 +23,8 @@ Bon, dans la pile de stockage il dit que c'est tous des complexes, mais bon ça 
 et comme j'en ai marre, tant pis
 -> C'est pas primordial mais le faite qu'il renvoie des complexe fait que lorque l'on fait des opération sur les valeurs
 sauvegardées on a un resultat complexe
+
+Pourrais tu me rejouter un line edit en dessous du champ d'affichage ? tu l'appel chamErr, moi j'y arrive pas il obeit
+pas...
+
+J'ai fini la fonction eval mais avec une autre méthode que la tienne parce que je comprennais pas ce que tu voulais faire...

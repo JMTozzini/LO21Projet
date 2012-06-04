@@ -17,7 +17,6 @@ SOURCES += main.cpp\
     affichageOp.cpp \
     menu.cpp \
     fonctionsAnnexe.cpp \
-    exceptionCalculatrice.cpp \
     pile.cpp \
     memento.cpp \
     pileOp.cpp \
