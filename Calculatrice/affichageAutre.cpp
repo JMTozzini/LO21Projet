@@ -25,6 +25,7 @@ void MainWindow::EntrerPress()
     else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
     else if(s=="+"){arret=1; PlusPress();} // Sinon il empile le signe et c'est moche lol
     else if(s=="-"){arret=1; MoinsPress();}
+    else if(s=="*"){arret=1; MultPress();}
 
     //else if(s==""){DupPress();}
     else {ps->Empiler(new Entier(s));}

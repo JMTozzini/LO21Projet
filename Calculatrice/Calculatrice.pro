@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     pileOp.cpp \
     operateursUnaires.cpp \
     constanteOpPlus.cpp \
-    constanteOpMoins.cpp
+    constanteOpMoins.cpp \
+    constanteOpMult.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \

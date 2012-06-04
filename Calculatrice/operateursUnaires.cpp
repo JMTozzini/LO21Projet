@@ -15,7 +15,7 @@ void MainWindow::EvalPress()
 
     if(c->GetType()=="expression") //J'ai pas compris ce que tu voulais faire... La ça fonctionne mais j'ai fait completement autre chose
     {
-        std::cout<<"c'est une expression"<<std::endl;
+        //std::cout<<"c'est une expression"<<std::endl;
         s.remove("'");
         QStringList liste = s.split(" ");
         for(int i=0;i<liste.size();i++)
@@ -33,5 +33,4 @@ void MainWindow::EvalPress()
     ui->champEcr->clear();
     AffichageEcran();
     MAJParam();
-
 }

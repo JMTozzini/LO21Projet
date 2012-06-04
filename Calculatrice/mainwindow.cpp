@@ -48,10 +48,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->coma,SIGNAL(clicked()),this,SLOT(ComaPress()));
     QObject::connect(ui->expr,SIGNAL(clicked()),this,SLOT(ExprPress()));
     QObject::connect(ui->cmplx,SIGNAL(clicked()),this,SLOT(CmplxPress()));
+    QObject::connect(ui->div,SIGNAL(clicked()),this,SLOT(DivPress()));
 
     // Opérateurs binaire
     QObject::connect(ui->plus,SIGNAL(clicked()),this,SLOT(PlusPress()));
     QObject::connect(ui->moins,SIGNAL(clicked()),this,SLOT(MoinsPress()));
+    QObject::connect(ui->multi,SIGNAL(clicked()),this,SLOT(MultPress()));
 
     // Opérateurs unaires
     QObject::connect(ui->eval,SIGNAL(clicked()),this,SLOT(EvalPress()));
