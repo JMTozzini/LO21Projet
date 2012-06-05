@@ -23,9 +23,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->actionDegres->setCheckable(true);
     ui->actionRadians->setCheckable(true);
 
-
-
-
     // Numéro
     QObject::connect(ui->un,SIGNAL(clicked()),this,SLOT(Num1Press()));
     QObject::connect(ui->deux,SIGNAL(clicked()),this,SLOT(Num2Press()));
