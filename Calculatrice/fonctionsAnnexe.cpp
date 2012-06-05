@@ -1,4 +1,5 @@
 #include "fonctionsAnnexe.h"
+#include "constante.h"
 
 Reel* ToReel(QString& s){
     s.remove(" ");
@@ -9,7 +10,9 @@ Reel* ToReel(QString& s){
 Rationnel* ToRationnel(QString& s){
     s.remove(" ");
     QStringList list1 = s.split("/");
-    return new Rationnel(list1.value(0).toInt(),list1.value(1).toInt());
+    Rationnel* ra=new Rationnel(list1.value(0).toInt(),list1.value(1).toInt());
+    ra->Simplifier();
+    return ra;
 }
 
 Complexe* ToComplexe(QString& s)
@@ -39,3 +42,30 @@ QString eval(QString& s){
 
     return s;
 }*/
+
+int PGCD(int min, int max)
+{
+    int res=max-min;
+    if(min==0)
+        return max;
+    else if(res>=min)
+        PGCD(min,res);
+    else if(min>0)
+        PGCD(res,min);
+    else
+        return -1;
+}
+
+void Rationnel::Simplifier()
+{
+    int res;
+
+    if(numerateur<=denominateur)
+        res=PGCD(numerateur,denominateur);
+    else
+        res=PGCD(denominateur,numerateur);
+
+    if(res==-1){res=-1;}
+
+    numerateur/=res; denominateur/=res;
+}

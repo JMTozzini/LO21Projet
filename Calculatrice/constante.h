@@ -27,6 +27,7 @@ public:
     virtual double GetValBis() const = 0;   // Temporaire
     virtual const std::string GetType()const=0;
     virtual QString GetQString()const=0;
+    virtual void Simplifier(){}
 
 
     // Opérateur +
@@ -235,6 +236,7 @@ public:
 
     double GetNum() const {return GetVal();}    // Pour des raisons de commodité
     double GetDen() const {return GetValBis();} // Pour des raisons de commodité
+    void Simplifier();
 
 
     // Operateur +

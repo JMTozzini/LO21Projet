@@ -19,6 +19,9 @@ void MainWindow::PlusPress()
             Constante* c;
             c = &(tmp2->operator +(tmp1));
 
+            if(c->GetType()=="rationnel")
+                c->Simplifier();
+
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
@@ -54,6 +57,9 @@ void MainWindow::MoinsPress()
             Constante* c;
             c = &(tmp2->operator -(tmp1));
 
+            if(c->GetType()=="rationnel")
+                c->Simplifier();
+
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
@@ -87,6 +93,9 @@ void MainWindow::MultPress()
             Constante* tmp2=&(ps->Depiler());
             Constante* c;
             c = &(tmp2->operator*(tmp1));
+
+            if(c->GetType()=="rationnel")
+                c->Simplifier();
 
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
@@ -122,6 +131,9 @@ void MainWindow::DivPress()
             Constante* c;
             c = &(tmp2->operator/(tmp1));
 
+            if(c->GetType()=="rationnel")
+                c->Simplifier();
+
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
@@ -130,7 +142,7 @@ void MainWindow::DivPress()
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
     }
-    pa->AffichagePile(); ps->AffichagePile();
+    //pa->AffichagePile(); ps->AffichagePile();
 
     ui->champEcr->clear();
     MAJParam();

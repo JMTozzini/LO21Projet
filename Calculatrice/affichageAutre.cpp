@@ -27,7 +27,7 @@ void MainWindow::EntrerPress()
         }
     }
     else if(s.contains(",")){ps->Empiler(ToReel(s));}
-    else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
+    else if(s.contains("/")){ps->Empiler(ToRationnel(s)); s=ToRationnel(s)->GetQString();}
     else {ps->Empiler(new Entier(s));}
     /*else
     {

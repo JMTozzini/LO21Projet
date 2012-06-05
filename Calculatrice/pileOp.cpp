@@ -55,6 +55,16 @@ Constante* PileStockage::Sum(int x)
     return res;
 }
 
+Constante* PileStockage::Mean(unsigned int x)
+{
+    Entier *div=new Entier(x);
+    if(x>=ptr.size())
+        throw ExceptionCalculatrice("Argument trop grand");
+    Constante* res=ptr.front();
+    for(unsigned int i=1;i<x;i++){res = &(*res + ptr[i]);}
+    res = &(*res / div);
+    return res;
+}
 
 // Slots
 void MainWindow::SwapPress()
@@ -120,10 +130,24 @@ void MainWindow::SumPress()
 
 void MainWindow::MeanPress()
 {
-    /*
-    – MEAN : moyenne des x premiers éléments de la pile (où x est l’argument) (entier, ra-
-    tionnel, réel, complexe) : à faire lorsque operator * surchargé
-    */
+    try
+    {
+        pa->Depiler();
+        Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
+        if(tmp1==0)
+        {
+            ExceptionCalculatrice e("Impossible de swapper arguments non entiers");
+            e.GetInfos();
+        }
+        Constante* tmp2=ps->Mean(tmp1->GetVal());
+        ps->Empiler(tmp2);
+        pa->Empiler(tmp2->GetQString());
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
+    AffichageEcran();
 }
 
-
+/*
+– MEAN : moyenne des x premiers éléments de la pile (où x est l’argument) (entier, ra-
+tionnel, réel, complexe) : à faire lorsque operator * surchargé
+*/
