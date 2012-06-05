@@ -34,7 +34,7 @@
       <number>0</number>
      </property>
      <item>
-      <layout class="QVBoxLayout" name="clavier">
+      <layout class="QVBoxLayout" name="clavierLayout">
        <item>
         <layout class="QGridLayout" name="gridLayout_2">
          <property name="bottomMargin">
@@ -597,7 +597,7 @@
      <x>0</x>
      <y>0</y>
      <width>582</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">

@@ -41,6 +41,7 @@ public:
     void AffichageEcran();
     void InitParam();
     void MAJParam();
+    void ApplicationMenu();
 
 public slots:
     void Num1Press();
