@@ -61,6 +61,9 @@ public:
     virtual Constante& operator/(const Rationnel&)=0;
     virtual Constante& operator/(const Complexe&)=0;
     virtual Constante& operator/(Expression&)=0;
+
+    // Operateurs sur les angles
+    virtual Constante& cosFonction(std::string angle)=0;
 };
 
 
@@ -105,6 +108,9 @@ public:
     Expression& operator/(const Rationnel&);
     Expression& operator/(const Complexe&);
     Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Expression& cosFonction(std::string angle);
 };
 
 
@@ -162,6 +168,8 @@ public:
     Complexe& operator/(const Complexe&);
     Expression& operator/(Expression&);
 
+    // Operateurs sur les angles
+    Complexe& cosFonction(std::string angle);
 };
 
 
@@ -209,6 +217,9 @@ public:
     Reel& operator/(const Rationnel&);
     Complexe& operator/(const Complexe&);
     Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Reel& cosFonction(std::string angle);
 };
 
 
@@ -266,6 +277,9 @@ public:
     Reel& operator/(const Reel&);
     Complexe& operator/(const Complexe&);
     Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Reel& cosFonction(std::string angle);
 };
 
 
@@ -312,6 +326,9 @@ public:
     Rationnel& operator/(const Rationnel&);
     Complexe& operator /(const Complexe&);
     Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Reel& cosFonction(std::string angle);
 };
 
 

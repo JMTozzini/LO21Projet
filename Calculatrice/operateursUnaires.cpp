@@ -1,29 +1,34 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <stdio.h>
+#include <math.h>
 
 
-void MainWindow::EvalPress()
-{
-    try
-    {
-        QString s=pa->Depiler();
-        Constante* c=&(ps->Depiler());
+Expression& Expression::cosFonction(std::string angle){
+    this->exp.remove("'");
+    this->exp="'" + this->exp + "cos"+ "'";
+    return *this;
+}
 
-        if(c->GetType()=="expression")
-        {
-            s.remove("'");
-            QStringList liste = s.split(" ");
-            for(int i=0;i<liste.size();i++)
-            {
-                ui->champEcr->insert(liste.value(i));
-                EntrerPress();
-            }
+Complexe& Complexe::cosFonction(std::string angle){
+    ExceptionCalculatrice e("Opération impossible");
+    e.GetInfos();
+    return *(this);
+}
 
-        }
+Reel& Reel::cosFonction(std::string angle){
+    if (angle=="degres"){
+        double val=cos(valeur*3.14159265/180.0);
+        return *(new Reel(val));
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    return *(new Reel(cos(valeur)));
+}
 
-    ui->champEcr->clear();
-    AffichageEcran();
-    MAJParam();
+Reel& Entier::cosFonction(std::string angle){
+    if (angle=="degres") return *(new Reel(cos(valeur*3.14159265/180.0)));
+    return *(new Reel(cos(valeur)));}
+
+Reel& Rationnel::cosFonction(std::string angle){
+    if (angle=="degres") return *(new Reel(cos((numerateur/denominateur)*3.14159265/180.0)));
+    return *(new Reel(cos(numerateur/denominateur)));
 }

@@ -47,7 +47,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->div,SIGNAL(clicked()),this,SLOT(DivPress()));
 
     // Opérateurs unaires
-    QObject::connect(ui->eval,SIGNAL(clicked()),this,SLOT(EvalPress()));
+    QObject::connect(ui->sin,SIGNAL(clicked()),this,SLOT(SinPress()));
+    QObject::connect(ui->cos,SIGNAL(clicked()),this,SLOT(CosPress()));
+    QObject::connect(ui->tan,SIGNAL(clicked()),this,SLOT(TanPress()));
+
 
     // Entrer
     QObject::connect(ui->entrer,SIGNAL(clicked()),this,SLOT(EntrerPress()));
@@ -73,6 +76,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->drop, SIGNAL(clicked()), this, SLOT(DropPress()));
     QObject::connect(ui->sum,SIGNAL(clicked()), this, SLOT(SumPress()));
     QObject::connect(ui->mean,SIGNAL(clicked()), this, SLOT(MeanPress()));
+    QObject::connect(ui->eval,SIGNAL(clicked()),this,SLOT(EvalPress()));
+
 }
 
 MainWindow::~MainWindow()

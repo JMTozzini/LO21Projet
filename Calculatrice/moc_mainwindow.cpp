@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Tue Jun 5 20:29:03 2012
+** Created: Tue Jun 5 22:06:13 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      33,   14, // methods
+      36,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,6 +64,9 @@ static const uint qt_meta_data_MainWindow[] = {
      390,   11,   11,   11, 0x0a,
      401,   11,   11,   11, 0x0a,
      413,   11,   11,   11, 0x0a,
+     425,   11,   11,   11, 0x0a,
+     436,   11,   11,   11, 0x0a,
+     447,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -80,7 +83,8 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "MenuDegres()\0MenuRadians()\0AnnulerPress()\0"
     "SwapPress()\0ClearPress()\0DupPress()\0"
     "DropPress()\0SumPress()\0MeanPress()\0"
-    "EvalPress()\0"
+    "EvalPress()\0CosPress()\0SinPress()\0"
+    "TanPress()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -122,6 +126,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 30: _t->SumPress(); break;
         case 31: _t->MeanPress(); break;
         case 32: _t->EvalPress(); break;
+        case 33: _t->CosPress(); break;
+        case 34: _t->SinPress(); break;
+        case 35: _t->TanPress(); break;
         default: ;
         }
     }
@@ -160,9 +167,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 33)
+        if (_id < 36)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 33;
+        _id -= 36;
     }
     return _id;
 }

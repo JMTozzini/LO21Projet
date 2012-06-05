@@ -77,6 +77,9 @@ public slots:
     void SumPress();
     void MeanPress();
     void EvalPress();
+    void CosPress();
+    void SinPress();
+    void TanPress();
 };
 
 
