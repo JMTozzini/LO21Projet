@@ -114,16 +114,15 @@ void MainWindow::InitParam(){
         getline(fichier, tmp_pile); // lit "pile" ou "pile vide"
         if(tmp_pile!="pile vide"){
             while(getline(fichier, tmp_pile)){
+                std::cout<<"recup val="<<tmp_pile<<"   ";
                 QString* tmp2= new QString(tmp_pile.c_str());
-
                 QRegExp exp("'*'");
                 exp.setPatternSyntax(QRegExp::Wildcard);
-                if(exp.exactMatch(tmp_pile.c_str())){Expression* c=new Expression(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
-                else if(tmp_pile.find('$')){Complexe* c=ToComplexe(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
-                else if(tmp_pile.find(',')){Reel* c=ToReel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
-                else if(tmp_pile.find('/')){Rationnel* c=ToRationnel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
-                else {Entier* c=new Entier(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
-
+                if(exp.exactMatch(tmp_pile.c_str())){Expression* c=new Expression(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);std::cout<<"expr"<<std::endl;}
+                else if(tmp2->contains('$')){Complexe* c=ToComplexe(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);std::cout<<"cmplx"<<std::endl;}
+                else if(tmp2->contains('.') || tmp2->contains(',')){Reel* c=ToReel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);std::cout<<"reel"<<std::endl;}
+                else if(tmp2->contains('/')){Rationnel* c=ToRationnel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);std::cout<<"rationnel"<<std::endl;}
+                else {Entier* c=new Entier(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);std::cout<<"entier"<<std::endl;}
 
             }
 
@@ -175,7 +174,7 @@ void MainWindow::MAJParam(){
 
 void MainWindow::ApplicationMenu(){
     if(complexe) ui->actionMode_Complexe->setChecked(true);
-    if(clavier){ ui->actionClavier->setChecked(true); std::cout<<"Clavier true -> checked"<<std::endl;}
+    if(clavier) ui->actionClavier->setChecked(true);
     if(typeDeCste=="entier") ui->actionEntier->setChecked(true);
     else if(typeDeCste=="reel") ui->actionReel->setChecked(true);
     else ui->actionRationnel->setChecked(true);
