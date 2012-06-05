@@ -6,4 +6,4 @@ Pourrais tu me rejouter un line edit en dessous du champ d'affichage(qt design) 
 
 J'ai fini la fonction eval mais avec une autre méthode que la tienne parce que je comprennais pas ce que tu voulais faire...
 
-Operation / et * terminée, il reste juste a faire attention aux signe j'ai mis des commentaires la ou il falait les inverser
+Operation / et * terminées, il reste juste à faire attention aux signes j'ai mis des commentaires la ou il falait les inverser
