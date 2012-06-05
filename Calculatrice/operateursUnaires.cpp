@@ -4,8 +4,13 @@
 
 void MainWindow::EvalPress()
 {
-    QString s=pa->Depiler();
-    Constante *c=&(ps->Depiler());
+    QString s; Constante* c;
+    try
+    {
+        s=pa->Depiler();
+        c=&(ps->Depiler());
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
 
     /*QRegExp exp("'*'");
     exp.setPatternSyntax(QRegExp::Wildcard);

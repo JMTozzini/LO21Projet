@@ -54,12 +54,12 @@ public:
     virtual Constante& operator*(Expression&)=0;
 
     // Opérateur /
-    /*virtual Constante& operator/(Constante*); // Design Pattern Template Method
+    virtual Constante& operator/(Constante*); // Design Pattern Template Method
     virtual Constante& operator/(const Reel&)=0;
     virtual Constante& operator/(const Entier&)=0;
     virtual Constante& operator/(const Rationnel&)=0;
     virtual Constante& operator/(const Complexe&)=0;
-    virtual Constante& operator/(Expression&)=0;*/
+    virtual Constante& operator/(Expression&)=0;
 };
 
 
@@ -99,11 +99,11 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-    /*Expression& operator/(const Entier&);
+    Expression& operator/(const Entier&);
     Expression& operator/(const Reel&);
     Expression& operator/(const Rationnel&);
     Expression& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
 };
 
 
@@ -155,11 +155,11 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-    /*Complexe& operator/(const Entier&);
+    Complexe& operator/(const Entier&);
     Complexe& operator/(const Reel&);
     Complexe& operator/(const Rationnel&);
     Complexe& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
 
 };
 
@@ -203,11 +203,11 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-   /* Reel& operator/(const Reel&);
+    Reel& operator/(const Reel&);
     Reel& operator/(const Entier&);
     Reel& operator/(const Rationnel&);
     Complexe& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
 };
 
 
@@ -259,11 +259,11 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-   /* Rationnel& operator/(const Rationnel&);
+    Rationnel& operator/(const Rationnel&);
     Rationnel& operator/(const Entier&);
     Reel& operator/(const Reel&);
     Complexe& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
 };
 
 
@@ -305,11 +305,11 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-    /*Rationnel& operator/(const Entier&);
+    Rationnel& operator/(const Entier&);
     Reel& operator/(const Reel&);
     Rationnel& operator/(const Rationnel&);
     Complexe& operator /(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
 };
 
 

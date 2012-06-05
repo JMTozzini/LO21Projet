@@ -11,6 +11,11 @@ void MainWindow::EntrerPress()
     exp.setPatternSyntax(QRegExp::Wildcard);
 
     if(exp.exactMatch(s)){ps->Empiler(new Expression(s));}
+    else if(s=="+"){arret=1; PlusPress();} // Sinon il empile le signe et c'est moche lol
+    else if(s=="-"){arret=1; MoinsPress();}
+    else if(s=="*"){arret=1; MultPress();}
+    else if(s=="/"){arret=1; DivPress();}
+    //else if(s==""){DupPress();}
     else if(s.contains("$")){
         if(!complexe){
             arret=1;
@@ -23,11 +28,6 @@ void MainWindow::EntrerPress()
     }
     else if(s.contains(",")){ps->Empiler(ToReel(s));}
     else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
-    else if(s=="+"){arret=1; PlusPress();} // Sinon il empile le signe et c'est moche lol
-    else if(s=="-"){arret=1; MoinsPress();}
-    else if(s=="*"){arret=1; MultPress();}
-
-    //else if(s==""){DupPress();}
     else {ps->Empiler(new Entier(s));}
     /*else
     {
