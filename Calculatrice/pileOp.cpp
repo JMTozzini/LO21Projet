@@ -83,12 +83,14 @@ void MainWindow::SwapPress()
         pa->Swap(tmp2->GetVal(),tmp1->GetVal());
         ps->Swap(tmp2->GetVal(),tmp1->GetVal());
     }
+    MAJParam();
     AffichageEcran();
 }
 
 void MainWindow::ClearPress()
 {
     pa->Clear(); ps->Clear();
+    MAJParam();
     AffichageEcran();
 }
 
@@ -100,6 +102,7 @@ void MainWindow::DupPress()
         pa->Empiler(pa->Dup());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 
@@ -111,6 +114,7 @@ void MainWindow::DropPress()
         pa->Drop();
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 
@@ -125,6 +129,7 @@ void MainWindow::SumPress()
         pa->Empiler(tmp2->GetQString());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 
@@ -144,6 +149,7 @@ void MainWindow::MeanPress()
         pa->Empiler(tmp2->GetQString());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 

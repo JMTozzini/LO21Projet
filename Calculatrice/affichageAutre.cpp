@@ -15,6 +15,9 @@ void MainWindow::EntrerPress()
     else if(s=="-"){arret=1; MoinsPress();}
     else if(s=="*"){arret=1; MultPress();}
     else if(s=="/"){arret=1; DivPress();}
+    else if(s=="cos"){arret=1; CosPress();}
+    else if(s=="sin"){arret=1; SinPress();}
+    else if(s=="tan"){arret=1; TanPress();}
     //else if(s==""){DupPress();}
     else if(s.contains("$")){
         if(!complexe){
@@ -57,6 +60,5 @@ void MainWindow::AnnulerPress()
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
     AffichageEcran();
-//    MAJParam();
-
+    MAJParam();
 }

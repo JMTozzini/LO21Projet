@@ -175,9 +175,47 @@ void MainWindow::CosPress(){
 }
 
 void MainWindow::SinPress(){
-
+    if(pa->GetPtr().size()<1){
+        ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
+        e.GetInfos();
+    }
+    else{
+        try{
+            pa->Depiler();
+            Constante* tmp1=&(ps->Depiler());
+            Constante* c;
+            c = &(tmp1->sinFonction(angle));
+            ps->Empiler(c);
+            pa->Empiler(c->GetQString());
+        }
+        catch(ExceptionCalculatrice e){e.GetInfos();}
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
+    }
+    ui->champEcr->clear();
+    MAJParam();
+    AffichageEcran();
 }
 
 void MainWindow::TanPress(){
-
+    if(pa->GetPtr().size()<1){
+        ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
+        e.GetInfos();
+    }
+    else{
+        try{
+            pa->Depiler();
+            Constante* tmp1=&(ps->Depiler());
+            Constante* c;
+            c = &(tmp1->tanFonction(angle));
+            ps->Empiler(c);
+            pa->Empiler(c->GetQString());
+        }
+        catch(ExceptionCalculatrice e){e.GetInfos();}
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
+    }
+    ui->champEcr->clear();
+    MAJParam();
+    AffichageEcran();
 }

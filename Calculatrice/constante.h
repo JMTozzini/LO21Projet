@@ -64,6 +64,8 @@ public:
 
     // Operateurs sur les angles
     virtual Constante& cosFonction(std::string)=0;
+    virtual Constante& sinFonction(std::string)=0;
+    virtual Constante& tanFonction(std::string)=0;
 };
 
 
@@ -111,6 +113,9 @@ public:
 
     // Operateurs sur les angles
     Expression& cosFonction(std::string);
+    Expression& sinFonction(std::string);
+    Expression& tanFonction(std::string);
+
 };
 
 
@@ -170,6 +175,9 @@ public:
 
     // Operateurs sur les angles
     Complexe& cosFonction(std::string);
+    Complexe& sinFonction(std::string);
+    Complexe& tanFonction(std::string);
+
 };
 
 
@@ -220,6 +228,9 @@ public:
 
     // Operateurs sur les angles
     Reel& cosFonction(std::string);
+    Reel& sinFonction(std::string);
+    Reel& tanFonction(std::string);
+
 };
 
 
@@ -280,6 +291,9 @@ public:
 
     // Operateurs sur les angles
     Reel& cosFonction(std::string);
+    Reel& sinFonction(std::string);
+    Reel& tanFonction(std::string);
+
 };
 
 
@@ -329,6 +343,9 @@ public:
 
     // Operateurs sur les angles
     Reel& cosFonction(std::string);
+    Reel& sinFonction(std::string);
+    Reel& tanFonction(std::string);
+
 };
 
 
