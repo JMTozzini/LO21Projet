@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <stdio.h>
 #include <math.h>
+#include <complex>
 
 
 // COS
@@ -13,7 +14,11 @@ Expression& Expression::cosFonction(std::string){
 }
 
 Complexe& Complexe::cosFonction(std::string){
-    throw ExceptionCalculatrice("Cos impossible sur complexe");
+    std::complex<double> cmplx (reel->GetVal(), imaginaire->GetVal());
+    std::complex<double> res=cos(cmplx);
+    Reel* tmp1 = new Reel(res.real());
+    Reel* tmp2 = new Reel(res.imag());
+    return *(new Complexe(tmp1, tmp2));
 }
 
 Reel& Reel::cosFonction(std::string angle){
@@ -52,8 +57,11 @@ Expression& Expression::sinFonction(std::string){
 }
 
 Complexe& Complexe::sinFonction(std::string){
-    throw ExceptionCalculatrice("sin impossible sur complexe");
-}
+    std::complex<double> cmplx (reel->GetVal(), imaginaire->GetVal());
+    std::complex<double> res=sin(cmplx);
+    Reel* tmp1 = new Reel(res.real());
+    Reel* tmp2 = new Reel(res.imag());
+    return *(new Complexe(tmp1, tmp2));}
 
 Reel& Reel::sinFonction(std::string angle){
     if (angle=="degres"){
@@ -92,7 +100,11 @@ Expression& Expression::tanFonction(std::string){
 }
 
 Complexe& Complexe::tanFonction(std::string){
-    throw ExceptionCalculatrice("tan impossible sur complexe");
+    std::complex<double> cmplx (reel->GetVal(), imaginaire->GetVal());
+    std::complex<double> res=tan(cmplx);
+    Reel* tmp1 = new Reel(res.real());
+    Reel* tmp2 = new Reel(res.imag());
+    return *(new Complexe(tmp1, tmp2));
 }
 
 Reel& Reel::tanFonction(std::string angle){
@@ -119,4 +131,134 @@ Reel& Rationnel::tanFonction(std::string angle){
         return *(new Reel(val));
     }
     return *(new Reel(tan(numerateur/denominateur)));
+}
+
+
+// COSH
+
+Expression& Expression::coshFonction(std::string){
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " cosh"+ "'";
+    return *this;
+}
+
+Complexe& Complexe::coshFonction(std::string){
+    std::complex<double> cmplx (reel->GetVal(), imaginaire->GetVal());
+    std::complex<double> res=cosh(cmplx);
+    Reel* tmp1 = new Reel(res.real());
+    Reel* tmp2 = new Reel(res.imag());
+    return *(new Complexe(tmp1, tmp2));
+}
+
+Reel& Reel::coshFonction(std::string angle){
+    if (angle=="degres"){
+        double val=cosh(valeur*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(cosh(valeur)));
+}
+
+Reel& Entier::coshFonction(std::string angle){
+    if (angle=="degres"){
+        double val=cosh(valeur*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(cosh(valeur)));}
+
+Reel& Rationnel::coshFonction(std::string angle){
+    if (angle=="degres"){
+        double val=cosh((numerateur/denominateur)*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(cosh(numerateur/denominateur)));
+}
+
+
+//SINH
+
+Expression& Expression::sinhFonction(std::string){
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " " + "sinh"+ "'";
+    return *this;
+}
+
+Complexe& Complexe::sinhFonction(std::string){
+    std::complex<double> cmplx (reel->GetVal(), imaginaire->GetVal());
+    std::complex<double> res=sinh(cmplx);
+    Reel* tmp1 = new Reel(res.real());
+    Reel* tmp2 = new Reel(res.imag());
+    return *(new Complexe(tmp1, tmp2));
+}
+
+Reel& Reel::sinhFonction(std::string angle){
+    if (angle=="degres"){
+        double val=sinh(valeur*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(sinh(valeur)));
+}
+
+Reel& Entier::sinhFonction(std::string angle){
+    if (angle=="degres"){
+        double val=sinh(valeur*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(sinh(valeur)));}
+
+Reel& Rationnel::sinhFonction(std::string angle){
+    if (angle=="degres"){
+        double val=sinh((numerateur/denominateur)*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(sinh(numerateur/denominateur)));
+}
+
+
+
+//TANH
+
+Expression& Expression::tanhFonction(std::string){
+    this->exp.remove("'");
+    this->exp="'" + this->exp + " tanh"+ "'";
+    return *this;
+}
+
+Complexe& Complexe::tanhFonction(std::string){
+    std::complex<double> cmplx (reel->GetVal(), imaginaire->GetVal());
+    std::complex<double> res=tanh(cmplx);
+    Reel* tmp1 = new Reel(res.real());
+    Reel* tmp2 = new Reel(res.imag());
+    return *(new Complexe(tmp1, tmp2));
+}
+
+Reel& Reel::tanhFonction(std::string angle){
+    if (angle=="degres"){
+        double val=tanh(valeur*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(tanh(valeur)));
+}
+
+Reel& Entier::tanhFonction(std::string angle){
+    if (angle=="degres"){
+        double val=tanh(valeur*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(tanh(valeur)));}
+
+Reel& Rationnel::tanhFonction(std::string angle){
+    if (angle=="degres"){
+        double val=tanh((numerateur/denominateur)*3.14159265/180.0);
+        val=(round(val*10000))/10000;
+        return *(new Reel(val));
+    }
+    return *(new Reel(tanh(numerateur/denominateur)));
 }

@@ -66,6 +66,9 @@ public:
     virtual Constante& cosFonction(std::string)=0;
     virtual Constante& sinFonction(std::string)=0;
     virtual Constante& tanFonction(std::string)=0;
+    virtual Constante& coshFonction(std::string)=0;
+    virtual Constante& sinhFonction(std::string)=0;
+    virtual Constante& tanhFonction(std::string)=0;
 };
 
 
@@ -115,6 +118,9 @@ public:
     Expression& cosFonction(std::string);
     Expression& sinFonction(std::string);
     Expression& tanFonction(std::string);
+    Expression& coshFonction(std::string);
+    Expression& sinhFonction(std::string);
+    Expression& tanhFonction(std::string);
 
 };
 
@@ -177,6 +183,9 @@ public:
     Complexe& cosFonction(std::string);
     Complexe& sinFonction(std::string);
     Complexe& tanFonction(std::string);
+    Complexe& coshFonction(std::string);
+    Complexe& sinhFonction(std::string);
+    Complexe& tanhFonction(std::string);
 
 };
 
@@ -230,6 +239,9 @@ public:
     Reel& cosFonction(std::string);
     Reel& sinFonction(std::string);
     Reel& tanFonction(std::string);
+    Reel& coshFonction(std::string);
+    Reel& sinhFonction(std::string);
+    Reel& tanhFonction(std::string);
 
 };
 
@@ -293,6 +305,9 @@ public:
     Reel& cosFonction(std::string);
     Reel& sinFonction(std::string);
     Reel& tanFonction(std::string);
+    Reel& coshFonction(std::string);
+    Reel& sinhFonction(std::string);
+    Reel& tanhFonction(std::string);
 
 };
 
@@ -345,6 +360,9 @@ public:
     Reel& cosFonction(std::string);
     Reel& sinFonction(std::string);
     Reel& tanFonction(std::string);
+    Reel& coshFonction(std::string);
+    Reel& sinhFonction(std::string);
+    Reel& tanhFonction(std::string);
 
 };
 

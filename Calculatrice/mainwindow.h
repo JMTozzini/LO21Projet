@@ -80,6 +80,9 @@ public slots:
     void CosPress();
     void SinPress();
     void TanPress();
+    void CoshPress();
+    void SinhPress();
+    void TanhPress();
 };
 
 

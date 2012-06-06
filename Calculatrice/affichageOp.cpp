@@ -219,3 +219,73 @@ void MainWindow::TanPress(){
     MAJParam();
     AffichageEcran();
 }
+
+
+void MainWindow::CoshPress(){
+    if(pa->GetPtr().size()<1){
+        ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
+        e.GetInfos();
+    }
+    else{
+        try{
+            pa->Depiler();
+            Constante* tmp1=&(ps->Depiler());
+            Constante* c;
+            c = &(tmp1->coshFonction(angle));
+            ps->Empiler(c);
+            pa->Empiler(c->GetQString());
+        }
+        catch(ExceptionCalculatrice e){e.GetInfos();}
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
+    }
+    ui->champEcr->clear();
+    MAJParam();
+    AffichageEcran();
+}
+
+void MainWindow::SinhPress(){
+    if(pa->GetPtr().size()<1){
+        ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
+        e.GetInfos();
+    }
+    else{
+        try{
+            pa->Depiler();
+            Constante* tmp1=&(ps->Depiler());
+            Constante* c;
+            c = &(tmp1->sinhFonction(angle));
+            ps->Empiler(c);
+            pa->Empiler(c->GetQString());
+        }
+        catch(ExceptionCalculatrice e){e.GetInfos();}
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
+    }
+    ui->champEcr->clear();
+    MAJParam();
+    AffichageEcran();
+}
+
+void MainWindow::TanhPress(){
+    if(pa->GetPtr().size()<1){
+        ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
+        e.GetInfos();
+    }
+    else{
+        try{
+            pa->Depiler();
+            Constante* tmp1=&(ps->Depiler());
+            Constante* c;
+            c = &(tmp1->tanhFonction(angle));
+            ps->Empiler(c);
+            pa->Empiler(c->GetQString());
+        }
+        catch(ExceptionCalculatrice e){e.GetInfos();}
+        g->AjouterMemento(ps->CreerMemento());
+        g->AjouterMemento(pa->CreerMemento());
+    }
+    ui->champEcr->clear();
+    MAJParam();
+    AffichageEcran();
+}
