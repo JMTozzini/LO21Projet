@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun Jun 3 12:39:46 2012
+** Created: Tue Jun 5 19:52:26 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -49,7 +49,7 @@ public:
     QWidget *centralWidget;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
-    QVBoxLayout *clavier;
+    QVBoxLayout *clavierLayout;
     QGridLayout *gridLayout_2;
     QPushButton *un;
     QPushButton *trois;
@@ -107,6 +107,8 @@ public:
     QLineEdit *champEcr;
     QSpacerItem *verticalSpacer;
     QTextEdit *champAff;
+    QSpacerItem *verticalSpacer_2;
+    QLineEdit *champErr;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuParam;
@@ -153,9 +155,9 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setSizeConstraint(QLayout::SetNoConstraint);
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        clavier = new QVBoxLayout();
-        clavier->setSpacing(6);
-        clavier->setObjectName(QString::fromUtf8("clavier"));
+        clavierLayout = new QVBoxLayout();
+        clavierLayout->setSpacing(6);
+        clavierLayout->setObjectName(QString::fromUtf8("clavierLayout"));
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(10);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -236,11 +238,11 @@ public:
         gridLayout_2->addWidget(entrer, 4, 2, 1, 1);
 
 
-        clavier->addLayout(gridLayout_2);
+        clavierLayout->addLayout(gridLayout_2);
 
         espace1 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        clavier->addItem(espace1);
+        clavierLayout->addItem(espace1);
 
         opBinaires = new QLabel(horizontalLayoutWidget);
         opBinaires->setObjectName(QString::fromUtf8("opBinaires"));
@@ -249,7 +251,7 @@ public:
         opBinaires->setFont(font);
         opBinaires->setAlignment(Qt::AlignCenter);
 
-        clavier->addWidget(opBinaires);
+        clavierLayout->addWidget(opBinaires);
 
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(10);
@@ -286,18 +288,18 @@ public:
         gridLayout->addWidget(mod, 2, 2, 1, 1);
 
 
-        clavier->addLayout(gridLayout);
+        clavierLayout->addLayout(gridLayout);
 
         espace2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        clavier->addItem(espace2);
+        clavierLayout->addItem(espace2);
 
         opUnaires = new QLabel(horizontalLayoutWidget);
         opUnaires->setObjectName(QString::fromUtf8("opUnaires"));
         opUnaires->setFont(font);
         opUnaires->setAlignment(Qt::AlignCenter);
 
-        clavier->addWidget(opUnaires);
+        clavierLayout->addWidget(opUnaires);
 
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
@@ -378,18 +380,18 @@ public:
         gridLayout_3->addWidget(eval, 4, 1, 1, 1);
 
 
-        clavier->addLayout(gridLayout_3);
+        clavierLayout->addLayout(gridLayout_3);
 
         espace3 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        clavier->addItem(espace3);
+        clavierLayout->addItem(espace3);
 
         opPile = new QLabel(horizontalLayoutWidget);
         opPile->setObjectName(QString::fromUtf8("opPile"));
         opPile->setFont(font);
         opPile->setAlignment(Qt::AlignCenter);
 
-        clavier->addWidget(opPile);
+        clavierLayout->addWidget(opPile);
 
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
@@ -425,10 +427,10 @@ public:
         gridLayout_4->addWidget(drop, 1, 2, 1, 1);
 
 
-        clavier->addLayout(gridLayout_4);
+        clavierLayout->addLayout(gridLayout_4);
 
 
-        horizontalLayout->addLayout(clavier);
+        horizontalLayout->addLayout(clavierLayout);
 
         horizontalSpacer = new QSpacerItem(15, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
 
@@ -453,13 +455,24 @@ public:
 
         ecrans->addWidget(champAff);
 
+        verticalSpacer_2 = new QSpacerItem(20, 15, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        ecrans->addItem(verticalSpacer_2);
+
+        champErr = new QLineEdit(horizontalLayoutWidget);
+        champErr->setObjectName(QString::fromUtf8("champErr"));
+        champErr->setEnabled(true);
+        champErr->setReadOnly(true);
+
+        ecrans->addWidget(champErr);
+
 
         horizontalLayout->addLayout(ecrans);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 582, 25));
+        menuBar->setGeometry(QRect(0, 0, 582, 22));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuParam = new QMenu(menuBar);

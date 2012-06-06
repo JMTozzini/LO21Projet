@@ -6,8 +6,7 @@
 Reel* ToReel(QString& s);
 Rationnel* ToRationnel(QString& s);
 Complexe* ToComplexe(QString& s);
-
-QString eval(QString& s);
+int PGCD(int,int);
 
 
 #endif // FONCTIONANNEXE_H

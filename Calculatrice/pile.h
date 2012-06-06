@@ -27,8 +27,7 @@ public :
     Constante* Dup();
     void Drop();
     Constante* Sum(int);
-
-
+    Constante* Mean(unsigned int);
 };
 
 class PileAffichage

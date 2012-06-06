@@ -11,6 +11,18 @@ void MainWindow::EntrerPress()
     exp.setPatternSyntax(QRegExp::Wildcard);
 
     if(exp.exactMatch(s)){ps->Empiler(new Expression(s));}
+    else if(s=="+"){arret=1; PlusPress();} // Sinon il empile le signe et c'est moche lol
+    else if(s=="-"){arret=1; MoinsPress();}
+    else if(s=="*"){arret=1; MultPress();}
+    else if(s=="/"){arret=1; DivPress();}
+    else if(s=="cos"){arret=1; CosPress();}
+    else if(s=="sin"){arret=1; SinPress();}
+    else if(s=="tan"){arret=1; TanPress();}
+    else if(s=="cosh"){arret=1; CoshPress();}
+    else if(s=="sinh"){arret=1; SinhPress();}
+    else if(s=="tanh"){arret=1; TanhPress();}
+    else if(s=="pow"){arret=1; PowPress();}
+    else if(s==NULL){DupPress();}
     else if(s.contains("$")){
         if(!complexe){
             arret=1;
@@ -22,12 +34,7 @@ void MainWindow::EntrerPress()
         }
     }
     else if(s.contains(",")){ps->Empiler(ToReel(s));}
-    else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
-    else if(s=="+"){arret=1; PlusPress();} // Sinon il empile le signe et c'est moche lol
-    else if(s=="-"){arret=1; MoinsPress();}
-    else if(s=="*"){arret=1; MultPress();}
-
-    //else if(s==""){DupPress();}
+    else if(s.contains("/")){ps->Empiler(ToRationnel(s)); s=ToRationnel(s)->GetQString();}
     else {ps->Empiler(new Entier(s));}
     /*else
     {
@@ -57,6 +64,5 @@ void MainWindow::AnnulerPress()
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
     AffichageEcran();
-//    MAJParam();
-
+    MAJParam();
 }

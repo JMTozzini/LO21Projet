@@ -55,6 +55,16 @@ Constante* PileStockage::Sum(int x)
     return res;
 }
 
+Constante* PileStockage::Mean(unsigned int x)
+{
+    Entier *div=new Entier(x);
+    if(x>=ptr.size())
+        throw ExceptionCalculatrice("Argument trop grand");
+    Constante* res=ptr.front();
+    for(unsigned int i=1;i<x;i++){res = &(*res + ptr[i]);}
+    res = &(*res / div);
+    return res;
+}
 
 // Slots
 void MainWindow::SwapPress()
@@ -73,12 +83,14 @@ void MainWindow::SwapPress()
         pa->Swap(tmp2->GetVal(),tmp1->GetVal());
         ps->Swap(tmp2->GetVal(),tmp1->GetVal());
     }
+    MAJParam();
     AffichageEcran();
 }
 
 void MainWindow::ClearPress()
 {
     pa->Clear(); ps->Clear();
+    MAJParam();
     AffichageEcran();
 }
 
@@ -90,6 +102,7 @@ void MainWindow::DupPress()
         pa->Empiler(pa->Dup());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 
@@ -101,6 +114,7 @@ void MainWindow::DropPress()
         pa->Drop();
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 
@@ -115,15 +129,53 @@ void MainWindow::SumPress()
         pa->Empiler(tmp2->GetQString());
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
     AffichageEcran();
 }
 
 void MainWindow::MeanPress()
 {
-    /*
-    – MEAN : moyenne des x premiers éléments de la pile (où x est l’argument) (entier, ra-
-    tionnel, réel, complexe) : à faire lorsque operator * surchargé
-    */
+    try
+    {
+        pa->Depiler();
+        Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
+        if(tmp1==0)
+        {
+            ExceptionCalculatrice e("Impossible de swapper arguments non entiers");
+            e.GetInfos();
+        }
+        Constante* tmp2=ps->Mean(tmp1->GetVal());
+        ps->Empiler(tmp2);
+        pa->Empiler(tmp2->GetQString());
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
+    MAJParam();
+    AffichageEcran();
 }
 
+void MainWindow::EvalPress()
+{
+    try
+    {
+        QString s=pa->Depiler();
+        Constante* c=&(ps->Depiler());
+
+        if(c->GetType()=="expression")
+        {
+            s.remove("'");
+            QStringList liste = s.split(" ");
+            for(int i=0;i<liste.size();i++)
+            {
+                ui->champEcr->insert(liste.value(i));
+                EntrerPress();
+            }
+
+        }
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
+
+    ui->champEcr->clear();
+    AffichageEcran();
+    MAJParam();
+}
 

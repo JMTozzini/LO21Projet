@@ -27,6 +27,7 @@ public:
     virtual double GetValBis() const = 0;   // Temporaire
     virtual const std::string GetType()const=0;
     virtual QString GetQString()const=0;
+    virtual void Simplifier(){}
 
 
     // Opérateur +
@@ -54,12 +55,28 @@ public:
     virtual Constante& operator*(Expression&)=0;
 
     // Opérateur /
-    /*virtual Constante& operator/(Constante*); // Design Pattern Template Method
+    virtual Constante& operator/(Constante*); // Design Pattern Template Method
     virtual Constante& operator/(const Reel&)=0;
     virtual Constante& operator/(const Entier&)=0;
     virtual Constante& operator/(const Rationnel&)=0;
     virtual Constante& operator/(const Complexe&)=0;
-    virtual Constante& operator/(Expression&)=0;*/
+    virtual Constante& operator/(Expression&)=0;
+
+    // Operateurs sur les angles
+    virtual Constante& cosFonction(std::string)=0;
+    virtual Constante& sinFonction(std::string)=0;
+    virtual Constante& tanFonction(std::string)=0;
+    virtual Constante& coshFonction(std::string)=0;
+    virtual Constante& sinhFonction(std::string)=0;
+    virtual Constante& tanhFonction(std::string)=0;
+
+    // pow
+    virtual Constante& powFonction(Constante*);
+    virtual Constante& powFonction(const Entier&)=0;
+    virtual Constante& powFonction(const Reel&)=0;
+    virtual Constante& powFonction(const Rationnel&)=0;
+    virtual Constante& powFonction(const Complexe&)=0;
+    virtual Constante& powFonction(Expression&)=0;
 };
 
 
@@ -99,11 +116,26 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-    /*Expression& operator/(const Entier&);
+    Expression& operator/(const Entier&);
     Expression& operator/(const Reel&);
     Expression& operator/(const Rationnel&);
     Expression& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Expression& cosFonction(std::string);
+    Expression& sinFonction(std::string);
+    Expression& tanFonction(std::string);
+    Expression& coshFonction(std::string);
+    Expression& sinhFonction(std::string);
+    Expression& tanhFonction(std::string);
+
+    // pow
+    Expression& powFonction(const Entier&);
+    Expression& powFonction(const Reel&);
+    Expression& powFonction(const Rationnel&);
+    Expression& powFonction(const Complexe&);
+    Expression& powFonction(Expression &);
 };
 
 
@@ -155,12 +187,26 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-    /*Complexe& operator/(const Entier&);
+    Complexe& operator/(const Entier&);
     Complexe& operator/(const Reel&);
     Complexe& operator/(const Rationnel&);
     Complexe& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
 
+    // Operateurs sur les angles
+    Complexe& cosFonction(std::string);
+    Complexe& sinFonction(std::string);
+    Complexe& tanFonction(std::string);
+    Complexe& coshFonction(std::string);
+    Complexe& sinhFonction(std::string);
+    Complexe& tanhFonction(std::string);
+
+    // pow
+    Complexe& powFonction(const Entier&);
+    Complexe& powFonction(const Reel&);
+    Complexe& powFonction(const Rationnel&);
+    Complexe& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
@@ -203,11 +249,26 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-   /* Reel& operator/(const Reel&);
+    Reel& operator/(const Reel&);
     Reel& operator/(const Entier&);
     Reel& operator/(const Rationnel&);
     Complexe& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Reel& cosFonction(std::string);
+    Reel& sinFonction(std::string);
+    Reel& tanFonction(std::string);
+    Reel& coshFonction(std::string);
+    Reel& sinhFonction(std::string);
+    Reel& tanhFonction(std::string);
+
+    // pow
+    Reel& powFonction(const Entier&);
+    Reel& powFonction(const Reel&);
+    Reel& powFonction(const Rationnel&);
+    Expression& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
@@ -235,6 +296,7 @@ public:
 
     double GetNum() const {return GetVal();}    // Pour des raisons de commodité
     double GetDen() const {return GetValBis();} // Pour des raisons de commodité
+    void Simplifier();
 
 
     // Operateur +
@@ -259,11 +321,26 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-   /* Rationnel& operator/(const Rationnel&);
+    Rationnel& operator/(const Rationnel&);
     Rationnel& operator/(const Entier&);
     Reel& operator/(const Reel&);
     Complexe& operator/(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Reel& cosFonction(std::string);
+    Reel& sinFonction(std::string);
+    Reel& tanFonction(std::string);
+    Reel& coshFonction(std::string);
+    Reel& sinhFonction(std::string);
+    Reel& tanhFonction(std::string);
+
+    // pow
+    Rationnel& powFonction(const Entier&);
+    Reel& powFonction(const Reel&);
+    Reel& powFonction(const Rationnel&);
+    Expression& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
@@ -305,11 +382,26 @@ public:
     Expression& operator*(Expression&);
 
     // Operateur /
-    /*Rationnel& operator/(const Entier&);
+    Rationnel& operator/(const Entier&);
     Reel& operator/(const Reel&);
     Rationnel& operator/(const Rationnel&);
     Complexe& operator /(const Complexe&);
-    Expression& operator/(Expression&);*/
+    Expression& operator/(Expression&);
+
+    // Operateurs sur les angles
+    Reel& cosFonction(std::string);
+    Reel& sinFonction(std::string);
+    Reel& tanFonction(std::string);
+    Reel& coshFonction(std::string);
+    Reel& sinhFonction(std::string);
+    Reel& tanhFonction(std::string);
+
+    // pow
+    Entier& powFonction(const Entier&);
+    Reel& powFonction(const Reel&);
+    Reel& powFonction(const Rationnel&);
+    Expression& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 

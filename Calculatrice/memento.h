@@ -26,12 +26,15 @@ public:
 class Gardien
 {
    std::deque<MementoStock*> listeEtatsSauveStock;
+   std::deque<MementoStock*>::const_iterator itStock;
    std::deque<MementoAff*> listeEtatsSauveAff;
+   std::deque<MementoAff*>::const_iterator itAff;
 
 
 public:
-   void AjouterMemento(MementoStock* m) {listeEtatsSauveStock.push_back(m);}
-   void AjouterMemento(MementoAff* m) {listeEtatsSauveAff.push_back(m);}
+   //Gardien():itStock(listeEtatsSauveStock.begin()),itAff(listeEtatsSauveAff.begin()){}
+   void AjouterMemento(MementoStock* m) { itStock=listeEtatsSauveStock.end(); listeEtatsSauveStock.push_back(m);}
+   void AjouterMemento(MementoAff* m) { itAff=listeEtatsSauveAff.end(); listeEtatsSauveAff.push_back(m);}
    MementoAff* AnnulerAff();
    MementoStock* AnnulerStock();
 };

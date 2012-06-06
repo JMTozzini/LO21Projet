@@ -1,30 +1,19 @@
-
-
-Je te propose qu'on fasse les autres opÃ©rations dans un autre .cpp dÃ©diÃ© sinon Ã§a va Ãªtre le souk
--> ok
-
-Le + remarche pour les Entiers, Rationnels, Reels et Complexe. (Complexe Ã§a marchait pas parce qu'on avait
-pas fini de gÃ©rer les expressions avec des $ en TP..)
-Par contre j'ai changÃ© Empile de la pile de stockage. Comme on empile des Constante*, je trouvais Ã§a mieux
-de mettre un Constante* en argument de Empiler(). Ca change pas grand chose mais il faut que tu le saches 
-pour le reste. 
-D'ailleurs on aurait pu renvoyer des pointeurs pour les opÃ©rateurs, Ã§a aurait Ã©tÃ© plus logique, mais bon...
--> Non car si on veut chainer les operation (a+b+c) il faut renvoyer des rÃ©fenrences
-
-J'ai mis Afficher en const.
-J'ai pas regardÃ© le code de ton Memento, et il faut buguer les opÃ©rateurs donc je l'ai commentÃ© dans le +.
--> C'est bon l'historique fonctionne, j'avais oubliÃ© d'initialiser le gardien dans mainwindow...
-
-Si tu veux je me charge du -, / et * ajourd'hui !
-
-Yop.
-AprÃ¨s deux heures de lutte j'ai fini la sauvegarde de la pile !!
 Bon, dans la pile de stockage il dit que c'est tous des complexes, mais bon Ã§a se voit pas dans l'affichage, 
 et comme j'en ai marre, tant pis
--> C'est pas primordial mais le faite qu'il renvoie des complexe fait que lorque l'on fait des opÃ©ration sur les valeurs
-sauvegardÃ©es on a un resultat complexe
+-> C'est pas primordial mais le faite qu'il renvoie des complexes fait que lorsque l'on fait des opÃ©rations sur les valeurs sauvegardÃ©es on a un resultat complexe...
+--> c'est bon c'Žtait juste le fin qui marchait pas. Par contre pour les rŽels des fois il les empile avec des . et des fois avec des , dans la pile d'affichageÉ du coup dans la restauration de contexte j'ai mis les deux tests
+--->Je vais regarder pourquoi l'empilement des réel n'est pas uniforme...
 
-Pourrais tu me rejouter un line edit en dessous du champ d'affichage ? tu l'appel chamErr, moi j'y arrive pas il obeit
-pas...
+Pourrais tu me rejouter un line edit en dessous du champ d'affichage(qt design) ? tu l'appel chamErr, moi j'y arrive pas il obeit pas...
+-> T'as rŽussi finalement ? Je l'ai sur le mien..
+--> C'est bon je l'ai aussi, je vais m'en servir pour afficher les erreurs
 
-J'ai fini la fonction eval mais avec une autre mÃ©thode que la tienne parce que je comprennais pas ce que tu voulais faire...
+Operation / et * terminÃ©es, il reste juste Ã  faire attention aux signes j'ai mis des commentaires la ou il falait les inverser
+
+
+
+- Operation pow terminée normalement, après y'a certains cas où j'étais pas sûre, ça serait bien que tu testes pour voir si ça te paraît logique.
+Ah aussi : on peut pas faire pow sur un complexe, du coup ça fait pas l'opération mais ça le dépile quand même.. Je sais pas si t'as une idée pour éviter ça.
+- J'avais fini cos, sin, tan, cosh, sinh et tanh aussi ce matin. J'ai aussi fait les complexes en croyant qu'on devait le faire, mais au final dans le sujet ça y été pas (non je l'ai pas lu avant.)
+Bref je crois que je t'expliquerai ça demain.
+++

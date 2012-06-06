@@ -27,4 +27,4 @@ void MainWindow::CmplxPress(){ui->champEcr->insert(" $ ");}
 
 void MainWindow::ExprPress(){ui->champEcr->insert("'");}
 
-void MainWindow::DivPress(){ui->champEcr->insert(" / ");}
+//void MainWindow::DivPress(){ui->champEcr->insert(" / ");}

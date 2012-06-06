@@ -41,6 +41,7 @@ public:
     void AffichageEcran();
     void InitParam();
     void MAJParam();
+    void ApplicationMenu();
 
 public slots:
     void Num1Press();
@@ -76,6 +77,13 @@ public slots:
     void SumPress();
     void MeanPress();
     void EvalPress();
+    void CosPress();
+    void SinPress();
+    void TanPress();
+    void CoshPress();
+    void SinhPress();
+    void TanhPress();
+    void PowPress();
 };
 
 

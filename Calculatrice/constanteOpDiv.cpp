@@ -1,5 +1,4 @@
 #include "constante.h"
-/*
 
 // ------ Operateur / ------
 
@@ -66,8 +65,9 @@ Complexe& Complexe::operator/(const Entier& e){
 
 Complexe& Complexe::operator/(const Rationnel& ra)
 {
-    Base* res1=dynamic_cast<Base*>(&((*reel * (ra.GetDen())) / ra.GetNum());
-    Base* res2=dynamic_cast<Base*>(&((*imaginaire * ra.GetDen())/ra.GetNum());
+    Entier* den=new Entier(ra.GetDen()); Entier* num=new Entier(ra.GetNum());
+    Base* res1=dynamic_cast<Base*>(&((*reel * *den) / *num));
+    Base* res2=dynamic_cast<Base*>(&((*imaginaire * *den) / *num));
     return *(new Complexe(res1, res2));
 }
 
@@ -78,8 +78,10 @@ Complexe& Complexe::operator/(const Reel& r){
 }
 
 Complexe& Complexe::operator/(const Complexe& c){
-    Base* tmp1=dynamic_cast<Base*>(&( ((*reel*c.GetReel()) + (*imaginaire*c.GetIm())) / (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm()) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (*imaginaire*c.GetReel() - *reel*c.GetIm()) / (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm()) ));
+    Base* tmp1=dynamic_cast<Base*>(&( (((*reel)*c.GetReel()) + &((*imaginaire) * (c.GetIm()))) /
+                                      &(((*c.GetReel())*c.GetReel()) + &((*c.GetIm())*c.GetIm()))));
+    Base* tmp2=dynamic_cast<Base*>(&( (((*imaginaire)*c.GetReel()) - &((*reel)*(c.GetIm()))) /
+                                      &(((*c.GetReel()*c.GetReel()) + &((*c.GetIm()*c.GetIm())) ))));
 
     return *(new Complexe(tmp1, tmp2));
 }
@@ -106,12 +108,12 @@ Reel& Rationnel::operator/(const Reel& r){
     return *( new Reel( (double)numerateur / (r.GetVal() * denominateur)) );
 }
 Complexe& Rationnel::operator/(const Complexe& c){
-    Base* tmp1=dynamic_cast<Base*>(&( (numerateur * c.GetReel()) / (denominateur * (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm())) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (0 - numerateur * c.GetIm()) / (denominateur * (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm())) ));
-    return *(new Complexe(tmp1, tmp2));
+    Constante* den=new Entier(denominateur); Constante* num=new Entier(numerateur);
+    Base* tmp1=dynamic_cast<Base*>(&( (*num * c.GetReel()) / &(*den * &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm()))) ));
+    Base* tmp2=dynamic_cast<Base*>(&( (*num * c.GetIm()) / &(*den * &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm()))) ));
+    return *(new Complexe(tmp1, tmp2)); // tmp2 à inverser le signe
 }
-Expression& Rationnel::operator/(Expression& ex)
-{
+Expression& Rationnel::operator/(Expression& ex){
     QString tmp1=this->GetQString(), tmp2=ex.GetQString();
     tmp1.remove("'"); tmp2.remove("'");
     ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "/" + "'");
@@ -124,9 +126,9 @@ Reel& Reel::operator/(const Reel& r) {return *(new Reel(valeur / r.GetVal()));}
 Reel& Reel::operator/(const Entier& e) {return *(new Reel(valeur / e.GetVal()));}
 Reel& Reel::operator/(const Rationnel& ra){return *(new Reel(valeur / (ra.GetNum() / ra.GetDen())));}
 Complexe& Reel::operator/(const Complexe& c){
-    Base* tmp1=dynamic_cast<Base*>(&( (valeur*c.GetReel()) / (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm()) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (0-valeur*c.GetIm()) / (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm()) ));
-    return *(new Complexe(tmp1, tmp2));
+    Base* tmp1=dynamic_cast<Base*>(&( (*c.GetReel() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
+    Base* tmp2=dynamic_cast<Base*>(&( (*c.GetIm() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
+    return *(new Complexe(tmp1, tmp2));// signe tmp2 opposé
 }
 Expression& Reel::operator/(Expression& ex)
 {
@@ -144,10 +146,10 @@ Rationnel& Entier::operator/(const Rationnel& ra)
 {
     return *(new Rationnel(ra.GetNum(), ra.GetDen() * valeur));
 }
-Complexe& Entier::operator*(const Complexe& c){
-    Base* tmp1=dynamic_cast<Base*>(&( (valeur*c.GetReel()) / (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm()) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (0-valeur*c.GetIm()) / (c.GetReel()*c.GetReel() + c.GetIm()*c.GetIm()) ));
-    return *(new Complexe(tmp1, tmp2));;
+Complexe& Entier::operator/(const Complexe& c){
+    Base* tmp1=dynamic_cast<Base*>(&( (*c.GetReel() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
+    Base* tmp2=dynamic_cast<Base*>(&( (*c.GetIm() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
+    return *(new Complexe(tmp1, tmp2)); // signe tmp2 opposé
 }
 Expression& Entier::operator/(Expression& ex)
 {
@@ -156,4 +158,3 @@ Expression& Entier::operator/(Expression& ex)
     ex.SetExp("'" + tmp1 + " " + tmp2 + " "+ "/" + "'");
     return ex;
 }
-*/
