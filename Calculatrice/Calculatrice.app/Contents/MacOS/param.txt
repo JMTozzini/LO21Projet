@@ -1,5 +1,0 @@
-1
-entier
-1
-radians
-pile

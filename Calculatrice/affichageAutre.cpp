@@ -18,7 +18,11 @@ void MainWindow::EntrerPress()
     else if(s=="cos"){arret=1; CosPress();}
     else if(s=="sin"){arret=1; SinPress();}
     else if(s=="tan"){arret=1; TanPress();}
-    //else if(s==""){DupPress();}
+    else if(s=="cosh"){arret=1; CoshPress();}
+    else if(s=="sinh"){arret=1; SinhPress();}
+    else if(s=="tanh"){arret=1; TanhPress();}
+    else if(s=="pow"){arret=1; PowPress();}
+    else if(s==NULL){DupPress();}
     else if(s.contains("$")){
         if(!complexe){
             arret=1;
