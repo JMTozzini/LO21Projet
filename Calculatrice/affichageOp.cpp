@@ -13,15 +13,12 @@ void MainWindow::PlusPress()
         try
         {
             pa->Depiler(); pa->Depiler();
-
             Constante* tmp1=&(ps->Depiler());
             Constante* tmp2=&(ps->Depiler());
             Constante* c;
             c = &(tmp2->operator +(tmp1));
-
             if(c->GetType()=="rationnel")
                 c->Simplifier();
-
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }

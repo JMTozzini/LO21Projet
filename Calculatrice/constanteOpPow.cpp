@@ -94,32 +94,39 @@ Rationnel& Rationnel::powFonction(const Entier& e){
     return ra;
 }
 Reel& Rationnel::powFonction(const Reel& e){
-
+    return *(new Reel(pow((numerateur/denominateur),e.GetVal())));
 }
 Reel& Rationnel::powFonction(const Rationnel& e){
+    return *(new Reel(pow((numerateur/denominateur),(e.GetNum()/e.GetDen()))));
 
 }
-Expression& Rationnel::powFonction(Expression &e){
-
+Expression& Rationnel::powFonction(Expression &ex){
+    QString tmp1=this->GetQString(), tmp2=ex.GetQString();
+    tmp1.remove("'"); tmp2.remove("'");
+    ex.SetExp("'" + tmp1 + " " + tmp2 + " " + "pow" + "'");
+    return ex;
 }
 Complexe& Rationnel::powFonction(const Complexe&){
-
+    throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
 }
 
 
 // Entier
-Entier& Entier::powFonction(const Entier&){
-
+Entier& Entier::powFonction(const Entier& e){
+    return *(new Entier(pow(valeur, e.GetVal())));
 }
-Reel& Entier::powFonction(const Reel&){
-
+Reel& Entier::powFonction(const Reel& e){
+    return *(new Reel(pow(valeur, e.GetVal())));
 }
-Reel& Entier::powFonction(const Rationnel&){
-
+Reel& Entier::powFonction(const Rationnel& e){
+    return *(new Reel(pow(valeur, (e.GetNum()/e.GetDen()))));
 }
-Expression& Entier::powFonction(Expression&){
-
+Expression& Entier::powFonction(Expression& ex){
+    QString tmp1=this->GetQString(), tmp2=ex.GetQString();
+    tmp1.remove("'"); tmp2.remove("'");
+    ex.SetExp("'" + tmp1 + " " + tmp2 + " " + "pow" + "'");
+    return ex;
 }
 Complexe& Entier::powFonction(const Complexe&){
-
+    throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
 }

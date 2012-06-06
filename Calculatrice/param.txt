@@ -1,0 +1,5 @@
+0
+entier
+1
+degres
+pile vide

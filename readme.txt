@@ -9,3 +9,11 @@ Pourrais tu me rejouter un line edit en dessous du champ d'affichage(qt design) 
 --> C'est bon je l'ai aussi, je vais m'en servir pour afficher les erreurs
 
 Operation / et * terminÃ©es, il reste juste Ã  faire attention aux signes j'ai mis des commentaires la ou il falait les inverser
+
+
+
+- Operation pow terminée normalement, après y'a certains cas où j'étais pas sûre, ça serait bien que tu testes pour voir si ça te paraît logique.
+Ah aussi : on peut pas faire pow sur un complexe, du coup ça fait pas l'opération mais ça le dépile quand même.. Je sais pas si t'as une idée pour éviter ça.
+- J'avais fini cos, sin, tan, cosh, sinh et tanh aussi ce matin. J'ai aussi fait les complexes en croyant qu'on devait le faire, mais au final dans le sujet ça y été pas (non je l'ai pas lu avant.)
+Bref je crois que je t'expliquerai ça demain.
+++
