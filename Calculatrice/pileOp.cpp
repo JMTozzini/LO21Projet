@@ -147,11 +147,6 @@ void MainWindow::MeanPress()
     AffichageEcran();
 }
 
-/*
-– MEAN : moyenne des x premiers éléments de la pile (où x est l’argument) (entier, ra-
-tionnel, réel, complexe) : à faire lorsque operator * surchargé
-*/
-
 void MainWindow::EvalPress()
 {
     try

@@ -4,16 +4,16 @@
 #include <math.h>
 
 
-Expression& Expression::cosFonction(std::string angle){
+Expression& Expression::cosFonction(std::string){
     this->exp.remove("'");
     this->exp="'" + this->exp + "cos"+ "'";
     return *this;
 }
 
-Complexe& Complexe::cosFonction(std::string angle){
-    ExceptionCalculatrice e("Opération impossible");
-    e.GetInfos();
-    return *(this);
+Complexe& Complexe::cosFonction(std::string){
+    throw ExceptionCalculatrice("Cos impossible sur complexe"); //elle est réalisée dans un bloc try
+    //e.GetInfos();
+    ///return *(this);
 }
 
 Reel& Reel::cosFonction(std::string angle){
