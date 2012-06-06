@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     constanteOpPlus.cpp \
     constanteOpMoins.cpp \
     constanteOpDiv.cpp \
-    constanteOpMult.cpp
+    constanteOpMult.cpp \
+    constanteOpPow.cpp
 
 HEADERS  += mainwindow.h \
     pile.h \

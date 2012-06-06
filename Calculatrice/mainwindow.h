@@ -83,6 +83,7 @@ public slots:
     void CoshPress();
     void SinhPress();
     void TanhPress();
+    void PowPress();
 };
 
 

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Wed Jun 6 13:20:07 2012
+** Created: Wed Jun 6 18:43:52 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      39,   14, // methods
+      40,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -70,6 +70,7 @@ static const uint qt_meta_data_MainWindow[] = {
      458,   11,   11,   11, 0x0a,
      470,   11,   11,   11, 0x0a,
      482,   11,   11,   11, 0x0a,
+     494,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -88,7 +89,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "DropPress()\0SumPress()\0MeanPress()\0"
     "EvalPress()\0CosPress()\0SinPress()\0"
     "TanPress()\0CoshPress()\0SinhPress()\0"
-    "TanhPress()\0"
+    "TanhPress()\0PowPress()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -136,6 +137,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 36: _t->CoshPress(); break;
         case 37: _t->SinhPress(); break;
         case 38: _t->TanhPress(); break;
+        case 39: _t->PowPress(); break;
         default: ;
         }
     }
@@ -174,9 +176,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 39)
+        if (_id < 40)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 39;
+        _id -= 40;
     }
     return _id;
 }

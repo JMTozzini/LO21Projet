@@ -45,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->moins,SIGNAL(clicked()),this,SLOT(MoinsPress()));
     QObject::connect(ui->multi,SIGNAL(clicked()),this,SLOT(MultPress()));
     QObject::connect(ui->div,SIGNAL(clicked()),this,SLOT(DivPress()));
+    QObject::connect(ui->pow,SIGNAL(clicked()),this,SLOT(PowPress()));
+
 
     // Opérateurs unaires
     QObject::connect(ui->sin,SIGNAL(clicked()),this,SLOT(SinPress()));

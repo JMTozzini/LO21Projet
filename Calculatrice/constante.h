@@ -69,6 +69,14 @@ public:
     virtual Constante& coshFonction(std::string)=0;
     virtual Constante& sinhFonction(std::string)=0;
     virtual Constante& tanhFonction(std::string)=0;
+
+    // pow
+    virtual Constante& powFonction(Constante*);
+    virtual Constante& powFonction(const Entier&)=0;
+    virtual Constante& powFonction(const Reel&)=0;
+    virtual Constante& powFonction(const Rationnel&)=0;
+    virtual Constante& powFonction(const Complexe&)=0;
+    virtual Constante& powFonction(Expression&)=0;
 };
 
 
@@ -122,6 +130,12 @@ public:
     Expression& sinhFonction(std::string);
     Expression& tanhFonction(std::string);
 
+    // pow
+    Expression& powFonction(const Entier&);
+    Expression& powFonction(const Reel&);
+    Expression& powFonction(const Rationnel&);
+    Expression& powFonction(const Complexe&);
+    Expression& powFonction(Expression &);
 };
 
 
@@ -187,6 +201,12 @@ public:
     Complexe& sinhFonction(std::string);
     Complexe& tanhFonction(std::string);
 
+    // pow
+    Complexe& powFonction(const Entier&);
+    Complexe& powFonction(const Reel&);
+    Complexe& powFonction(const Rationnel&);
+    Complexe& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
@@ -243,6 +263,12 @@ public:
     Reel& sinhFonction(std::string);
     Reel& tanhFonction(std::string);
 
+    // pow
+    Reel& powFonction(const Entier&);
+    Reel& powFonction(const Reel&);
+    Reel& powFonction(const Rationnel&);
+    Expression& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
@@ -309,6 +335,12 @@ public:
     Reel& sinhFonction(std::string);
     Reel& tanhFonction(std::string);
 
+    // pow
+    Rationnel& powFonction(const Entier&);
+    Reel& powFonction(const Reel&);
+    Reel& powFonction(const Rationnel&);
+    Expression& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
@@ -364,6 +396,12 @@ public:
     Reel& sinhFonction(std::string);
     Reel& tanhFonction(std::string);
 
+    // pow
+    Entier& powFonction(const Entier&);
+    Reel& powFonction(const Reel&);
+    Reel& powFonction(const Rationnel&);
+    Expression& powFonction(Expression&);
+    Complexe& powFonction(const Complexe&);
 };
 
 
