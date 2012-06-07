@@ -86,6 +86,7 @@ class Expression : public Constante
 
 public:
     Expression(QString s):exp(s){}
+    ~Expression(){delete this;}
 
     void Afficher(std::ostream& os=std::cout)const {os<<exp.toStdString()/*<< std::endl*/;}
     double GetVal() const {throw ExceptionCalculatrice("Fonction non définie\n");}
@@ -142,7 +143,7 @@ public:
 class Base : public Constante{
 public :
     virtual void Afficher(std::ostream& os=std::cout)const = 0;
-
+    virtual ~Base(){delete this;}
 };
 
 class Complexe : public Constante // a$b (correspondant à a+ib), a : reel, b : imaginaire
@@ -153,6 +154,7 @@ class Complexe : public Constante // a$b (correspondant à a+ib), a : reel, b : 
 public:
     // Constructeurs
     Complexe(Base* r, Base* i):reel(r), imaginaire(i){}
+    ~Complexe(){delete[] reel; delete[] imaginaire;}
 
     // Fonctions annexes virtuelles
     void Afficher(std::ostream& os=std::cout)const {reel->Afficher(os); os<<"$"; imaginaire->Afficher(os); /*os<< std::endl;*/}
@@ -219,6 +221,7 @@ public:
     // Constructeurs
     Reel(double r=0):valeur(r){}
     Reel(QString s):valeur(s.toDouble()){}
+    ~Reel(){delete this;}
 
     // Fonctions annexes virtuelles
     void Afficher(std::ostream& os=std::cout)const {os<<valeur/*<<std::endl*/;}
@@ -286,6 +289,7 @@ public:
         else
             denominateur=den;
     }
+    ~Rationnel(){delete this;}
 
     // Fonctions annexes virtuelles
     void Afficher(std::ostream& os=std::cout)const { os<<numerateur << "/" << denominateur /*<< std::endl*/;}
@@ -352,6 +356,7 @@ public:
     // Constructeurs
     Entier(int n=0):valeur(n){}
     Entier(QString s):valeur(s.toInt()){}
+    ~Entier(){delete this;}
 
     // Fonctions annexes virtuelles
     void Afficher(std::ostream& os=std::cout)const {os<<GetVal()/*<<std::endl*/;}

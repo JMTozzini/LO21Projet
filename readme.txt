@@ -20,5 +20,4 @@ Bref je crois que je t'expliquerai ça demain.
 
 
 7/06/12
-- destructeurs pour chaque classe
-- 
+- PowPress à voir

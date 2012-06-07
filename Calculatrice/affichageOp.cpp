@@ -290,35 +290,43 @@ void MainWindow::TanhPress(){
 
 void MainWindow::PowPress()
 {
+    int stop=0;
     if(pa->GetPtr().size()<2){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
         e.GetInfos();
     }
     else{
         try{
-            QString a=pa->Depiler(), b=pa->Depiler();
-            Constante* tmp1=&(ps->Depiler());
-            Constante* tmp2=&(ps->Depiler());
-            if(tmp1->GetType()=="complexe" || tmp2->GetType()=="complexe"){
-                pa->Empiler(b); pa->Empiler(a);
-                ps->Empiler(tmp2); ps->Empiler(tmp1);
+            QString a=pa->Depiler();
+            if(a.contains("$")){
+                pa->Empiler(a);
                 throw ExceptionCalculatrice("Erreur d'operation : pow impossible avec un complexe");
             }
-            else{
-                Constante* c;
-                c = &(tmp2->powFonction(tmp1));
-                if(c->GetType()=="rationnel")
-                    c->Simplifier();
-                ps->Empiler(c);
-                pa->Empiler(c->GetQString());
+            QString b=pa->Depiler();
+            if(b.contains("$")){
+                pa->Empiler(a);
+                pa->Empiler(b);
+                throw ExceptionCalculatrice("Erreur d'operation : pow impossible avec un complexe");
             }
+            // La suite n'est pas exécutée si il y a eu une exception
+            Constante* tmp1=&(ps->Depiler());
+            Constante* tmp2=&(ps->Depiler());
+
+            Constante* c;
+            c = &(tmp2->powFonction(tmp1));
+            if(c->GetType()=="rationnel")
+                c->Simplifier();
+            ps->Empiler(c);
+            pa->Empiler(c->GetQString());
+            ui->champEcr->clear();
+            MAJParam();
+            AffichageEcran();
         }
-        catch(ExceptionCalculatrice e){e.GetInfos();}
-        g->AjouterMemento(ps->CreerMemento());
-        g->AjouterMemento(pa->CreerMemento());
+        catch(ExceptionCalculatrice e){e.GetInfos(); stop=1;}
+        if(!stop){
+            g->AjouterMemento(ps->CreerMemento());
+            g->AjouterMemento(pa->CreerMemento());
+        }
     }
-    //pa->AffichagePile(); ps->AffichagePile();
-    ui->champEcr->clear();
-    MAJParam();
-    AffichageEcran();
+//    pa->AffichagePile(); ps->AffichagePile();
 }

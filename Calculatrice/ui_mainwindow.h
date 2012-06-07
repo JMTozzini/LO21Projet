@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Jun 7 09:32:38 2012
+** Created: Thu Jun 7 09:43:12 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -516,8 +516,9 @@ public:
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0, QApplication::UnicodeUTF8));
         actionRetablir->setText(QApplication::translate("MainWindow", "Retablir", 0, QApplication::UnicodeUTF8));
+        actionRetablir->setShortcut(QApplication::translate("MainWindow", "Meta+Y", 0, QApplication::UnicodeUTF8));
         actionAnnuler->setText(QApplication::translate("MainWindow", "Annuler", 0, QApplication::UnicodeUTF8));
-        actionAnnuler->setShortcut(QApplication::translate("MainWindow", "Ctrl+Z", 0, QApplication::UnicodeUTF8));
+        actionAnnuler->setShortcut(QApplication::translate("MainWindow", "Meta+Z", 0, QApplication::UnicodeUTF8));
         actionMode_Complexe->setText(QApplication::translate("MainWindow", "Mode Complexe", 0, QApplication::UnicodeUTF8));
         actionClavier->setText(QApplication::translate("MainWindow", "Clavier", 0, QApplication::UnicodeUTF8));
         actionEntier->setText(QApplication::translate("MainWindow", "Entier", 0, QApplication::UnicodeUTF8));

@@ -38,6 +38,7 @@ Expression& Expression::powFonction(const Rationnel& e){
 }
 Expression& Expression::powFonction(const Complexe& e){
     throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
+    return *(this);
 }
 Expression& Expression::powFonction(Expression& e){
     this->exp.remove("'");
@@ -49,18 +50,23 @@ Expression& Expression::powFonction(Expression& e){
 // Complexe
 Complexe& Complexe::powFonction(const Entier&){
     throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
+    return *(this);
 }
 Complexe& Complexe::powFonction(const Reel&){
     throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
+    return *(this);
 }
 Complexe& Complexe::powFonction(const Rationnel&){
     throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
+    return *(this);
 }
 Complexe& Complexe::powFonction(Expression&){
     throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
+    return *(this);
 }
 Complexe& Complexe::powFonction(const Complexe&){
     throw ExceptionCalculatrice("Erreur d'operation pow : impossible sur un complexe");
+    return *(this);
 }
 
 

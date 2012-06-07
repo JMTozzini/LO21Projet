@@ -658,13 +658,16 @@
    <property name="text">
     <string>Retablir</string>
    </property>
+   <property name="shortcut">
+    <string>Meta+Y</string>
+   </property>
   </action>
   <action name="actionAnnuler">
    <property name="text">
     <string>Annuler</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Z</string>
+    <string>Meta+Z</string>
    </property>
   </action>
   <action name="actionMode_Complexe">
