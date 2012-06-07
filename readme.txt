@@ -17,3 +17,8 @@ Ah aussi : on peut pas faire pow sur un complexe, du coup ça fait pas l'opératio
 - J'avais fini cos, sin, tan, cosh, sinh et tanh aussi ce matin. J'ai aussi fait les complexes en croyant qu'on devait le faire, mais au final dans le sujet ça y été pas (non je l'ai pas lu avant.)
 Bref je crois que je t'expliquerai ça demain.
 ++
+
+
+7/06/12
+- destructeurs pour chaque classe
+- 

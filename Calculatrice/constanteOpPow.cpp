@@ -10,13 +10,11 @@ Constante& Constante::powFonction(Constante* c){
     Reel* r=dynamic_cast<Reel*>(c);
     Rationnel* ra=dynamic_cast<Rationnel*>(c);
     Expression* exp=dynamic_cast<Expression*>(c);
-    Complexe* cmplx=dynamic_cast<Complexe*>(c);
 
     if(e) return (this->powFonction(*e));
     else if(r) return (this->powFonction(*r));
     else if(ra) return (this->powFonction(*ra));
     else if(exp) return (this->powFonction(*exp));
-    else if(cmplx) return (this->powFonction(*cmplx));
     else throw ExceptionCalculatrice("Erreur d'operation pow");
     return *c;
 }

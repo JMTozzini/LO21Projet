@@ -296,15 +296,22 @@ void MainWindow::PowPress()
     }
     else{
         try{
-            pa->Depiler(); pa->Depiler();
+            QString a=pa->Depiler(), b=pa->Depiler();
             Constante* tmp1=&(ps->Depiler());
             Constante* tmp2=&(ps->Depiler());
-            Constante* c;
-            c = &(tmp2->powFonction(tmp1));
-            if(c->GetType()=="rationnel")
-                c->Simplifier();
-            ps->Empiler(c);
-            pa->Empiler(c->GetQString());
+            if(tmp1->GetType()=="complexe" || tmp2->GetType()=="complexe"){
+                pa->Empiler(b); pa->Empiler(a);
+                ps->Empiler(tmp2); ps->Empiler(tmp1);
+                throw ExceptionCalculatrice("Erreur d'operation : pow impossible avec un complexe");
+            }
+            else{
+                Constante* c;
+                c = &(tmp2->powFonction(tmp1));
+                if(c->GetType()=="rationnel")
+                    c->Simplifier();
+                ps->Empiler(c);
+                pa->Empiler(c->GetQString());
+            }
         }
         catch(ExceptionCalculatrice e){e.GetInfos();}
         g->AjouterMemento(ps->CreerMemento());
