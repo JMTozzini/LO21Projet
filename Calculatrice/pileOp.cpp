@@ -53,9 +53,9 @@ void PileStockage::Drop()
 
 Constante* PileStockage::Sum(int x)
 {
-    Constante* res=ptr[x-1];
-    if(x>=ptr.size() || y>=ptr.size())
+    if(x>=ptr.size())
         throw ExceptionCalculatrice("Impossible de sommer : arguments incorrects");
+    Constante* res=ptr[x-1];
     std::cout<<res->GetVal()<<std::endl;
     for(int i=0;i<x-1;i++){res = &(*res + ptr[i]);}
     return res;

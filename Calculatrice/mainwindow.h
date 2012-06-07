@@ -70,6 +70,7 @@ public slots:
     void MenuDegres();
     void MenuRadians();
     void AnnulerPress();
+    void RetablirPress();
     void SwapPress();
     void ClearPress();
     void DupPress();

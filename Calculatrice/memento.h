@@ -12,6 +12,7 @@ class MementoStock
 public:
     MementoStock(std::deque<Constante*> state){etat=state;}
     std::deque<Constante*> GetEtatSauve() const {return etat;}
+    void test(){etat[0]->Afficher();}
 };
 
 class MementoAff
@@ -21,22 +22,27 @@ class MementoAff
 public:
     MementoAff(std::deque<QString> state){etat=state;}
     std::deque<QString> GetEtatSauve() const {return etat;}
+    void test(){std::cout<<etat[0].toStdString()<<std::endl;}
 };
 
 class Gardien
 {
    std::deque<MementoStock*> listeEtatsSauveStock;
-   std::deque<MementoStock*>::const_iterator itStock;
-   std::deque<MementoAff*> listeEtatsSauveAff;
-   std::deque<MementoAff*>::const_iterator itAff;
+   int indexStock;
 
+   std::deque<MementoAff*> listeEtatsSauveAff;
+   int indexAff;
 
 public:
-   //Gardien():itStock(listeEtatsSauveStock.begin()),itAff(listeEtatsSauveAff.begin()){}
-   void AjouterMemento(MementoStock* m) { itStock=listeEtatsSauveStock.end(); listeEtatsSauveStock.push_back(m);}
-   void AjouterMemento(MementoAff* m) { itAff=listeEtatsSauveAff.end(); listeEtatsSauveAff.push_back(m);}
-   MementoAff* AnnulerAff();
+   Gardien():indexStock(-1),indexAff(-1){}
+
+   void AjouterMemento(MementoStock* m);
    MementoStock* AnnulerStock();
+   MementoStock* RetablirStock();
+
+   void AjouterMemento(MementoAff* m);
+   MementoAff* AnnulerAff();
+   MementoAff* RetablirAff();
 };
 
 #endif // MEMENTO_H

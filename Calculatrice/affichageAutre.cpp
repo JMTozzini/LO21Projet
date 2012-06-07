@@ -43,7 +43,12 @@ void MainWindow::EntrerPress()
         e.GetInfos();
     }*/
     if(!arret){
-        try {pa->Empiler(s);}
+        try
+        {
+                pa->Empiler(s);
+                g->AjouterMemento(pa->CreerMemento());
+                g->AjouterMemento(ps->CreerMemento());
+        }
         catch(ExceptionCalculatrice e){e.GetInfos();}
     }
 
@@ -59,7 +64,25 @@ void MainWindow::AnnulerPress()
     {
         MementoStock *m1= g->AnnulerStock();
         MementoAff *m2=g->AnnulerAff();
-        ps->ChargerMemento(m1); pa->ChargerMemento(m2);
+
+        ps->ChargerMemento(m1);
+        pa->ChargerMemento(m2);
+    }
+    catch(ExceptionCalculatrice e){e.GetInfos();}
+
+    AffichageEcran();
+    MAJParam();
+}
+
+void MainWindow::RetablirPress()
+{
+    try
+    {
+        MementoStock *m1= g->RetablirStock();
+        MementoAff *m2=g->RetablirAff();
+
+        ps->ChargerMemento(m1);
+        pa->ChargerMemento(m2);
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
 

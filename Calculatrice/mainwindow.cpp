@@ -73,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Annuler & Rétablir
     QObject::connect(ui->actionAnnuler, SIGNAL(triggered()),this,SLOT(AnnulerPress()));
+    QObject::connect(ui->actionRetablir, SIGNAL(triggered()),this,SLOT(RetablirPress()));
 
     // Opération sur Pile
     QObject::connect(ui->swap, SIGNAL(clicked()), this, SLOT(SwapPress()));

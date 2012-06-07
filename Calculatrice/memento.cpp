@@ -2,16 +2,56 @@
 
 MementoAff* Gardien::AnnulerAff()
 {
-    if(listeEtatsSauveAff.size()<=1)
+    if(indexAff<1)
         throw ExceptionCalculatrice("Vous ne pouvez pas Annuler d'avantage");
-    --itAff;
-    return (*itAff);
+
+    return listeEtatsSauveAff[--indexAff];
+}
+
+MementoAff* Gardien::RetablirAff()
+{
+    if(indexAff >= listeEtatsSauveAff.size()-1)
+        throw ExceptionCalculatrice("Impossible de rétablir d'avantage");
+
+    return listeEtatsSauveAff[++indexAff];
+}
+
+void Gardien::AjouterMemento(MementoAff *m)
+{
+    if(indexAff!=(listeEtatsSauveAff.size()-1))
+    {
+        for(int i=indexAff;i<listeEtatsSauveAff.size();i++)
+            listeEtatsSauveAff.pop_back();
+    }
+
+    listeEtatsSauveAff.push_back(m);
+    indexAff++;
 }
 
 MementoStock* Gardien::AnnulerStock()
 {
-    if(listeEtatsSauveStock.size()<=1)
+    if(indexStock<1)
         throw ExceptionCalculatrice("Vous ne pouvez pas Annuler d'avantage");
-    --itStock;
-    return (*itStock);
+
+    return listeEtatsSauveStock[--indexStock];
+}
+
+MementoStock* Gardien::RetablirStock()
+{
+    if(indexStock >= listeEtatsSauveStock.size()-1)
+        throw ExceptionCalculatrice("Impossible de rétablir d'avantage");
+
+    return listeEtatsSauveStock[++indexStock];
+}
+
+void Gardien::AjouterMemento(MementoStock *m)
+{
+    if(indexStock!=(listeEtatsSauveStock.size()-1))
+    {
+        for(int i=indexStock;i<listeEtatsSauveStock.size();i++)
+            listeEtatsSauveStock.pop_back();
+    }
+
+    listeEtatsSauveStock.push_back(m);
+    indexStock++;
 }
