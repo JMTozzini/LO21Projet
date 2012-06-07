@@ -7,7 +7,7 @@ void PileAffichage::Swap(int x, int y)
 {
     QString tmp;
     if(x>=ptr.size() || y>=ptr.size())
-        throw ExceptionCalculatrice("Impossible de swapper arguments incorrectes");
+        throw ExceptionCalculatrice("Impossible de swapper : arguments incorrects");
     tmp=ptr[x];
     ptr[x]=ptr[y];
     ptr[y]=tmp;
@@ -17,7 +17,7 @@ void PileStockage::Swap(int x, int y)
 {
     Constante* tmp;
     if(x>=ptr.size() || y>=ptr.size())
-        throw ExceptionCalculatrice("Impossible de swapper arguments incorrectes");
+        throw ExceptionCalculatrice("Impossible de swapper : arguments incorrects");
     tmp=ptr[x];
     ptr[x]=ptr[y];
     ptr[y]=tmp;
@@ -53,10 +53,10 @@ void PileStockage::Drop()
 
 Constante* PileStockage::Sum(int x)
 {
-
-    if(x>=ptr.size())
-        throw ExceptionCalculatrice("Impossible de sommer arguments incorrectes");
     Constante* res=ptr[x-1];
+    if(x>=ptr.size() || y>=ptr.size())
+        throw ExceptionCalculatrice("Impossible de sommer : arguments incorrects");
+    std::cout<<res->GetVal()<<std::endl;
     for(int i=0;i<x-1;i++){res = &(*res + ptr[i]);}
     return res;
 }
