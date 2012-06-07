@@ -3,7 +3,7 @@
 #include "ui_mainwindow.h"
 
 //Méthodes des piles
-void PileAffichage::Swap(int x, int y)
+void PileAffichage::Swap(unsigned int x, unsigned int y)
 {
     QString tmp;
     if(x>=ptr.size() || y>=ptr.size())
@@ -13,7 +13,7 @@ void PileAffichage::Swap(int x, int y)
     ptr[y]=tmp;
 }
 
-void PileStockage::Swap(int x, int y)
+void PileStockage::Swap(unsigned int x, unsigned int y)
 {
     Constante* tmp;
     if(x>=ptr.size() || y>=ptr.size())
@@ -51,13 +51,13 @@ void PileStockage::Drop()
     ptr.pop_front();
 }
 
-Constante* PileStockage::Sum(int x)
+Constante* PileStockage::Sum(unsigned int x)
 {
     if(x>=ptr.size())
         throw ExceptionCalculatrice("Impossible de sommer : arguments incorrects");
     Constante* res=ptr[x-1];
     std::cout<<res->GetVal()<<std::endl;
-    for(int i=0;i<x-1;i++){res = &(*res + ptr[i]);}
+    for(unsigned int i=0;i<x-1;i++){res = &(*res + ptr[i]);}
     return res;
 }
 

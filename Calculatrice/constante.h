@@ -284,9 +284,9 @@ public:
     // Constructeurs
     Rationnel(int num, int den):numerateur(num)
     {
-        if(den==0)
-            throw ExceptionCalculatrice("Divison par 0 !");
-        else
+        //if(den==0)
+            /*throw ExceptionCalculatrice("Divison par 0 !");*/
+        //else
             denominateur=den;
     }
     ~Rationnel(){delete this;}

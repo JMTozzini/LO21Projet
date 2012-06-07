@@ -26,7 +26,8 @@ void MainWindow::EntrerPress()
     else if(s.contains("$")){
         if(!complexe){
             arret=1;
-            std::cout<<"Le mode complexe n'est pas activé"<<std::endl;
+            ExceptionCalculatrice e("Le mode complexe n'est pas activé");
+            e.GetInfos();
         }
         else{
             Complexe* c=ToComplexe(s);

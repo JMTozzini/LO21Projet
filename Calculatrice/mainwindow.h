@@ -30,14 +30,12 @@ private:
     bool clavier;
     std::string operateur;
     std::string angle;
-    //static ExceptionCalculatrice* ex;
     //friend class ExceptionCalculatrice;
 
 
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    //static void TraitementExceptions(QString s);
     void AffichageEcran();
     void InitParam();
     void MAJParam();
@@ -86,8 +84,5 @@ public slots:
     void TanhPress();
     void PowPress();
 };
-
-
-
 
 #endif // MAINWINDOW_H

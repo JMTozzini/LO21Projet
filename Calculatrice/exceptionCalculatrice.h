@@ -2,6 +2,7 @@
 #define EXCEPTIONCALCULATRICE_H
 
 #include <QString>
+#include <QWidget>
 #include <iostream>
 
 class ExceptionCalculatrice
@@ -10,7 +11,10 @@ class ExceptionCalculatrice
 
 public:
     ExceptionCalculatrice(QString s="") : infos(s){}
-    void GetInfos() const {std::cout<<infos.toStdString()<<std::endl;}
+    void GetInfos() const
+    {
+        std::cout<<infos.toStdString()<<std::endl;
+    }
 
 };
 

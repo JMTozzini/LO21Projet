@@ -22,11 +22,11 @@ public :
     void ChargerMemento(MementoStock *mem){ptr = mem->GetEtatSauve();}
 
     // Méthodes d'opérations
-    void Swap(int, int);
+    void Swap(unsigned int, unsigned int);
     void Clear(){ptr.clear();}
     Constante* Dup();
     void Drop();
-    Constante* Sum(int);
+    Constante* Sum(unsigned int);
     Constante* Mean(unsigned int);
 };
 
@@ -49,7 +49,7 @@ public:
     void ChargerMemento(MementoAff *mem){ptr = mem->GetEtatSauve();}
 
     // Méthodes d'opérations
-    void Swap(int, int);
+    void Swap(unsigned int, unsigned int);
     void Clear(){ptr.clear();}
     QString Dup();
     void Drop();
