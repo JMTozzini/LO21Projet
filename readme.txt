@@ -7,6 +7,9 @@ Bref je crois que je t'expliquerai �a demain.
 7/06/12
 - PowPress � voir
 
-Annuler et rétablir fonctionnent !!
+Annuler et rétablir fonctionnent !! 
 
-J'arrive pas a afficher les erreurs, il faut qu'on récupère le pointeur ui et je vois pas du tout comment faire...
+Traitement d'erreur terminé, il faut encadrer le GetInfos() de exception avec TraitementErreur() :
+
+try{...}catch(Exception e){TraitementErreur(e.GetInfos);} // pour l'affichage dans la barre du bas
+

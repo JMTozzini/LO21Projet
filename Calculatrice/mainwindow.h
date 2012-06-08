@@ -30,8 +30,6 @@ private:
     bool clavier;
     std::string operateur;
     std::string angle;
-    //friend class ExceptionCalculatrice;
-
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -40,6 +38,7 @@ public:
     void InitParam();
     void MAJParam();
     void ApplicationMenu();
+    void TraitementErreur(QString);
 
 public slots:
     void Num1Press();
@@ -52,6 +51,7 @@ public slots:
     void Num8Press();
     void Num9Press();
     void Num0Press();
+    void DelPress();
     void ComaPress();
     void CmplxPress();
     void ExprPress();

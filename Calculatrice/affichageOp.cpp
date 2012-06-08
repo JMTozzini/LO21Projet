@@ -6,7 +6,7 @@ void MainWindow::PlusPress()
     if(pa->GetPtr().size()<2)
     {
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else
     {
@@ -41,7 +41,7 @@ void MainWindow::MoinsPress()
     if(pa->GetPtr().size()<2)
     {
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else
     {
@@ -60,7 +60,7 @@ void MainWindow::MoinsPress()
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
-        catch(ExceptionCalculatrice e){e.GetInfos();}
+        catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
@@ -78,7 +78,7 @@ void MainWindow::MultPress()
     if(pa->GetPtr().size()<2)
     {
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else
     {
@@ -97,7 +97,7 @@ void MainWindow::MultPress()
             ps->Empiler(c);
             pa->Empiler(c->GetQString());
         }
-        catch(ExceptionCalculatrice e){e.GetInfos();}
+        catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
@@ -115,7 +115,7 @@ void MainWindow::DivPress()
     if(pa->GetPtr().size()<2)
     {
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else
     {
@@ -151,7 +151,7 @@ void MainWindow::DivPress()
 void MainWindow::CosPress(){
     if(pa->GetPtr().size()<1){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -174,7 +174,7 @@ void MainWindow::CosPress(){
 void MainWindow::SinPress(){
     if(pa->GetPtr().size()<1){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -197,7 +197,7 @@ void MainWindow::SinPress(){
 void MainWindow::TanPress(){
     if(pa->GetPtr().size()<1){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -221,7 +221,7 @@ void MainWindow::TanPress(){
 void MainWindow::CoshPress(){
     if(pa->GetPtr().size()<1){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -244,7 +244,7 @@ void MainWindow::CoshPress(){
 void MainWindow::SinhPress(){
     if(pa->GetPtr().size()<1){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -267,7 +267,7 @@ void MainWindow::SinhPress(){
 void MainWindow::TanhPress(){
     if(pa->GetPtr().size()<1){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -293,7 +293,7 @@ void MainWindow::PowPress()
     int stop=0;
     if(pa->GetPtr().size()<2){
         ExceptionCalculatrice e("Pas assez d'operandes dans la pile");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else{
         try{
@@ -322,7 +322,7 @@ void MainWindow::PowPress()
             MAJParam();
             AffichageEcran();
         }
-        catch(ExceptionCalculatrice e){e.GetInfos(); stop=1;}
+        catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos()); stop=1;}
         if(!stop){
             g->AjouterMemento(ps->CreerMemento());
             g->AjouterMemento(pa->CreerMemento());

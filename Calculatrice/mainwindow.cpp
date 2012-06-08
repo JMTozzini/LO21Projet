@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->huit,SIGNAL(clicked()),this,SLOT(Num8Press()));
     QObject::connect(ui->neuf,SIGNAL(clicked()),this,SLOT(Num9Press()));
     QObject::connect(ui->zero,SIGNAL(clicked()),this,SLOT(Num0Press()));
+    QObject::connect(ui->del,SIGNAL(clicked()),this,SLOT(DelPress()));
 
     //Connection des types
     QObject::connect(ui->coma,SIGNAL(clicked()),this,SLOT(ComaPress()));
@@ -281,4 +282,10 @@ void MainWindow::ApplicationMenu(){
             ui->pow->setVisible(true);
             ui->mod->setVisible(true);
     }
+}
+
+void MainWindow::TraitementErreur(QString s)
+{
+    ui->champErr->clear();
+    ui->champErr->insert(s);
 }

@@ -27,7 +27,7 @@ void MainWindow::EntrerPress()
         if(!complexe){
             arret=1;
             ExceptionCalculatrice e("Le mode complexe n'est pas activé");
-            e.GetInfos();
+            TraitementErreur(e.GetInfos());
         }
         else{
             Complexe* c=ToComplexe(s);

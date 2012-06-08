@@ -11,11 +11,7 @@ class ExceptionCalculatrice
 
 public:
     ExceptionCalculatrice(QString s="") : infos(s){}
-    void GetInfos() const
-    {
-        std::cout<<infos.toStdString()<<std::endl;
-    }
-
+    QString GetInfos() const{return infos;}
 };
 
 #endif // EXCEPTIONCALCULATRICE_H

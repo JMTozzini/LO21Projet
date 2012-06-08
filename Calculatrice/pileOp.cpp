@@ -76,13 +76,13 @@ Constante* PileStockage::Mean(unsigned int x)
 void MainWindow::SwapPress()
 {
     try{pa->Depiler();pa->Depiler();}
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
     Entier* tmp2=dynamic_cast<Entier*>(&(ps->Depiler()));
     if(tmp1==0 || tmp2==0)
     {
         ExceptionCalculatrice e("Impossible de swapper arguments non entiers");
-        e.GetInfos();
+        TraitementErreur(e.GetInfos());
     }
     else
     {
@@ -107,7 +107,7 @@ void MainWindow::DupPress()
         ps->Empiler(ps->Dup());
         pa->Empiler(pa->Dup());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     MAJParam();
     AffichageEcran();
 }
@@ -119,7 +119,7 @@ void MainWindow::DropPress()
         ps->Drop();
         pa->Drop();
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     MAJParam();
     AffichageEcran();
 }
@@ -134,7 +134,7 @@ void MainWindow::SumPress()
         ps->Empiler(tmp2);
         pa->Empiler(tmp2->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     MAJParam();
     AffichageEcran();
 }
@@ -154,7 +154,7 @@ void MainWindow::MeanPress()
         ps->Empiler(tmp2);
         pa->Empiler(tmp2->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     MAJParam();
     AffichageEcran();
 }
@@ -178,7 +178,7 @@ void MainWindow::EvalPress()
 
         }
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     ui->champEcr->clear();
     AffichageEcran();
