@@ -31,6 +31,9 @@ private:
     std::string operateur;
     std::string angle;
 
+    //Variable utilisateur
+    Constante* x;
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -56,10 +59,10 @@ public slots:
     void CmplxPress();
     void ExprPress();
     void DivPress();
+    void ModPress();
     void PlusPress();
     void MoinsPress();
     void MultPress();
-    void ModPress();
     void EntrerPress();
     void MenuComplexe();
     void MenuEntier();
@@ -84,6 +87,8 @@ public slots:
     void SinhPress();
     void TanhPress();
     void PowPress();
+    void xPress();
+    void xEgalPress();
 };
 
 #endif // MAINWINDOW_H

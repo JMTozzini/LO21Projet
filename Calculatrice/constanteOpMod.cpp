@@ -17,3 +17,4 @@ Constante& Constante::operator%(const Entier& e)
 {
     return *(new Entier((int)this->GetVal() % (int)e.GetVal()));
 }
+

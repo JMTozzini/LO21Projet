@@ -75,7 +75,7 @@ public:
     virtual Constante& sinhFonction(std::string)=0;
     virtual Constante& tanhFonction(std::string)=0;
 
-    // Pow
+    // pow
     virtual Constante& powFonction(Constante*);
     virtual Constante& powFonction(const Entier&)=0;
     virtual Constante& powFonction(const Reel&)=0;

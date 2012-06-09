@@ -331,6 +331,7 @@ void MainWindow::PowPress()
 //    pa->AffichagePile(); ps->AffichagePile();
 }
 
+
 void MainWindow::ModPress()
 {
     try

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Jun 7 09:43:12 2012
+** Created: Sat Jun 9 16:17:23 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -66,6 +66,8 @@ public:
     QPushButton *del;
     QPushButton *zero;
     QPushButton *entrer;
+    QPushButton *xEgal;
+    QPushButton *x;
     QSpacerItem *espace1;
     QLabel *opBinaires;
     QGridLayout *gridLayout;
@@ -236,6 +238,16 @@ public:
         entrer->setObjectName(QString::fromUtf8("entrer"));
 
         gridLayout_2->addWidget(entrer, 4, 2, 1, 1);
+
+        xEgal = new QPushButton(horizontalLayoutWidget);
+        xEgal->setObjectName(QString::fromUtf8("xEgal"));
+
+        gridLayout_2->addWidget(xEgal, 7, 0, 1, 1);
+
+        x = new QPushButton(horizontalLayoutWidget);
+        x->setObjectName(QString::fromUtf8("x"));
+
+        gridLayout_2->addWidget(x, 7, 1, 1, 1);
 
 
         clavierLayout->addLayout(gridLayout_2);
@@ -556,6 +568,8 @@ public:
         zero->setShortcut(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
         entrer->setText(QApplication::translate("MainWindow", "Entrer", 0, QApplication::UnicodeUTF8));
         entrer->setShortcut(QApplication::translate("MainWindow", "Return", 0, QApplication::UnicodeUTF8));
+        xEgal->setText(QApplication::translate("MainWindow", "x=", 0, QApplication::UnicodeUTF8));
+        x->setText(QApplication::translate("MainWindow", "x", 0, QApplication::UnicodeUTF8));
         opBinaires->setText(QApplication::translate("MainWindow", "Operateurs Binaires", 0, QApplication::UnicodeUTF8));
         div->setText(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));
         div->setShortcut(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));

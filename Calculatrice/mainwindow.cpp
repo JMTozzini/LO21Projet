@@ -87,6 +87,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->mean,SIGNAL(clicked()), this, SLOT(MeanPress()));
     QObject::connect(ui->eval,SIGNAL(clicked()),this,SLOT(EvalPress()));
 
+    // Variables utilisateur
+    QObject::connect(ui->x, SIGNAL(clicked()), this, SLOT(xPress()));
+    QObject::connect(ui->xEgal, SIGNAL(clicked()), this, SLOT(xEgalPress()));
+
+
 }
 
 MainWindow::~MainWindow()

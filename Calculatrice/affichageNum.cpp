@@ -30,3 +30,12 @@ void MainWindow::ExprPress(){ui->champEcr->insert("'");}
 //void MainWindow::DivPress(){ui->champEcr->insert(" / ");}
 
 void MainWindow::DelPress(){ui->champEcr->clear();}
+
+
+void MainWindow::xEgalPress(){
+    ui->champEcr->insert("x=");
+}
+
+void MainWindow::xPress(){
+    ui->champEcr->insert(x->GetQString());
+}
