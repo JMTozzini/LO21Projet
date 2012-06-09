@@ -11,14 +11,14 @@ MementoAff* Gardien::AnnulerAff()
 MementoAff* Gardien::RetablirAff()
 {
     if((unsigned int) indexAff >= listeEtatsSauveAff.size()-1)
-        throw ExceptionCalculatrice("Impossible de rétablir d'avantage");
+        throw ExceptionCalculatrice("Impossible de Retablir d'avantage");
 
     return listeEtatsSauveAff[++indexAff];
 }
 
 void Gardien::AjouterMemento(MementoAff *m)
 {
-    if(indexAff!=(listeEtatsSauveAff.size()-1))
+    if(indexAff!=(listeEtatsSauveAff.size()-2))
     {
         for(unsigned int i=indexAff;i<listeEtatsSauveAff.size();i++)
             listeEtatsSauveAff.pop_back();
@@ -38,8 +38,9 @@ MementoStock* Gardien::AnnulerStock()
 
 MementoStock* Gardien::RetablirStock()
 {
-    if((unsigned int)indexStock >= listeEtatsSauveStock.size()-1)
-        throw ExceptionCalculatrice("Impossible de rétablir d'avantage");
+    std::cout<<indexStock<<" "<< listeEtatsSauveStock.size()<<std::endl;
+    if((unsigned int)indexStock >= listeEtatsSauveStock.size()-2)
+        throw ExceptionCalculatrice("Impossible de Retablir d'avantage");
 
     return listeEtatsSauveStock[++indexStock];
 }

@@ -262,3 +262,8 @@ Reel& Rationnel::tanhFonction(std::string angle){
     }
     return *(new Reel(tanh(numerateur/denominateur)));
 }
+
+
+//SIGN
+
+

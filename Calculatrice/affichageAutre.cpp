@@ -69,7 +69,7 @@ void MainWindow::AnnulerPress()
         ps->ChargerMemento(m1);
         pa->ChargerMemento(m2);
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     AffichageEcran();
     MAJParam();
@@ -85,7 +85,7 @@ void MainWindow::RetablirPress()
         ps->ChargerMemento(m1);
         pa->ChargerMemento(m2);
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     AffichageEcran();
     MAJParam();

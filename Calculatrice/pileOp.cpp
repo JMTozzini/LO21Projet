@@ -75,20 +75,26 @@ Constante* PileStockage::Mean(unsigned int x)
 // Slots
 void MainWindow::SwapPress()
 {
-    try{pa->Depiler();pa->Depiler();}
-    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
-    Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
-    Entier* tmp2=dynamic_cast<Entier*>(&(ps->Depiler()));
-    if(tmp1==0 || tmp2==0)
+    try
     {
-        ExceptionCalculatrice e("Impossible de swapper arguments non entiers");
-        TraitementErreur(e.GetInfos());
-    }
-    else
-    {
+        if(pa->GetPtr().size()<2)
+            throw ExceptionCalculatrice("Impossible de swapper pas assez d'arguments");
+        QString s1=pa->Depiler(); QString s2=pa->Depiler();
+        Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
+        Entier* tmp2=dynamic_cast<Entier*>(&(ps->Depiler()));
+        if(tmp1==0 || tmp2==0 || tmp1->GetVal()<0 || tmp2->GetVal()<0)
+        {
+            ps->Empiler(tmp2); ps->Empiler(tmp1);
+            pa->Empiler(s2); pa->Empiler(s1);
+            throw ExceptionCalculatrice("Impossible de swapper arguments non entiers positifs");
+        }
+
         pa->Swap(tmp2->GetVal(),tmp1->GetVal());
         ps->Swap(tmp2->GetVal(),tmp1->GetVal());
+
     }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
     MAJParam();
     AffichageEcran();
 }

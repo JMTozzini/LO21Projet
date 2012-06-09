@@ -62,6 +62,11 @@ public:
     virtual Constante& operator/(const Complexe&)=0;
     virtual Constante& operator/(Expression&)=0;
 
+    // Opérateur %
+    virtual Constante& operator%(Constante *);
+    virtual Constante& operator%(const Entier&);
+    //virtual Constante& operator%(Expression&);
+
     // Operateurs sur les angles
     virtual Constante& cosFonction(std::string)=0;
     virtual Constante& sinFonction(std::string)=0;
@@ -70,7 +75,7 @@ public:
     virtual Constante& sinhFonction(std::string)=0;
     virtual Constante& tanhFonction(std::string)=0;
 
-    // pow
+    // Pow
     virtual Constante& powFonction(Constante*);
     virtual Constante& powFonction(const Entier&)=0;
     virtual Constante& powFonction(const Reel&)=0;

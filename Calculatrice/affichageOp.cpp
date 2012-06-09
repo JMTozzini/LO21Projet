@@ -330,3 +330,37 @@ void MainWindow::PowPress()
     }
 //    pa->AffichagePile(); ps->AffichagePile();
 }
+
+void MainWindow::ModPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<2)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s1=pa->Depiler(); QString s2=pa->Depiler();
+        Constante* tmp1=&(ps->Depiler());
+        Constante* tmp2=&(ps->Depiler());
+
+        if(tmp1->GetType()!="entier" || tmp2->GetType()!="entier")
+        {
+            pa->Empiler(s2); pa->Empiler(s1);
+            ps->Empiler(tmp2); ps->Empiler(tmp1);
+            throw ExceptionCalculatrice("Modulo impossible, argument(s) non entier(s)");
+        }
+
+        Constante* c = &(tmp2->operator%(tmp1));
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
