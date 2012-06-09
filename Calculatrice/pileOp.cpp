@@ -175,13 +175,44 @@ void MainWindow::EvalPress()
         if(c->GetType()=="expression")
         {
             s.remove("'");
-            QStringList liste = s.split(" ");
-            for(int i=0;i<liste.size();i++)
-            {
-                ui->champEcr->insert(liste.value(i));
-                EntrerPress();
+            if(s.startsWith("x=")){
+                s.remove(0,2);
+                std::cout<<"s="<<s.toStdString()<<std::endl;
+                if(s.contains("$")){
+                    if(!complexe){
+                        ExceptionCalculatrice e("Le mode complexe n'est pas activé");
+                        TraitementErreur(e.GetInfos());
+                    }
+                    else{
+                        x=ToComplexe(s);
+                        ps->Empiler(x);
+                    }
+                }
+                else if(s.contains(",")){x=ToReel(s); ps->Empiler(x);}
+                else if(s.contains("/")){x=ToRationnel(s); ps->Empiler(x);}
+                else {// entier ou expression non reconnue
+                    bool retour=0;
+                    int valeur=s.toInt(&retour,10);
+                    std::cout<<"entier";
+                    if(retour==0){
+                        ExceptionCalculatrice e("Erreur : valeur non reconnue");
+                        TraitementErreur(e.GetInfos());
+                    }
+                    x=new Entier(valeur);
+                    ps->Empiler(x);
+                }
+                pa->Empiler(s);
+                std::cout<<"x="; x->Afficher();
             }
+            else{
 
+                QStringList liste = s.split(" ");
+                for(int i=0;i<liste.size();i++)
+                {
+                    ui->champEcr->insert(liste.value(i));
+                    EntrerPress();
+                }
+            }
         }
     }
     catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}

@@ -11,37 +11,6 @@ void MainWindow::EntrerPress()
     exp.setPatternSyntax(QRegExp::Wildcard);
 
     if(exp.exactMatch(s)){ps->Empiler(new Expression(s));}
-    else if(s.startsWith("x=")){
-        s.remove(0,2);
-        std::cout<<"s="<<s.toStdString()<<std::endl;
-        if(s.contains("$")){
-            std::cout<<"complexe repéré"<<std::endl;
-            if(!complexe){
-                arret=1;
-                ExceptionCalculatrice e("Le mode complexe n'est pas activé");
-                TraitementErreur(e.GetInfos());
-            }
-            else{
-                x=ToComplexe(s);
-                ps->Empiler(x);
-            }
-        }
-        else if(s.contains(",")){x=ToReel(s); ps->Empiler(x);}
-        else if(s.contains("/")){x=ToRationnel(s); ps->Empiler(x);}
-        else {// entier ou expression non reconnue
-            bool retour=0;
-            int valeur=s.toInt(&retour,10);
-            std::cout<<"entier";
-            if(retour==0){
-                arret=1;
-                ExceptionCalculatrice e("Erreur : valeur non reconnue");
-                TraitementErreur(e.GetInfos());
-            }
-            x=new Entier(valeur);
-            ps->Empiler(x);
-        }
-        std::cout<<"x="; x->Afficher();
-    }
     else if(s=="+"){arret=1; PlusPress();}
     else if(s=="-"){arret=1; MoinsPress();}
     else if(s=="*"){arret=1; MultPress();}
