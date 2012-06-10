@@ -38,3 +38,4 @@ Mais ça renvoie 1 alors que la pile est vide.. T'as pas une idée?
 
 => Non ça marche pas non plus, le pointeur existe maisn il a rien dedans.. Du coup on peut pas sauvegarder une pile vide.
 Tu crashes toujours avec les changements que j'ai fait ? J'ai remis le x
+->Je crash encore...
