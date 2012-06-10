@@ -118,12 +118,13 @@ void MainWindow::AffichageEcran()
 
 
 
-// Fonctions pour l'initialisation et la mise à jour des paramètres
+// Fonctions pour l'initialisation et la mise à jour des param8ètres
 
 void MainWindow::InitParam(){
-    std::ifstream fichier("param.txt", ios::in);  // Ouverture en lecture du fichier de paramètres
-    if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des paramètres
+    std::ifstream fichier("param8.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
+    if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des param8ètres
     {
+        if(x) std::cout<<"x="<<(x->GetQString()).toStdString()<<std::endl;
         string tmp, tmp_pile;
         getline(fichier, tmp);
         complexe=atoi(tmp.c_str());
@@ -131,8 +132,20 @@ void MainWindow::InitParam(){
         getline(fichier, tmp);
         clavier=atoi(tmp.c_str());
         getline(fichier, angle);
+        getline(fichier, tmp);
+        if(tmp!="xVide"){
+            getline(fichier, tmp);
+            QString* tmp2= new QString(tmp.c_str());
+            QRegExp exp("'*'");
+            exp.setPatternSyntax(QRegExp::Wildcard);
+            if(exp.exactMatch(tmp.c_str())){x=new Expression(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
+            else if(tmp2->contains('$')){x=ToComplexe(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
+            else if(tmp2->contains('.') || tmp2->contains(',')){x=ToReel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
+            else if(tmp2->contains('/')){x=ToRationnel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
+            else {x=new Entier(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
+        }
         getline(fichier, tmp_pile); // lit "pile" ou "pile vide"
-        if(tmp_pile!="pile vide"){
+        if(tmp_pile!="pileVide"){
             while(getline(fichier, tmp_pile)){
                 QString* tmp2= new QString(tmp_pile.c_str());
                 QRegExp exp("'*'");
@@ -143,12 +156,11 @@ void MainWindow::InitParam(){
                 else if(tmp2->contains('/')){Rationnel* c=ToRationnel(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
                 else {Entier* c=new Entier(*tmp2); ps->Empiler(c); pa->Empiler(*tmp2);}
             }
-            AffichageEcran();
-
         }
+        AffichageEcran();
     }
     else{ // Sinon le fichier n'existait pas, on ouvre en écriture et on l'initialise avec les valeurs pas défaut
-        std::ofstream fichier("param.txt", ios::out);
+        std::ofstream fichier("param8.txt", ios::out);
 
         if(fichier)
         {
@@ -160,7 +172,15 @@ void MainWindow::InitParam(){
             clavier=1;
             fichier<<"degres"<<std::endl;
             angle="degres";
-            fichier<<"pile vide"<<std::endl;
+            fichier<<"xVide"<<std::endl;
+            fichier<<"pileVide"<<std::endl;
+
+            fichier.close();
+
+            std::ifstream fichier("param8.txt", ios::in);
+            std::string tmp;
+            while(getline(fichier, tmp))
+                std::cout<<tmp<<std::endl;
         }
         else
             cerr << "Erreur à l'ouverture !" << endl;
@@ -171,7 +191,7 @@ void MainWindow::InitParam(){
 }
 
 void MainWindow::MAJParam(){
-    std::ofstream fichier("param.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
+    std::ofstream fichier("param8.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
 
     if(fichier)  // si l'ouverture a réussi
     {
@@ -179,12 +199,24 @@ void MainWindow::MAJParam(){
         fichier<<typeDeCste<<std::endl;
         fichier<<clavier<<std::endl;
         fichier<<angle<<std::endl;
-        fichier<<"pile"<<std::endl;
-        pa->Save(fichier);
+        if(x){fichier<<"x"<<std::endl; fichier<<(x->GetQString()).toStdString()<<std::endl;} // Variable utilisateur
+        else fichier<<"xVide"<<std::endl;
+        if(ps->GetPtr().empty()){
+            fichier<<"pile"<<std::endl;
+            pa->Save(fichier);
+        }
+        else fichier<<"pileVide"<<std::endl;
+
         fichier.close();
+
+        std::ifstream fichier("param8.txt", ios::in);
+        std::string tmp;
+        while(getline(fichier, tmp))
+            std::cout<<tmp<<std::endl;
     }
     else  // sinon
         cerr << "Erreur à l'ouverture !" << endl;
+    fichier.close();
 }
 
 
@@ -245,52 +277,52 @@ void MainWindow::ApplicationMenu(){
         ui->mod->setVisible(false);
     }
 
-   else{
-            ui->un->setVisible(true);
-            ui->deux->setVisible(true);
-            ui->trois->setVisible(true);
-            ui->quatre->setVisible(true);
-            ui->cinq->setVisible(true);
-            ui->six->setVisible(true);
-            ui->sept->setVisible(true);
-            ui->huit->setVisible(true);
-            ui->neuf->setVisible(true);
-            ui->zero->setVisible(true);
-            ui->coma->setVisible(true);
-            ui->expr->setVisible(true);
-            ui->cmplx->setVisible(true);
-            ui->plus->setVisible(true);
-            ui->moins->setVisible(true);
-            ui->div->setVisible(true);
-            ui->eval->setVisible(true);
-            ui->entrer->setVisible(true);
-            ui->del->setVisible(true);
-            ui->opBinaires->setVisible(true);
-            ui->opPile->setVisible(true);
-            ui->opUnaires->setVisible(true);
-            ui->sin->setVisible(true);
-            ui->cos->setVisible(true);
-            ui->tan->setVisible(true);
-            ui->sinh->setVisible(true);
-            ui->cosh->setVisible(true);
-            ui->tanh->setVisible(true);
-            ui->ln->setVisible(true);
-            ui->log->setVisible(true);
-            ui->inv->setVisible(true);
-            ui->sqrt->setVisible(true);
-            ui->sqr->setVisible(true);
-            ui->cube->setVisible(true);
-            ui->fact->setVisible(true);
-            ui->sign->setVisible(true);
-            ui->swap->setVisible(true);
-            ui->sum->setVisible(true);
-            ui->mean->setVisible(true);
-            ui->clear->setVisible(true);
-            ui->dup->setVisible(true);
-            ui->drop->setVisible(true);
-            ui->multi->setVisible(true);
-            ui->pow->setVisible(true);
-            ui->mod->setVisible(true);
+    else{
+        ui->un->setVisible(true);
+        ui->deux->setVisible(true);
+        ui->trois->setVisible(true);
+        ui->quatre->setVisible(true);
+        ui->cinq->setVisible(true);
+        ui->six->setVisible(true);
+        ui->sept->setVisible(true);
+        ui->huit->setVisible(true);
+        ui->neuf->setVisible(true);
+        ui->zero->setVisible(true);
+        ui->coma->setVisible(true);
+        ui->expr->setVisible(true);
+        ui->cmplx->setVisible(true);
+        ui->plus->setVisible(true);
+        ui->moins->setVisible(true);
+        ui->div->setVisible(true);
+        ui->eval->setVisible(true);
+        ui->entrer->setVisible(true);
+        ui->del->setVisible(true);
+        ui->opBinaires->setVisible(true);
+        ui->opPile->setVisible(true);
+        ui->opUnaires->setVisible(true);
+        ui->sin->setVisible(true);
+        ui->cos->setVisible(true);
+        ui->tan->setVisible(true);
+        ui->sinh->setVisible(true);
+        ui->cosh->setVisible(true);
+        ui->tanh->setVisible(true);
+        ui->ln->setVisible(true);
+        ui->log->setVisible(true);
+        ui->inv->setVisible(true);
+        ui->sqrt->setVisible(true);
+        ui->sqr->setVisible(true);
+        ui->cube->setVisible(true);
+        ui->fact->setVisible(true);
+        ui->sign->setVisible(true);
+        ui->swap->setVisible(true);
+        ui->sum->setVisible(true);
+        ui->mean->setVisible(true);
+        ui->clear->setVisible(true);
+        ui->dup->setVisible(true);
+        ui->drop->setVisible(true);
+        ui->multi->setVisible(true);
+        ui->pow->setVisible(true);
+        ui->mod->setVisible(true);
     }
 }
 
