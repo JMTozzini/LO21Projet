@@ -23,3 +23,14 @@ J'ai fait la variable utilisateur x, defini comme une constante* dans mainwindow
 => il faut d'abord que tu enregistre une valeur pour x, en faisant 'x=1$2' par exemple, et que tu evalues l'expression
 Ensuite tu peux utiliser x directement.
 J'ai ajouté la sauvegarde de la valeur dans le fichier param.txt
+
+
+J'ai un soucis avec la sauvegarde de la pile. Je sais pass si c'est ça qui te fait planter, mais en tous c'est sûr que c'est source de bugs..
+Le problème c'est quand on veut sauvegarder une pile vide. Comment est-ce qu'on peut savoir si la pile de stockage est vide ou pas ?
+J'avais fait :
+if(ps->GetPtr().empty()){
+            fichier<<"pile"<<std::endl;
+            pa->Save(fichier);
+        }
+parce que ps est un deque
+Mais ça renvoie 1 alors que la pile est vide.. T'as pas une idée?
