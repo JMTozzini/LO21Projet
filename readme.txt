@@ -34,4 +34,6 @@ if(ps->GetPtr().empty()){
         }
 parce que ps est un deque
 Mais ça renvoie 1 alors que la pile est vide.. T'as pas une idée?
+->peut-etre tester ps->GetPtr()[0] ? 
+
 >>>>>>> da891df139e8d8f60b08b510a5fcce7898965fec
