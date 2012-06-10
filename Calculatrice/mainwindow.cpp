@@ -122,7 +122,7 @@ void MainWindow::AffichageEcran()
 // Fonctions pour l'initialisation et la mise à jour des param8ètres
 
 void MainWindow::InitParam(){
-    std::ifstream fichier("param8.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
+    std::ifstream fichier("param9.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
     if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des param8ètres
     {
         //if(x) std::cout<<"x="<<(x->GetQString()).toStdString()<<std::endl;
@@ -134,7 +134,7 @@ void MainWindow::InitParam(){
         clavier=atoi(tmp.c_str());
         getline(fichier, angle);
         getline(fichier, tmp);
-        /*if(tmp!="xVide"){
+        if(tmp!="xVide"){
             getline(fichier, tmp);
             QString* tmp2= new QString(tmp.c_str());
             QRegExp exp("'*'");
@@ -144,7 +144,7 @@ void MainWindow::InitParam(){
             else if(tmp2->contains('.') || tmp2->contains(',')){x=ToReel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
             else if(tmp2->contains('/')){x=ToRationnel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
             else {x=new Entier(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
-        }*/
+        }
         getline(fichier, tmp_pile); // lit "pile" ou "pile vide"
         if(tmp_pile!="pileVide"){
             while(getline(fichier, tmp_pile)){
@@ -161,7 +161,7 @@ void MainWindow::InitParam(){
         AffichageEcran();
     }
     else{ // Sinon le fichier n'existait pas, on ouvre en écriture et on l'initialise avec les valeurs pas défaut
-        std::ofstream fichier("param8.txt", ios::out);
+        std::ofstream fichier("param9.txt", ios::out);
 
         if(fichier)
         {
@@ -178,7 +178,7 @@ void MainWindow::InitParam(){
 
             fichier.close();
 
-            std::ifstream fichier("param8.txt", ios::in);
+            std::ifstream fichier("param9.txt", ios::in);
             std::string tmp;
             while(getline(fichier, tmp))
                 std::cout<<tmp<<std::endl;
@@ -192,7 +192,7 @@ void MainWindow::InitParam(){
 }
 
 void MainWindow::MAJParam(){
-    std::ofstream fichier("param8.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
+    std::ofstream fichier("param9.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
 
     if(fichier)  // si l'ouverture a réussi
     {
@@ -200,17 +200,17 @@ void MainWindow::MAJParam(){
         fichier<<typeDeCste<<std::endl;
         fichier<<clavier<<std::endl;
         fichier<<angle<<std::endl;
-        /*if(x){fichier<<"x"<<std::endl; fichier<<(x->GetQString()).toStdString()<<std::endl;} // Variable utilisateur
-        else fichier<<"xVide"<<std::endl;*/
-        if(ps->GetPtr().empty()){
+        if(x){fichier<<"x"<<std::endl; fichier<<(x->GetQString()).toStdString()<<std::endl;} // Variable utilisateur
+        else fichier<<"xVide"<<std::endl;
+//        if(ps->GetPtr()[0]){
             fichier<<"pile"<<std::endl;
             pa->Save(fichier);
-        }
-        else fichier<<"pileVide"<<std::endl;
+//        }
+//        else fichier<<"pileVide"<<std::endl;
 
         fichier.close();
 
-        std::ifstream fichier("param8.txt", ios::in);
+        std::ifstream fichier("param9.txt", ios::in);
         std::string tmp;
         while(getline(fichier, tmp))
             std::cout<<tmp<<std::endl;
