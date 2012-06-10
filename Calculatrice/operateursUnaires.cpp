@@ -401,6 +401,7 @@ Constante& Constante::sqrtFonction()
         throw ExceptionCalculatrice("Erreur d'operation Racine Carré");
 }
 
+
 // inv
 
 Constante& Constante::invFonction()
@@ -431,4 +432,70 @@ Constante& Constante::invFonction()
     }
     else
         throw ExceptionCalculatrice("Erreur d'operation d'Inverse");
+}
+
+
+// Ln & Log (entier, rationnel, réel)
+
+Constante& Constante::lnFonction()
+{
+    Entier* e=dynamic_cast<Entier*>(this);
+    Reel* r=dynamic_cast<Reel*>(this);
+    Rationnel* ra=dynamic_cast<Rationnel*>(this);
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(e)
+    {
+        return *(new Reel( log(e->GetVal()) ));
+    }
+    else if(r)
+    {
+        return *(new Reel ( log(r->GetVal()) ));
+    }
+    else if(ra)
+    {
+        return *(new Reel( log(ra->GetDen() / ra->GetNum())));
+    }
+    else if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "ln" + "'");
+        return *exp;
+    }
+    else
+        throw ExceptionCalculatrice("Erreur d'operation Ln");
+}
+
+Constante& Constante::logFonction()
+{
+    Entier* e=dynamic_cast<Entier*>(this);
+    Reel* r=dynamic_cast<Reel*>(this);
+    Rationnel* ra=dynamic_cast<Rationnel*>(this);
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(e)
+    {
+        if(log10(e->GetVal()) == (int)log10(e->GetVal()))
+            return *(new Entier( (int)log10(e->GetVal()) ));
+        else
+            return *(new Reel ( log10(r->GetVal()) ));
+    }
+    else if(r)
+    {
+        return *(new Reel ( log10(r->GetVal()) ));
+    }
+    else if(ra)
+    {
+        return *(new Reel( log10(ra->GetDen() / ra->GetNum())));
+    }
+    else if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "log" + "'");
+        return *exp;
+    }
+    else
+        throw ExceptionCalculatrice("Erreur d'operation Log");
 }

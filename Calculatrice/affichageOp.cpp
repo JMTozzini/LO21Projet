@@ -530,3 +530,69 @@ void MainWindow::InvPress()
 
     AffichageEcran();
 }
+
+void MainWindow::LnPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+
+        if(tmp->GetType()=="complexe")
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Ln impossible, argument complexe");
+        }
+
+        Constante* c = &(tmp->lnFonction());
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
+
+void MainWindow::LogPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+
+        if(tmp->GetType()=="complexe")
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Log impossible, argument complexe");
+        }
+
+        Constante* c = &(tmp->logFonction());
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}

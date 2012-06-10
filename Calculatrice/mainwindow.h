@@ -69,6 +69,8 @@ public slots:
     void CubePress();
     void SqrtPress();
     void InvPress();
+    void LnPress();
+    void LogPress();
     void EntrerPress();
     void MenuComplexe();
     void MenuEntier();

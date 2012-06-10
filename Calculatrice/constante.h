@@ -112,17 +112,21 @@ public:
     // Signe
     virtual Constante& signFonction();
 
-    // sqr
+    // Sqr
     virtual Constante& sqrFonction();
 
-    //cube
+    // Cube
     virtual Constante& cubeFonction();
 
-    //sqrt
+    // Sqrt
     virtual Constante& sqrtFonction();
 
-    //inv
+    // Inv
     virtual Constante& invFonction();
+
+    // Ln & Log
+    virtual Constante& lnFonction();
+    virtual Constante& logFonction();
 };
 
 
