@@ -374,18 +374,21 @@ Constante& Constante::sqrtFonction()
 
     if(e)
     {
-        if((int)sqrt(e->GetVal()) == e->GetVal())
+        if((int)sqrt(e->GetVal()) == sqrt(e->GetVal()))
             return *(new Entier((int)sqrt(e->GetVal())));
         else
             return *(new Reel( sqrt(e->GetVal()) ));
     }
     else if(r)
     {
-        return *(new Reel (sqrt(e->GetVal()) ));
+        return *(new Reel(sqrt(r->GetVal()) ));
     }
     else if(ra)
     {
-        return *(new Rationnel(sqrt(ra->GetNum()), sqrt(ra->GetDen())));
+        if( ((int)sqrt(ra->GetNum()) == sqrt(ra->GetNum())) && ((int)sqrt(ra->GetDen()) == sqrt(ra->GetDen())))
+            return *(new Rationnel(sqrt(ra->GetNum()), sqrt(ra->GetDen())));
+        else
+            return *(new Reel( sqrt(ra->GetNum()) / sqrt(ra->GetDen()) ) );
     }
     else if(exp)
     {
@@ -396,4 +399,36 @@ Constante& Constante::sqrtFonction()
     }
     else
         throw ExceptionCalculatrice("Erreur d'operation Racine Carré");
+}
+
+// inv
+
+Constante& Constante::invFonction()
+{
+    Entier* e=dynamic_cast<Entier*>(this);
+    Reel* r=dynamic_cast<Reel*>(this);
+    Rationnel* ra=dynamic_cast<Rationnel*>(this);
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(e)
+    {
+        return *(new Reel( 1 / e->GetVal() ));
+    }
+    else if(r)
+    {
+        return *(new Reel ( 1 / r->GetVal() ));
+    }
+    else if(ra)
+    {
+        return *(new Rationnel( ra->GetDen(), ra->GetNum()));
+    }
+    else if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "inv" + "'");
+        return *exp;
+    }
+    else
+        throw ExceptionCalculatrice("Erreur d'operation d'Inverse");
 }

@@ -28,6 +28,7 @@ void MainWindow::EntrerPress()
     else if(s=="sqr"){arret=1; SignPress();}
     else if(s=="cube"){arret=1; CubePress();}
     else if(s=="sqrt"){arret=1; SqrtPress();}
+    else if(s=="inv"){arret=1; InvPress();}
     else if(s==NULL){DupPress();}
     else if(s.contains("$")){
         if(!complexe){

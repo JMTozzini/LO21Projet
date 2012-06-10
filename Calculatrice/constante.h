@@ -95,6 +95,9 @@ public:
 
     //sqrt
     virtual Constante& sqrtFonction();
+
+    //inv
+    virtual Constante& invFonction();
 };
 
 

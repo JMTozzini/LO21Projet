@@ -63,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->sqr,SIGNAL(clicked()),this,SLOT(SqrPress()));
     QObject::connect(ui->cube,SIGNAL(clicked()),this,SLOT(CubePress()));
     QObject::connect(ui->sqrt,SIGNAL(clicked()),this,SLOT(SqrtPress()));
+    QObject::connect(ui->inv,SIGNAL(clicked()),this,SLOT(InvPress()));
 
 
     // Entrer
@@ -120,8 +121,6 @@ void MainWindow::AffichageEcran()
 // Fonctions pour l'initialisation et la mise à jour des paramètres
 
 void MainWindow::InitParam(){
-
-
     std::ifstream fichier("param.txt", ios::in);  // Ouverture en lecture du fichier de paramètres
     if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des paramètres
     {
