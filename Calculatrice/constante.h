@@ -64,8 +64,6 @@ public:
 
     // Opérateur %
     virtual Constante& operator%(Constante *);
-    virtual Constante& operator%(const Entier&);
-    //virtual Constante& operator%(Expression&);
 
     // Operateurs sur les angles
     virtual Constante& cosFonction(std::string)=0;
@@ -82,6 +80,21 @@ public:
     virtual Constante& powFonction(const Rationnel&)=0;
     virtual Constante& powFonction(const Complexe&)=0;
     virtual Constante& powFonction(Expression&)=0;
+
+    // Factorielle
+    virtual Constante& factFonction();
+
+    // Signe
+    virtual Constante& signFonction();
+
+    // sqr
+    virtual Constante& sqrFonction();
+
+    //cube
+    virtual Constante& cubeFonction();
+
+    //sqrt
+    virtual Constante& sqrtFonction();
 };
 
 

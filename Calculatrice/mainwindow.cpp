@@ -58,6 +58,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->sinh,SIGNAL(clicked()),this,SLOT(SinhPress()));
     QObject::connect(ui->cosh,SIGNAL(clicked()),this,SLOT(CoshPress()));
     QObject::connect(ui->tanh,SIGNAL(clicked()),this,SLOT(TanhPress()));
+    QObject::connect(ui->fact,SIGNAL(clicked()),this,SLOT(FactPress()));
+    QObject::connect(ui->sign,SIGNAL(clicked()),this,SLOT(SignPress()));
+    QObject::connect(ui->sqr,SIGNAL(clicked()),this,SLOT(SqrPress()));
+    QObject::connect(ui->cube,SIGNAL(clicked()),this,SLOT(CubePress()));
+    QObject::connect(ui->sqrt,SIGNAL(clicked()),this,SLOT(SqrtPress()));
 
 
     // Entrer

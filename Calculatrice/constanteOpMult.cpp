@@ -75,8 +75,8 @@ Complexe& Complexe::operator*(const Reel& r){
 }
 
 Complexe& Complexe::operator*(const Complexe& c){
-    Base* tmp1=dynamic_cast<Base*>(&( (*reel + c.GetReel()) + (&(*imaginaire + c.GetIm())) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (*imaginaire + c.GetReel()) + (&(*reel + c.GetIm())) ));
+    Base* tmp1=dynamic_cast<Base*>(&( (*reel * c.GetReel()) - (&(*imaginaire * c.GetIm())) ));
+    Base* tmp2=dynamic_cast<Base*>(&( (*imaginaire * c.GetReel()) + (&(*reel * c.GetIm())) ));
 
     return *(new Complexe(tmp1, tmp2));
 }

@@ -61,3 +61,11 @@ void Rationnel::Simplifier()
 
     numerateur/=res; denominateur/=res;
 }
+
+int Factorielle(int n)
+{
+    if(n==0)
+        return 1;
+    else
+        return (n*Factorielle(n-1));
+}

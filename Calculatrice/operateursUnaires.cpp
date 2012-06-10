@@ -262,3 +262,138 @@ Reel& Rationnel::tanhFonction(std::string angle){
     }
     return *(new Reel(tanh(numerateur/denominateur)));
 }
+
+
+// Factorielle
+
+Constante& Constante::factFonction()
+{
+    Entier* e=dynamic_cast<Entier*>(this);
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(e)
+    {
+        return *(new Entier(Factorielle( (int)e->GetVal() )));
+    }
+    else if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "!" + "'");
+        return *exp;
+    }
+    else
+        throw ExceptionCalculatrice("Factorielle impossible, argument(s) non entiers ou expression");
+}
+
+
+// Signe
+
+Constante& Constante::signFonction()
+{
+    Entier* e=dynamic_cast<Entier*>(this);
+    Reel* r=dynamic_cast<Reel*>(this);
+    Rationnel* ra=dynamic_cast<Rationnel*>(this);
+    Expression* exp=dynamic_cast<Expression*>(this);
+    Complexe* cmplx=dynamic_cast<Complexe*>(this);
+
+    if(e)
+    {
+        return *(new Entier(-((int)e->GetVal())));
+    }
+    else if(r)
+    {
+        return *(new Reel(-(r->GetVal())));
+    }
+    else if(ra)
+    {
+        return *(new Rationnel(-((int)ra->GetNum()) , (int)ra->GetDen() ));
+    }
+    else if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "sign" + "'");
+        return *exp;
+    }
+    else if(cmplx)
+    {
+        Base* tmp1=dynamic_cast<Base*>(&(cmplx->GetReel()->signFonction()));
+        Base* tmp2=dynamic_cast<Base*>(&(cmplx->GetIm()->signFonction()));
+        return *(new Complexe(tmp1, tmp2));
+    }
+    else
+        throw ExceptionCalculatrice("Erreur d'operation Signe");
+}
+
+
+// sqr
+
+Constante& Constante::sqrFonction()
+{
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "sqr" + "'");
+        return *exp;
+    }
+    else
+        return (this->operator *(this));
+}
+
+
+// cube
+
+Constante& Constante::cubeFonction()
+{
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "cube" + "'");
+        return *exp;
+    }
+    else
+        return (*this * this * this);
+}
+
+
+// sqrt
+
+Constante& Constante::sqrtFonction()
+{
+    Entier* e=dynamic_cast<Entier*>(this);
+    Reel* r=dynamic_cast<Reel*>(this);
+    Rationnel* ra=dynamic_cast<Rationnel*>(this);
+    Expression* exp=dynamic_cast<Expression*>(this);
+
+    if(e)
+    {
+        if((int)sqrt(e->GetVal()) == e->GetVal())
+            return *(new Entier((int)sqrt(e->GetVal())));
+        else
+            return *(new Reel( sqrt(e->GetVal()) ));
+    }
+    else if(r)
+    {
+        return *(new Reel (sqrt(e->GetVal()) ));
+    }
+    else if(ra)
+    {
+        return *(new Rationnel(sqrt(ra->GetNum()), sqrt(ra->GetDen())));
+    }
+    else if(exp)
+    {
+        QString tmp = exp->GetQString();
+        tmp.remove("'");
+        exp->SetExp("'" + tmp + " " + "sqrt" + "'");
+        return *exp;
+    }
+    else
+        throw ExceptionCalculatrice("Erreur d'operation Racine Carré");
+}

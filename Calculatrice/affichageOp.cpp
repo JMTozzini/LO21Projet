@@ -343,14 +343,155 @@ void MainWindow::ModPress()
         Constante* tmp1=&(ps->Depiler());
         Constante* tmp2=&(ps->Depiler());
 
-        if(tmp1->GetType()!="entier" || tmp2->GetType()!="entier")
+        if((tmp1->GetType()!="entier" && tmp1->GetType()!="expression") || (tmp2->GetType()!="entier" && tmp2->GetType()!="expression"))
         {
             pa->Empiler(s2); pa->Empiler(s1);
             ps->Empiler(tmp2); ps->Empiler(tmp1);
-            throw ExceptionCalculatrice("Modulo impossible, argument(s) non entier(s)");
+            throw ExceptionCalculatrice("Modulo impossible, argument(s) non entier(s) ou expression(s)");
         }
 
         Constante* c = &(tmp2->operator%(tmp1));
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
+
+void MainWindow::FactPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+
+        if((tmp->GetType()!="entier" && tmp->GetType()!="expression"))
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Factorielle impossible, argument non entier ou expression");
+        }
+
+        Constante* c = &(tmp->factFonction());
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
+
+void MainWindow::SignPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+        Constante* c = &(tmp->signFonction());
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
+
+void MainWindow::SqrPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+        Constante* c = &(tmp->sqrFonction());
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
+
+void MainWindow::CubePress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+        Constante* c = &(tmp->cubeFonction());
+        ps->Empiler(c);
+        pa->Empiler(c->GetQString());
+    }
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
+
+    g->AjouterMemento(ps->CreerMemento());
+    g->AjouterMemento(pa->CreerMemento());
+    //pa->AffichagePile(); ps->AffichagePile();
+
+    ui->champEcr->clear();
+    MAJParam();
+
+    AffichageEcran();
+}
+
+void MainWindow::SqrtPress()
+{
+    try
+    {
+        if(pa->GetPtr().size()<1)
+            throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
+
+        QString s=pa->Depiler();
+        Constante* tmp=&(ps->Depiler());
+
+        if(tmp->GetType()=="complexe")
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Racine Carré impossible, argument complexe");
+        }
+
+        Constante* c = &(tmp->sqrtFonction());
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }

@@ -110,8 +110,8 @@ Reel& Rationnel::operator/(const Reel& r){
 Complexe& Rationnel::operator/(const Complexe& c){
     Constante* den=new Entier(denominateur); Constante* num=new Entier(numerateur);
     Base* tmp1=dynamic_cast<Base*>(&( (*num * c.GetReel()) / &(*den * &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm()))) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (*num * c.GetIm()) / &(*den * &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm()))) ));
-    return *(new Complexe(tmp1, tmp2)); // tmp2 à inverser le signe
+    Base* tmp2=dynamic_cast<Base*>(&(( (*num * c.GetIm()) / &(*den * &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm()))) ).signFonction()));
+    return *(new Complexe(tmp1, tmp2));
 }
 Expression& Rationnel::operator/(Expression& ex){
     QString tmp1=this->GetQString(), tmp2=ex.GetQString();
@@ -127,8 +127,8 @@ Reel& Reel::operator/(const Entier& e) {return *(new Reel(valeur / e.GetVal()));
 Reel& Reel::operator/(const Rationnel& ra){return *(new Reel(valeur / (ra.GetNum() / ra.GetDen())));}
 Complexe& Reel::operator/(const Complexe& c){
     Base* tmp1=dynamic_cast<Base*>(&( (*c.GetReel() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (*c.GetIm() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
-    return *(new Complexe(tmp1, tmp2));// signe tmp2 opposé
+    Base* tmp2=dynamic_cast<Base*>(&(( (*c.GetIm() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ).signFonction()));
+    return *(new Complexe(tmp1, tmp2));
 }
 Expression& Reel::operator/(Expression& ex)
 {
@@ -148,8 +148,8 @@ Rationnel& Entier::operator/(const Rationnel& ra)
 }
 Complexe& Entier::operator/(const Complexe& c){
     Base* tmp1=dynamic_cast<Base*>(&( (*c.GetReel() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
-    Base* tmp2=dynamic_cast<Base*>(&( (*c.GetIm() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ));
-    return *(new Complexe(tmp1, tmp2)); // signe tmp2 opposé
+    Base* tmp2=dynamic_cast<Base*>(&(( (*c.GetIm() * this) / &(*c.GetReel()*c.GetReel() + &(*c.GetIm()*c.GetIm())) ).signFonction()));
+    return *(new Complexe(tmp1, tmp2));
 }
 Expression& Entier::operator/(Expression& ex)
 {

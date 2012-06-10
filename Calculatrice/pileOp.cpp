@@ -2,7 +2,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-//Méthodes des piles
+//Methodes des piles
 void PileAffichage::Swap(unsigned int x, unsigned int y)
 {
     QString tmp;
@@ -26,14 +26,14 @@ void PileStockage::Swap(unsigned int x, unsigned int y)
 QString PileAffichage::Dup()
 {
     if(ptr.size()==0)
-        throw ExceptionCalculatrice("Il n'y a pas d'éléments à dupliquer");
+        throw ExceptionCalculatrice("Il n'y a pas d'elements a dupliquer");
     return ptr.front();
 }
 
 Constante* PileStockage::Dup()
 {
     if(ptr.size()==0)
-        throw ExceptionCalculatrice("Il n'y a pas d'éléments à dupliquer");
+        throw ExceptionCalculatrice("Il n'y a pas d'elements a dupliquer");
     return ptr.front();
 }
 
@@ -153,8 +153,7 @@ void MainWindow::MeanPress()
         Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
         if(tmp1==0)
         {
-            ExceptionCalculatrice e("Impossible de swapper arguments non entiers");
-            e.GetInfos();
+            throw ExceptionCalculatrice("Impossible de swapper arguments non entiers");
         }
         Constante* tmp2=ps->Mean(tmp1->GetVal());
         ps->Empiler(tmp2);
@@ -180,7 +179,7 @@ void MainWindow::EvalPress()
                 std::cout<<"s="<<s.toStdString()<<std::endl;
                 if(s.contains("$")){
                     if(!complexe){
-                        ExceptionCalculatrice e("Le mode complexe n'est pas activé");
+                        ExceptionCalculatrice e("Le mode complexe n'est pas active");
                         TraitementErreur(e.GetInfos());
                     }
                     else{
@@ -213,6 +212,12 @@ void MainWindow::EvalPress()
                     EntrerPress();
                 }
             }
+        }
+        else
+        {
+            pa->Empiler(s);
+            ps->Empiler(c);
+            throw ExceptionCalculatrice("Impossible d'evaluer, l'argument n'est pas une expression");
         }
     }
     catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}

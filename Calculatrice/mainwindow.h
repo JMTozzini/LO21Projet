@@ -63,6 +63,11 @@ public slots:
     void PlusPress();
     void MoinsPress();
     void MultPress();
+    void FactPress();
+    void SignPress();
+    void SqrPress();
+    void CubePress();
+    void SqrtPress();
     void EntrerPress();
     void MenuComplexe();
     void MenuEntier();

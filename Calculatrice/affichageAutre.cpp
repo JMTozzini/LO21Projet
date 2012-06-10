@@ -23,6 +23,11 @@ void MainWindow::EntrerPress()
     else if(s=="tanh"){arret=1; TanhPress();}
     else if(s=="pow"){arret=1; PowPress();}
     else if(s=="mod"){arret=1; ModPress();}
+    else if(s=="!"){arret=1; FactPress();}
+    else if(s=="sign"){arret=1; SignPress();}
+    else if(s=="sqr"){arret=1; SignPress();}
+    else if(s=="cube"){arret=1; CubePress();}
+    else if(s=="sqrt"){arret=1; SqrtPress();}
     else if(s==NULL){DupPress();}
     else if(s.contains("$")){
         if(!complexe){

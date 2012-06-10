@@ -10,5 +10,10 @@ mod
 mod
 
 Ca plante. J'ai pas plus regardé ton code, mais c'est chelou
+-> Chez moi ça fonctionne...
 
-- J'ai fait la variable utilisateur x, defini comme une constante* dans mainwindow
+Modulo, Factorielle, Signe, sqr, cube terminés. Mise a jour de Div grâce à Signe
+Sqrt en cours.
+
+J'ai fait la variable utilisateur x, defini comme une constante* dans mainwindow
+-> Je comprend pas comment marche ce x, il me met "valeur non reconnue"
