@@ -72,7 +72,9 @@ Constante* PileStockage::Mean(unsigned int x)
     return res;
 }
 
+
 // Slots
+
 void MainWindow::SwapPress()
 {
     try
@@ -134,8 +136,13 @@ void MainWindow::SumPress()
 {
     try
     {
-        pa->Depiler();
+        QString s=pa->Depiler();
         Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
+        if(tmp1==0 || tmp1->GetVal()<0)
+        {
+            ps->Empiler(tmp1); pa->Empiler(s);
+            throw ExceptionCalculatrice("Impossible de sommer arguments non entiers positifs");
+        }
         Constante* tmp2=ps->Sum(tmp1->GetVal());
         ps->Empiler(tmp2);
         pa->Empiler(tmp2->GetQString());

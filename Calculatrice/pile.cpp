@@ -26,8 +26,23 @@ void PileStockage::AffichagePile()
     std::cout<<"----"<<std::endl;
 }
 
+PileStockage* PileStockage::instance=0;
 
+PileStockage* PileStockage::GetInstance()
+{
+    if(instance==0)
+        instance=new PileStockage();
 
+    else
+        std::cout<<"erreur"<<std::endl;
+
+    return instance;
+}
+
+void PileStockage::DetruireInstance()
+{
+    delete instance;
+}
 
 
 // ----- Pile Affichage -----
@@ -68,4 +83,22 @@ void PileAffichage::Save(std::ostream& os)
         os<< (*deb).toStdString() <<std::endl;
     }
 
+}
+
+PileAffichage* PileAffichage::instance=0;
+
+PileAffichage* PileAffichage::GetInstance()
+{
+    if(instance==0)
+        instance=new PileAffichage();
+
+    else
+        std::cout<<"erreur"<<std::endl;
+
+    return instance;
+}
+
+void PileAffichage::DetruireInstance()
+{
+    delete instance;
 }

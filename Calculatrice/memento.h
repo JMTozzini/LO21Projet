@@ -33,8 +33,12 @@ class Gardien
    std::deque<MementoAff*> listeEtatsSauveAff;
    int indexAff;
 
+   static Gardien* instance;
+
 public:
-   Gardien():indexStock(-1),indexAff(-1){}
+   // Constructeur & Destructeur
+   static Gardien* GetInstance();
+   static void DetruireInstance();
 
    void AjouterMemento(MementoStock* m);
    MementoStock* AnnulerStock();
@@ -43,6 +47,11 @@ public:
    void AjouterMemento(MementoAff* m);
    MementoAff* AnnulerAff();
    MementoAff* RetablirAff();
+
+private :
+    Gardien():indexStock(-1),indexAff(-1){}
+    void operator=(const Gardien&){}
+    ~Gardien(){delete this;}
 };
 
 #endif // MEMENTO_H

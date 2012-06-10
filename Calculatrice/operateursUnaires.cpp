@@ -479,7 +479,7 @@ Constante& Constante::logFonction()
         if(log10(e->GetVal()) == (int)log10(e->GetVal()))
             return *(new Entier( (int)log10(e->GetVal()) ));
         else
-            return *(new Reel ( log10(r->GetVal()) ));
+            return *(new Reel( log10(e->GetVal()) ));
     }
     else if(r)
     {

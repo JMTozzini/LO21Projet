@@ -29,6 +29,8 @@ void MainWindow::EntrerPress()
     else if(s=="cube"){arret=1; CubePress();}
     else if(s=="sqrt"){arret=1; SqrtPress();}
     else if(s=="inv"){arret=1; InvPress();}
+    else if(s=="ln"){arret=1; LnPress();}
+    else if(s=="log"){arret=1; LogPress();}
     else if(s==NULL){DupPress();}
     else if(s.contains("$")){
         if(!complexe){
@@ -43,7 +45,6 @@ void MainWindow::EntrerPress()
     }
     else if(s.contains(",")){ps->Empiler(ToReel(s));}
     else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
-
     else if(s=="x" && x!=NULL){
         ps->Empiler(x);
         pa->Empiler(x->GetQString());
@@ -52,7 +53,7 @@ void MainWindow::EntrerPress()
     else {// entier ou expression non reconnue
         bool retour=0;
         int valeur=s.toInt(&retour,10);
-        std::cout<<"entier";
+        //std::cout<<"entier";
         if(retour==0){
             arret=1;
             ExceptionCalculatrice e("Erreur : valeur non reconnue");
@@ -60,12 +61,7 @@ void MainWindow::EntrerPress()
         }
         ps->Empiler(new Entier(valeur));
     }
-    /*else
-    {
-        pa->Depiler();
-        ExceptionCalculatrice e("Mauvaise saisie");
-        e.GetInfos();
-    }*/
+
     if(!arret){
         try
         {
@@ -88,7 +84,6 @@ void MainWindow::AnnulerPress()
     {
         MementoStock *m1= g->AnnulerStock();
         MementoAff *m2=g->AnnulerAff();
-
         ps->ChargerMemento(m1);
         pa->ChargerMemento(m2);
     }
@@ -104,7 +99,6 @@ void MainWindow::RetablirPress()
     {
         MementoStock *m1= g->RetablirStock();
         MementoAff *m2=g->RetablirAff();
-
         ps->ChargerMemento(m1);
         pa->ChargerMemento(m2);
     }

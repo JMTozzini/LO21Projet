@@ -5,8 +5,8 @@
 using namespace std;
 
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow),
-    ps(new PileStockage()), pa(new PileAffichage()), g(new Gardien())
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
+    ui(new Ui::MainWindow), ps(PileStockage::GetInstance()), pa(PileAffichage::GetInstance()), g(Gardien::GetInstance())
 {
     ui->setupUi(this);
 
@@ -125,7 +125,7 @@ void MainWindow::InitParam(){
     std::ifstream fichier("param8.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
     if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des param8ètres
     {
-        if(x) std::cout<<"x="<<(x->GetQString()).toStdString()<<std::endl;
+        //if(x) std::cout<<"x="<<(x->GetQString()).toStdString()<<std::endl;
         string tmp, tmp_pile;
         getline(fichier, tmp);
         complexe=atoi(tmp.c_str());
@@ -134,7 +134,7 @@ void MainWindow::InitParam(){
         clavier=atoi(tmp.c_str());
         getline(fichier, angle);
         getline(fichier, tmp);
-        if(tmp!="xVide"){
+        /*if(tmp!="xVide"){
             getline(fichier, tmp);
             QString* tmp2= new QString(tmp.c_str());
             QRegExp exp("'*'");
@@ -144,7 +144,7 @@ void MainWindow::InitParam(){
             else if(tmp2->contains('.') || tmp2->contains(',')){x=ToReel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
             else if(tmp2->contains('/')){x=ToRationnel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
             else {x=new Entier(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
-        }
+        }*/
         getline(fichier, tmp_pile); // lit "pile" ou "pile vide"
         if(tmp_pile!="pileVide"){
             while(getline(fichier, tmp_pile)){
@@ -200,8 +200,8 @@ void MainWindow::MAJParam(){
         fichier<<typeDeCste<<std::endl;
         fichier<<clavier<<std::endl;
         fichier<<angle<<std::endl;
-        if(x){fichier<<"x"<<std::endl; fichier<<(x->GetQString()).toStdString()<<std::endl;} // Variable utilisateur
-        else fichier<<"xVide"<<std::endl;
+        /*if(x){fichier<<"x"<<std::endl; fichier<<(x->GetQString()).toStdString()<<std::endl;} // Variable utilisateur
+        else fichier<<"xVide"<<std::endl;*/
         if(ps->GetPtr().empty()){
             fichier<<"pile"<<std::endl;
             pa->Save(fichier);

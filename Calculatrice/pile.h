@@ -7,9 +7,12 @@
 class PileStockage
 {
     std::deque<Constante*> ptr;
+    static PileStockage* instance;
 
 public :
-    PileStockage(){}
+    // Constructeur & Destructeur
+    static PileStockage* GetInstance();
+    static void DetruireInstance();
 
     // Méthodes de base
     void Empiler(Constante*);
@@ -28,14 +31,22 @@ public :
     void Drop();
     Constante* Sum(unsigned int);
     Constante* Mean(unsigned int);
+
+private:
+    PileStockage(){}
+    void operator=(const PileStockage&){}
+    ~PileStockage(){delete this;}
 };
 
 class PileAffichage
 {
     std::deque<QString> ptr;
+    static PileAffichage* instance;
 
 public:
-    PileAffichage(){}
+    // Constructeur & Destructeur
+    static PileAffichage* GetInstance();
+    static void DetruireInstance();
 
     // Méthodes de base
     void Empiler(QString);
@@ -56,6 +67,11 @@ public:
 
     // Sauvegarde dans un fichier
     void Save(std::ostream& os);
+
+private:
+    PileAffichage(){}
+    void operator=(const PileAffichage&){}
+    ~PileAffichage(){delete this;}
 };
 
 #endif // PILE_H

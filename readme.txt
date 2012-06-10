@@ -14,8 +14,6 @@ Ca plante. J'ai pas plus regardé ton code, mais c'est chelou
 
 Modulo, Factorielle, Signe, sqr, cube, sqrt, inv terminés. Mise a jour de Div grâce à Signe
 
-Reste le LN sachant que LOG(X)=LN(X)/LN(10)
-
 Corrections erreurs dans affichageOp.cpp 
 
 J'ai fait la variable utilisateur x, defini comme une constante* dans mainwindow

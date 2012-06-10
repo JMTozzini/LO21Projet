@@ -56,3 +56,21 @@ void Gardien::AjouterMemento(MementoStock *m)
     listeEtatsSauveStock.push_back(m);
     indexStock++;
 }
+
+Gardien* Gardien::instance=0;
+
+Gardien* Gardien::GetInstance()
+{
+    if(instance==0)
+        instance=new Gardien();
+
+    else
+        std::cout<<"erreur"<<std::endl;
+
+    return instance;
+}
+
+void Gardien::DetruireInstance()
+{
+    delete instance;
+}
