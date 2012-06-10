@@ -1,6 +1,16 @@
 #ifndef CONSTANTE_H
 #define CONSTANTE_H
 
+/**
+\file constante.cpp
+\author Agathe Oddon et Jean-Michel Tozzini
+\date 10/06/2012
+\version 1
+
+\brief Déclaration de la classe Constante et de ses classes filles
+**/
+
+
 #include <iostream>
 #include <string>
 #include <QString>
@@ -14,6 +24,11 @@ class Entier;
 class Expression;
 
 
+/*!
+  * \class Constante
+  * \brief Classe mère de toutes les valeurs empilées dans la pile de stockage
+  */
+
 class Constante
 {
 public:
@@ -22,8 +37,18 @@ public:
     virtual ~Constante(){delete this;}
 
     // Fonctions annexes virtuelles
+    /*!
+      * \brief Fonction virtuelle pour l'affichage
+      * \param os flux d'affichage
+      */
     virtual void Afficher(std::ostream& os=std::cout)const = 0;
+    /*!
+      * \return Renvoie un double qui représente une valeur principale de la classe.
+      */
     virtual double GetVal() const = 0;      // Temporaire
+    /*!
+      * \return Renvoie un double qui représente une valeur secondaire de la classe.
+      */
     virtual double GetValBis() const = 0;   // Temporaire
     virtual const std::string GetType()const=0;
     virtual QString GetQString()const=0;
