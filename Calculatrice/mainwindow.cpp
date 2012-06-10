@@ -123,7 +123,7 @@ void MainWindow::AffichageEcran()
 
 void MainWindow::InitParam(){
     std::ifstream fichier("param9.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
-    if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des param8ètres
+    if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des paramètres
     {
         //if(x) std::cout<<"x="<<(x->GetQString()).toStdString()<<std::endl;
         string tmp, tmp_pile;
@@ -133,7 +133,7 @@ void MainWindow::InitParam(){
         getline(fichier, tmp);
         clavier=atoi(tmp.c_str());
         getline(fichier, angle);
-        getline(fichier, tmp);
+        getline(fichier, tmp); // lit "x" ou "xVide"
         if(tmp!="xVide"){
             getline(fichier, tmp);
             QString* tmp2= new QString(tmp.c_str());
@@ -145,7 +145,7 @@ void MainWindow::InitParam(){
             else if(tmp2->contains('/')){x=ToRationnel(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
             else {x=new Entier(*tmp2); ps->Empiler(x); pa->Empiler(*tmp2);}
         }
-        getline(fichier, tmp_pile); // lit "pile" ou "pile vide"
+        getline(fichier, tmp_pile); // lit "pile" ou "pileVide"
         if(tmp_pile!="pileVide"){
             while(getline(fichier, tmp_pile)){
                 QString* tmp2= new QString(tmp_pile.c_str());

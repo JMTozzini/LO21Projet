@@ -39,3 +39,5 @@ Mais ça renvoie 1 alors que la pile est vide.. T'as pas une idée?
 => Non ça marche pas non plus, le pointeur existe maisn il a rien dedans.. Du coup on peut pas sauvegarder une pile vide.
 Tu crashes toujours avec les changements que j'ai fait ? J'ai remis le x
 ->Je crash encore...
+=> Je sais pas s'où ça peut venir.. En attendant commente tous les trucs avec les x dans mainwindow.cpp, change param9.txt en param10.txt, sinon ça risque de faire buguer le reste.
+Au pire on le montrera sur mon ordi.
