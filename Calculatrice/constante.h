@@ -38,24 +38,40 @@ public:
 
     // Fonctions annexes virtuelles
     /*!
-      * \brief Fonction virtuelle pour l'affichage
+      * \brief Fonction virtuelle pour l'affichage, affichant une constante en console.
       * \param os flux d'affichage
       */
     virtual void Afficher(std::ostream& os=std::cout)const = 0;
     /*!
-      * \return Renvoie un double qui représente une valeur principale de la classe.
+      * \brief Fonction permettant de récupérer la valeur principale des différentes constantes.
+      * \return Double.
       */
     virtual double GetVal() const = 0;      // Temporaire
     /*!
-      * \return Renvoie un double qui représente une valeur secondaire de la classe.
+      * \brief Fonction permettant de récupérer la valeur secondaire des différentes constantes.
+      * \return Double.
       */
     virtual double GetValBis() const = 0;   // Temporaire
+    /*!
+      * \brief Fonction permettant de récupérer la valeur du type des différentes constantes.
+      * \return String.
+      */
     virtual const std::string GetType()const=0;
+    /*!
+      * \brief Fonction permettant de transformer une Constante en QString.
+      * \return QString.
+      */
     virtual QString GetQString()const=0;
     virtual void Simplifier(){}
 
 
     // Opérateur +
+    /*!
+      * Surcharge permettant de réaliser l'opération + pour les différentes constantes. Lors d'une opération c'est l'opérateur +
+      * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
+      * \brief Fonction permetant de surcharger l'opérateur +.
+      * \return Référence sur Constante.
+      */
     virtual Constante& operator+(Constante*); // Design Pattern Template Method
     virtual Constante& operator+(const Reel&)=0;
     virtual Constante& operator+(const Entier&)=0;
@@ -64,6 +80,12 @@ public:
     virtual Constante& operator+(Expression&)=0;
 
     // Opérateur -
+    /*!
+      * Surcharge permettant de réaliser l'opération - pour les différentes constantes. Lors d'une opération c'est l'opérateur -
+      * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
+      * \brief Fonction permetant de surcharger l'opérateur -.
+      * \return Référence sur Constante.
+      */
     virtual Constante& operator-(Constante*); // Design Pattern Template Method
     virtual Constante& operator-(const Reel&)=0;
     virtual Constante& operator-(const Entier&)=0;
@@ -129,7 +151,12 @@ public:
     virtual Constante& logFonction();
 };
 
-
+/*!
+  * Le type expression est une Chaîne de caractères déclaré entre quote, pouvant reporter un calcule. Ce dernier ne peut-être réalisé
+  * qu'à travers la fonction eval.
+  * \class Expression
+  * \brief Classe permettant de gérer le type expression pouvant être évaluer à tout moment.
+  */
 class Expression : public Constante
 {
     QString exp;
@@ -143,6 +170,9 @@ public:
     double GetValBis() const {throw ExceptionCalculatrice("Fonction non définie\n");}
     const std::string GetType() const {return "expression";}
     QString GetQString() const {return exp;}
+    /*!
+      * \brief Fonction permettant de d'affecter la valeur de l'expression.
+      */
     void SetExp(QString s){exp=s;}
 
     // Operateur +
@@ -189,14 +219,21 @@ public:
     Expression& powFonction(Expression &);
 };
 
-
+/*!
+  * \class Base
+  * \brief Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe.
+  */
 class Base : public Constante{
 public :
     virtual void Afficher(std::ostream& os=std::cout)const = 0;
     virtual ~Base(){delete this;}
 };
 
-class Complexe : public Constante // a$b (correspondant à a+ib), a : reel, b : imaginaire
+/*!
+  * \class Complexe
+  * \brief Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle & Imaginaire) est une Base.
+  */
+class Complexe : public Constante
 {
     Base* reel;
     Base* imaginaire;
@@ -213,7 +250,15 @@ public:
     const std::string GetType() const {return "complexe";}
     QString GetQString() const {return (reel->GetQString()+"$"+imaginaire->GetQString());}
 
+    /*!
+      * \brief Fonction permettant de récupérer la partie Réelle du Complexe.
+      * \return Pointeur sur Base
+      */
     Base* GetReel() const {return reel;}   // Pour des raisons de commodité
+    /*!
+      * \brief Fonction permettant de récupérer la partie Imaginaire du Complexe.
+      * \return Pointeur sur Base
+      */
     Base* GetIm() const {return imaginaire;}  // Pour des raisons de commodité
 
 
@@ -261,8 +306,10 @@ public:
     Complexe& powFonction(const Complexe&);
 };
 
-
-
+/*!
+  * \class Reel
+  * \brief Classe permettant de représenter le type Réel.
+  */
 class Reel : public Base
 {
     double valeur;
@@ -324,8 +371,11 @@ public:
     Complexe& powFonction(const Complexe&);
 };
 
-
-class Rationnel : public Base // a/b, a : numérateur & b : dénominateur != 0
+/*!
+  * \class Rationnel
+  * \brief Classe permettant de représenter le type Rationnel.
+  */
+class Rationnel : public Base
 {
     int numerateur;
     int denominateur;
@@ -334,9 +384,9 @@ public:
     // Constructeurs
     Rationnel(int num, int den):numerateur(num)
     {
-        //if(den==0)
-            /*throw ExceptionCalculatrice("Divison par 0 !");*/
-        //else
+        if(den==0)
+            throw ExceptionCalculatrice("Divison par 0 !");
+        else
             denominateur=den;
     }
     ~Rationnel(){delete this;}
@@ -350,6 +400,9 @@ public:
 
     double GetNum() const {return GetVal();}    // Pour des raisons de commodité
     double GetDen() const {return GetValBis();} // Pour des raisons de commodité
+    /*!
+      * \brief Fonction permattant de simplifier un Rationnel.
+      */
     void Simplifier();
 
 
@@ -397,7 +450,10 @@ public:
     Complexe& powFonction(const Complexe&);
 };
 
-
+/*!
+  * \class Entier
+  * \brief Classe permettant de représenter le type Entier.
+  */
 class Entier : public Base
 {
     int valeur;
@@ -458,8 +514,6 @@ public:
     Expression& powFonction(Expression&);
     Complexe& powFonction(const Complexe&);
 };
-
-
 
 #endif // CONSTANTE_H
 

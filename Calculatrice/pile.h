@@ -4,6 +4,10 @@
 #include "constante.h"
 #include "memento.h"
 
+/*!
+  * \class PileStockage
+  * \brief Classe permettant d'empiler et de dépiler des pointeurs sur Constante.
+  */
 class PileStockage
 {
     std::deque<Constante*> ptr;
@@ -38,6 +42,11 @@ private:
     ~PileStockage(){delete this;}
 };
 
+/*!
+  * Cette classe est l'exacte copie de la PileStockage mais avec des valeur QString, elle permet une gestion simplifiée de l'affichage.
+  * \class PileAffichage
+  * \brief Classe permettant d'empiler et de dépiler des QString.
+  */
 class PileAffichage
 {
     std::deque<QString> ptr;

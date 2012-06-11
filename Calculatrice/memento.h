@@ -5,6 +5,11 @@
 #include <iostream>
 #include "constante.h"
 
+/*!
+  * Cette classe sauvegarde à un chaque changement le contenu de PileStockage.
+  * \class MementoStock
+  * \brief Classe permettant d'annuler et de rétablir un état de PileStockage.
+  */
 class MementoStock
 {
     std::deque<Constante*> etat;
@@ -15,6 +20,11 @@ public:
     void test(){etat[0]->Afficher();}
 };
 
+/*!
+  * Cette classe sauvegarde à chaque changement le contenu de PileAffichage.
+  * \class MementoAff
+  * \brief Classe permettant d'annuler et de rétablir un état de PileAffichage.
+  */
 class MementoAff
 {
     std::deque<QString> etat;
@@ -25,6 +35,11 @@ public:
     void test(){std::cout<<etat[0].toStdString()<<std::endl;}
 };
 
+/*!
+  * Cette classe sert à sauvegarder les mementos des deux piles, elle peut rétablir ou annuler un état.
+  * \class Gardien
+  * \brief Classe permettant d'empiler et de dépiler les MementoStock & MementoAff.
+  */
 class Gardien
 {
    std::deque<MementoStock*> listeEtatsSauveStock;

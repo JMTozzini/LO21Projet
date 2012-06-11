@@ -41,3 +41,8 @@ Tu crashes toujours avec les changements que j'ai fait ? J'ai remis le x
 ->Je crash encore...
 => Je sais pas s'où ça peut venir.. En attendant commente tous les trucs avec les x dans mainwindow.cpp, change param9.txt en param10.txt, sinon ça risque de faire buguer le reste.
 Au pire on le montrera sur mon ordi.
+--> de toute façon je comptais pas le montrer sur mon ordi, j'ai un peu la flemme d'apporter mon fixe a PG et le netbook est un peu petit pour une démo, il lui faut 3 heures pour compiler lool
+
+J'ai passer les deux pile et Gardien en singleton, si tu as un peu de tmps regarde si elles se comporte toujours bien, notamment Gardien.
+
+Je n'arrive pas à mettre les fonctions annexes dans doxygen...
