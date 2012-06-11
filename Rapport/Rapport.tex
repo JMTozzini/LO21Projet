@@ -29,6 +29,14 @@ Le rendu final du projet est composé du présent rapport, du code du programme ai
 
 \section{Conception}
 \subsection{Diagramme de classes}
+-- UML --\\
+\subsubsection{Types de données}
+Nous avons choisi de représenter les données manipulées par la calculatrice comme des objets de trois classes : Entier, Réel, Rationnel, Complexe et Expression. 
+
+La classe complexe est composée de deux objets de type Base, classe abstraite de laquelle dérivent Entier, Réel et Rationnel. Cela permet d'obtenir des complexes composés de deux attributs de types différents.
+
+Les classes Base, Complexe et Expression dérivent de la classe abstraite et exclusive Constante. Ainsi nous empilerons dans la pile de stockage des objets de type Constante.
+
 
 \subsection{Diagrammes de séquences}
 \begin{figure}[H]
@@ -42,8 +50,6 @@ Le rendu final du projet est composé du présent rapport, du code du programme ai
 	\includegraphics[width=16.7cm]{diag_seq_2.png}
 	\caption{Diagramme de séquence décrivant le lancement de la fenêtre, la saisie de 'x=1', puis l'évaluation de l'expression et la sauvegarde de la valeur 1 dans la variable x.}
 \end{figure}
-
-
 
 \section{Implémentation}
 aaaaaaaah
