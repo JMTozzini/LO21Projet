@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LO21 Projet: Rationnel Class Reference</title>
+<title>Projet LO21: Rationnel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">LO21 Projet
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Projet LO21
    </div>
-   <div id="projectbrief">test</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,13 +86,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Rationnel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe permettant de représenter le type <a class="el" href="class_rationnel.html" title="Classe permettant de représenter le type Rationnel.">Rationnel</a>.  
+ <a href="class_rationnel.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="constante_8h_source.html">constante.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Rationnel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_rationnel.png" usemap="#Rationnel_map" alt=""/>
   <map id="Rationnel_map" name="Rationnel_map">
-<area href="class_base.html" alt="Base" shape="rect" coords="0,56,68,80"/>
+<area href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe." alt="Base" shape="rect" coords="0,56,68,80"/>
 <area href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage." alt="Constante" shape="rect" coords="0,0,68,24"/>
 </map>
  </div></div>
@@ -106,19 +109,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afac9e543020a4611f5c217a01f3c0a7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afac9e543020a4611f5c217a01f3c0a7e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Rationnel</b> (int num, int den)</td></tr>
 <tr class="memitem:a52b4a6398d50e630ad76be8be0185f9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rationnel.html#a52b4a6398d50e630ad76be8be0185f9f">Afficher</a> (std::ostream &amp;os=std::cout) const </td></tr>
-<tr class="memdesc:a52b4a6398d50e630ad76be8be0185f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage.  <a href="#a52b4a6398d50e630ad76be8be0185f9f"></a><br/></td></tr>
+<tr class="memdesc:a52b4a6398d50e630ad76be8be0185f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage, affichant une constante en console.  <a href="#a52b4a6398d50e630ad76be8be0185f9f"></a><br/></td></tr>
 <tr class="memitem:a29987744cb2a7631ffa4db708630fe19"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rationnel.html#a29987744cb2a7631ffa4db708630fe19">GetVal</a> () const </td></tr>
+<tr class="memdesc:a29987744cb2a7631ffa4db708630fe19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur principale des différentes constantes.  <a href="#a29987744cb2a7631ffa4db708630fe19"></a><br/></td></tr>
 <tr class="memitem:a2403f411e88b3de9f83ad735342e68ec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rationnel.html#a2403f411e88b3de9f83ad735342e68ec">GetValBis</a> () const </td></tr>
-<tr class="memitem:a8c04071cda8dbe6f2b13db3e48d1bedb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c04071cda8dbe6f2b13db3e48d1bedb"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> () const </td></tr>
-<tr class="memitem:af3d40b73dc2dd7ca6e978fe5ddb0c945"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3d40b73dc2dd7ca6e978fe5ddb0c945"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () const </td></tr>
+<tr class="memdesc:a2403f411e88b3de9f83ad735342e68ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur secondaire des différentes constantes.  <a href="#a2403f411e88b3de9f83ad735342e68ec"></a><br/></td></tr>
+<tr class="memitem:a8c04071cda8dbe6f2b13db3e48d1bedb"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rationnel.html#a8c04071cda8dbe6f2b13db3e48d1bedb">GetType</a> () const </td></tr>
+<tr class="memdesc:a8c04071cda8dbe6f2b13db3e48d1bedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur du type des différentes constantes.  <a href="#a8c04071cda8dbe6f2b13db3e48d1bedb"></a><br/></td></tr>
+<tr class="memitem:af3d40b73dc2dd7ca6e978fe5ddb0c945"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rationnel.html#af3d40b73dc2dd7ca6e978fe5ddb0c945">GetQString</a> () const </td></tr>
+<tr class="memdesc:af3d40b73dc2dd7ca6e978fe5ddb0c945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString.  <a href="#af3d40b73dc2dd7ca6e978fe5ddb0c945"></a><br/></td></tr>
 <tr class="memitem:a07ba81e61e4186ada00f3da12bb24ffc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07ba81e61e4186ada00f3da12bb24ffc"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>GetNum</b> () const </td></tr>
 <tr class="memitem:ab2791ae061c2c27af018830c1564fb4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2791ae061c2c27af018830c1564fb4c"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>GetDen</b> () const </td></tr>
 <tr class="memitem:ab86742d127646fff7096e04c0882e00d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab86742d127646fff7096e04c0882e00d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rationnel.html#ab86742d127646fff7096e04c0882e00d">Simplifier</a> ()</td></tr>
+<tr class="memdesc:ab86742d127646fff7096e04c0882e00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permattant de simplifier un <a class="el" href="class_rationnel.html" title="Classe permettant de représenter le type Rationnel.">Rationnel</a>. <br/></td></tr>
 <tr class="memitem:a7f8c5581a3127a63c4e1d607f67c2c41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f8c5581a3127a63c4e1d607f67c2c41"></a>
 <a class="el" href="class_rationnel.html">Rationnel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_rationnel.html">Rationnel</a> &amp;)</td></tr>
 <tr class="memitem:aa3f503d0e02a7a4d9a1a76cfe433cfd6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3f503d0e02a7a4d9a1a76cfe433cfd6"></a>
@@ -182,7 +188,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td
 <tr class="memitem:ad97076dea173603caed06561f332188d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad97076dea173603caed06561f332188d"></a>
 <a class="el" href="class_complexe.html">Complexe</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>powFonction</b> (const <a class="el" href="class_complexe.html">Complexe</a> &amp;)</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Classe permettant de représenter le type <a class="el" href="class_rationnel.html" title="Classe permettant de représenter le type Rationnel.">Rationnel</a>. </p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a52b4a6398d50e630ad76be8be0185f9f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +213,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td
 </table>
 </div><div class="memdoc">
 
-<p>Fonction virtuelle pour l'affichage. </p>
+<p>Fonction virtuelle pour l'affichage, affichant une constante en console. </p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>flux d'affichage </td></tr>
@@ -214,6 +222,62 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td
 </dl>
 
 <p>Implements <a class="el" href="class_base.html#abf809e43ca06c05dcbe3592648a72466">Base</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3d40b73dc2dd7ca6e978fe5ddb0c945"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Rationnel::GetQString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString. </p>
+<dl class="section return"><dt>Returns:</dt><dd>QString. </dd></dl>
+
+<p>Implements <a class="el" href="class_constante.html#a7c3edb9082492c95eb319da3d42bb7a4">Constante</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c04071cda8dbe6f2b13db3e48d1bedb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Rationnel::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la valeur du type des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>String. </dd></dl>
+
+<p>Implements <a class="el" href="class_constante.html#a2f716a85b9b519b7bbf8ed8d997f66d3">Constante</a>.</p>
 
 </div>
 </div>
@@ -237,7 +301,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur principale de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur principale des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implements <a class="el" href="class_constante.html#af88eb444ed659cc6bb2f9571326a9eb1">Constante</a>.</p>
 
@@ -263,7 +329,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur secondaire de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur secondaire des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implements <a class="el" href="class_constante.html#aa0602d62c04f28f7bda68723f5dbc48b">Constante</a>.</p>
 
@@ -282,7 +350,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 10 2012 15:51:50 for LO21 Projet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 11 2012 10:55:00 for Projet LO21 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

@@ -1,3 +1,8 @@
+/**
+\file mainwindow.h
+\brief Déclaration de la class MainWindow permettant la création de la fenêtre
+**/
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

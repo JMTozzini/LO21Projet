@@ -1,8 +1,5 @@
-#ifndef CONSTANTE_H
-#define CONSTANTE_H
-
 /**
-\file constante.cpp
+\file constante.h
 \author Agathe Oddon et Jean-Michel Tozzini
 \date 10/06/2012
 \version 1
@@ -10,6 +7,8 @@
 \brief Déclaration de la classe Constante et de ses classes filles
 **/
 
+#ifndef CONSTANTE_H
+#define CONSTANTE_H
 
 #include <iostream>
 #include <string>

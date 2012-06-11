@@ -1,6 +1,15 @@
 \hypertarget{class_expression}{\section{Expression Class Reference}
 \label{class_expression}\index{Expression@{Expression}}
 }
+
+
+Classe permettant de gérer le type expression pouvant être évaluer à tout moment.  
+
+
+
+
+{\ttfamily \#include $<$constante.\-h$>$}
+
 Inheritance diagram for Expression\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,20 +23,18 @@ Inheritance diagram for Expression\-:\begin{figure}[H]
 
 \item 
 void \hyperlink{class_expression_a82c745bad73c0adf286f893febaf7406}{Afficher} (std\-::ostream \&os=std\-::cout) const 
-\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage, affichant une constante en console. \end{DoxyCompactList}\item 
 double \hyperlink{class_expression_addc8118b94c445af0da80e8e661dfd6a}{Get\-Val} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur principale des différentes constantes. \end{DoxyCompactList}\item 
 double \hyperlink{class_expression_ad602729011040226673d7c1ee94367d9}{Get\-Val\-Bis} () const 
-\item 
-\hypertarget{class_expression_aa96b1065b6d35277b2c30c25966eccfb}{const std\-::string {\bfseries Get\-Type} () const }\label{class_expression_aa96b1065b6d35277b2c30c25966eccfb}
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur secondaire des différentes constantes. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{class_expression_aa96b1065b6d35277b2c30c25966eccfb}{Get\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur du type des différentes constantes. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_expression_ab64fbbad486a07035ada97ae21786db4}{Get\-Q\-String} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. \end{DoxyCompactList}\item 
+\hypertarget{class_expression_accbdcaab3d8ffc239d83618d49574733}{void \hyperlink{class_expression_accbdcaab3d8ffc239d83618d49574733}{Set\-Exp} (Q\-String s)}\label{class_expression_accbdcaab3d8ffc239d83618d49574733}
 
-\item 
-\hypertarget{class_expression_ab64fbbad486a07035ada97ae21786db4}{Q\-String {\bfseries Get\-Q\-String} () const }\label{class_expression_ab64fbbad486a07035ada97ae21786db4}
-
-\item 
-\hypertarget{class_expression_accbdcaab3d8ffc239d83618d49574733}{void {\bfseries Set\-Exp} (Q\-String s)}\label{class_expression_accbdcaab3d8ffc239d83618d49574733}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de d'affecter la valeur de l'expression. \end{DoxyCompactList}\item 
 \hypertarget{class_expression_a9059e6564e7737b2b5f22bb101f0e983}{\hyperlink{class_expression}{Expression} \& {\bfseries operator+} (const \hyperlink{class_entier}{Entier} \&)}\label{class_expression_a9059e6564e7737b2b5f22bb101f0e983}
 
 \item 
@@ -123,6 +130,11 @@ double \hyperlink{class_expression_ad602729011040226673d7c1ee94367d9}{Get\-Val\-
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Classe permettant de gérer le type expression pouvant être évaluer à tout moment. 
+
+Le type expression est une Chaîne de caractères déclaré entre quote, pouvant reporter un calcule. Ce dernier ne peut-\/être réalisé qu'à travers la fonction eval. 
+
 \subsection{Member Function Documentation}
 \hypertarget{class_expression_a82c745bad73c0adf286f893febaf7406}{\index{Expression@{Expression}!Afficher@{Afficher}}
 \index{Afficher@{Afficher}!Expression@{Expression}}
@@ -133,7 +145,7 @@ double \hyperlink{class_expression_ad602729011040226673d7c1ee94367d9}{Get\-Val\-
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_expression_a82c745bad73c0adf286f893febaf7406}
 
 
-Fonction virtuelle pour l'affichage. 
+Fonction virtuelle pour l'affichage, affichant une constante en console. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -144,6 +156,42 @@ Fonction virtuelle pour l'affichage.
 
 Implements \hyperlink{class_constante_af3be055efee6c5be81ed6a610dbe2082}{Constante}.
 
+\hypertarget{class_expression_ab64fbbad486a07035ada97ae21786db4}{\index{Expression@{Expression}!Get\-Q\-String@{Get\-Q\-String}}
+\index{Get\-Q\-String@{Get\-Q\-String}!Expression@{Expression}}
+\subsubsection[{Get\-Q\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Expression\-::\-Get\-Q\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_expression_ab64fbbad486a07035ada97ae21786db4}
+
+
+Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. 
+
+\begin{DoxyReturn}{Returns}
+Q\-String. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}{Constante}.
+
+\hypertarget{class_expression_aa96b1065b6d35277b2c30c25966eccfb}{\index{Expression@{Expression}!Get\-Type@{Get\-Type}}
+\index{Get\-Type@{Get\-Type}!Expression@{Expression}}
+\subsubsection[{Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Expression\-::\-Get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_expression_aa96b1065b6d35277b2c30c25966eccfb}
+
+
+Fonction permettant de récupérer la valeur du type des différentes constantes. 
+
+\begin{DoxyReturn}{Returns}
+String. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}{Constante}.
+
 \hypertarget{class_expression_addc8118b94c445af0da80e8e661dfd6a}{\index{Expression@{Expression}!Get\-Val@{Get\-Val}}
 \index{Get\-Val@{Get\-Val}!Expression@{Expression}}
 \subsubsection[{Get\-Val}]{\setlength{\rightskip}{0pt plus 5cm}double Expression\-::\-Get\-Val (
@@ -151,8 +199,12 @@ Implements \hyperlink{class_constante_af3be055efee6c5be81ed6a610dbe2082}{Constan
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_expression_addc8118b94c445af0da80e8e661dfd6a}
+
+
+Fonction permettant de récupérer la valeur principale des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur principale de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -165,8 +217,12 @@ Implements \hyperlink{class_constante_af88eb444ed659cc6bb2f9571326a9eb1}{Constan
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_expression_ad602729011040226673d7c1ee94367d9}
+
+
+Fonction permettant de récupérer la valeur secondaire des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur secondaire de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -176,7 +232,7 @@ Implements \hyperlink{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}{Constan
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-constante.\-h\item 
+\hyperlink{constante_8h}{constante.\-h}\item 
 constante\-Op\-Div.\-cpp\item 
 constante\-Op\-Moins.\-cpp\item 
 constante\-Op\-Mult.\-cpp\item 

@@ -1,7 +1,13 @@
+/**
+\file fonctionsAnnexe.h
+\brief Fonctions annexes de la calculatrice
+**/
+
 #ifndef FONCTIONANNEXE_H
 #define FONCTIONANNEXE_H
 
 #include "mainwindow.h"
+
 
 /*!
   * \brief Fonction permettant de transformer une chaine de caractères en Réel.

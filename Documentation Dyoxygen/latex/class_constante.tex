@@ -20,23 +20,20 @@ Inheritance diagram for Constante\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_constante_af3be055efee6c5be81ed6a610dbe2082}{Afficher} (std\-::ostream \&os=std\-::cout) const =0
-\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage, affichant une constante en console. \end{DoxyCompactList}\item 
 virtual double \hyperlink{class_constante_af88eb444ed659cc6bb2f9571326a9eb1}{Get\-Val} () const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur principale des différentes constantes. \end{DoxyCompactList}\item 
 virtual double \hyperlink{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}{Get\-Val\-Bis} () const =0
-\item 
-\hypertarget{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}{virtual const std\-::string {\bfseries Get\-Type} () const =0}\label{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}
-
-\item 
-\hypertarget{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}{virtual Q\-String {\bfseries Get\-Q\-String} () const =0}\label{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur secondaire des différentes constantes. \end{DoxyCompactList}\item 
+virtual const std\-::string \hyperlink{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}{Get\-Type} () const =0
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur du type des différentes constantes. \end{DoxyCompactList}\item 
+virtual Q\-String \hyperlink{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}{Get\-Q\-String} () const =0
+\begin{DoxyCompactList}\small\item\em Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. \end{DoxyCompactList}\item 
 \hypertarget{class_constante_a19f83499c795b8fc069eb18600d4150b}{virtual void {\bfseries Simplifier} ()}\label{class_constante_a19f83499c795b8fc069eb18600d4150b}
 
 \item 
-\hypertarget{class_constante_a2346d7608b9732c34f96d01bed7de6c1}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries operator+} (\hyperlink{class_constante}{Constante} $\ast$)}\label{class_constante_a2346d7608b9732c34f96d01bed7de6c1}
-
-\item 
+virtual \hyperlink{class_constante}{Constante} \& \hyperlink{class_constante_a2346d7608b9732c34f96d01bed7de6c1}{operator+} (\hyperlink{class_constante}{Constante} $\ast$)
+\begin{DoxyCompactList}\small\item\em Fonction permetant de surcharger l'opérateur +. \end{DoxyCompactList}\item 
 \hypertarget{class_constante_adb952a391e582f997a96d848e461e281}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries operator+} (const \hyperlink{class_reel}{Reel} \&)=0}\label{class_constante_adb952a391e582f997a96d848e461e281}
 
 \item 
@@ -52,9 +49,8 @@ virtual double \hyperlink{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}{Get
 \hypertarget{class_constante_a03fc01b8fdf5b8945ae8b72209bc1285}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries operator+} (\hyperlink{class_expression}{Expression} \&)=0}\label{class_constante_a03fc01b8fdf5b8945ae8b72209bc1285}
 
 \item 
-\hypertarget{class_constante_a24a763c775e35399bff4441b2f41db12}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries operator-\/} (\hyperlink{class_constante}{Constante} $\ast$)}\label{class_constante_a24a763c775e35399bff4441b2f41db12}
-
-\item 
+virtual \hyperlink{class_constante}{Constante} \& \hyperlink{class_constante_a24a763c775e35399bff4441b2f41db12}{operator-\/} (\hyperlink{class_constante}{Constante} $\ast$)
+\begin{DoxyCompactList}\small\item\em Fonction permetant de surcharger l'opérateur -\/. \end{DoxyCompactList}\item 
 \hypertarget{class_constante_a6eb6194c90dce85b0e8d55cb39733f6e}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries operator-\/} (const \hyperlink{class_reel}{Reel} \&)=0}\label{class_constante_a6eb6194c90dce85b0e8d55cb39733f6e}
 
 \item 
@@ -162,6 +158,12 @@ virtual double \hyperlink{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}{Get
 \item 
 \hypertarget{class_constante_aa6b78608f1cac4f73fd6fc329827fc51}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries inv\-Fonction} ()}\label{class_constante_aa6b78608f1cac4f73fd6fc329827fc51}
 
+\item 
+\hypertarget{class_constante_ae5ab8d028c8f1f30adecd55e490abc02}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries ln\-Fonction} ()}\label{class_constante_ae5ab8d028c8f1f30adecd55e490abc02}
+
+\item 
+\hypertarget{class_constante_a59acb8fb371ba3ac53670ec6a62d1864}{virtual \hyperlink{class_constante}{Constante} \& {\bfseries log\-Fonction} ()}\label{class_constante_a59acb8fb371ba3ac53670ec6a62d1864}
+
 \end{DoxyCompactItemize}
 
 
@@ -178,7 +180,7 @@ Classe mère de toutes les valeurs empilées dans la pile de stockage.
 ) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_constante_af3be055efee6c5be81ed6a610dbe2082}
 
 
-Fonction virtuelle pour l'affichage. 
+Fonction virtuelle pour l'affichage, affichant une constante en console. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -189,6 +191,42 @@ Fonction virtuelle pour l'affichage.
 
 Implemented in \hyperlink{class_entier_ab93c84ba0e96feeaf5cbf8bc4fc7c9c3}{Entier}, \hyperlink{class_rationnel_a52b4a6398d50e630ad76be8be0185f9f}{Rationnel}, \hyperlink{class_reel_a52eb23de069729bc2f8b8b2c18e1be7d}{Reel}, \hyperlink{class_complexe_ab81a9988e1a69cae64682e5030de5901}{Complexe}, \hyperlink{class_base_abf809e43ca06c05dcbe3592648a72466}{Base}, and \hyperlink{class_expression_a82c745bad73c0adf286f893febaf7406}{Expression}.
 
+\hypertarget{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}{\index{Constante@{Constante}!Get\-Q\-String@{Get\-Q\-String}}
+\index{Get\-Q\-String@{Get\-Q\-String}!Constante@{Constante}}
+\subsubsection[{Get\-Q\-String}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String Constante\-::\-Get\-Q\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}
+
+
+Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. 
+
+\begin{DoxyReturn}{Returns}
+Q\-String. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_entier_a6e534c8d7e3861fd43055134f4379262}{Entier}, \hyperlink{class_rationnel_af3d40b73dc2dd7ca6e978fe5ddb0c945}{Rationnel}, \hyperlink{class_reel_a594333e01d25ecce1335cd25d7cd872e}{Reel}, \hyperlink{class_complexe_a32c9167b86fd9cfccb1295c2eecc516e}{Complexe}, and \hyperlink{class_expression_ab64fbbad486a07035ada97ae21786db4}{Expression}.
+
+\hypertarget{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}{\index{Constante@{Constante}!Get\-Type@{Get\-Type}}
+\index{Get\-Type@{Get\-Type}!Constante@{Constante}}
+\subsubsection[{Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\-::string Constante\-::\-Get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}
+
+
+Fonction permettant de récupérer la valeur du type des différentes constantes. 
+
+\begin{DoxyReturn}{Returns}
+String. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_entier_af8701306da8ca2e12869eaa3c65eb03b}{Entier}, \hyperlink{class_rationnel_a8c04071cda8dbe6f2b13db3e48d1bedb}{Rationnel}, \hyperlink{class_reel_ae36b25f3a050292cd6324c0f15dbfb2d}{Reel}, \hyperlink{class_complexe_aee55b37e0370e38f3aeedbbf25977876}{Complexe}, and \hyperlink{class_expression_aa96b1065b6d35277b2c30c25966eccfb}{Expression}.
+
 \hypertarget{class_constante_af88eb444ed659cc6bb2f9571326a9eb1}{\index{Constante@{Constante}!Get\-Val@{Get\-Val}}
 \index{Get\-Val@{Get\-Val}!Constante@{Constante}}
 \subsubsection[{Get\-Val}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Constante\-::\-Get\-Val (
@@ -196,8 +234,12 @@ Implemented in \hyperlink{class_entier_ab93c84ba0e96feeaf5cbf8bc4fc7c9c3}{Entier
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_constante_af88eb444ed659cc6bb2f9571326a9eb1}
+
+
+Fonction permettant de récupérer la valeur principale des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur principale de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -210,18 +252,50 @@ Implemented in \hyperlink{class_entier_a3e5f576f451df416bb58e7286ccbe951}{Entier
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}
+
+
+Fonction permettant de récupérer la valeur secondaire des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur secondaire de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
 Implemented in \hyperlink{class_entier_a349675638599cd6e5f67161664e1d58a}{Entier}, \hyperlink{class_rationnel_a2403f411e88b3de9f83ad735342e68ec}{Rationnel}, \hyperlink{class_reel_ab66ca2cb446b1cbc0c3565ff054acc1b}{Reel}, \hyperlink{class_complexe_acfe2a56e2024db9eca2039fccdb2d6f4}{Complexe}, and \hyperlink{class_expression_ad602729011040226673d7c1ee94367d9}{Expression}.
 
+\hypertarget{class_constante_a2346d7608b9732c34f96d01bed7de6c1}{\index{Constante@{Constante}!operator+@{operator+}}
+\index{operator+@{operator+}!Constante@{Constante}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Constante} \& Constante\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf Constante} $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_constante_a2346d7608b9732c34f96d01bed7de6c1}
+
+
+Fonction permetant de surcharger l'opérateur +. 
+
+Surcharge permettant de réaliser l'opération + pour les différentes constantes. Lors d'une opération c'est l'opérateur + de \hyperlink{class_constante}{Constante} qui est appelé et qui délègue en fonction du type de \hyperlink{class_constante}{Constante} au surcharge des classes filles. \begin{DoxyReturn}{Returns}
+Référence sur \hyperlink{class_constante}{Constante}. 
+\end{DoxyReturn}
+\hypertarget{class_constante_a24a763c775e35399bff4441b2f41db12}{\index{Constante@{Constante}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Constante@{Constante}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Constante} \& Constante\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Constante} $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_constante_a24a763c775e35399bff4441b2f41db12}
+
+
+Fonction permetant de surcharger l'opérateur -\/. 
+
+Surcharge permettant de réaliser l'opération -\/ pour les différentes constantes. Lors d'une opération c'est l'opérateur -\/ de \hyperlink{class_constante}{Constante} qui est appelé et qui délègue en fonction du type de \hyperlink{class_constante}{Constante} au surcharge des classes filles. \begin{DoxyReturn}{Returns}
+Référence sur \hyperlink{class_constante}{Constante}. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-constante.\-h\item 
+\hyperlink{constante_8h}{constante.\-h}\item 
 constante\-Op\-Div.\-cpp\item 
 constante\-Op\-Mod.\-cpp\item 
 constante\-Op\-Moins.\-cpp\item 

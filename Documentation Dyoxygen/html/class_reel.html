@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LO21 Projet: Reel Class Reference</title>
+<title>Projet LO21: Reel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">LO21 Projet
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Projet LO21
    </div>
-   <div id="projectbrief">test</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,13 +86,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Reel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe permettant de représenter le type Réel.  
+ <a href="class_reel.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="constante_8h_source.html">constante.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Reel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_reel.png" usemap="#Reel_map" alt=""/>
   <map id="Reel_map" name="Reel_map">
-<area href="class_base.html" alt="Base" shape="rect" coords="0,56,68,80"/>
+<area href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe." alt="Base" shape="rect" coords="0,56,68,80"/>
 <area href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage." alt="Constante" shape="rect" coords="0,0,68,24"/>
 </map>
  </div></div>
@@ -108,13 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3f4716794dd7c64e94ec56accc75dd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3f4716794dd7c64e94ec56accc75dd9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Reel</b> (QString s)</td></tr>
 <tr class="memitem:a52eb23de069729bc2f8b8b2c18e1be7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reel.html#a52eb23de069729bc2f8b8b2c18e1be7d">Afficher</a> (std::ostream &amp;os=std::cout) const </td></tr>
-<tr class="memdesc:a52eb23de069729bc2f8b8b2c18e1be7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage.  <a href="#a52eb23de069729bc2f8b8b2c18e1be7d"></a><br/></td></tr>
+<tr class="memdesc:a52eb23de069729bc2f8b8b2c18e1be7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage, affichant une constante en console.  <a href="#a52eb23de069729bc2f8b8b2c18e1be7d"></a><br/></td></tr>
 <tr class="memitem:a5755a5ed2d9042ad59984967dbddc7f5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reel.html#a5755a5ed2d9042ad59984967dbddc7f5">GetVal</a> () const </td></tr>
+<tr class="memdesc:a5755a5ed2d9042ad59984967dbddc7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur principale des différentes constantes.  <a href="#a5755a5ed2d9042ad59984967dbddc7f5"></a><br/></td></tr>
 <tr class="memitem:ab66ca2cb446b1cbc0c3565ff054acc1b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reel.html#ab66ca2cb446b1cbc0c3565ff054acc1b">GetValBis</a> () const </td></tr>
-<tr class="memitem:ae36b25f3a050292cd6324c0f15dbfb2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae36b25f3a050292cd6324c0f15dbfb2d"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> () const </td></tr>
-<tr class="memitem:a594333e01d25ecce1335cd25d7cd872e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a594333e01d25ecce1335cd25d7cd872e"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () const </td></tr>
+<tr class="memdesc:ab66ca2cb446b1cbc0c3565ff054acc1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur secondaire des différentes constantes.  <a href="#ab66ca2cb446b1cbc0c3565ff054acc1b"></a><br/></td></tr>
+<tr class="memitem:ae36b25f3a050292cd6324c0f15dbfb2d"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reel.html#ae36b25f3a050292cd6324c0f15dbfb2d">GetType</a> () const </td></tr>
+<tr class="memdesc:ae36b25f3a050292cd6324c0f15dbfb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur du type des différentes constantes.  <a href="#ae36b25f3a050292cd6324c0f15dbfb2d"></a><br/></td></tr>
+<tr class="memitem:a594333e01d25ecce1335cd25d7cd872e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reel.html#a594333e01d25ecce1335cd25d7cd872e">GetQString</a> () const </td></tr>
+<tr class="memdesc:a594333e01d25ecce1335cd25d7cd872e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString.  <a href="#a594333e01d25ecce1335cd25d7cd872e"></a><br/></td></tr>
 <tr class="memitem:a6a81e5a8d9d1d00e8ec75f4c1e6ca08b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a81e5a8d9d1d00e8ec75f4c1e6ca08b"></a>
 <a class="el" href="class_reel.html">Reel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_reel.html">Reel</a> &amp;)</td></tr>
 <tr class="memitem:afe46150ca2ed4f283cf7945d78c91365"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe46150ca2ed4f283cf7945d78c91365"></a>
@@ -178,7 +183,9 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
 <tr class="memitem:a86cf7d11bb08bf03236bfa90355a921a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86cf7d11bb08bf03236bfa90355a921a"></a>
 <a class="el" href="class_complexe.html">Complexe</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>powFonction</b> (const <a class="el" href="class_complexe.html">Complexe</a> &amp;)</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Classe permettant de représenter le type Réel. </p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a52eb23de069729bc2f8b8b2c18e1be7d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +208,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
 </table>
 </div><div class="memdoc">
 
-<p>Fonction virtuelle pour l'affichage. </p>
+<p>Fonction virtuelle pour l'affichage, affichant une constante en console. </p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>flux d'affichage </td></tr>
@@ -210,6 +217,62 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
 </dl>
 
 <p>Implements <a class="el" href="class_base.html#abf809e43ca06c05dcbe3592648a72466">Base</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a594333e01d25ecce1335cd25d7cd872e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Reel::GetQString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString. </p>
+<dl class="section return"><dt>Returns:</dt><dd>QString. </dd></dl>
+
+<p>Implements <a class="el" href="class_constante.html#a7c3edb9082492c95eb319da3d42bb7a4">Constante</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae36b25f3a050292cd6324c0f15dbfb2d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Reel::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la valeur du type des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>String. </dd></dl>
+
+<p>Implements <a class="el" href="class_constante.html#a2f716a85b9b519b7bbf8ed8d997f66d3">Constante</a>.</p>
 
 </div>
 </div>
@@ -233,7 +296,9 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur principale de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur principale des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implements <a class="el" href="class_constante.html#af88eb444ed659cc6bb2f9571326a9eb1">Constante</a>.</p>
 
@@ -259,7 +324,9 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur secondaire de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur secondaire des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implements <a class="el" href="class_constante.html#aa0602d62c04f28f7bda68723f5dbc48b">Constante</a>.</p>
 
@@ -277,7 +344,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 10 2012 15:51:50 for LO21 Projet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 11 2012 10:55:00 for Projet LO21 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

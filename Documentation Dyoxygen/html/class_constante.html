@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LO21 Projet: Constante Class Reference</title>
+<title>Projet LO21: Constante Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">LO21 Projet
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Projet LO21
    </div>
-   <div id="projectbrief">test</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,12 +97,12 @@ Inheritance diagram for Constante:</div>
  <div class="center">
   <img src="class_constante.png" usemap="#Constante_map" alt=""/>
   <map id="Constante_map" name="Constante_map">
-<area href="class_base.html" alt="Base" shape="rect" coords="84,56,158,80"/>
-<area href="class_complexe.html" alt="Complexe" shape="rect" coords="168,56,242,80"/>
-<area href="class_expression.html" alt="Expression" shape="rect" coords="252,56,326,80"/>
-<area href="class_entier.html" alt="Entier" shape="rect" coords="0,112,74,136"/>
-<area href="class_rationnel.html" alt="Rationnel" shape="rect" coords="84,112,158,136"/>
-<area href="class_reel.html" alt="Reel" shape="rect" coords="168,112,242,136"/>
+<area href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe." alt="Base" shape="rect" coords="84,56,158,80"/>
+<area href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u..." alt="Complexe" shape="rect" coords="168,56,242,80"/>
+<area href="class_expression.html" title="Classe permettant de gérer le type expression pouvant être évaluer à tout moment." alt="Expression" shape="rect" coords="252,56,326,80"/>
+<area href="class_entier.html" title="Classe permettant de représenter le type Entier." alt="Entier" shape="rect" coords="0,112,74,136"/>
+<area href="class_rationnel.html" title="Classe permettant de représenter le type Rationnel." alt="Rationnel" shape="rect" coords="84,112,158,136"/>
+<area href="class_reel.html" title="Classe permettant de représenter le type Réel." alt="Reel" shape="rect" coords="168,112,242,136"/>
 </map>
  </div></div>
 
@@ -113,17 +111,19 @@ Inheritance diagram for Constante:</div>
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af3be055efee6c5be81ed6a610dbe2082"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#af3be055efee6c5be81ed6a610dbe2082">Afficher</a> (std::ostream &amp;os=std::cout) const =0</td></tr>
-<tr class="memdesc:af3be055efee6c5be81ed6a610dbe2082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage.  <a href="#af3be055efee6c5be81ed6a610dbe2082"></a><br/></td></tr>
+<tr class="memdesc:af3be055efee6c5be81ed6a610dbe2082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage, affichant une constante en console.  <a href="#af3be055efee6c5be81ed6a610dbe2082"></a><br/></td></tr>
 <tr class="memitem:af88eb444ed659cc6bb2f9571326a9eb1"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#af88eb444ed659cc6bb2f9571326a9eb1">GetVal</a> () const =0</td></tr>
+<tr class="memdesc:af88eb444ed659cc6bb2f9571326a9eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur principale des différentes constantes.  <a href="#af88eb444ed659cc6bb2f9571326a9eb1"></a><br/></td></tr>
 <tr class="memitem:aa0602d62c04f28f7bda68723f5dbc48b"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#aa0602d62c04f28f7bda68723f5dbc48b">GetValBis</a> () const =0</td></tr>
-<tr class="memitem:a2f716a85b9b519b7bbf8ed8d997f66d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f716a85b9b519b7bbf8ed8d997f66d3"></a>
-virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> () const =0</td></tr>
-<tr class="memitem:a7c3edb9082492c95eb319da3d42bb7a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c3edb9082492c95eb319da3d42bb7a4"></a>
-virtual QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () const =0</td></tr>
+<tr class="memdesc:aa0602d62c04f28f7bda68723f5dbc48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur secondaire des différentes constantes.  <a href="#aa0602d62c04f28f7bda68723f5dbc48b"></a><br/></td></tr>
+<tr class="memitem:a2f716a85b9b519b7bbf8ed8d997f66d3"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#a2f716a85b9b519b7bbf8ed8d997f66d3">GetType</a> () const =0</td></tr>
+<tr class="memdesc:a2f716a85b9b519b7bbf8ed8d997f66d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur du type des différentes constantes.  <a href="#a2f716a85b9b519b7bbf8ed8d997f66d3"></a><br/></td></tr>
+<tr class="memitem:a7c3edb9082492c95eb319da3d42bb7a4"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#a7c3edb9082492c95eb319da3d42bb7a4">GetQString</a> () const =0</td></tr>
+<tr class="memdesc:a7c3edb9082492c95eb319da3d42bb7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString.  <a href="#a7c3edb9082492c95eb319da3d42bb7a4"></a><br/></td></tr>
 <tr class="memitem:a19f83499c795b8fc069eb18600d4150b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19f83499c795b8fc069eb18600d4150b"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td></tr>
-<tr class="memitem:a2346d7608b9732c34f96d01bed7de6c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2346d7608b9732c34f96d01bed7de6c1"></a>
-virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memitem:a2346d7608b9732c34f96d01bed7de6c1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#a2346d7608b9732c34f96d01bed7de6c1">operator+</a> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memdesc:a2346d7608b9732c34f96d01bed7de6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permetant de surcharger l'opérateur +.  <a href="#a2346d7608b9732c34f96d01bed7de6c1"></a><br/></td></tr>
 <tr class="memitem:adb952a391e582f997a96d848e461e281"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb952a391e582f997a96d848e461e281"></a>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_reel.html">Reel</a> &amp;)=0</td></tr>
 <tr class="memitem:a2402e4cd1b0d9d9618f05fe5876f090f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2402e4cd1b0d9d9618f05fe5876f090f"></a>
@@ -134,8 +134,8 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_complexe.html">Complexe</a> &amp;)=0</td></tr>
 <tr class="memitem:a03fc01b8fdf5b8945ae8b72209bc1285"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03fc01b8fdf5b8945ae8b72209bc1285"></a>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (<a class="el" href="class_expression.html">Expression</a> &amp;)=0</td></tr>
-<tr class="memitem:a24a763c775e35399bff4441b2f41db12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24a763c775e35399bff4441b2f41db12"></a>
-virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memitem:a24a763c775e35399bff4441b2f41db12"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#a24a763c775e35399bff4441b2f41db12">operator-</a> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memdesc:a24a763c775e35399bff4441b2f41db12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permetant de surcharger l'opérateur -.  <a href="#a24a763c775e35399bff4441b2f41db12"></a><br/></td></tr>
 <tr class="memitem:a6eb6194c90dce85b0e8d55cb39733f6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6eb6194c90dce85b0e8d55cb39733f6e"></a>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="class_reel.html">Reel</a> &amp;)=0</td></tr>
 <tr class="memitem:a0227e180269d318299bf7981a639d196"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0227e180269d318299bf7981a639d196"></a>
@@ -208,6 +208,10 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>sqrtFonction</b> ()</td></tr>
 <tr class="memitem:aa6b78608f1cac4f73fd6fc329827fc51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6b78608f1cac4f73fd6fc329827fc51"></a>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>invFonction</b> ()</td></tr>
+<tr class="memitem:ae5ab8d028c8f1f30adecd55e490abc02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5ab8d028c8f1f30adecd55e490abc02"></a>
+virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>lnFonction</b> ()</td></tr>
+<tr class="memitem:a59acb8fb371ba3ac53670ec6a62d1864"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59acb8fb371ba3ac53670ec6a62d1864"></a>
+virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>logFonction</b> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Classe mère de toutes les valeurs empilées dans la pile de stockage. </p>
@@ -234,7 +238,7 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 </table>
 </div><div class="memdoc">
 
-<p>Fonction virtuelle pour l'affichage. </p>
+<p>Fonction virtuelle pour l'affichage, affichant une constante en console. </p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>flux d'affichage </td></tr>
@@ -243,6 +247,62 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 </dl>
 
 <p>Implemented in <a class="el" href="class_entier.html#ab93c84ba0e96feeaf5cbf8bc4fc7c9c3">Entier</a>, <a class="el" href="class_rationnel.html#a52b4a6398d50e630ad76be8be0185f9f">Rationnel</a>, <a class="el" href="class_reel.html#a52eb23de069729bc2f8b8b2c18e1be7d">Reel</a>, <a class="el" href="class_complexe.html#ab81a9988e1a69cae64682e5030de5901">Complexe</a>, <a class="el" href="class_base.html#abf809e43ca06c05dcbe3592648a72466">Base</a>, and <a class="el" href="class_expression.html#a82c745bad73c0adf286f893febaf7406">Expression</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c3edb9082492c95eb319da3d42bb7a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QString Constante::GetQString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString. </p>
+<dl class="section return"><dt>Returns:</dt><dd>QString. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_entier.html#a6e534c8d7e3861fd43055134f4379262">Entier</a>, <a class="el" href="class_rationnel.html#af3d40b73dc2dd7ca6e978fe5ddb0c945">Rationnel</a>, <a class="el" href="class_reel.html#a594333e01d25ecce1335cd25d7cd872e">Reel</a>, <a class="el" href="class_complexe.html#a32c9167b86fd9cfccb1295c2eecc516e">Complexe</a>, and <a class="el" href="class_expression.html#ab64fbbad486a07035ada97ae21786db4">Expression</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f716a85b9b519b7bbf8ed8d997f66d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const std::string Constante::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la valeur du type des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>String. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_entier.html#af8701306da8ca2e12869eaa3c65eb03b">Entier</a>, <a class="el" href="class_rationnel.html#a8c04071cda8dbe6f2b13db3e48d1bedb">Rationnel</a>, <a class="el" href="class_reel.html#ae36b25f3a050292cd6324c0f15dbfb2d">Reel</a>, <a class="el" href="class_complexe.html#aee55b37e0370e38f3aeedbbf25977876">Complexe</a>, and <a class="el" href="class_expression.html#aa96b1065b6d35277b2c30c25966eccfb">Expression</a>.</p>
 
 </div>
 </div>
@@ -266,7 +326,9 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur principale de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur principale des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_entier.html#a3e5f576f451df416bb58e7286ccbe951">Entier</a>, <a class="el" href="class_rationnel.html#a29987744cb2a7631ffa4db708630fe19">Rationnel</a>, <a class="el" href="class_reel.html#a5755a5ed2d9042ad59984967dbddc7f5">Reel</a>, <a class="el" href="class_complexe.html#ab3a3d0582d701ba9fa7ce45d7e82eb81">Complexe</a>, and <a class="el" href="class_expression.html#addc8118b94c445af0da80e8e661dfd6a">Expression</a>.</p>
 
@@ -292,9 +354,67 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur secondaire de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur secondaire des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_entier.html#a349675638599cd6e5f67161664e1d58a">Entier</a>, <a class="el" href="class_rationnel.html#a2403f411e88b3de9f83ad735342e68ec">Rationnel</a>, <a class="el" href="class_reel.html#ab66ca2cb446b1cbc0c3565ff054acc1b">Reel</a>, <a class="el" href="class_complexe.html#acfe2a56e2024db9eca2039fccdb2d6f4">Complexe</a>, and <a class="el" href="class_expression.html#ad602729011040226673d7c1ee94367d9">Expression</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2346d7608b9732c34f96d01bed7de6c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_constante.html">Constante</a> &amp; Constante::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_constante.html">Constante</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permetant de surcharger l'opérateur +. </p>
+<p>Surcharge permettant de réaliser l'opération + pour les différentes constantes. Lors d'une opération c'est l'opérateur + de <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> qui est appelé et qui délègue en fonction du type de <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> au surcharge des classes filles. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Référence sur <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a24a763c775e35399bff4441b2f41db12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_constante.html">Constante</a> &amp; Constante::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_constante.html">Constante</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permetant de surcharger l'opérateur -. </p>
+<p>Surcharge permettant de réaliser l'opération - pour les différentes constantes. Lors d'une opération c'est l'opérateur - de <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> qui est appelé et qui délègue en fonction du type de <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> au surcharge des classes filles. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Référence sur <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a>. </dd></dl>
 
 </div>
 </div>
@@ -311,7 +431,7 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 10 2012 15:51:50 for LO21 Projet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 11 2012 10:55:00 for Projet LO21 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

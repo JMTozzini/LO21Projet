@@ -1,6 +1,15 @@
 \hypertarget{class_complexe}{\section{Complexe Class Reference}
 \label{class_complexe}\index{Complexe@{Complexe}}
 }
+
+
+Classe permettant de représenter le type \hyperlink{class_complexe}{Complexe}. Chacune de ses parties (Réelle \& Imaginaire) est une \hyperlink{class_base}{Base}.  
+
+
+
+
+{\ttfamily \#include $<$constante.\-h$>$}
+
 Inheritance diagram for Complexe\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,23 +23,19 @@ Inheritance diagram for Complexe\-:\begin{figure}[H]
 
 \item 
 void \hyperlink{class_complexe_ab81a9988e1a69cae64682e5030de5901}{Afficher} (std\-::ostream \&os=std\-::cout) const 
-\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage, affichant une constante en console. \end{DoxyCompactList}\item 
 double \hyperlink{class_complexe_ab3a3d0582d701ba9fa7ce45d7e82eb81}{Get\-Val} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur principale des différentes constantes. \end{DoxyCompactList}\item 
 double \hyperlink{class_complexe_acfe2a56e2024db9eca2039fccdb2d6f4}{Get\-Val\-Bis} () const 
-\item 
-\hypertarget{class_complexe_aee55b37e0370e38f3aeedbbf25977876}{const std\-::string {\bfseries Get\-Type} () const }\label{class_complexe_aee55b37e0370e38f3aeedbbf25977876}
-
-\item 
-\hypertarget{class_complexe_a32c9167b86fd9cfccb1295c2eecc516e}{Q\-String {\bfseries Get\-Q\-String} () const }\label{class_complexe_a32c9167b86fd9cfccb1295c2eecc516e}
-
-\item 
-\hypertarget{class_complexe_a5f39994e59be2809629c9d9deac7539c}{\hyperlink{class_base}{Base} $\ast$ {\bfseries Get\-Reel} () const }\label{class_complexe_a5f39994e59be2809629c9d9deac7539c}
-
-\item 
-\hypertarget{class_complexe_ae57b14f197af61edf80f5c0b46373a2f}{\hyperlink{class_base}{Base} $\ast$ {\bfseries Get\-Im} () const }\label{class_complexe_ae57b14f197af61edf80f5c0b46373a2f}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur secondaire des différentes constantes. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{class_complexe_aee55b37e0370e38f3aeedbbf25977876}{Get\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur du type des différentes constantes. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_complexe_a32c9167b86fd9cfccb1295c2eecc516e}{Get\-Q\-String} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. \end{DoxyCompactList}\item 
+\hyperlink{class_base}{Base} $\ast$ \hyperlink{class_complexe_a5f39994e59be2809629c9d9deac7539c}{Get\-Reel} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la partie Réelle du \hyperlink{class_complexe}{Complexe}. \end{DoxyCompactList}\item 
+\hyperlink{class_base}{Base} $\ast$ \hyperlink{class_complexe_ae57b14f197af61edf80f5c0b46373a2f}{Get\-Im} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la partie Imaginaire du \hyperlink{class_complexe}{Complexe}. \end{DoxyCompactList}\item 
 \hypertarget{class_complexe_a8f564d48149e48b0a0bbb230a6010782}{\hyperlink{class_complexe}{Complexe} \& {\bfseries operator+} (const \hyperlink{class_entier}{Entier} \&)}\label{class_complexe_a8f564d48149e48b0a0bbb230a6010782}
 
 \item 
@@ -126,6 +131,9 @@ double \hyperlink{class_complexe_acfe2a56e2024db9eca2039fccdb2d6f4}{Get\-Val\-Bi
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Classe permettant de représenter le type \hyperlink{class_complexe}{Complexe}. Chacune de ses parties (Réelle \& Imaginaire) est une \hyperlink{class_base}{Base}. 
+
 \subsection{Member Function Documentation}
 \hypertarget{class_complexe_ab81a9988e1a69cae64682e5030de5901}{\index{Complexe@{Complexe}!Afficher@{Afficher}}
 \index{Afficher@{Afficher}!Complexe@{Complexe}}
@@ -136,7 +144,7 @@ double \hyperlink{class_complexe_acfe2a56e2024db9eca2039fccdb2d6f4}{Get\-Val\-Bi
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_complexe_ab81a9988e1a69cae64682e5030de5901}
 
 
-Fonction virtuelle pour l'affichage. 
+Fonction virtuelle pour l'affichage, affichant une constante en console. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -147,6 +155,70 @@ Fonction virtuelle pour l'affichage.
 
 Implements \hyperlink{class_constante_af3be055efee6c5be81ed6a610dbe2082}{Constante}.
 
+\hypertarget{class_complexe_ae57b14f197af61edf80f5c0b46373a2f}{\index{Complexe@{Complexe}!Get\-Im@{Get\-Im}}
+\index{Get\-Im@{Get\-Im}!Complexe@{Complexe}}
+\subsubsection[{Get\-Im}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base}$\ast$ Complexe\-::\-Get\-Im (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_complexe_ae57b14f197af61edf80f5c0b46373a2f}
+
+
+Fonction permettant de récupérer la partie Imaginaire du \hyperlink{class_complexe}{Complexe}. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur sur \hyperlink{class_base}{Base} 
+\end{DoxyReturn}
+\hypertarget{class_complexe_a32c9167b86fd9cfccb1295c2eecc516e}{\index{Complexe@{Complexe}!Get\-Q\-String@{Get\-Q\-String}}
+\index{Get\-Q\-String@{Get\-Q\-String}!Complexe@{Complexe}}
+\subsubsection[{Get\-Q\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Complexe\-::\-Get\-Q\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_complexe_a32c9167b86fd9cfccb1295c2eecc516e}
+
+
+Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. 
+
+\begin{DoxyReturn}{Returns}
+Q\-String. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}{Constante}.
+
+\hypertarget{class_complexe_a5f39994e59be2809629c9d9deac7539c}{\index{Complexe@{Complexe}!Get\-Reel@{Get\-Reel}}
+\index{Get\-Reel@{Get\-Reel}!Complexe@{Complexe}}
+\subsubsection[{Get\-Reel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base}$\ast$ Complexe\-::\-Get\-Reel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_complexe_a5f39994e59be2809629c9d9deac7539c}
+
+
+Fonction permettant de récupérer la partie Réelle du \hyperlink{class_complexe}{Complexe}. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur sur \hyperlink{class_base}{Base} 
+\end{DoxyReturn}
+\hypertarget{class_complexe_aee55b37e0370e38f3aeedbbf25977876}{\index{Complexe@{Complexe}!Get\-Type@{Get\-Type}}
+\index{Get\-Type@{Get\-Type}!Complexe@{Complexe}}
+\subsubsection[{Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Complexe\-::\-Get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_complexe_aee55b37e0370e38f3aeedbbf25977876}
+
+
+Fonction permettant de récupérer la valeur du type des différentes constantes. 
+
+\begin{DoxyReturn}{Returns}
+String. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}{Constante}.
+
 \hypertarget{class_complexe_ab3a3d0582d701ba9fa7ce45d7e82eb81}{\index{Complexe@{Complexe}!Get\-Val@{Get\-Val}}
 \index{Get\-Val@{Get\-Val}!Complexe@{Complexe}}
 \subsubsection[{Get\-Val}]{\setlength{\rightskip}{0pt plus 5cm}double Complexe\-::\-Get\-Val (
@@ -154,8 +226,12 @@ Implements \hyperlink{class_constante_af3be055efee6c5be81ed6a610dbe2082}{Constan
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_complexe_ab3a3d0582d701ba9fa7ce45d7e82eb81}
+
+
+Fonction permettant de récupérer la valeur principale des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur principale de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -168,8 +244,12 @@ Implements \hyperlink{class_constante_af88eb444ed659cc6bb2f9571326a9eb1}{Constan
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_complexe_acfe2a56e2024db9eca2039fccdb2d6f4}
+
+
+Fonction permettant de récupérer la valeur secondaire des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur secondaire de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -179,7 +259,7 @@ Implements \hyperlink{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}{Constan
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-constante.\-h\item 
+\hyperlink{constante_8h}{constante.\-h}\item 
 constante\-Op\-Div.\-cpp\item 
 constante\-Op\-Moins.\-cpp\item 
 constante\-Op\-Mult.\-cpp\item 

@@ -1,3 +1,8 @@
+/**
+\file exceptionCalculatrice.h
+\brief Déclaration de la classe ExceptionCalculatrice pour la gestion des erreurs
+**/
+
 #ifndef EXCEPTIONCALCULATRICE_H
 #define EXCEPTIONCALCULATRICE_H
 

@@ -46,3 +46,6 @@ Au pire on le montrera sur mon ordi.
 J'ai passer les deux pile et Gardien en singleton, si tu as un peu de tmps regarde si elles se comporte toujours bien, notamment Gardien.
 
 Je n'arrive pas à mettre les fonctions annexes dans doxygen...
+=> En fait il faut documenter chaque fichier .h avec /file, sinon il apparaît mais ya pas de page spéciale.
+Je l'ai fait pour tous sauf ui_mainwindow.h, comme c'est un truc graphique je sais pas si on peut.
+Tu sais si il faut beaucoup détailler les commentaires ou pas ? A mon avis ils vont juste lire comme ça..

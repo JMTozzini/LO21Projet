@@ -1,3 +1,8 @@
+/**
+\file memento.h
+\brief Déclaration des classes MementoStock, MementoAff, Gardien
+**/
+
 #ifndef MEMENTO_H
 #define MEMENTO_H
 

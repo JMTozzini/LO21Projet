@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LO21 Projet: PileAffichage Class Reference</title>
+<title>Projet LO21: PileAffichage Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">LO21 Projet
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Projet LO21
    </div>
-   <div id="projectbrief">test</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,11 +81,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">PileAffichage Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe permettant d'empiler et de dépiler des QString.  
+ <a href="class_pile_affichage.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pile_8h_source.html">pile.h</a>&gt;</code></p>
 
 <p><a href="class_pile_affichage-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -117,8 +121,18 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>Dup</b> ()</td></t
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Drop</b> ()</td></tr>
 <tr class="memitem:a0cb7b0b675468c8670c6260c3c75d203"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cb7b0b675468c8670c6260c3c75d203"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> (std::ostream &amp;os)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae25f21273bf5d03ad1de209b622992a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae25f21273bf5d03ad1de209b622992a3"></a>
+static <a class="el" href="class_pile_affichage.html">PileAffichage</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
+<tr class="memitem:a1bf96ebc64e812b39f26f821b3a65f4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bf96ebc64e812b39f26f821b3a65f4f"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>DetruireInstance</b> ()</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Classe permettant d'empiler et de dépiler des QString. </p>
+<p>Cette classe est l'exacte copie de la <a class="el" href="class_pile_stockage.html" title="Classe permettant d&#39;empiler et de dépiler des pointeurs sur Constante.">PileStockage</a> mais avec des valeur QString, elle permet une gestion simplifiée de l'affichage. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="pile_8h_source.html">pile.h</a></li>
 <li>pile.cpp</li>
 <li>pileOp.cpp</li>
@@ -126,7 +140,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> (std::ostrea
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 10 2012 15:51:50 for LO21 Projet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 11 2012 10:55:00 for Projet LO21 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

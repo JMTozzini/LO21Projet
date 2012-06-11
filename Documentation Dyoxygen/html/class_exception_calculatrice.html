@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LO21 Projet: ExceptionCalculatrice Class Reference</title>
+<title>Projet LO21: ExceptionCalculatrice Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">LO21 Projet
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Projet LO21
    </div>
-   <div id="projectbrief">test</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,22 +87,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Classe permettant de gérer les exceptions de la calculatrice.  
+ <a href="class_exception_calculatrice.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="exception_calculatrice_8h_source.html">exceptionCalculatrice.h</a>&gt;</code></p>
+
 <p><a href="class_exception_calculatrice-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac40d005f833f378e415cdad4080a065a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac40d005f833f378e415cdad4080a065a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ExceptionCalculatrice</b> (QString s=&quot;&quot;)</td></tr>
-<tr class="memitem:ae25e0a80a32fbb5b581b250e76c60081"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae25e0a80a32fbb5b581b250e76c60081"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetInfos</b> () const </td></tr>
+<tr class="memitem:ae25e0a80a32fbb5b581b250e76c60081"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exception_calculatrice.html#ae25e0a80a32fbb5b581b250e76c60081">GetInfos</a> () const </td></tr>
+<tr class="memdesc:ae25e0a80a32fbb5b581b250e76c60081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de renvoyer le détail de l'exception.  <a href="#ae25e0a80a32fbb5b581b250e76c60081"></a><br/></td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Classe permettant de gérer les exceptions de la calculatrice. </p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ae25e0a80a32fbb5b581b250e76c60081"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExceptionCalculatrice::GetInfos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de renvoyer le détail de l'exception. </p>
+<dl class="section return"><dt>Returns:</dt><dd>QString. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="exception_calculatrice_8h_source.html">exceptionCalculatrice.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 10 2012 15:51:50 for LO21 Projet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 11 2012 10:55:00 for Projet LO21 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

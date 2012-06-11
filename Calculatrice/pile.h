@@ -1,3 +1,8 @@
+/**
+\file pile.h
+\brief Déclaration des classes PileStockage et PileAffichage
+**/
+
 #ifndef PILE_H
 #define PILE_H
 

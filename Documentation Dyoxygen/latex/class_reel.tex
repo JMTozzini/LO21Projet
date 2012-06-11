@@ -1,6 +1,15 @@
 \hypertarget{class_reel}{\section{Reel Class Reference}
 \label{class_reel}\index{Reel@{Reel}}
 }
+
+
+Classe permettant de représenter le type Réel.  
+
+
+
+
+{\ttfamily \#include $<$constante.\-h$>$}
+
 Inheritance diagram for Reel\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,17 +26,15 @@ Inheritance diagram for Reel\-:\begin{figure}[H]
 
 \item 
 void \hyperlink{class_reel_a52eb23de069729bc2f8b8b2c18e1be7d}{Afficher} (std\-::ostream \&os=std\-::cout) const 
-\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle pour l'affichage, affichant une constante en console. \end{DoxyCompactList}\item 
 double \hyperlink{class_reel_a5755a5ed2d9042ad59984967dbddc7f5}{Get\-Val} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur principale des différentes constantes. \end{DoxyCompactList}\item 
 double \hyperlink{class_reel_ab66ca2cb446b1cbc0c3565ff054acc1b}{Get\-Val\-Bis} () const 
-\item 
-\hypertarget{class_reel_ae36b25f3a050292cd6324c0f15dbfb2d}{const std\-::string {\bfseries Get\-Type} () const }\label{class_reel_ae36b25f3a050292cd6324c0f15dbfb2d}
-
-\item 
-\hypertarget{class_reel_a594333e01d25ecce1335cd25d7cd872e}{Q\-String {\bfseries Get\-Q\-String} () const }\label{class_reel_a594333e01d25ecce1335cd25d7cd872e}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur secondaire des différentes constantes. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{class_reel_ae36b25f3a050292cd6324c0f15dbfb2d}{Get\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la valeur du type des différentes constantes. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_reel_a594333e01d25ecce1335cd25d7cd872e}{Get\-Q\-String} () const 
+\begin{DoxyCompactList}\small\item\em Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. \end{DoxyCompactList}\item 
 \hypertarget{class_reel_a6a81e5a8d9d1d00e8ec75f4c1e6ca08b}{\hyperlink{class_reel}{Reel} \& {\bfseries operator+} (const \hyperlink{class_reel}{Reel} \&)}\label{class_reel_a6a81e5a8d9d1d00e8ec75f4c1e6ca08b}
 
 \item 
@@ -123,6 +130,9 @@ double \hyperlink{class_reel_ab66ca2cb446b1cbc0c3565ff054acc1b}{Get\-Val\-Bis} (
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Classe permettant de représenter le type Réel. 
+
 \subsection{Member Function Documentation}
 \hypertarget{class_reel_a52eb23de069729bc2f8b8b2c18e1be7d}{\index{Reel@{Reel}!Afficher@{Afficher}}
 \index{Afficher@{Afficher}!Reel@{Reel}}
@@ -133,7 +143,7 @@ double \hyperlink{class_reel_ab66ca2cb446b1cbc0c3565ff054acc1b}{Get\-Val\-Bis} (
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_reel_a52eb23de069729bc2f8b8b2c18e1be7d}
 
 
-Fonction virtuelle pour l'affichage. 
+Fonction virtuelle pour l'affichage, affichant une constante en console. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -144,6 +154,42 @@ Fonction virtuelle pour l'affichage.
 
 Implements \hyperlink{class_base_abf809e43ca06c05dcbe3592648a72466}{Base}.
 
+\hypertarget{class_reel_a594333e01d25ecce1335cd25d7cd872e}{\index{Reel@{Reel}!Get\-Q\-String@{Get\-Q\-String}}
+\index{Get\-Q\-String@{Get\-Q\-String}!Reel@{Reel}}
+\subsubsection[{Get\-Q\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Reel\-::\-Get\-Q\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_reel_a594333e01d25ecce1335cd25d7cd872e}
+
+
+Fonction permettant de transformer une \hyperlink{class_constante}{Constante} en Q\-String. 
+
+\begin{DoxyReturn}{Returns}
+Q\-String. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_constante_a7c3edb9082492c95eb319da3d42bb7a4}{Constante}.
+
+\hypertarget{class_reel_ae36b25f3a050292cd6324c0f15dbfb2d}{\index{Reel@{Reel}!Get\-Type@{Get\-Type}}
+\index{Get\-Type@{Get\-Type}!Reel@{Reel}}
+\subsubsection[{Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Reel\-::\-Get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_reel_ae36b25f3a050292cd6324c0f15dbfb2d}
+
+
+Fonction permettant de récupérer la valeur du type des différentes constantes. 
+
+\begin{DoxyReturn}{Returns}
+String. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_constante_a2f716a85b9b519b7bbf8ed8d997f66d3}{Constante}.
+
 \hypertarget{class_reel_a5755a5ed2d9042ad59984967dbddc7f5}{\index{Reel@{Reel}!Get\-Val@{Get\-Val}}
 \index{Get\-Val@{Get\-Val}!Reel@{Reel}}
 \subsubsection[{Get\-Val}]{\setlength{\rightskip}{0pt plus 5cm}double Reel\-::\-Get\-Val (
@@ -151,8 +197,12 @@ Implements \hyperlink{class_base_abf809e43ca06c05dcbe3592648a72466}{Base}.
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_reel_a5755a5ed2d9042ad59984967dbddc7f5}
+
+
+Fonction permettant de récupérer la valeur principale des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur principale de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -165,8 +215,12 @@ Implements \hyperlink{class_constante_af88eb444ed659cc6bb2f9571326a9eb1}{Constan
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_reel_ab66ca2cb446b1cbc0c3565ff054acc1b}
+
+
+Fonction permettant de récupérer la valeur secondaire des différentes constantes. 
+
 \begin{DoxyReturn}{Returns}
-Renvoie un double qui représente une valeur secondaire de la classe. 
+Double. 
 \end{DoxyReturn}
 
 
@@ -176,7 +230,7 @@ Implements \hyperlink{class_constante_aa0602d62c04f28f7bda68723f5dbc48b}{Constan
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-constante.\-h\item 
+\hyperlink{constante_8h}{constante.\-h}\item 
 constante\-Op\-Div.\-cpp\item 
 constante\-Op\-Moins.\-cpp\item 
 constante\-Op\-Mult.\-cpp\item 

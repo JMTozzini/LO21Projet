@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LO21 Projet: Complexe Class Reference</title>
+<title>Projet LO21: Complexe Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">LO21 Projet
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Projet LO21
    </div>
-   <div id="projectbrief">test</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,6 +86,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Complexe Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe permettant de représenter le type <a class="el" href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u...">Complexe</a>. Chacune de ses parties (Réelle &amp; Imaginaire) est une <a class="el" href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe.">Base</a>.  
+ <a href="class_complexe.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="constante_8h_source.html">constante.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Complexe:</div>
 <div class="dyncontent">
@@ -105,17 +108,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afbc9334c87c0d03105c6b83cffa91ba6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbc9334c87c0d03105c6b83cffa91ba6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Complexe</b> (<a class="el" href="class_base.html">Base</a> *r, <a class="el" href="class_base.html">Base</a> *i)</td></tr>
 <tr class="memitem:ab81a9988e1a69cae64682e5030de5901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#ab81a9988e1a69cae64682e5030de5901">Afficher</a> (std::ostream &amp;os=std::cout) const </td></tr>
-<tr class="memdesc:ab81a9988e1a69cae64682e5030de5901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage.  <a href="#ab81a9988e1a69cae64682e5030de5901"></a><br/></td></tr>
+<tr class="memdesc:ab81a9988e1a69cae64682e5030de5901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle pour l'affichage, affichant une constante en console.  <a href="#ab81a9988e1a69cae64682e5030de5901"></a><br/></td></tr>
 <tr class="memitem:ab3a3d0582d701ba9fa7ce45d7e82eb81"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#ab3a3d0582d701ba9fa7ce45d7e82eb81">GetVal</a> () const </td></tr>
+<tr class="memdesc:ab3a3d0582d701ba9fa7ce45d7e82eb81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur principale des différentes constantes.  <a href="#ab3a3d0582d701ba9fa7ce45d7e82eb81"></a><br/></td></tr>
 <tr class="memitem:acfe2a56e2024db9eca2039fccdb2d6f4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#acfe2a56e2024db9eca2039fccdb2d6f4">GetValBis</a> () const </td></tr>
-<tr class="memitem:aee55b37e0370e38f3aeedbbf25977876"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee55b37e0370e38f3aeedbbf25977876"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> () const </td></tr>
-<tr class="memitem:a32c9167b86fd9cfccb1295c2eecc516e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32c9167b86fd9cfccb1295c2eecc516e"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () const </td></tr>
-<tr class="memitem:a5f39994e59be2809629c9d9deac7539c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f39994e59be2809629c9d9deac7539c"></a>
-<a class="el" href="class_base.html">Base</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetReel</b> () const </td></tr>
-<tr class="memitem:ae57b14f197af61edf80f5c0b46373a2f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae57b14f197af61edf80f5c0b46373a2f"></a>
-<a class="el" href="class_base.html">Base</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetIm</b> () const </td></tr>
+<tr class="memdesc:acfe2a56e2024db9eca2039fccdb2d6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur secondaire des différentes constantes.  <a href="#acfe2a56e2024db9eca2039fccdb2d6f4"></a><br/></td></tr>
+<tr class="memitem:aee55b37e0370e38f3aeedbbf25977876"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#aee55b37e0370e38f3aeedbbf25977876">GetType</a> () const </td></tr>
+<tr class="memdesc:aee55b37e0370e38f3aeedbbf25977876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la valeur du type des différentes constantes.  <a href="#aee55b37e0370e38f3aeedbbf25977876"></a><br/></td></tr>
+<tr class="memitem:a32c9167b86fd9cfccb1295c2eecc516e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#a32c9167b86fd9cfccb1295c2eecc516e">GetQString</a> () const </td></tr>
+<tr class="memdesc:a32c9167b86fd9cfccb1295c2eecc516e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString.  <a href="#a32c9167b86fd9cfccb1295c2eecc516e"></a><br/></td></tr>
+<tr class="memitem:a5f39994e59be2809629c9d9deac7539c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_base.html">Base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#a5f39994e59be2809629c9d9deac7539c">GetReel</a> () const </td></tr>
+<tr class="memdesc:a5f39994e59be2809629c9d9deac7539c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la partie Réelle du <a class="el" href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u...">Complexe</a>.  <a href="#a5f39994e59be2809629c9d9deac7539c"></a><br/></td></tr>
+<tr class="memitem:ae57b14f197af61edf80f5c0b46373a2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_base.html">Base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complexe.html#ae57b14f197af61edf80f5c0b46373a2f">GetIm</a> () const </td></tr>
+<tr class="memdesc:ae57b14f197af61edf80f5c0b46373a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la partie Imaginaire du <a class="el" href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u...">Complexe</a>.  <a href="#ae57b14f197af61edf80f5c0b46373a2f"></a><br/></td></tr>
 <tr class="memitem:a8f564d48149e48b0a0bbb230a6010782"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f564d48149e48b0a0bbb230a6010782"></a>
 <a class="el" href="class_complexe.html">Complexe</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_entier.html">Entier</a> &amp;)</td></tr>
 <tr class="memitem:a1a2eae6f18f1bd6889ea6d588db49b1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a2eae6f18f1bd6889ea6d588db49b1f"></a>
@@ -181,10 +186,10 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>GetQString</b> () 
 <tr class="inherit_header pub_methods_class_constante"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_constante')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="class_constante.html">Constante</a></td></tr>
 <tr class="memitem:a19f83499c795b8fc069eb18600d4150b inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19f83499c795b8fc069eb18600d4150b"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Simplifier</b> ()</td></tr>
-<tr class="memitem:a2346d7608b9732c34f96d01bed7de6c1 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2346d7608b9732c34f96d01bed7de6c1"></a>
-virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
-<tr class="memitem:a24a763c775e35399bff4441b2f41db12 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24a763c775e35399bff4441b2f41db12"></a>
-virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memitem:a2346d7608b9732c34f96d01bed7de6c1 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#a2346d7608b9732c34f96d01bed7de6c1">operator+</a> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memdesc:a2346d7608b9732c34f96d01bed7de6c1 inherit pub_methods_class_constante"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permetant de surcharger l'opérateur +.  <a href="#a2346d7608b9732c34f96d01bed7de6c1"></a><br/></td></tr>
+<tr class="memitem:a24a763c775e35399bff4441b2f41db12 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_constante.html#a24a763c775e35399bff4441b2f41db12">operator-</a> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
+<tr class="memdesc:a24a763c775e35399bff4441b2f41db12 inherit pub_methods_class_constante"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permetant de surcharger l'opérateur -.  <a href="#a24a763c775e35399bff4441b2f41db12"></a><br/></td></tr>
 <tr class="memitem:a4293c8632cc246b0e88285ae4afd2128 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4293c8632cc246b0e88285ae4afd2128"></a>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (<a class="el" href="class_constante.html">Constante</a> *)</td></tr>
 <tr class="memitem:a9be1827fd118f5a81cf10b509b64cfa7 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9be1827fd118f5a81cf10b509b64cfa7"></a>
@@ -205,8 +210,14 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>sqrtFonction</b> ()</td></tr>
 <tr class="memitem:aa6b78608f1cac4f73fd6fc329827fc51 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6b78608f1cac4f73fd6fc329827fc51"></a>
 virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>invFonction</b> ()</td></tr>
+<tr class="memitem:ae5ab8d028c8f1f30adecd55e490abc02 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5ab8d028c8f1f30adecd55e490abc02"></a>
+virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>lnFonction</b> ()</td></tr>
+<tr class="memitem:a59acb8fb371ba3ac53670ec6a62d1864 inherit pub_methods_class_constante"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59acb8fb371ba3ac53670ec6a62d1864"></a>
+virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>logFonction</b> ()</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Classe permettant de représenter le type <a class="el" href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u...">Complexe</a>. Chacune de ses parties (Réelle &amp; Imaginaire) est une <a class="el" href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe.">Base</a>. </p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ab81a9988e1a69cae64682e5030de5901"></a>
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +240,7 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 </table>
 </div><div class="memdoc">
 
-<p>Fonction virtuelle pour l'affichage. </p>
+<p>Fonction virtuelle pour l'affichage, affichant une constante en console. </p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>flux d'affichage </td></tr>
@@ -238,6 +249,114 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 </dl>
 
 <p>Implements <a class="el" href="class_constante.html#af3be055efee6c5be81ed6a610dbe2082">Constante</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae57b14f197af61edf80f5c0b46373a2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_base.html">Base</a>* Complexe::GetIm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la partie Imaginaire du <a class="el" href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u...">Complexe</a>. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Pointeur sur <a class="el" href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe.">Base</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a32c9167b86fd9cfccb1295c2eecc516e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Complexe::GetQString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de transformer une <a class="el" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a> en QString. </p>
+<dl class="section return"><dt>Returns:</dt><dd>QString. </dd></dl>
+
+<p>Implements <a class="el" href="class_constante.html#a7c3edb9082492c95eb319da3d42bb7a4">Constante</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f39994e59be2809629c9d9deac7539c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_base.html">Base</a>* Complexe::GetReel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la partie Réelle du <a class="el" href="class_complexe.html" title="Classe permettant de représenter le type Complexe. Chacune de ses parties (Réelle &amp; Imaginaire) est u...">Complexe</a>. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Pointeur sur <a class="el" href="class_base.html" title="Classe englobant les types Rationnel, Réel et Entier. Elle compose la classe Complexe.">Base</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aee55b37e0370e38f3aeedbbf25977876"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Complexe::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la valeur du type des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>String. </dd></dl>
+
+<p>Implements <a class="el" href="class_constante.html#a2f716a85b9b519b7bbf8ed8d997f66d3">Constante</a>.</p>
 
 </div>
 </div>
@@ -261,7 +380,9 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur principale de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur principale des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implements <a class="el" href="class_constante.html#af88eb444ed659cc6bb2f9571326a9eb1">Constante</a>.</p>
 
@@ -287,7 +408,9 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Renvoie un double qui représente une valeur secondaire de la classe. </dd></dl>
+
+<p>Fonction permettant de récupérer la valeur secondaire des différentes constantes. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Double. </dd></dl>
 
 <p>Implements <a class="el" href="class_constante.html#aa0602d62c04f28f7bda68723f5dbc48b">Constante</a>.</p>
 
@@ -305,7 +428,7 @@ virtual <a class="el" href="class_constante.html">Constante</a> &amp;&#160;</td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 10 2012 15:51:50 for LO21 Projet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 11 2012 10:55:00 for Projet LO21 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>
