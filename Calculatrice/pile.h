@@ -19,10 +19,10 @@ public :
 
     // Méthodes d'historique
     MementoStock* CreerMemento(){return new MementoStock(ptr);}
-    void ChargerMemento(MementoStock *mem){ptr = mem->GetEtatSauve();}
+    void ChargerMemento(MementoStock *mem){std::cout<<"flag4"<<std::endl;ptr = mem->GetEtatSauve();}
 
     // Méthodes d'opérations
-    void Swap(int, int);
+    void Swap(unsigned int, unsigned int);
     void Clear(){ptr.clear();}
     Constante* Dup();
     void Drop();
@@ -46,10 +46,10 @@ public:
 
     // Méthodes d'historique
     MementoAff* CreerMemento(){return new MementoAff(ptr);}
-    void ChargerMemento(MementoAff *mem){ptr = mem->GetEtatSauve();}
+    void ChargerMemento(MementoAff *mem){std::cout<<"flag4bis"<<std::endl;ptr = mem->GetEtatSauve();}
 
     // Méthodes d'opérations
-    void Swap(int, int);
+    void Swap(unsigned int,unsigned int);
     void Clear(){ptr.clear();}
     QString Dup();
     void Drop();

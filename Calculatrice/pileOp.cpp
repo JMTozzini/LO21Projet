@@ -3,7 +3,7 @@
 #include "ui_mainwindow.h"
 
 //Méthodes des piles
-void PileAffichage::Swap(int x, int y)
+void PileAffichage::Swap(unsigned int x, unsigned int y)
 {
     QString tmp;
     if(x>=ptr.size() || y>=ptr.size())
@@ -13,7 +13,7 @@ void PileAffichage::Swap(int x, int y)
     ptr[y]=tmp;
 }
 
-void PileStockage::Swap(int x, int y)
+void PileStockage::Swap(unsigned int x,unsigned int y)
 {
     Constante* tmp;
     if(x>=ptr.size() || y>=ptr.size())

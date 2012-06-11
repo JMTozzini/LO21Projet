@@ -57,9 +57,12 @@ void MainWindow::AnnulerPress()
 {
     try
     {
-        MementoStock *m1= g->AnnulerStock();
-        MementoAff *m2=g->AnnulerAff();
+        MementoStock *m1 = g->AnnulerStock();
+        std::cout<<"flag1"<<std::endl;
+        MementoAff *m2 = g->AnnulerAff();
+        std::cout<<"flag2"<<std::endl;
         ps->ChargerMemento(m1); pa->ChargerMemento(m2);
+        std::cout<<"flag3"<<std::endl;
     }
     catch(ExceptionCalculatrice e){e.GetInfos();}
 
