@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  11 JUN 2012 17:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  11 JUN 2012 19:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -383,35 +383,45 @@ Overfull \hbox (19.91682pt too wide) in paragraph at lines 36--37
 [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
+<diag_seq_2.png, id=37, 850.17625pt x 694.595pt>
+File: diag_seq_2.png Graphic file (type png)
+ <use diag_seq_2.png>
+Package pdftex.def Info: diag_seq_2.png used on input line 42.
+(pdftex.def)             Requested size: 475.16093pt x 388.20744pt.
 
-[2 <./diag_seq_1.png>] [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+Overfull \hbox (19.91682pt too wide) in paragraph at lines 42--43
+ [] 
+ []
+
+[2 <./diag_seq_1.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
+ [3 <./diag_seq_2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
  (./Rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 50.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 50.
 Package rerunfilecheck Info: File `Rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 7AE3D33304A7A594E381ED8551904B35;241.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 6237 strings out of 493633
- 92416 string characters out of 3143378
+ 6243 strings out of 493633
+ 92513 string characters out of 3143378
  185075 words of memory out of 3000000
- 9467 multiletter control sequences out of 15000+200000
+ 9471 multiletter control sequences out of 15000+200000
  9112 words of font info for 32 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 32i,6n,28p,292b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,6n,28p,295b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Rapport.pdf (3 pages, 129608 bytes).
+Output written on Rapport.pdf (3 pages, 164796 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 74 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
