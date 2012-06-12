@@ -22,7 +22,6 @@ class MementoStock
 public:
     MementoStock(std::deque<Constante*> state){etat=state;}
     std::deque<Constante*> GetEtatSauve() const {return etat;}
-    void test(){etat[0]->Afficher();}
 };
 
 /*!
@@ -37,7 +36,6 @@ class MementoAff
 public:
     MementoAff(std::deque<QString> state){etat=state;}
     std::deque<QString> GetEtatSauve() const {return etat;}
-    void test(){std::cout<<etat[0].toStdString()<<std::endl;}
 };
 
 /*!
