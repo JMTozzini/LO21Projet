@@ -9,3 +9,5 @@ Tu sais si il faut beaucoup détailler les commentaires ou pas ? A mon avis ils 
 J'ai commencé un rapport en latex, ça te va ?
 Je sais pas combien il faut faire de diagrammes de séquence, je pense que je vais en faire un autre pour les expressions..
 ->Problème de rapport, la norme c'est UFT8 donc si tu encode le rapport en MAC je peux pas le compiler, regarde s'il y a possibilité d'encoder en utf8 sous mac sinon ça va être chiant...
+
+J'ai ajouté une petite icone, c'est unpeu inutile mais bon... Il faut qu'elle soit dans le même dossier que l'executable (pas celui des sources)

@@ -68,7 +68,7 @@ public:
     /*!
       * Surcharge permettant de réaliser l'opération + pour les différentes constantes. Lors d'une opération c'est l'opérateur +
       * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
-      * \brief Fonction permetant de surcharger l'opérateur +.
+      * \brief Fonction permettant de surcharger l'opérateur d'Addition.
       * \return Référence sur Constante.
       */
     virtual Constante& operator+(Constante*); // Design Pattern Template Method
@@ -82,7 +82,7 @@ public:
     /*!
       * Surcharge permettant de réaliser l'opération - pour les différentes constantes. Lors d'une opération c'est l'opérateur -
       * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
-      * \brief Fonction permetant de surcharger l'opérateur -.
+      * \brief Fonction permettant de surcharger l'opérateur de Soustraction.
       * \return Référence sur Constante.
       */
     virtual Constante& operator-(Constante*); // Design Pattern Template Method
@@ -93,6 +93,12 @@ public:
     virtual Constante& operator-(Expression&)=0;
 
     // Opérateur *
+    /*!
+      * Surcharge permettant de réaliser l'opération * pour les différentes constantes. Lors d'une opération c'est l'opérateur *
+      * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
+      * \brief Fonction permettant de surcharger l'opérateur de Multiplication.
+      * \return Référence sur Constante.
+      */
     virtual Constante& operator*(Constante*); // Design Pattern Template Method
     virtual Constante& operator*(const Reel&)=0;
     virtual Constante& operator*(const Entier&)=0;
@@ -101,6 +107,12 @@ public:
     virtual Constante& operator*(Expression&)=0;
 
     // Opérateur /
+    /*!
+      * Surcharge permettant de réaliser l'opération / pour les différentes constantes. Lors d'une opération c'est l'opérateur /
+      * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
+      * \brief Fonction permettant de surcharger l'opérateur de Division.
+      * \return Référence sur Constante.
+      */
     virtual Constante& operator/(Constante*); // Design Pattern Template Method
     virtual Constante& operator/(const Reel&)=0;
     virtual Constante& operator/(const Entier&)=0;
@@ -109,9 +121,19 @@ public:
     virtual Constante& operator/(Expression&)=0;
 
     // Opérateur %
+    /*!
+      * \brief Fonction permettant de gérer l'opération Modulo.
+      * \return Référence sur Constante.
+      */
     virtual Constante& operator%(Constante *);
 
     // Operateurs sur les angles
+    /*!
+      * Ensemble de fonction calculant les opération trigonométrique, le Cosinus, le Sinus et la Tangente. Les fonctions hyperboliques
+      * sont également traitées.
+      * \brief Fonction permettant le calcule des fonctions trigonométriques.
+      * \return Référence sur Constante.
+      */
     virtual Constante& cosFonction(std::string)=0;
     virtual Constante& sinFonction(std::string)=0;
     virtual Constante& tanFonction(std::string)=0;
@@ -120,6 +142,12 @@ public:
     virtual Constante& tanhFonction(std::string)=0;
 
     // pow
+    /*!
+      * Surcharge permettant de réaliser l'opération Pow pour les différentes constantes. Lors d'une opération c'est l'opérateur Pow
+      * de Constante qui est appelé et qui délègue en fonction du type de Constante au surcharge des classes filles.
+      * \brief Fonction permettant de surcharger l'opérateur de Puissance.
+      * \return Référence sur Constante.
+      */
     virtual Constante& powFonction(Constante*);
     virtual Constante& powFonction(const Entier&)=0;
     virtual Constante& powFonction(const Reel&)=0;
@@ -128,24 +156,52 @@ public:
     virtual Constante& powFonction(Expression&)=0;
 
     // Factorielle
+    /*!
+      * \brief Fonction permettant de calculer la Factorielle.
+      * \return Référence sur Constante.
+      */
     virtual Constante& factFonction();
 
     // Signe
+    /*!
+      * \brief Fonction permettant de calculer l'Opposer.
+      * \return Référence sur Constante.
+      */
     virtual Constante& signFonction();
 
     // Sqr
+    /*!
+      * \brief Fonction permettant de calculer le Carré d'un nombre.
+      * \return Référence sur Constante.
+      */
     virtual Constante& sqrFonction();
 
     // Cube
+    /*!
+      * \brief Fonction permettant de calculer le Cube d'un nombre.
+      * \return Référence sur Constante.
+      */
     virtual Constante& cubeFonction();
 
     // Sqrt
+    /*!
+      * \brief Fonction permettant de calculer la Racine Carrée d'un nombre.
+      * \return Référence sur Constante.
+      */
     virtual Constante& sqrtFonction();
 
     // Inv
+    /*!
+      * \brief Fonction permettant de calculer l'Inverse d'un nombre.
+      * \return Référence sur Constante.
+      */
     virtual Constante& invFonction();
 
     // Ln & Log
+    /*!
+      * \brief Fonction permettant de calculer le Ln et le Log d'un nombre.
+      * \return Référence sur Constante.
+      */
     virtual Constante& lnFonction();
     virtual Constante& logFonction();
 };
