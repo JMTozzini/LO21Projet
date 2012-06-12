@@ -6,7 +6,7 @@ using namespace std;
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
-    ui(new Ui::MainWindow), ps(PileStockage::GetInstance()), pa(PileAffichage::GetInstance()), g(Gardien::GetInstance())
+    ui(new Ui::MainWindow), ps(PileStockage::GetInstance()), pa(PileAffichage::GetInstance()), g(Gardien::GetInstance()),x(0)
 {
     ui->setupUi(this);
 
@@ -180,8 +180,8 @@ void MainWindow::InitParam(){
 
             std::ifstream fichier("param9.txt", ios::in);
             std::string tmp;
-            while(getline(fichier, tmp))
-                std::cout<<tmp<<std::endl;
+            /*while(getline(fichier, tmp))
+                std::cout<<tmp<<std::endl;*/
         }
         else
             cerr << "Erreur à l'ouverture !" << endl;
@@ -200,20 +200,27 @@ void MainWindow::MAJParam(){
         fichier<<typeDeCste<<std::endl;
         fichier<<clavier<<std::endl;
         fichier<<angle<<std::endl;
-        if(x){fichier<<"x"<<std::endl; fichier<<(x->GetQString()).toStdString()<<std::endl;} // Variable utilisateur
-        else fichier<<"xVide"<<std::endl;
-//        if(ps->GetPtr()[0]){
+
+        if(x){
+            fichier<<"x"<<std::endl;
+            std::cout<<x->GetType()<<std::endl;
+            fichier<<(x->GetQString()).toStdString()<<std::endl;
+        }// Variable utilisateur
+        else
+            fichier<<"xVide"<<std::endl;
+
+        if(ps->GetPtr().empty()==false){
             fichier<<"pile"<<std::endl;
             pa->Save(fichier);
-//        }
-//        else fichier<<"pileVide"<<std::endl;
+        }
+        else fichier<<"pileVide"<<std::endl;
 
         fichier.close();
 
         std::ifstream fichier("param9.txt", ios::in);
         std::string tmp;
-        while(getline(fichier, tmp))
-            std::cout<<tmp<<std::endl;
+        /*while(getline(fichier, tmp))
+            std::cout<<tmp<<std::endl;*/
     }
     else  // sinon
         cerr << "Erreur à l'ouverture !" << endl;
