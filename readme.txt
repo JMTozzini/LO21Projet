@@ -9,5 +9,10 @@ Tu sais si il faut beaucoup détailler les commentaires ou pas ? A mon avis ils 
 J'ai commencé un rapport en latex, ça te va ?
 Je sais pas combien il faut faire de diagrammes de séquence, je pense que je vais en faire un autre pour les expressions..
 ->Problème de rapport, la norme c'est UFT8 donc si tu encode le rapport en MAC je peux pas le compiler, regarde s'il y a possibilité d'encoder en utf8 sous mac sinon ça va être chiant...
+===> J'ai essayé de compiler ta version, et ça a mis des caractères spéciaux partout.. je sais pas si tu vas les voir chez toi, en tous cas si tu as gardé l'ancienne version remet la, je vais essayer de pas mettre ma version sur GitHub mais j'ai peur que ça fasse un conflit.
+Pour les modifications je changerai la ligne de utf8 avec l'encodage mac, c'est pas grave.
 
 J'ai ajouté une petite icone, c'est unpeu inutile mais bon... Il faut qu'elle soit dans le même dossier que l'executable (pas celui des sources)
+===> Dommage chez moi elle marche pas..
+
+Il reste quoi à faire du coup ?
