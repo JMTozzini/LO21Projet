@@ -57,9 +57,8 @@ void Rationnel::Simplifier()
     else
         res=PGCD(denominateur,numerateur);
 
-    if(res==-1){res=-1;}
-
-    numerateur/=res; denominateur/=res;
+    if(res==-1){}
+    else{numerateur/=res; denominateur/=res;}
 }
 
 int Factorielle(int n)

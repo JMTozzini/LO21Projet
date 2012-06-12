@@ -79,8 +79,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     QObject::connect(ui->actionDegres,SIGNAL(triggered()),this,SLOT(MenuDegres()));
     QObject::connect(ui->actionRadians,SIGNAL(triggered()),this,SLOT(MenuRadians()));
 
-
-
     // Annuler & Rétablir
     QObject::connect(ui->actionAnnuler, SIGNAL(triggered()),this,SLOT(AnnulerPress()));
     QObject::connect(ui->actionRetablir, SIGNAL(triggered()),this,SLOT(RetablirPress()));
@@ -178,9 +176,9 @@ void MainWindow::InitParam(){
 
             fichier.close();
 
-            std::ifstream fichier("param9.txt", ios::in);
+            /*std::ifstream fichier("param9.txt", ios::in);
             std::string tmp;
-            /*while(getline(fichier, tmp))
+            while(getline(fichier, tmp))
                 std::cout<<tmp<<std::endl;*/
         }
         else
@@ -217,9 +215,9 @@ void MainWindow::MAJParam(){
 
         fichier.close();
 
-        std::ifstream fichier("param9.txt", ios::in);
+        /*std::ifstream fichier("param9.txt", ios::in);
         std::string tmp;
-        /*while(getline(fichier, tmp))
+        while(getline(fichier, tmp))
             std::cout<<tmp<<std::endl;*/
     }
     else  // sinon
