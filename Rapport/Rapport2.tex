@@ -45,9 +45,10 @@ Les classes Base, Complexe et Expression dérivent de la classe abstraite et excl
 
 L'utilisation de la classe mère abstraite Constante nous permet à la fois d'empiler des objets de type pointeur sur Constante, et de définir des méthodes polymorphes pour les opérateurs. 
 
-- Pourquoi deux piles ?
+\subsubsection{Sauvegarde des données}
+ $\rightarrow$  Pourquoi deux piles ?
 
-- Renvoi type le plus riche, sauf Rationnel\&Reel
+
 
 
 
@@ -62,8 +63,36 @@ L'utilisation de la classe mère abstraite Constante nous permet à la fois d'empi
 	\center
 	\includegraphics[width=16.7cm]{diag_seq_2.png}
 	\caption{Diagramme de séquence décrivant le lancement de la fenêtre, la saisie de 'x=1', puis l'évaluation de l'expression et la sauvegarde de la valeur 1 dans la variable x.}
+	\label{Diagramme sequence x}
 \end{figure}
 
 \section{Implémentation}
-aaaaaaaah
+\subsection{Paramètres utilisateur}
+L'utilisateur dispose d'un menu "Paramètres" lui permettant :
+\begin{itemize}
+\item{De changer le type de constante $\rightarrow$ \textbf{EST-CE QUE ÇA ON LE SUPPRIME OU PAS ?}}
+\item{D'activer ou désactiver le clavier}
+\item{D'activer ou désactiver le mode complexe}
+\item{De choisir l'unité d'angle pour les fonctions cos, sin, tan, cosh, sinh et tanh}
+\end{itemize}
+
+\subsection{Variable utilisateur}
+L'initialisation de la variable utilisateur x se fait par l'intermédiaire d'une expression de la forme 'x=valeur'. Après évaluation (bouton "Eval"), cette expression initialise la variable x avec la valeur spécifiée, qui peut-être de type Entier, Rationnel, Réel ou Complexe. Ce comportement est décrit dans la figure \ref{Diagramme sequence x}.
+
+La variable x sera ensuite accessible en tapant directement x ou par l'intermédiaire du bouton "x".
+
+\subsection{Sauvegarde et restauration de contexte}
+A l'ouverture du programme, une méthode est lancée permettant la restauration du contexte de la Calculatrice : il s'agit des piles, des valeurs des menu et de la valeur de la variable utilisateur si elle a été initialisée. Cette méthode interroge un fichier "param.txt" contenant les données du contexte. Si il s'agit de la première ouverture du programme, le fichier est initialisé avec des valeurs par défaut.
+
+A chaque entrée de l'utilisateur ou modification des paramètres, une méthode est lancée pour mettre à jour le ficher.
+
+\subsection{Historique}
+
+\subsection{Exceptions}
+
+\subsection{Méthodes de Constante et ses classes filles}
+Pour les opérateurs utilisables avec plusieurs types de données, par exemple l'opérateur + peut-être utilisés avec les types Entier, Réel, Rationnel, Complexe et Expression, nous avons d'abord défini une méthode de Constante permettant d'appeler la bonne méthode de ses classes filles.
+
+Toutes les méthodes ont ensuite dues être implémentées pour tous les types de données. Nous avons fait le choix de toujours renvoyer le type le plus riche. Par exemple, l'addition d'un entier et d'un réel renverra toujours un réel, de même la soustraction d'un rationnel et d'un complexe renverra un complexe.\footnote{Pour les opérations entre les types Rationnel et Réel, nous avons choisi de toujours renvoyer un Réel, même si il ne s'agit pas du type le plus riche, du fait que nous ne pouvons pas convertir un Réel en Rationnel sans perdre d'information sur celui-ci.} Les méthodes qui n'acceptait pas le type de données, par exemple l'opérateur mod (modulo) n'accepte que les entiers, renvoient des exceptions.
+
 \end{document}
