@@ -16,4 +16,14 @@ J'ai ajouté une petite icone, c'est unpeu inutile mais bon... Il faut qu'elle s
 ===> Dommage chez moi elle marche pas..
 
 Il reste quoi à faire du coup ?
+<<<<<<< HEAD
 ->On fait le point Jeudi matin 8h30 à la bu ?
+=======
+
+
+A FAIRE
+--------------
+
+
+=> Ok normalement c'est bon, mis à part que y'a plus ta sécurisation d'opérations, j'espère que tu l'as encore.
+>>>>>>> 43ea99c5917660719498e0b91159dfb9367f0208

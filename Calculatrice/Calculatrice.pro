@@ -9,6 +9,7 @@ QT       += core gui
 TARGET = Calculatrice
 TEMPLATE = app
 
+#ICON = iconeCalculatte.png
 
 SOURCES += main.cpp\
         mainwindow.cpp \

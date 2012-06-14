@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun Jun 10 14:39:28 2012
+** Created: Thu Jun 14 10:03:34 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -46,6 +46,8 @@ public:
     QAction *actionRationnel;
     QAction *actionDegres;
     QAction *actionRadians;
+    QAction *action2;
+    QAction *action1;
     QWidget *centralWidget;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -110,12 +112,16 @@ public:
     QSpacerItem *verticalSpacer;
     QTextEdit *champAff;
     QSpacerItem *verticalSpacer_2;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_2;
+    QLineEdit *champNbAff;
     QLineEdit *champErr;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuParam;
     QMenu *menuType_de_Constante;
     QMenu *menuAngle;
+    QMenu *menuAffichage;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -123,7 +129,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(582, 760);
+        MainWindow->resize(584, 767);
         actionQuit = new QAction(MainWindow);
         actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
         actionAbout = new QAction(MainWindow);
@@ -146,6 +152,10 @@ public:
         actionDegres->setObjectName(QString::fromUtf8("actionDegres"));
         actionRadians = new QAction(MainWindow);
         actionRadians->setObjectName(QString::fromUtf8("actionRadians"));
+        action2 = new QAction(MainWindow);
+        action2->setObjectName(QString::fromUtf8("action2"));
+        action1 = new QAction(MainWindow);
+        action1->setObjectName(QString::fromUtf8("action1"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalLayoutWidget = new QWidget(centralWidget);
@@ -471,20 +481,34 @@ public:
 
         ecrans->addItem(verticalSpacer_2);
 
-        champErr = new QLineEdit(horizontalLayoutWidget);
-        champErr->setObjectName(QString::fromUtf8("champErr"));
-        champErr->setEnabled(true);
-        champErr->setReadOnly(true);
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        label_2 = new QLabel(horizontalLayoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        ecrans->addWidget(champErr);
+        horizontalLayout_3->addWidget(label_2);
+
+        champNbAff = new QLineEdit(horizontalLayoutWidget);
+        champNbAff->setObjectName(QString::fromUtf8("champNbAff"));
+
+        horizontalLayout_3->addWidget(champNbAff);
+
+
+        ecrans->addLayout(horizontalLayout_3);
 
 
         horizontalLayout->addLayout(ecrans);
 
+        champErr = new QLineEdit(centralWidget);
+        champErr->setObjectName(QString::fromUtf8("champErr"));
+        champErr->setEnabled(true);
+        champErr->setGeometry(QRect(10, 700, 561, 22));
+        champErr->setReadOnly(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 582, 22));
+        menuBar->setGeometry(QRect(0, 0, 584, 22));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuParam = new QMenu(menuBar);
@@ -493,6 +517,8 @@ public:
         menuType_de_Constante->setObjectName(QString::fromUtf8("menuType_de_Constante"));
         menuAngle = new QMenu(menuParam);
         menuAngle->setObjectName(QString::fromUtf8("menuAngle"));
+        menuAffichage = new QMenu(menuParam);
+        menuAffichage->setObjectName(QString::fromUtf8("menuAffichage"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -510,11 +536,15 @@ public:
         menuParam->addAction(menuAngle->menuAction());
         menuParam->addAction(actionMode_Complexe);
         menuParam->addAction(actionClavier);
+        menuParam->addAction(menuAffichage->menuAction());
         menuType_de_Constante->addAction(actionEntier);
         menuType_de_Constante->addAction(actionReel);
         menuType_de_Constante->addAction(actionRationnel);
         menuAngle->addAction(actionDegres);
         menuAngle->addAction(actionRadians);
+        menuAffichage->addSeparator();
+        menuAffichage->addAction(action1);
+        menuAffichage->addAction(action2);
 
         retranslateUi(MainWindow);
         QObject::connect(actionQuit, SIGNAL(triggered()), MainWindow, SLOT(close()));
@@ -538,6 +568,8 @@ public:
         actionRationnel->setText(QApplication::translate("MainWindow", "Rationnel", 0, QApplication::UnicodeUTF8));
         actionDegres->setText(QApplication::translate("MainWindow", "Degres", 0, QApplication::UnicodeUTF8));
         actionRadians->setText(QApplication::translate("MainWindow", "Radians", 0, QApplication::UnicodeUTF8));
+        action2->setText(QApplication::translate("MainWindow", "2", 0, QApplication::UnicodeUTF8));
+        action1->setText(QApplication::translate("MainWindow", "1", 0, QApplication::UnicodeUTF8));
         un->setText(QApplication::translate("MainWindow", "1", 0, QApplication::UnicodeUTF8));
         un->setShortcut(QApplication::translate("MainWindow", "1", 0, QApplication::UnicodeUTF8));
         trois->setText(QApplication::translate("MainWindow", "3", 0, QApplication::UnicodeUTF8));
@@ -604,10 +636,12 @@ public:
         mean->setText(QApplication::translate("MainWindow", "Mean", 0, QApplication::UnicodeUTF8));
         clear->setText(QApplication::translate("MainWindow", "Clear", 0, QApplication::UnicodeUTF8));
         drop->setText(QApplication::translate("MainWindow", "Drop", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("MainWindow", "Nombre de valeurs affich\303\251es : ", 0, QApplication::UnicodeUTF8));
         menuMenu->setTitle(QApplication::translate("MainWindow", "Menu", 0, QApplication::UnicodeUTF8));
         menuParam->setTitle(QApplication::translate("MainWindow", "Parametres", 0, QApplication::UnicodeUTF8));
         menuType_de_Constante->setTitle(QApplication::translate("MainWindow", "Type de Constante", 0, QApplication::UnicodeUTF8));
         menuAngle->setTitle(QApplication::translate("MainWindow", "Mesure d'angle", 0, QApplication::UnicodeUTF8));
+        menuAffichage->setTitle(QApplication::translate("MainWindow", "Affichage", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

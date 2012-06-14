@@ -293,7 +293,7 @@ void MainWindow::PowPress()
             pa->Empiler(b);
             throw ExceptionCalculatrice("Erreur d'operation : pow impossible avec un complexe");
         }
-        // La suite n'est pas exécutée si il y a eu une exception
+        // La suite n'est pas executee si il y a eu une exception
         Constante* tmp1=&(ps->Depiler());
         Constante* tmp2=&(ps->Depiler());
 
@@ -479,9 +479,14 @@ void MainWindow::SqrtPress()
         {
             pa->Empiler(s);
             ps->Empiler(tmp);
-            throw ExceptionCalculatrice("Racine Carré impossible, argument complexe");
+            throw ExceptionCalculatrice("Racine Carree impossible, argument complexe");
         }
-
+        else if(tmp->GetVal()<0)
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Racine Carree impossible, argument negatif");
+        }
         Constante* c = &(tmp->sqrtFonction());
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
@@ -512,7 +517,7 @@ void MainWindow::InvPress()
         {
             pa->Empiler(s);
             ps->Empiler(tmp);
-            throw ExceptionCalculatrice("Racine Carré impossible, argument complexe");
+            throw ExceptionCalculatrice("Racine Carre impossible, argument complexe");
         }
 
         Constante* c = &(tmp->invFonction());
@@ -547,7 +552,12 @@ void MainWindow::LnPress()
             ps->Empiler(tmp);
             throw ExceptionCalculatrice("Ln impossible, argument complexe");
         }
-
+        else if(tmp->GetVal()<0)
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Ln impossible, argument negatif");
+        }
         Constante* c = &(tmp->lnFonction());
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
@@ -579,6 +589,12 @@ void MainWindow::LogPress()
             pa->Empiler(s);
             ps->Empiler(tmp);
             throw ExceptionCalculatrice("Log impossible, argument complexe");
+        }
+        else if(tmp->GetVal()<0)
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Log impossible, argument negatif");
         }
 
         Constante* c = &(tmp->logFonction());

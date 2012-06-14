@@ -35,6 +35,7 @@ private:
     bool clavier;
     std::string operateur;
     std::string angle;
+    int nbreAff;
 
     //Variable utilisateur
     Constante* x;
