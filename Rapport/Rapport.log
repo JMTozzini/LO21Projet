@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.2)  14 JUN 2012 16:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.2)  14 JUN 2012 17:07
 entering extended mode
  %&-line parsing enabled.
 **Rapport.tex
@@ -6,19 +6,20 @@ entering extended mode
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -248,7 +249,7 @@ Language: frenchb 2009/03/16 v2.3d French support from the babel system
 
 (/usr/share/texmf-texlive/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count87
+\babel@savecnt=\count88
 \U@D=\dimen103
 )
 
@@ -262,8 +263,8 @@ Package babel Info: Making ; an active character on input line 121.
 Package babel Info: Making ! an active character on input line 122.
 Package babel Info: Making ? an active character on input line 123.
 \FB@Mht=\dimen104
-\std@mcc=\count88
-\dec@mcc=\count89
+\std@mcc=\count89
+\dec@mcc=\count90
 \parindentFFN=\dimen105
 *************************************
 * Local config file frenchb.cfg used
@@ -290,14 +291,14 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count90
+\Gread@gobject=\count91
 ))
 \Gin@req@height=\dimen106
 \Gin@req@width=\dimen107
 )
 (/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count91
+\c@float@type=\count92
 \float@exts=\toks17
 \float@box=\box26
 \@float@everytoks=\toks18
@@ -314,9 +315,9 @@ Package ifpdf Info: pdfTeX in pdf mode detected.
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count92
-\Gm@cntv=\count93
-\c@Gm@tempcnt=\count94
+\Gm@cnth=\count93
+\Gm@cntv=\count94
+\c@Gm@tempcnt=\count95
 \Gm@bindingoffset=\dimen108
 \Gm@wd@mp=\dimen109
 \Gm@odd@mp=\dimen110
@@ -337,8 +338,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen112
-\Hy@linkcounter=\count95
-\Hy@pagecounter=\count96
+\Hy@linkcounter=\count96
+\Hy@pagecounter=\count97
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -409,7 +410,7 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count97
+\Fld@menulength=\count98
 \Field@Width=\dimen113
 \Fld@charsize=\dimen114
 \Field@toks=\toks20
@@ -424,14 +425,14 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count98
-\c@Item=\count99
-\c@Hfootnote=\count100
+\Hy@abspage=\count99
+\c@Item=\count100
+\c@Hfootnote=\count101
 )
 *hyperref using driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count101
+\Fld@listcount=\count102
 ) (./Rapport.aux)
 \openout1 = `Rapport.aux'.
 
@@ -460,15 +461,15 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
+\scratchcounter=\count103
 \scratchdimen=\dimen115
 \scratchbox=\box28
-\nofMPsegments=\count103
-\nofMParguments=\count104
+\nofMPsegments=\count104
+\nofMParguments=\count105
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count105
+\MPscratchCnt=\count106
 \MPscratchDim=\dimen116
-\MPnumerator=\count106
+\MPnumerator=\count107
 \everyMPtoPDFconversion=\toks22
 )
 *geometry auto-detecting driver*
@@ -528,7 +529,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count107
+\c@section@level=\count108
 )
 LaTeX Info: Redefining \ref on input line 19.
 LaTeX Info: Redefining \pageref on input line 19.
@@ -539,54 +540,81 @@ LaTeX Info: Redefining \pageref on input line 19.
 
 \AtBeginShipoutBox=\box29
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 25.
+(Font)              <14.4> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
- (./Rapport.toc
+(Font)              <7> on input line 26.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.1}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.32 \tableofcontents
+                      [1
+
+] (./Rapport.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 5.
 )
 \tf@toc=\write4
 \openout4 = `Rapport.toc'.
 
+ [2
 
-<UMLProjetLO21v3.png, id=103, 753.81625pt x 911.405pt>
+]
+Chapitre 1.
+<UMLProjetLO21v3.png, id=133, 733.74126pt x 911.405pt>
 File: UMLProjetLO21v3.png Graphic file (type png)
 
-<use UMLProjetLO21v3.png> [1
+<use UMLProjetLO21v3.png> [3
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./UMLProjetLO21v3.png 
-(PNG copy)>]
-<diag_seq_1.png, id=121, 821.0675pt x 957.5775pt>
+]
+<diag_seq_1.png, id=145, 821.0675pt x 957.5775pt>
 File: diag_seq_1.png Graphic file (type png)
- <use diag_seq_1.png> [3]
-<diag_seq_2.png, id=132, 850.17625pt x 694.595pt>
+ <use diag_seq_1.png> [4 <./UMLProjetLO21v3.png (PNG copy)>]
+<diag_seq_2.png, id=151, 850.17625pt x 694.595pt>
 File: diag_seq_2.png Graphic file (type png)
- <use diag_seq_2.png> [4 <./diag_seq_1.png (PNG copy)>] [5 <./diag_seq_2.png (P
-NG copy)>] [6] [7]
-(./Rapport.aux) ) 
+ <use diag_seq_2.png> [5 <./diag_seq_1.png (PNG copy)>] [6 <./diag_seq_2.png (P
+NG copy)>]
+Chapitre 2.
+[7
+
+] [8] [9]
+Chapitre 3.
+[10
+
+] [11
+
+] (./Rapport.lof)
+\tf@lof=\write5
+\openout5 = `Rapport.lof'.
+
+ [12
+
+] (./Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 5579 strings out of 495061
- 79403 string characters out of 1182622
- 161776 words of memory out of 3000000
- 8617 multiletter control sequences out of 15000+50000
- 9757 words of font info for 34 fonts, out of 3000000 for 9000
+ 5621 strings out of 495061
+ 79774 string characters out of 1182622
+ 162142 words of memory out of 3000000
+ 8636 multiletter control sequences out of 15000+50000
+ 10363 words of font info for 36 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,6n,36p,779b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmti12.pfb>
-Output written on Rapport.pdf (7 pages, 372835 bytes).
+ 38i,6n,36p,779b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb>
+Output written on Rapport.pdf (13 pages, 383421 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
