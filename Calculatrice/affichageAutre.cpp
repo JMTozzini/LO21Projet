@@ -6,7 +6,21 @@
 void MainWindow::EntrerPress()
 {
     QString s=ui->champEcr->text();
-    if(s!=""){
+    QString s2=ui->champNbAff->text();
+
+    if(s2!=""){
+        bool retour=0;
+        int valeur=s2.toInt(&retour,10);
+        if(retour==0){
+            ExceptionCalculatrice e("Erreur : valeur pour le nombre d'affichage non reconnue");
+            TraitementErreur(e.GetInfos());
+        }
+        else
+            nbreAff=valeur;
+        ui->champNbAff->clear();
+    }
+
+    else{ // Ecriture dans dans champEcr
         bool arret=0;
         QRegExp exp("'*'");
         exp.setPatternSyntax(QRegExp::Wildcard);
@@ -32,7 +46,7 @@ void MainWindow::EntrerPress()
         else if(s=="inv"){arret=1; InvPress();}
         else if(s=="ln"){arret=1; LnPress();}
         else if(s=="log"){arret=1; LogPress();}
-        else if(s==NULL){DupPress();}
+        else if(s==NULL){arret=1; DupPress();}
         else if(s.contains("$")){
             if(!complexe){
                 arret=1;
@@ -54,7 +68,6 @@ void MainWindow::EntrerPress()
         else {// entier ou expression non reconnue
             bool retour=0;
             int valeur=s.toInt(&retour,10);
-            //std::cout<<"entier";
             if(retour==0){
                 arret=1;
                 ExceptionCalculatrice e("Erreur : valeur non reconnue");
@@ -75,18 +88,6 @@ void MainWindow::EntrerPress()
 
         ui->champEcr->clear();
         AffichageEcran();
-    }
-    else{
-        QString s2=ui->champNbAff->text();
-        bool retour=0;
-        int valeur=s2.toInt(&retour,10);
-        if(retour==0){
-            ExceptionCalculatrice e("Erreur : valeur pour le nombre d'affichage non reconnue");
-            TraitementErreur(e.GetInfos());
-        }
-        else
-            nbreAff=valeur;
-        ui->champNbAff->clear();
     }
 
 

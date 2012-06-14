@@ -114,7 +114,6 @@ void MainWindow::AffichageEcran()
         tmp=0;
     else
         tmp=ptr.size()-nbreAff;
-    std::cout<<tmp<<" ";
     for(unsigned int i=tmp;i<ptr.size();i++)
             ui->champAff->append(pa->GetVal(i));
 }

@@ -20,4 +20,6 @@ Il reste quoi à faire du coup ?
 
 A FAIRE
 --------------
-- Sauvegarde nbreAff
+
+
+=> Ok normalement c'est bon, mis à part que y'a plus ta sécurisation d'opérations, j'espère que tu l'as encore.
