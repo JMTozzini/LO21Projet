@@ -16,3 +16,4 @@ J'ai ajouté une petite icone, c'est unpeu inutile mais bon... Il faut qu'elle s
 ===> Dommage chez moi elle marche pas..
 
 Il reste quoi à faire du coup ?
+->On fait le point Jeudi matin 8h30 à la bu ?
