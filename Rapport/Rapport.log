@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.2)  14 JUN 2012 16:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.2)  14 JUN 2012 16:33
 entering extended mode
  %&-line parsing enabled.
 **Rapport.tex
@@ -554,26 +554,26 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `Rapport.toc'.
 
 
-<UMLProjetLO21v3.png, id=73, 753.81625pt x 911.405pt>
+<UMLProjetLO21v3.png, id=103, 753.81625pt x 911.405pt>
 File: UMLProjetLO21v3.png Graphic file (type png)
 
 <use UMLProjetLO21v3.png> [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./UMLProjetLO21v3.png 
 (PNG copy)>]
-<diag_seq_1.png, id=91, 821.0675pt x 957.5775pt>
+<diag_seq_1.png, id=121, 821.0675pt x 957.5775pt>
 File: diag_seq_1.png Graphic file (type png)
  <use diag_seq_1.png> [3]
-<diag_seq_2.png, id=102, 850.17625pt x 694.595pt>
+<diag_seq_2.png, id=132, 850.17625pt x 694.595pt>
 File: diag_seq_2.png Graphic file (type png)
  <use diag_seq_2.png> [4 <./diag_seq_1.png (PNG copy)>] [5 <./diag_seq_2.png (P
 NG copy)>] [6] [7]
 (./Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 5560 strings out of 495061
- 79147 string characters out of 1182622
- 161775 words of memory out of 3000000
- 8610 multiletter control sequences out of 15000+50000
+ 5579 strings out of 495061
+ 79403 string characters out of 1182622
+ 161776 words of memory out of 3000000
+ 8617 multiletter control sequences out of 15000+50000
  9757 words of font info for 34 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  38i,6n,36p,779b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -584,9 +584,9 @@ f-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fo
 nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/pu
 blic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmti12.pfb>
-Output written on Rapport.pdf (7 pages, 362395 bytes).
+Output written on Rapport.pdf (7 pages, 372835 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

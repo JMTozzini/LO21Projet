@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc} % utf8 c'est la norme
 %\usepackage[applemac]{inputenc}
 
-\usepackage[frenchb]{babel}
+\usepackage[francais]{babel}
 \usepackage{graphicx}
 \usepackage{float}
 
@@ -40,7 +40,7 @@ Le rendu final du projet est composé du présent rapport, du code du programme 
 		\end{figure}
 		
 		\subsubsection{Types de données}
-			\paragraph{}Nous avons choisi de représenter les données manipulées par la calculatrice comme des objets de trois classes : Entier, Réel, Rationnel, Complexe et Expression. 
+			\paragraph{}Nous avons choisi de représenter les données manipulées par la calculatrice comme des objets de plusieurs classes : Entier, Réel, Rationnel, Complexe et Expression. 
 
 			\paragraph{}La classe complexe est composée de deux objets de type Base, classe abstraite de laquelle dérivent Entier, Réel et Rationnel. Cela permet d'obtenir des complexes composés de deux attributs de types différents.
 
@@ -105,5 +105,25 @@ Le rendu final du projet est composé du présent rapport, du code du programme 
 		\paragraph{}Pour les opérateurs utilisables avec plusieurs types de données, par exemple l'opérateur + peut-être utilisés avec les types Entier, Réel, Rationnel, Complexe et Expression, nous avons d'abord défini une méthode de Constante permettant d'appeler la bonne méthode de ses classes filles.
 
 		\paragraph{}Toutes les méthodes ont ensuite dues être implémentées pour tous les types de données. Nous avons fait le choix de toujours renvoyer le type le plus riche. Par exemple, l'addition d'un entier et d'un réel renverra toujours un réel, de même la soustraction d'un rationnel et d'un complexe renverra un complexe.\footnote{Pour les opérations entre les types Rationnel et Réel, nous avons choisi de toujours renvoyer un Réel, méme si il ne s'agit pas du type le plus riche, du fait que nous ne pouvons pas convertir un Réel en Rationnel sans perdre d'information sur celui-ci.} Les méthodes qui n'acceptait pas le type de données, par exemple l'opérateur mod (modulo) n'accepte que les entiers, renvoient des exceptions.
+
+	\subsection{Piles}
+		\paragraph{}Nous avons fait le choix d'utiliser deux piles. Leur contenu est identique à la différence que la pile de stockage contient des Constantes alors que la pile d’affichage contient cette constante sous forme de QString.
+		
+		\paragraph{}La pile d’affichage permet un affichage sur l’écran simplifié, ainsi il n'est pas nécessaire de parcourir la pile de stockage en entier et de transformer à chaque itération les constantes en QString. De plus, cette pile d'affichag sert à sauvegarder le contexte de maniers plus aisé, en effet il est plus facile d'écrire un QString dans un fichier qu'une Constante.
+		
+		\paragraph{}Enfin, nous avons utilisé la STL pour créer nos piles. La structure deque a été utilisé, ainsi nous avons adapter cette structure à travers la pile pour une utilisation spécifique à nos problématiques.
+		
+	\subsection{Opérateur binaires}
+			\paragraph{}Pour la majorité de nos opérateur binaires, nous avons fait le choix d'utiliser le design pattern Template Method. Ainsi nous traitons chaque opération binaires par la classe Constante qui délègue le calcule dans les surcharge des classes filles. Cela évitait d’utiliser des \emph{dynamique\_cast} de manière excessive et permettait de factoriser le code.
+
+	\subsection{Types de données}
+		\paragraph{}Nous avons représenté nos type en nous inspirant du design pattern Composite, ainsi nous avons une classe abstraite Constante dont hérite tout les type de donnée. De plus les méthodes sont virtuelle pure et donc quelque soit la classe fille de constante les méthodes sont identique et s'appellent de la même façon.
+		
+	\subsection{Utilisation des Singletons}
+		\paragraph{}Pour permettre de respecter la constrainte d'unicité de que nous avons décris dasn l'UML, nous avons choisi d'implementer les classes Gardien, Pile de Stockage et Pile d'Affichage avec le design pattern singleton.
+		
+\section{Améliorations et difficultés}
+	\subsection{Critiques de Conception}
+	
 
 \end{document}
