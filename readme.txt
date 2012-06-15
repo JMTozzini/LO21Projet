@@ -16,7 +16,6 @@ J'ai ajouté une petite icone, c'est unpeu inutile mais bon... Il faut qu'elle s
 ===> Dommage chez moi elle marche pas..
 
 Il reste quoi à faire du coup ?
-<<<<<<< HEAD
 ->On fait le point Jeudi matin 8h30 à la bu ?
 =======
 
@@ -26,8 +25,8 @@ A FAIRE
 
 
 => Ok normalement c'est bon, mis à part que y'a plus ta sécurisation d'opérations, j'espère que tu l'as encore.
->>>>>>> 43ea99c5917660719498e0b91159dfb9367f0208
-
 
 - Mec le rapport fait 13 pages ! C'était censé être entre 3 et 5… Du coup j'ai enlevé la liste des figures et changé le style des titres, je sais pas si ça prend vraiment moins de place en tous cas je trouve ça plus joli perso. Bref si ça se plaît pas vire le.
+->tu as rajouté un package que j'ai pas donc je peux pas modifier le rapport, il reste juste a voir les fautes d'orthographes parce que je suis archi nul.
 
+- J'ai sécurisé des fonctions, l'annuler ne marche qu'au bout du deuxième clic j'arrive pas a voir pourquoi. Comme la démo est sur ton pc fait le tourner chez toi pour être sur que ça bug pas. Essaye également de mettre les raccourcis pour "Rétablir" & "Annuler".
