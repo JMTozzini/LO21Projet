@@ -19,7 +19,7 @@ void MainWindow::PlusPress()
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
@@ -110,11 +110,20 @@ void MainWindow::DivPress()
             throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
         }
 
-        pa->Depiler(); pa->Depiler();
+        QString s1=pa->Depiler();
+        QString s2=pa->Depiler();
 
         Constante* tmp1=&(ps->Depiler());
         Constante* tmp2=&(ps->Depiler());
         Constante* c;
+
+        if(tmp1->GetVal()==0)
+        {
+            pa->Empiler(s2); pa->Empiler(s1);
+            ps->Empiler(tmp2); ps->Empiler(tmp1);
+            throw ExceptionCalculatrice("Div impossible, argument nul");
+        }
+
         c = &(tmp2->operator/(tmp1));
 
         if(c->GetType()=="rationnel")
@@ -123,7 +132,7 @@ void MainWindow::DivPress()
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
@@ -174,7 +183,7 @@ void MainWindow::SinPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -196,7 +205,7 @@ void MainWindow::TanPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -219,7 +228,7 @@ void MainWindow::CoshPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -241,7 +250,7 @@ void MainWindow::SinhPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -263,7 +272,7 @@ void MainWindow::TanhPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
