@@ -6,6 +6,8 @@ Constante& Constante::operator%(Constante* c)
     Entier* e=dynamic_cast<Entier*>(c);
     Expression* exp=dynamic_cast<Expression*>(c);
 
+    //std::cout<<e<<" "<<exp<<std::endl;
+
     if(e && this->GetType()=="entier") //Entier % Entier
     {
         return *(new Entier((int)this->GetVal() % (int)e->GetVal()));

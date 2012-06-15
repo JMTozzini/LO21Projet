@@ -84,12 +84,14 @@ void MainWindow::SwapPress()
         QString s1=pa->Depiler(); QString s2=pa->Depiler();
         Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
         Entier* tmp2=dynamic_cast<Entier*>(&(ps->Depiler()));
-        if(tmp1==0 || tmp2==0 || tmp1->GetVal()<0 || tmp2->GetVal()<0)
+        if(tmp1==0 || tmp2==0 || tmp1->GetVal()<0 || tmp2->GetVal()<0 || tmp1->GetVal()>pa->GetPtr().size() || tmp2->GetVal()>pa->GetPtr().size())
         {
             ps->Empiler(tmp2); ps->Empiler(tmp1);
             pa->Empiler(s2); pa->Empiler(s1);
             throw ExceptionCalculatrice("Impossible de swapper arguments non entiers positifs");
         }
+
+        //std::cout<<tmp2->GetVal()<<" "<<tmp1->GetVal()<<std::endl;
 
         pa->Swap(tmp2->GetVal(),tmp1->GetVal());
         ps->Swap(tmp2->GetVal(),tmp1->GetVal());
@@ -183,7 +185,7 @@ void MainWindow::EvalPress()
             s.remove("'");
             if(s.startsWith("x=")){
                 s.remove(0,2);
-                std::cout<<"s="<<s.toStdString()<<std::endl;
+                //std::cout<<"s="<<s.toStdString()<<std::endl;
                 if(s.contains("$")){
                     if(!complexe){
                         ExceptionCalculatrice e("Le mode complexe n'est pas active");
@@ -199,7 +201,7 @@ void MainWindow::EvalPress()
                 else {// entier ou expression non reconnue
                     bool retour=0;
                     int valeur=s.toInt(&retour,10);
-                    std::cout<<"entier";
+                    //std::cout<<"entier";
                     if(retour==0){
                         ExceptionCalculatrice e("Erreur : valeur non reconnue");
                         TraitementErreur(e.GetInfos());
@@ -208,7 +210,7 @@ void MainWindow::EvalPress()
                     ps->Empiler(x);
                 }
                 pa->Empiler(s);
-                std::cout<<"x="; x->Afficher();
+                //std::cout<<"x="; x->Afficher();
             }
             else{
 

@@ -209,7 +209,7 @@ void MainWindow::MAJParam(){
 
         if(x){
             fichier<<"x"<<std::endl;
-            std::cout<<x->GetType()<<std::endl;
+            //std::cout<<x->GetType()<<std::endl;
             fichier<<(x->GetQString()).toStdString()<<std::endl;
         }// Variable utilisateur
         else

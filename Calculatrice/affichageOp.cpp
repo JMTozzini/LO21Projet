@@ -336,6 +336,7 @@ void MainWindow::ModPress()
         }
 
         Constante* c = &(tmp2->operator%(tmp1));
+        //std::cout<<c->GetVal()<<std::endl;
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }

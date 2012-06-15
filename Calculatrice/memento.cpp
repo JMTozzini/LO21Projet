@@ -32,13 +32,12 @@ MementoStock* Gardien::AnnulerStock()
 {
     if(indexStock<1)
         throw ExceptionCalculatrice("Vous ne pouvez pas Annuler d'avantage");
-
     return listeEtatsSauveStock[--indexStock];
 }
 
 MementoStock* Gardien::RetablirStock()
 {
-    std::cout<<indexStock<<" "<< listeEtatsSauveStock.size()<<std::endl;
+    //std::cout<<indexStock<<" "<< listeEtatsSauveStock.size()<<std::endl;
     if((unsigned int)indexStock >= listeEtatsSauveStock.size()-2)
         throw ExceptionCalculatrice("Impossible de Retablir d'avantage");
 
