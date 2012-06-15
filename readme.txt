@@ -36,3 +36,5 @@ A FAIRE
 - Je relierai le rapport tou à l'heure, là j'ai pas le temps je dois aller en entretien
 - Au fait j'arrive pas à trouver non plus pourquoi on soit annuler deux fois pour que ça marche, rétablir marche tout de suite.. Ca marchait avant non ?
 Pour les raccourcis c'est bon.
+
+-> Sécurisation de plusieurs fonctions

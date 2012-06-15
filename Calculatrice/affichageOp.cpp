@@ -305,14 +305,20 @@ void MainWindow::PowPress()
         // La suite n'est pas executee si il y a eu une exception
         Constante* tmp1=&(ps->Depiler());
         Constante* tmp2=&(ps->Depiler());
-
         Constante* c;
-        c = &(tmp2->powFonction(tmp1));
+
+        if(tmp1->GetVal()<0 && tmp2->GetVal()==0)
+            throw ExceptionCalculatrice("0 n'a pas de puissance negative");
+        else
+            c = &(tmp2->powFonction(tmp1));
+
         if(c->GetType()=="rationnel")
             c->Simplifier();
+
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
         ui->champEcr->clear();
+
         MAJParam();
         AffichageEcran();
     }
@@ -527,10 +533,17 @@ void MainWindow::InvPress()
         {
             pa->Empiler(s);
             ps->Empiler(tmp);
-            throw ExceptionCalculatrice("Racine Carre impossible, argument complexe");
+            throw ExceptionCalculatrice("Inverse impossible, argument complexe");
+        }
+        else if(tmp->GetVal()==0)
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Inverse impossible, argument nul");
         }
 
         Constante* c = &(tmp->invFonction());
+
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
