@@ -313,7 +313,7 @@ void MainWindow::PowPress()
         g->AjouterMemento(ps->CreerMemento());
         g->AjouterMemento(pa->CreerMemento());
     }
-//    pa->AffichagePile(); ps->AffichagePile();
+    //    pa->AffichagePile(); ps->AffichagePile();
 }
 
 

@@ -50,7 +50,7 @@ void MainWindow::EntrerPress()
         else if(s.contains("$")){
             if(!complexe){
                 arret=1;
-                ExceptionCalculatrice e("Le mode complexe n'est pas activé");
+                ExceptionCalculatrice e("Le mode complexe n'est pas actif");
                 TraitementErreur(e.GetInfos());
             }
             else{
@@ -59,7 +59,16 @@ void MainWindow::EntrerPress()
             }
         }
         else if(s.contains(",")){ps->Empiler(ToReel(s));}
-        else if(s.contains("/")){ps->Empiler(ToRationnel(s));}
+        else if(s.contains("/")){
+            Rationnel* a=NULL;
+            try{
+                a=ToRationnel(s);
+                a->Afficher();
+                ps->Empiler(a);
+                s=a->GetQString();
+            }
+            catch(ExceptionCalculatrice e){arret=1; TraitementErreur(e.GetInfos());}
+        }
         else if(s=="x" && x!=NULL){
             ps->Empiler(x);
             pa->Empiler(x->GetQString());
@@ -87,19 +96,16 @@ void MainWindow::EntrerPress()
         }
 
         ui->champEcr->clear();
-        AffichageEcran();
+
     }
-
-
-
-        MAJParam();
+    AffichageEcran();
+    MAJParam();
 
 }
 
 void MainWindow::AnnulerPress()
 {
-    try
-    {
+    try{
         MementoStock *m1= g->AnnulerStock();
         MementoAff *m2=g->AnnulerAff();
         ps->ChargerMemento(m1);

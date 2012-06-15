@@ -1,8 +1,5 @@
 #include "constante.h"
 
-
-
-
 // ------ Operateur - ------
 
 // Constante

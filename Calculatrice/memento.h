@@ -45,26 +45,26 @@ public:
   */
 class Gardien
 {
-   std::deque<MementoStock*> listeEtatsSauveStock;
-   int indexStock;
+    std::deque<MementoStock*> listeEtatsSauveStock;
+    int indexStock;
 
-   std::deque<MementoAff*> listeEtatsSauveAff;
-   int indexAff;
+    std::deque<MementoAff*> listeEtatsSauveAff;
+    int indexAff;
 
-   static Gardien* instance;
+    static Gardien* instance;
 
 public:
-   // Constructeur & Destructeur
-   static Gardien* GetInstance();
-   static void DetruireInstance();
+    // Constructeur & Destructeur
+    static Gardien* GetInstance();
+    static void DetruireInstance();
 
-   void AjouterMemento(MementoStock* m);
-   MementoStock* AnnulerStock();
-   MementoStock* RetablirStock();
+    void AjouterMemento(MementoStock* m);
+    MementoStock* AnnulerStock();
+    MementoStock* RetablirStock();
 
-   void AjouterMemento(MementoAff* m);
-   MementoAff* AnnulerAff();
-   MementoAff* RetablirAff();
+    void AjouterMemento(MementoAff* m);
+    MementoAff* AnnulerAff();
+    MementoAff* RetablirAff();
 
 private :
     Gardien():indexStock(-1),indexAff(-1){}

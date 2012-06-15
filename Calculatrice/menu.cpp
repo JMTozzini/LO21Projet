@@ -88,7 +88,7 @@ void MainWindow::MenuClavier()
         ui->multi->setVisible(false);
         ui->pow->setVisible(false);
         ui->mod->setVisible(false);
-}
+    }
     else{
         ui->un->setVisible(true);
         ui->deux->setVisible(true);
@@ -135,7 +135,7 @@ void MainWindow::MenuClavier()
         ui->multi->setVisible(true);
         ui->pow->setVisible(true);
         ui->mod->setVisible(true);
-}
+    }
 }
 
 void MainWindow::MenuDegres()

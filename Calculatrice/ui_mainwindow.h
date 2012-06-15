@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Jun 14 10:03:34 2012
+** Created: Fri Jun 15 11:03:38 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -121,7 +121,6 @@ public:
     QMenu *menuParam;
     QMenu *menuType_de_Constante;
     QMenu *menuAngle;
-    QMenu *menuAffichage;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -129,15 +128,17 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(584, 767);
+        MainWindow->resize(597, 770);
         actionQuit = new QAction(MainWindow);
         actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         actionRetablir = new QAction(MainWindow);
         actionRetablir->setObjectName(QString::fromUtf8("actionRetablir"));
+        actionRetablir->setShortcut(QString::fromUtf8("Ctrl+Y"));
         actionAnnuler = new QAction(MainWindow);
         actionAnnuler->setObjectName(QString::fromUtf8("actionAnnuler"));
+        actionAnnuler->setShortcut(QString::fromUtf8("Ctrl+Z"));
         actionMode_Complexe = new QAction(MainWindow);
         actionMode_Complexe->setObjectName(QString::fromUtf8("actionMode_Complexe"));
         actionClavier = new QAction(MainWindow);
@@ -160,7 +161,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(16, 13, 551, 678));
+        horizontalLayoutWidget->setGeometry(QRect(16, 13, 562, 678));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -503,12 +504,12 @@ public:
         champErr = new QLineEdit(centralWidget);
         champErr->setObjectName(QString::fromUtf8("champErr"));
         champErr->setEnabled(true);
-        champErr->setGeometry(QRect(10, 700, 561, 22));
+        champErr->setGeometry(QRect(20, 700, 561, 22));
         champErr->setReadOnly(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 584, 22));
+        menuBar->setGeometry(QRect(0, 0, 597, 23));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuParam = new QMenu(menuBar);
@@ -517,8 +518,6 @@ public:
         menuType_de_Constante->setObjectName(QString::fromUtf8("menuType_de_Constante"));
         menuAngle = new QMenu(menuParam);
         menuAngle->setObjectName(QString::fromUtf8("menuAngle"));
-        menuAffichage = new QMenu(menuParam);
-        menuAffichage->setObjectName(QString::fromUtf8("menuAffichage"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -536,15 +535,11 @@ public:
         menuParam->addAction(menuAngle->menuAction());
         menuParam->addAction(actionMode_Complexe);
         menuParam->addAction(actionClavier);
-        menuParam->addAction(menuAffichage->menuAction());
         menuType_de_Constante->addAction(actionEntier);
         menuType_de_Constante->addAction(actionReel);
         menuType_de_Constante->addAction(actionRationnel);
         menuAngle->addAction(actionDegres);
         menuAngle->addAction(actionRadians);
-        menuAffichage->addSeparator();
-        menuAffichage->addAction(action1);
-        menuAffichage->addAction(action2);
 
         retranslateUi(MainWindow);
         QObject::connect(actionQuit, SIGNAL(triggered()), MainWindow, SLOT(close()));
@@ -558,9 +553,7 @@ public:
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0, QApplication::UnicodeUTF8));
         actionRetablir->setText(QApplication::translate("MainWindow", "Retablir", 0, QApplication::UnicodeUTF8));
-        actionRetablir->setShortcut(QApplication::translate("MainWindow", "Meta+Y", 0, QApplication::UnicodeUTF8));
         actionAnnuler->setText(QApplication::translate("MainWindow", "Annuler", 0, QApplication::UnicodeUTF8));
-        actionAnnuler->setShortcut(QApplication::translate("MainWindow", "Meta+Z", 0, QApplication::UnicodeUTF8));
         actionMode_Complexe->setText(QApplication::translate("MainWindow", "Mode Complexe", 0, QApplication::UnicodeUTF8));
         actionClavier->setText(QApplication::translate("MainWindow", "Clavier", 0, QApplication::UnicodeUTF8));
         actionEntier->setText(QApplication::translate("MainWindow", "Entier", 0, QApplication::UnicodeUTF8));
@@ -641,7 +634,6 @@ public:
         menuParam->setTitle(QApplication::translate("MainWindow", "Parametres", 0, QApplication::UnicodeUTF8));
         menuType_de_Constante->setTitle(QApplication::translate("MainWindow", "Type de Constante", 0, QApplication::UnicodeUTF8));
         menuAngle->setTitle(QApplication::translate("MainWindow", "Mesure d'angle", 0, QApplication::UnicodeUTF8));
-        menuAffichage->setTitle(QApplication::translate("MainWindow", "Affichage", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

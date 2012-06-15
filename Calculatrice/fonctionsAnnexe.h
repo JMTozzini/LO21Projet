@@ -26,7 +26,8 @@ Complexe* ToComplexe(QString& s);
   * \brief Fonction permettant de calculer le PGCD de deux int.
   * \return int.
   */
-int PGCD(int,int);
+
+int pgcd(int a, int b);
 /*!
   * Cette fonction permet l'utilisation de la fonction factoriel de la Calculatrice.
   * \brief Fonction permettant de calculer la factorielle d'un int.

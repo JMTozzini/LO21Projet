@@ -8,9 +8,13 @@ Reel* ToReel(QString& s){
 }
 
 Rationnel* ToRationnel(QString& s){
+    Rationnel* ra=NULL;
     s.remove(" ");
     QStringList list1 = s.split("/");
-    Rationnel* ra=new Rationnel(list1.value(0).toInt(),list1.value(1).toInt());
+    int tmp=list1.value(0).toInt(), tmp2=list1.value(1).toInt();
+    if(!tmp2)
+        throw ExceptionCalculatrice("Erreur : le denominateur d'un rationnel ne peut pas etre nul");
+    ra=new Rationnel(list1.value(0).toInt(),list1.value(1).toInt());
     ra->Simplifier();
     return ra;
 }
@@ -33,33 +37,20 @@ Complexe* ToComplexe(QString& s)
     return (new Complexe(b1, b2));
 }
 
-
-
-int PGCD(int min, int max)
+int pgcd(int a, int b)
 {
-    int res=max-min;
-    if(min==0)
-        return max;
-    else if(res>=min)
-        PGCD(min,res);
-    else if(min>0)
-        PGCD(res,min);
-    else
-        return -1;
+    return (b == 0 ? a : pgcd(b, a%b));
 }
+
 
 void Rationnel::Simplifier()
 {
-    int res;
-
-    if(numerateur<=denominateur)
-        res=PGCD(numerateur,denominateur);
-    else
-        res=PGCD(denominateur,numerateur);
-
-    if(res==-1){}
-    else{numerateur/=res; denominateur/=res;}
+    int g = pgcd(numerateur, denominateur);
+    numerateur/=g;
+    denominateur/=g;
+    std::cout<<std::endl;
 }
+
 
 int Factorielle(int n)
 {

@@ -30,3 +30,7 @@ A FAIRE
 ->tu as rajouté un package que j'ai pas donc je peux pas modifier le rapport, il reste juste a voir les fautes d'orthographes parce que je suis archi nul.
 
 - J'ai sécurisé des fonctions, l'annuler ne marche qu'au bout du deuxième clic j'arrive pas a voir pourquoi. Comme la démo est sur ton pc fait le tourner chez toi pour être sur que ça bug pas. Essaye également de mettre les raccourcis pour "Rétablir" & "Annuler".
+
+- Rationnel ne marchait pas, heureusement que je l'ai vu !!
+- Pour le rapport ça doit être titlesec que tu n'as pas, mais tu peux commenter les lignes et tu devrais pas avoir de soucis.
+- Je relierai le rapport tou à l'heure, là j'ai pas le temps je dois aller en entretien

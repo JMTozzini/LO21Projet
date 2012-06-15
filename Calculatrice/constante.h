@@ -447,7 +447,7 @@ public:
     ~Rationnel(){delete this;}
 
     // Fonctions annexes virtuelles
-    void Afficher(std::ostream& os=std::cout)const { os<<numerateur << "/" << denominateur /*<< std::endl*/;}
+    void Afficher(std::ostream& os=std::cout)const { os<<numerateur << "/" << denominateur;}
     double GetVal() const {return numerateur;}
     double GetValBis() const {return denominateur;}
     const std::string GetType() const {return "rationnel";}

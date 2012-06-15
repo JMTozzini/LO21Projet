@@ -115,7 +115,7 @@ void MainWindow::AffichageEcran()
     else
         tmp=ptr.size()-nbreAff;
     for(unsigned int i=tmp;i<ptr.size();i++)
-            ui->champAff->append(pa->GetVal(i));
+        ui->champAff->append(pa->GetVal(i));
 }
 
 
@@ -124,7 +124,7 @@ void MainWindow::AffichageEcran()
 // Fonctions pour l'initialisation et la mise à jour des param8ètres
 
 void MainWindow::InitParam(){
-    std::ifstream fichier("param10.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
+    std::ifstream fichier("param11.txt", ios::in);  // Ouverture en lecture du fichier de param8ètres
     if(fichier)  // l'ouverture fonctionne -> on récupère les valeurs des paramètres
     {
         //if(x) std::cout<<"x="<<(x->GetQString()).toStdString()<<std::endl;
@@ -165,7 +165,7 @@ void MainWindow::InitParam(){
         AffichageEcran();
     }
     else{ // Sinon le fichier n'existait pas, on ouvre en écriture et on l'initialise avec les valeurs pas défaut
-        std::ofstream fichier("param10.txt", ios::out);
+        std::ofstream fichier("param11.txt", ios::out);
 
         if(fichier)
         {
@@ -197,7 +197,7 @@ void MainWindow::InitParam(){
 }
 
 void MainWindow::MAJParam(){
-    std::ofstream fichier("param10.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
+    std::ofstream fichier("param11.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
 
     if(fichier)  // si l'ouverture a réussi
     {
