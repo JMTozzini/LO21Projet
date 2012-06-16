@@ -1,3 +1,8 @@
+/**
+\file affichageAutre.cpp
+**/
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QRegExp>
@@ -7,6 +12,8 @@ void MainWindow::EntrerPress()
 {
     QString s=ui->champEcr->text();
     QString s2=ui->champNbAff->text();
+
+    ui->champErr->clear();
 
     if(s2!=""){
         bool retour=0;
@@ -46,6 +53,7 @@ void MainWindow::EntrerPress()
         else if(s=="inv"){arret=1; InvPress();}
         else if(s=="ln"){arret=1; LnPress();}
         else if(s=="log"){arret=1; LogPress();}
+        else if(s=="eval"){arret=1; EvalPress();}
         else if(s==NULL){arret=1; DupPress();}
         else if(s.contains("$")){
             if(!complexe){
@@ -82,7 +90,8 @@ void MainWindow::EntrerPress()
                 ExceptionCalculatrice e("Erreur : valeur non reconnue");
                 TraitementErreur(e.GetInfos());
             }
-            ps->Empiler(new Entier(valeur));
+            else
+                ps->Empiler(new Entier(valeur));
         }
 
         if(!arret){
@@ -105,14 +114,14 @@ void MainWindow::EntrerPress()
 
 void MainWindow::AnnulerPress()
 {
+
     try{
         MementoStock *m1= g->AnnulerStock();
         MementoAff *m2=g->AnnulerAff();
-        ps->ChargerMemento(m1);
+        pa->ChargerMemento(m2);
         pa->ChargerMemento(m2);
     }
     catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
-
     AffichageEcran();
     MAJParam();
 }

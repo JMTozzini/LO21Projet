@@ -1,3 +1,8 @@
+/**
+\file constanteOpMoins.cpp
+**/
+
+
 #include "constante.h"
 
 // ------ Operateur - ------

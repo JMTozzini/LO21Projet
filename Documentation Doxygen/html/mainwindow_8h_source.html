@@ -3,46 +3,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Calculatrice à notation polonaise inversée:  Fichier source de /home/jean-michel/Git/LO21Projet/Calculatrice/mainwindow.h</title>
-
+<title>LO21 Projet:  Fichier source de mainwindow.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="top"><!-- do not remove this div! -->
-
-
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  
   <td id="projectlogo"><img alt="Logo" src="logoDoxy.png"/></td>
-  
-  
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Calculatrice à notation polonaise inversée
-   
+   <div id="projectname">LO21 Projet
    </div>
-   <div id="projectbrief">Projet LO21</div>
   </td>
-  
-  
-  
  </tr>
  </tbody>
 </table>
 </div>
-
-<!-- Généré par Doxygen 1.7.6.1 -->
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.1.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -75,123 +63,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
-</div>
-<div class="header">
-  <div class="headertitle">
-<div class="title">/home/jean-michel/Git/LO21Projet/Calculatrice/mainwindow.h</div>  </div>
-</div><!--header-->
-<div class="contents">
-<a href="mainwindow_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00006"></a>00006 <span class="preprocessor">#ifndef MAINWINDOW_H</span>
-<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define MAINWINDOW_H</span>
-<a name="l00008"></a>00008 <span class="preprocessor"></span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;cstdio&gt;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;fstream&gt;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="pile_8h.html" title="Déclaration des classes PileStockage et PileAffichage.">pile.h</a>&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="constante_8h.html" title="Déclaration de la classe Constante et de ses classes filles.">constante.h</a>&quot;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="fonctions_annexe_8h.html" title="Fonctions annexes de la calculatrice.">fonctionsAnnexe.h</a>&quot;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="exception_calculatrice_8h.html" title="Déclaration de la classe ExceptionCalculatrice pour la gestion des erreurs.">exceptionCalculatrice.h</a>&quot;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="memento_8h.html" title="Déclaration des classes MementoStock, MementoAff, Gardien.">memento.h</a>&quot;</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="keyword">namespace </span>Ui {<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>;}
-<a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="class_main_window.html">00024</a> <span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow
-<a name="l00025"></a>00025 {
-<a name="l00026"></a>00026     Q_OBJECT
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">private</span>:
-<a name="l00029"></a>00029     <a class="code" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *ui;
-<a name="l00030"></a>00030     <a class="code" href="class_pile_stockage.html" title="Classe permettant d&#39;empiler et de dépiler des pointeurs sur Constante.">PileStockage</a>* ps;
-<a name="l00031"></a>00031     <a class="code" href="class_pile_affichage.html" title="Classe permettant d&#39;empiler et de dépiler des QString.">PileAffichage</a>* pa;
-<a name="l00032"></a>00032     <a class="code" href="class_gardien.html" title="Classe permettant d&#39;empiler et de dépiler les MementoStock &amp; MementoAff.">Gardien</a>* g;
-<a name="l00033"></a>00033     <span class="keywordtype">bool</span> complexe;
-<a name="l00034"></a>00034     std::string typeDeCste;
-<a name="l00035"></a>00035     <span class="keywordtype">bool</span> clavier;
-<a name="l00036"></a>00036     std::string operateur;
-<a name="l00037"></a>00037     std::string angle;
-<a name="l00038"></a>00038     <span class="keywordtype">int</span> nbreAff;
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040     <span class="comment">//Variable utilisateur</span>
-<a name="l00041"></a>00041     <a class="code" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a>* x;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="keyword">public</span>:
-<a name="l00044"></a>00044     <span class="keyword">explicit</span> <a class="code" href="class_main_window.html">MainWindow</a>(QWidget *parent = 0);
-<a name="l00045"></a>00045     ~<a class="code" href="class_main_window.html">MainWindow</a>();
-<a name="l00046"></a>00046     <span class="keywordtype">void</span> AffichageEcran();
-<a name="l00047"></a>00047     <span class="keywordtype">void</span> InitParam();
-<a name="l00048"></a>00048     <span class="keywordtype">void</span> MAJParam();
-<a name="l00049"></a>00049     <span class="keywordtype">void</span> ApplicationMenu();
-<a name="l00050"></a>00050     <span class="keywordtype">void</span> TraitementErreur(QString);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <span class="keyword">public</span> slots:
-<a name="l00053"></a>00053     <span class="keywordtype">void</span> Num1Press();
-<a name="l00054"></a>00054     <span class="keywordtype">void</span> Num2Press();
-<a name="l00055"></a>00055     <span class="keywordtype">void</span> Num3Press();
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> Num4Press();
-<a name="l00057"></a>00057     <span class="keywordtype">void</span> Num5Press();
-<a name="l00058"></a>00058     <span class="keywordtype">void</span> Num6Press();
-<a name="l00059"></a>00059     <span class="keywordtype">void</span> Num7Press();
-<a name="l00060"></a>00060     <span class="keywordtype">void</span> Num8Press();
-<a name="l00061"></a>00061     <span class="keywordtype">void</span> Num9Press();
-<a name="l00062"></a>00062     <span class="keywordtype">void</span> Num0Press();
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> DelPress();
-<a name="l00064"></a>00064     <span class="keywordtype">void</span> ComaPress();
-<a name="l00065"></a>00065     <span class="keywordtype">void</span> CmplxPress();
-<a name="l00066"></a>00066     <span class="keywordtype">void</span> ExprPress();
-<a name="l00067"></a>00067     <span class="keywordtype">void</span> DivPress();
-<a name="l00068"></a>00068     <span class="keywordtype">void</span> ModPress();
-<a name="l00069"></a>00069     <span class="keywordtype">void</span> PlusPress();
-<a name="l00070"></a>00070     <span class="keywordtype">void</span> MoinsPress();
-<a name="l00071"></a>00071     <span class="keywordtype">void</span> MultPress();
-<a name="l00072"></a>00072     <span class="keywordtype">void</span> FactPress();
-<a name="l00073"></a>00073     <span class="keywordtype">void</span> SignPress();
-<a name="l00074"></a>00074     <span class="keywordtype">void</span> SqrPress();
-<a name="l00075"></a>00075     <span class="keywordtype">void</span> CubePress();
-<a name="l00076"></a>00076     <span class="keywordtype">void</span> SqrtPress();
-<a name="l00077"></a>00077     <span class="keywordtype">void</span> InvPress();
-<a name="l00078"></a>00078     <span class="keywordtype">void</span> LnPress();
-<a name="l00079"></a>00079     <span class="keywordtype">void</span> LogPress();
-<a name="l00080"></a>00080     <span class="keywordtype">void</span> EntrerPress();
-<a name="l00081"></a>00081     <span class="keywordtype">void</span> MenuComplexe();
-<a name="l00082"></a>00082     <span class="keywordtype">void</span> MenuEntier();
-<a name="l00083"></a>00083     <span class="keywordtype">void</span> MenuReel();
-<a name="l00084"></a>00084     <span class="keywordtype">void</span> MenuRationnel();
-<a name="l00085"></a>00085     <span class="keywordtype">void</span> MenuClavier();
-<a name="l00086"></a>00086     <span class="keywordtype">void</span> MenuDegres();
-<a name="l00087"></a>00087     <span class="keywordtype">void</span> MenuRadians();
-<a name="l00088"></a>00088     <span class="keywordtype">void</span> AnnulerPress();
-<a name="l00089"></a>00089     <span class="keywordtype">void</span> RetablirPress();
-<a name="l00090"></a>00090     <span class="keywordtype">void</span> SwapPress();
-<a name="l00091"></a>00091     <span class="keywordtype">void</span> ClearPress();
-<a name="l00092"></a>00092     <span class="keywordtype">void</span> DupPress();
-<a name="l00093"></a>00093     <span class="keywordtype">void</span> DropPress();
-<a name="l00094"></a>00094     <span class="keywordtype">void</span> SumPress();
-<a name="l00095"></a>00095     <span class="keywordtype">void</span> MeanPress();
-<a name="l00096"></a>00096     <span class="keywordtype">void</span> EvalPress();
-<a name="l00097"></a>00097     <span class="keywordtype">void</span> CosPress();
-<a name="l00098"></a>00098     <span class="keywordtype">void</span> SinPress();
-<a name="l00099"></a>00099     <span class="keywordtype">void</span> TanPress();
-<a name="l00100"></a>00100     <span class="keywordtype">void</span> CoshPress();
-<a name="l00101"></a>00101     <span class="keywordtype">void</span> SinhPress();
-<a name="l00102"></a>00102     <span class="keywordtype">void</span> TanhPress();
-<a name="l00103"></a>00103     <span class="keywordtype">void</span> PowPress();
-<a name="l00104"></a>00104     <span class="keywordtype">void</span> xPress();
-<a name="l00105"></a>00105     <span class="keywordtype">void</span> xEgalPress();
-<a name="l00106"></a>00106 };
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108 <span class="preprocessor">#endif // MAINWINDOW_H</span>
-</pre></div></div><!-- contents -->
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -200,13 +78,121 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </iframe>
 </div>
 
-
-
+<div class="header">
+  <div class="headertitle">
+<div class="title">mainwindow.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mainwindow_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MAINWINDOW_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pile_8h.html" title="Déclaration des classes PileStockage et PileAffichage.">pile.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constante_8h.html" title="Déclaration de la classe Constante et de ses classes filles.">constante.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fonctions_annexe_8h.html" title="Fonctions annexes de la calculatrice.">fonctionsAnnexe.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exception_calculatrice_8h.html" title="Déclaration de la classe ExceptionCalculatrice pour la gestion des erreurs.">exceptionCalculatrice.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="memento_8h.html" title="Déclaration des classes MementoStock, MementoAff, Gardien.">memento.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>Ui {<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_main_window.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *ui;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_pile_stockage.html" title="Classe permettant d&#39;empiler et de dépiler des pointeurs sur Constante.">PileStockage</a>* ps;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_pile_affichage.html" title="Classe permettant d&#39;empiler et de dépiler des QString.">PileAffichage</a>* pa;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_gardien.html" title="Classe permettant d&#39;empiler et de dépiler les MementoStock &amp; MementoAff.">Gardien</a>* g;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> complexe;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::string typeDeCste;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> clavier;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string operateur;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string angle;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> nbreAff;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//Variable utilisateur</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_constante.html" title="Classe mère de toutes les valeurs empilées dans la pile de stockage.">Constante</a>* x;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_main_window.html">MainWindow</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ~<a class="code" href="class_main_window.html">MainWindow</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> AffichageEcran();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> InitParam();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> MAJParam();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> ApplicationMenu();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> TraitementErreur(QString);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> Num1Press();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> Num2Press();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> Num3Press();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> Num4Press();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> Num5Press();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> Num6Press();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> Num7Press();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> Num8Press();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> Num9Press();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> Num0Press();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> DelPress();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> ComaPress();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> CmplxPress();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> ExprPress();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> DivPress();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> ModPress();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> PlusPress();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> MoinsPress();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> MultPress();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> FactPress();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> SignPress();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> SqrPress();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> CubePress();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> SqrtPress();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> InvPress();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> LnPress();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> LogPress();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> EntrerPress();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> MenuComplexe();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> MenuEntier();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> MenuReel();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> MenuRationnel();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> MenuClavier();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> MenuDegres();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> MenuRadians();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> AnnulerPress();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> RetablirPress();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> SwapPress();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> ClearPress();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> DupPress();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> DropPress();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> SumPress();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> MeanPress();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> EvalPress();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> CosPress();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> SinPress();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> TanPress();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> CoshPress();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> SinhPress();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> TanhPress();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> PowPress();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> xPress();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> xEgalPress();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi Juin 14 2012 17:16:42 pour Calculatrice à notation polonaise inversée par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi Juin 15 2012 15:10:04 pour LO21 Projet par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.7.6.1
+</a> 1.8.1.1
 </small></address>
-
 </body>
 </html>

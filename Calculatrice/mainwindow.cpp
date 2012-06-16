@@ -1,3 +1,8 @@
+/**
+\file mainwindow.cpp
+**/
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <stdlib.h>
@@ -209,7 +214,6 @@ void MainWindow::MAJParam(){
 
         if(x){
             fichier<<"x"<<std::endl;
-            //std::cout<<x->GetType()<<std::endl;
             fichier<<(x->GetQString()).toStdString()<<std::endl;
         }// Variable utilisateur
         else
@@ -222,11 +226,6 @@ void MainWindow::MAJParam(){
         else fichier<<"pileVide"<<std::endl;
 
         fichier.close();
-
-        /*std::ifstream fichier("param9.txt", ios::in);
-        std::string tmp;
-        while(getline(fichier, tmp))
-            std::cout<<tmp<<std::endl;*/
     }
     else  // sinon
         cerr << "Erreur à l'ouverture !" << endl;
@@ -289,6 +288,8 @@ void MainWindow::ApplicationMenu(){
         ui->multi->setVisible(false);
         ui->pow->setVisible(false);
         ui->mod->setVisible(false);
+        ui->x->setVisible(false);
+        ui->xEgal->setVisible(false);
     }
 
     else{
@@ -337,6 +338,8 @@ void MainWindow::ApplicationMenu(){
         ui->multi->setVisible(true);
         ui->pow->setVisible(true);
         ui->mod->setVisible(true);
+        ui->x->setVisible(true);
+        ui->xEgal->setVisible(true);
     }
 }
 

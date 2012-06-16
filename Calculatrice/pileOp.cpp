@@ -1,3 +1,9 @@
+/**
+\file constanteOpMoins.cpp
+**/
+
+
+
 #include "pile.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -158,11 +164,12 @@ void MainWindow::MeanPress()
 {
     try
     {
-        pa->Depiler();
+        QString s=pa->Depiler();
         Entier* tmp1=dynamic_cast<Entier*>(&(ps->Depiler()));
         if(tmp1==0)
         {
-            throw ExceptionCalculatrice("Impossible de swapper arguments non entiers");
+            ps->Empiler(tmp1); pa->Empiler(s);
+            throw ExceptionCalculatrice("Impossible de Mean arguments non entiers");
         }
         Constante* tmp2=ps->Mean(tmp1->GetVal());
         ps->Empiler(tmp2);

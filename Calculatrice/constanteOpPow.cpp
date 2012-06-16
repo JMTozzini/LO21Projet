@@ -1,3 +1,9 @@
+/**
+\file constanteOpPow.cpp
+**/
+
+
+
 #include "constante.h"
 #include <stdio.h>
 #include <math.h>

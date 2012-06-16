@@ -1,3 +1,8 @@
+/**
+\file affichageOp.cpp
+**/
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -19,7 +24,7 @@ void MainWindow::PlusPress()
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
@@ -110,11 +115,20 @@ void MainWindow::DivPress()
             throw ExceptionCalculatrice("Pas assez d'operandes dans la pile");
         }
 
-        pa->Depiler(); pa->Depiler();
+        QString s1=pa->Depiler();
+        QString s2=pa->Depiler();
 
         Constante* tmp1=&(ps->Depiler());
         Constante* tmp2=&(ps->Depiler());
         Constante* c;
+
+        if(tmp1->GetType()!="expression" && tmp1->GetVal()==0)
+        {
+            pa->Empiler(s2); pa->Empiler(s1);
+            ps->Empiler(tmp2); ps->Empiler(tmp1);
+            throw ExceptionCalculatrice("Div impossible, argument nul");
+        }
+
         c = &(tmp2->operator/(tmp1));
 
         if(c->GetType()=="rationnel")
@@ -123,7 +137,7 @@ void MainWindow::DivPress()
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
 
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
@@ -174,7 +188,7 @@ void MainWindow::SinPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -196,7 +210,7 @@ void MainWindow::TanPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -219,7 +233,7 @@ void MainWindow::CoshPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -241,7 +255,7 @@ void MainWindow::SinhPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -263,7 +277,7 @@ void MainWindow::TanhPress(){
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }
-    catch(ExceptionCalculatrice e){e.GetInfos();}
+    catch(ExceptionCalculatrice e){TraitementErreur(e.GetInfos());}
     g->AjouterMemento(ps->CreerMemento());
     g->AjouterMemento(pa->CreerMemento());
 
@@ -296,14 +310,20 @@ void MainWindow::PowPress()
         // La suite n'est pas executee si il y a eu une exception
         Constante* tmp1=&(ps->Depiler());
         Constante* tmp2=&(ps->Depiler());
-
         Constante* c;
-        c = &(tmp2->powFonction(tmp1));
+
+        if(tmp1->GetVal()<0 && tmp2->GetVal()==0)
+            throw ExceptionCalculatrice("0 n'a pas de puissance negative");
+        else
+            c = &(tmp2->powFonction(tmp1));
+
         if(c->GetType()=="rationnel")
             c->Simplifier();
+
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
         ui->champEcr->clear();
+
         MAJParam();
         AffichageEcran();
     }
@@ -518,10 +538,17 @@ void MainWindow::InvPress()
         {
             pa->Empiler(s);
             ps->Empiler(tmp);
-            throw ExceptionCalculatrice("Racine Carre impossible, argument complexe");
+            throw ExceptionCalculatrice("Inverse impossible, argument complexe");
+        }
+        else if(tmp->GetVal()==0)
+        {
+            pa->Empiler(s);
+            ps->Empiler(tmp);
+            throw ExceptionCalculatrice("Inverse impossible, argument nul");
         }
 
         Constante* c = &(tmp->invFonction());
+
         ps->Empiler(c);
         pa->Empiler(c->GetQString());
     }

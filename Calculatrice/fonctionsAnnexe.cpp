@@ -1,3 +1,9 @@
+/**
+\file fonctionAnnexe.cpp
+**/
+
+
+
 #include "fonctionsAnnexe.h"
 #include "constante.h"
 

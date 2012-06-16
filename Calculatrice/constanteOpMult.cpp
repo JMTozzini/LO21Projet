@@ -1,3 +1,8 @@
+/**
+\file constanteOpMult.cpp
+**/
+
+
 #include "constante.h"
 
 

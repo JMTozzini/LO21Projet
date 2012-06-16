@@ -1,3 +1,9 @@
+/**
+\file operateursUnaires.cpp
+**/
+
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <stdio.h>
@@ -413,7 +419,7 @@ Constante& Constante::invFonction()
 
     if(e)
     {
-        return *(new Reel( 1 / e->GetVal() ));
+        return *(new Rationnel( 1 , e->GetVal() ));
     }
     else if(r)
     {

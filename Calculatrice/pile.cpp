@@ -1,3 +1,9 @@
+/**
+\file pile.cpp
+**/
+
+
+
 #include "pile.h"
 #include "mainwindow.h"
 #include "exceptionCalculatrice.h"

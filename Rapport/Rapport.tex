@@ -7,9 +7,9 @@
 \usepackage{float}
 \usepackage{titlesec}
 
+%https://github.com/ProjetsUTC/LO21Projet
 
-
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
 
 \usepackage[pdfauthor={Agathe Oddon, Jean-Michel Tozzini},%
 pdftitle={LO21 : Rapport de projets},%
@@ -59,12 +59,12 @@ colorlinks]{hyperref}
 			\paragraph{}L'utilisation de la classe mère abstraite Constante nous permet à la fois d'empiler des objets de type pointeur sur Constante, et de définir des méthodes polymorphes pour les opérateurs. 
 
 		\subsection{Sauvegarde de l'historique}
-	 		\paragraph{}L'historique est représenté par les classes Gardiens, mementoAff et mementoStock. Sont utilisation est explicité par la suite.
+	 		\paragraph{}L'historique est représenté par les classes Gardiens, mementoAff et mementoStock. Sont utilisation est explicitée par la suite.
 		\subsection{Piles}
-			\paragraph{} La pile est géré par deux structures, la pile de stockage qui contient des Constantes et la pile d'affichage qui contient l'équivalent de la pile de stockage mais en QString.
+			\paragraph{} La pile est gérée par deux structures, la pile de stockage qui contient des Constantes et la pile d'affichage qui contient l'équivalent de la pile de stockage mais en QString.
 		
 		\subsection{Calculatrice}
-			\paragraph{}Cette classe est la classe princiaple de notre UML, elle gère l'interface graphique ainsi que l'affichage des objets. Elle ne manipule pas directement des données : cela se fait soit par le Gardien pour les mementos, soit par les piles pour les constantes et les chaines de caractères associées à ces constantes.
+			\paragraph{}Cette classe est la classe principale de notre UML, elle gère l'interface graphique ainsi que l'affichage des objets. Elle ne manipule pas directement des données : cela se fait soit par le Gardien pour les mementos, soit par les piles pour les constantes et les chaines de caractères associées à ces constantes.
 			
 		\subsection{Schéma}
 			\begin{figure}[H]
@@ -116,7 +116,7 @@ colorlinks]{hyperref}
 		\paragraph{}A chaque entrée de l'utilisateur ou modification des paramètres, une méthode est lancée pour mettre à jour le ficher.
 
 	\section{Historique}
-		\paragraph{}Notre historique est implémenté avec le design pattern memento. Ainsi il est composé de trois classe, le Memento qui est une version de sauvegarde, le gardien qui est composé de plusieurs mementos et la pile est l'élément à sauvegarder. 
+		\paragraph{}Notre historique est implémenté avec le design pattern memento. Ainsi il est composé de trois classes, le Memento qui est une version de sauvegarde, le gardien qui est composé de plusieurs mementos et la pile est l'élément à sauvegarder. 
 		
 		 \paragraph{}Lors d’un changement de la pile, un memento est crée pour chacune des deux piles. Ce memento est une copie de la pile, Il est ensuite empilé dans le gardien. Les fonctions annuler et rétablir naviguent dans les mementos du gardien pour récupérer ces mémentos et utilise une méthode des pile pour lire et récupérer l'information contenu dans le memento.
 		 
@@ -136,10 +136,10 @@ colorlinks]{hyperref}
 		\paragraph{}Enfin, nous avons utilisé la STL pour créer nos piles. La structure deque a été utilisée, ainsi nous avons adapter cette structure à travers la pile pour une utilisation spécifique à nos problématiques.
 		
 	\section{Opérateur binaires}
-			\paragraph{}Pour la majorité de nos opérateur binaires, nous avons fait le choix d'utiliser le design pattern Template Method. Ainsi nous traitons chaque opération binaire par la classe Constante qui délègue le calcule dans les surcharge des classes filles. Cela évite d’utiliser des \emph{dynamic\_cast} de manière excessive et permet de factoriser le code.
+			\paragraph{}Pour la majorité de nos opérateurs binaires, nous avons fait le choix d'utiliser le design pattern Template Method. Ainsi nous traitons chaque opération binaire par la classe Constante qui délègue le calcule dans les surcharges des classes filles. Cela évite d’utiliser des \emph{dynamic\_cast} de manière excessive et permet de factoriser le code.
 
 	\section{Types de données}
-		\paragraph{}Nous avons représenté nos types en nous inspirant du design pattern Composite, ainsi nous avons une classe abstraite Constante dont hérite tout les type de données. De plus les méthodes sont virtuelles pures et donc quelque soit la classe fille de Constante les méthodes sont identiques et s'appellent de la même façon.
+		\paragraph{}Nous avons représenté nos types en nous inspirant du design pattern Composite, ainsi nous avons une classe abstraite Constante dont hérite tout les types de données. De plus les méthodes sont virtuelles pures et donc quelque soit la classe fille de Constante les méthodes sont identiques et s'appellent de la même façon.
 		
 	\section{Utilisation des Singletons}
 		\paragraph{}Pour permettre de respecter la constrainte d'unicité de que nous avons décrit dans l'UML, nous avons choisi d'implementer les classes Gardien, Pile de Stockage et Pile d'Affichage avec le design pattern singleton.

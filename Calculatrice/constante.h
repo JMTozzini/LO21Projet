@@ -221,8 +221,8 @@ public:
     ~Expression(){delete this;}
 
     void Afficher(std::ostream& os=std::cout)const {os<<exp.toStdString()/*<< std::endl*/;}
-    double GetVal() const {throw ExceptionCalculatrice("Fonction non définie\n");}
-    double GetValBis() const {throw ExceptionCalculatrice("Fonction non définie\n");}
+    double GetVal() const {throw ExceptionCalculatrice("Fonction non definie\n");}
+    double GetValBis() const {throw ExceptionCalculatrice("Fonction non definie\n");}
     const std::string GetType() const {return "expression";}
     QString GetQString() const {return exp;}
     /*!

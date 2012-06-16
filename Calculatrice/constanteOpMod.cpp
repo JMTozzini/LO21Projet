@@ -1,3 +1,8 @@
+/**
+\file constanteOpMod.cpp
+**/
+
+
 #include "constante.h"
 
 // ------ Operateur % ------

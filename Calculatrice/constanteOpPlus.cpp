@@ -1,3 +1,9 @@
+/**
+\file constanteOpPlus.cpp
+**/
+
+
+
 #include "constante.h"
 
 
