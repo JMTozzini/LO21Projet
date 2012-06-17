@@ -43,10 +43,25 @@ private:
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    /*!
+      * \brief Méthode permettant l'affichage de la pile d'affichage sur l'ecran central.
+      */
     void AffichageEcran();
+    /*!
+      * \brief Méthode permettant d'initialiser le contexte sauvegardé précédemment.
+      */
     void InitParam();
+    /*!
+      * \brief Méthode permettant la mise à jour du contexte.
+      */
     void MAJParam();
+    /*!
+      * \brief Méthode permettant d'appliquer les informations du menu.
+      */
     void ApplicationMenu();
+    /*!
+      * \brief Méthode permettant d'afficher les erreurs sur l'écran d'erreur.
+      */
     void TraitementErreur(QString);
 
 public slots:

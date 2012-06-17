@@ -1,10 +1,10 @@
 /**
-\mainpage Documentation de notre projet de LO21
+\mainpage Documentation du projet de LO21
 
 \section Introduction
 Ce document a pour but d'expliquer le code de notre projet de l'UV LO21.
 Il s'agit d'une Calculatrice à notation polonaise inversée, implémentée en C++ avec Qt.
-
+Il y sera détaillé les différentes fonctions, méthodes de la calculatrice. Il y sera également explicité La structure de donnés.
 **/
 
 #include <QtGui/QApplication>

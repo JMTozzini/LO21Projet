@@ -1,5 +1,6 @@
 /**
 \file pile.cpp
+\brief Fichier implementant les méthodes des deux piles.
 **/
 
 

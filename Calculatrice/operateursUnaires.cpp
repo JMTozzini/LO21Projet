@@ -1,5 +1,6 @@
 /**
 \file operateursUnaires.cpp
+\brief Fichier implementant les différentes méthodes de calcule des opérateurs unaires.
 **/
 
 

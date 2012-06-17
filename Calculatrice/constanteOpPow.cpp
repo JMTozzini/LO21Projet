@@ -1,5 +1,6 @@
 /**
 \file constanteOpPow.cpp
+\brief Gestion de l'opérateur Puissance.
 **/
 
 

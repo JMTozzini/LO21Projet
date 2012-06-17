@@ -1,5 +1,6 @@
 /**
 \file constanteOpMult.cpp
+\brief Gestion de l'opérateur Multiplier.
 **/
 
 

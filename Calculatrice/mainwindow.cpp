@@ -1,5 +1,6 @@
 /**
 \file mainwindow.cpp
+\brief Initialisation de la calculatrice.
 **/
 
 

@@ -8,6 +8,12 @@
 #include <QRegExp>
 #include <string>
 
+/*!
+  * Slot central de la calculatrice, il permet d'analyser les information entrée dans la calculatrice. Après l'analyse, elle délègue
+  * aux slots correspondant les différentes actions correspondant aux informations entrées.
+  * \brief Slot gérant l'appui du bouton Entrer.
+  */
+
 void MainWindow::EntrerPress()
 {
     QString s=ui->champEcr->text();
@@ -112,6 +118,9 @@ void MainWindow::EntrerPress()
 
 }
 
+/*!
+  * \brief Slot permettant d'annuler une action.
+  */
 void MainWindow::AnnulerPress()
 {
 
@@ -126,6 +135,9 @@ void MainWindow::AnnulerPress()
     MAJParam();
 }
 
+/*!
+  * \brief Slot permettant de rétablir une action.
+  */
 void MainWindow::RetablirPress()
 {
     try

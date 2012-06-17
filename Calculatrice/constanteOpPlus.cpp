@@ -1,5 +1,6 @@
 /**
 \file constanteOpPlus.cpp
+\brief Gestion de l'opérateur Addition.
 **/
 
 

@@ -1,4 +1,5 @@
 /**
+Ensemble de Slots permettant l'affichage d'informations primitives
 \file affichageNum.cpp
 **/
 

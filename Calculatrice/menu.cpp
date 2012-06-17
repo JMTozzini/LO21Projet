@@ -1,5 +1,6 @@
 /**
 \file menu.cpp
+\brief Fichier de gestion du menu de la calculatrice.
 **/
 
 

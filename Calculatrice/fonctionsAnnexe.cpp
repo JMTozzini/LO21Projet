@@ -1,5 +1,6 @@
 /**
 \file fonctionAnnexe.cpp
+\brief Fonctions annexes facilitant certains traitements ou calcules.
 **/
 
 

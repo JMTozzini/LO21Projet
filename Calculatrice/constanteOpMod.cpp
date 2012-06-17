@@ -1,5 +1,6 @@
 /**
 \file constanteOpMod.cpp
+\brief Gestion de l'opérateur Modulo.
 **/
 
 

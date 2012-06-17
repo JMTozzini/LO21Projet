@@ -1,5 +1,6 @@
 /**
 \file constanteOpMoins.cpp
+\brief Fichier implementant les Opérateurs de piles.
 **/
 
 

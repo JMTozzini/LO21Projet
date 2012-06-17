@@ -1,5 +1,6 @@
 /**
 \file constanteOpMoins.cpp
+\brief Gestion de l'opérateur Soustraction.
 **/
 
 

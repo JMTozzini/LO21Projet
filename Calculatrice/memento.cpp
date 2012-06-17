@@ -1,8 +1,7 @@
 /**
 \file memento.cpp
+\brief Fichier implementant les différentes fonctions de gestion de l'historique.
 **/
-
-
 
 #include "memento.h"
 

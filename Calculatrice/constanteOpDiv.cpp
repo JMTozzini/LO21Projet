@@ -1,5 +1,6 @@
 /**
 \file constanteOpDiv.cpp
+\brief Gestion de l'opérateur Diviser.
 **/
 
 
